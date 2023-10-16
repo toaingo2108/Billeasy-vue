@@ -1,5 +1,5 @@
 <template>
-  <v-card style="height: 50%" class="d-flex flex-column">
+  <v-card style="height: 50%" class="d-flex flex-column rounded-xl">
     <v-card-title
       class="app-semibold-font font-20 dark-font d-flex flex-row mt-4 ms-4 align-center"
     >
@@ -11,7 +11,11 @@
         mdi-information-outline
       </v-icon>
       <v-spacer />
-      <v-switch hide-details />
+      <div class="d-flex flex-row align-center">
+        <span class="font-14 app-medium-font blue-600 me-2">Net</span>
+        <v-switch hide-details />
+        <span class="font-14 app-medium-font dark-font ms-2">Gross</span>
+      </div>
     </v-card-title>
     <v-card-text class="d-flex flex-row mx-4 mt-5 pb-0">
       <div class="d-flex flex-column w-25">

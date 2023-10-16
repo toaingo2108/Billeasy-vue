@@ -1,6 +1,6 @@
 <template>
   <div style="height: 33.3%" class="pb-3">
-    <v-card class="h-100">
+    <v-card class="h-100 rounded-xl d-flex flex-column">
       <v-card-title
         class="app-semibold-font font-20 dark-font d-flex flex-row mt-4 ms-4 align-center"
       >
