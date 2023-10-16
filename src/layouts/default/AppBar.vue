@@ -1,13 +1,40 @@
 <template>
-  <v-app-bar flat>
-    <v-app-bar-title>
-      <v-icon icon="mdi-circle-slice-4" />
-
-      Base Preset
-    </v-app-bar-title>
+  <v-app-bar flat color="white">
+    <v-spacer />
+    <v-divider vertical class="bar-divider" />
+    <v-btn icon class="mx-2">
+      <v-icon color="#0D0D1E">mdi-help-circle-outline</v-icon>
+    </v-btn>
+    <v-divider vertical class="bar-divider" />
+    <v-btn icon class="mx-2">
+      <v-icon color="#0D0D1E">mdi-bell-outline</v-icon>
+    </v-btn>
+    <v-divider vertical class="bar-divider" />
+    <v-btn icon>
+      <v-icon color="#8B8BA9" size="16">mdi-chevron-down</v-icon>
+    </v-btn>
+    <div class="app-semibold-font font-14">English</div>
+    <div class="ms-3 me-5">
+      <v-img src="@/assets/sample/flag.svg" width="18" height="14" />
+    </div>
+    <v-divider vertical class="bar-divider" />
+    <v-btn icon>
+      <v-icon color="#8B8BA9" size="16">mdi-chevron-down</v-icon>
+    </v-btn>
+    <div class="app-semibold-font font-14">Jane</div>
+    <v-avatar size="32" class="ms-3 me-5">
+      <v-img src="@/assets/sample/profile.png" />
+    </v-avatar>
   </v-app-bar>
 </template>
 
 <script lang="ts" setup>
-  //
+//
 </script>
+<style scoped>
+.bar-divider {
+  max-height: calc(100% - 32px);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+</style>
