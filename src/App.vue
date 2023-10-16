@@ -48,6 +48,9 @@
 .font-12 {
   font-size: 12px !important;
 }
+.font-13 {
+  font-size: 13px !important;
+}
 .font-14 {
   font-size: 14px !important;
 }
@@ -81,6 +84,9 @@ html {
 .h-100 {
   height: 100% !important;
 }
+.w-25 {
+  width: 25%;
+}
 .min-height-inherit {
   min-height: inherit;
 }
@@ -91,7 +97,13 @@ html {
 .dark-font {
   color: #0d0d1e;
 }
+.teal-font {
+  color: #20c39d;
+}
 .white-font {
   color: white !important;
+}
+.blue-600 {
+  color: #8b8ba9;
 }
 </style>

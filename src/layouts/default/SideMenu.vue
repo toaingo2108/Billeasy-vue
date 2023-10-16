@@ -8,7 +8,7 @@
       height="auto"
     >
       <v-list v-model="selected">
-        <v-list-subheader class="d-flex justify-center my-5">
+        <v-list-subheader class="d-flex justify-center my-5 mb-10">
           <v-img height="104" width="120" src="@/assets/logo.png" />
         </v-list-subheader>
         <v-list-item
