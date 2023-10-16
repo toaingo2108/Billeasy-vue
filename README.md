@@ -1,9 +1,69 @@
-# Anima App exported vue code
-This package was generated automatically with [Anima App](https://www.animaapp.com).
-## Instructions
+# base
+
+## Project setup
+
 ```
-cd package_code
+# yarn
+yarn
+
+# npm
 npm install
-npm start
+
+# pnpm
+pnpm install
+
+# bun
+bun install
 ```
-Open [http://localhost:8080](http://localhost:8080).
+
+### Compiles and hot-reloads for development
+
+```
+# yarn
+yarn dev
+
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# bun
+pnpm run dev
+```
+
+### Compiles and minifies for production
+
+```
+# yarn
+yarn build
+
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# bun
+pnpm run build
+```
+
+### Lints and fixes files
+
+```
+# yarn
+yarn lint
+
+# npm
+npm run lint
+
+# pnpm
+pnpm lint
+
+# bun
+pnpm run lint
+```
+
+### Customize configuration
+
+See [Configuration Reference](https://vitejs.dev/config/).
