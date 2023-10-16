@@ -19,16 +19,16 @@
         <div class="app-regular-font font-13 blue-600">Last 12 months</div>
       </div>
       <div class="d-flex flex-column w-25">
-        <div class="app-semibold-font font-18 dark-font">55k+</div>
-        <div class="app-regular-font font-13 blue-600">Last 12 months</div>
+        <div class="app-semibold-font font-18 dark-font">21k+</div>
+        <div class="app-regular-font font-13 blue-600">Last 6 months</div>
       </div>
       <div class="d-flex flex-column w-25">
-        <div class="app-semibold-font font-18 dark-font">55k+</div>
-        <div class="app-regular-font font-13 blue-600">Last 12 months</div>
+        <div class="app-semibold-font font-18 dark-font">1k+</div>
+        <div class="app-regular-font font-13 blue-600">Last 3 months</div>
       </div>
       <div class="d-flex flex-column w-25">
-        <div class="app-semibold-font font-18 dark-font">55k+</div>
-        <div class="app-regular-font font-13 blue-600">Last 12 months</div>
+        <div class="app-semibold-font font-18 dark-font">500+</div>
+        <div class="app-regular-font font-13 blue-600">This month</div>
       </div>
     </v-card-text>
     <v-card-text class="pt-0">

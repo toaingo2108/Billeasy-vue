@@ -106,4 +106,7 @@ html {
 .blue-600 {
   color: #8b8ba9;
 }
+.shade-font {
+  color: #59597b;
+}
 </style>
