@@ -6,7 +6,7 @@
         class="w-100 min-width-200 mx-0 d-flex flex-column align-center pa-0"
       >
         <app-bar />
-        <default-view class="w-100 pa-0" />
+        <default-view class="w-100 px-0" />
       </div>
     </div>
   </v-app>

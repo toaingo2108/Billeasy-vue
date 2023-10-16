@@ -49,7 +49,7 @@
   font-size: 12px !important;
 }
 .font-14 {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 .font-16 {
   font-size: 16px;
@@ -61,6 +61,9 @@
   font-size: 20px !important;
 }
 .font-24 {
+  font-size: 24px !important;
+}
+.font-28 {
   font-size: 24px !important;
 }
 .font-30 {
@@ -87,5 +90,8 @@ html {
 }
 .dark-font {
   color: #0d0d1e;
+}
+.white-font {
+  color: white !important;
 }
 </style>

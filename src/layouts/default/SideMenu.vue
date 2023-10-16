@@ -33,6 +33,11 @@
 import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
+
+const router = useRouter();
+const route = useRoute();
+const store = useStore();
+
 import homeIcon from "@/assets/svg/sideMenu/home.svg";
 import productsIcon from "@/assets/svg/sideMenu/products.svg";
 import customersIcon from "@/assets/svg/sideMenu/customers.svg";
@@ -53,9 +58,6 @@ const menuItems = [
   [usersIcon, "Users", "users"],
 ];
 const selected = ref(-1);
-const router = useRouter();
-const route = useRoute();
-const store = useStore();
 
 function onOpenMenu(name: string, index: number) {
   if (name == "logout") {
