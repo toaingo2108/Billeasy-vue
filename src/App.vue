@@ -85,4 +85,7 @@ html {
 .blue-font {
   color: #3737c8;
 }
+.dark-font {
+  color: #0d0d1e;
+}
 </style>
