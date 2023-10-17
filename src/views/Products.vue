@@ -21,34 +21,67 @@
           />
         </div>
         <div class="ml-2">
-          <v-img
+          <v-btn
+            variant="plain"
             width="40"
             height="40"
-            src="@/assets/svg/products/filter.svg"
-          />
+            class="img-button"
+            rounded="lg"
+          >
+            <v-img
+              width="40"
+              height="40"
+              src="@/assets/svg/products/filter.svg"
+            />
+          </v-btn>
         </div>
       </div>
       <div class="d-flex align-center">
         <div class="me-3">
-          <v-img
+          <v-btn
+            variant="plain"
             width="40"
             height="40"
-            src="@/assets/svg/products/download.svg"
-          />
+            class="img-button"
+            rounded="lg"
+            @click="onExportData"
+          >
+            <v-img
+              width="40"
+              height="40"
+              src="@/assets/svg/products/download.svg"
+            />
+          </v-btn>
         </div>
         <div class="me-3">
-          <v-img
+          <v-btn
+            variant="plain"
             width="40"
             height="40"
-            src="@/assets/svg/products/upload.svg"
-          />
+            class="img-button"
+            rounded="lg"
+          >
+            <v-img
+              width="40"
+              height="40"
+              src="@/assets/svg/products/upload.svg"
+            />
+          </v-btn>
         </div>
         <div class="me-3">
-          <v-img
+          <v-btn
+            variant="plain"
             width="40"
             height="40"
-            src="@/assets/svg/products/products.svg"
-          />
+            class="img-button"
+            rounded="lg"
+          >
+            <v-img
+              width="40"
+              height="40"
+              src="@/assets/svg/products/products.svg"
+            />
+          </v-btn>
         </div>
         <v-btn
           color="#20C39D"
@@ -70,13 +103,20 @@
       :dialog="newProductDialog"
       @update:dialog="(val) => (newProductDialog = val)"
     />
+    <product-export-dialog
+      :dialog="exportDialog"
+      @update:dialog="(val) => (exportDialog = val)"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
 import NewProductDialog from "@/components/products/NewProductDialog.vue";
+import ProductExportDialog from "@/components/products/ProductExportDialog.vue";
+
 const newProductDialog = ref(false);
+const exportDialog = ref(false);
 const headers = [
   { title: "ID", key: "id" },
   { title: "Name", key: "name" },
@@ -431,13 +471,24 @@ const items = [
 ];
 
 const openNewProductDialog = function () {
-  console.log("open dialog");
   newProductDialog.value = true;
+};
+
+const onExportData = function () {
+  exportDialog.value = true;
 };
 </script>
 <style scoped>
 div >>> .v-text-field input.v-field__input {
   min-height: 40px;
   padding: 5px;
+}
+div >>> .img-button {
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  max-width: 40px;
 }
 </style>

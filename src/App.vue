@@ -97,6 +97,9 @@ html {
 .dark-font {
   color: #0d0d1e;
 }
+.black-font {
+  color: black;
+}
 .teal-font {
   color: #20c39d;
 }

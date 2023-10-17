@@ -89,6 +89,7 @@
             prepend-icon="mdi-plus"
             class="text-none app-medium-font font-14"
             color="#20c39d"
+            @click="onAddNewCategory"
           >
             Add New
           </v-btn>
@@ -217,6 +218,10 @@
         :dialog="priceDialog"
         @update:dialog="(val) => (priceDialog = val)"
       />
+      <new-product-category-dialog
+        :dialog="categoryDialog"
+        @update:dialog="(val) => (categoryDialog = val)"
+      />
     </v-card>
   </v-dialog>
 </template>
@@ -224,6 +229,7 @@
 <script lang="ts" setup>
 import { ref, defineProps, defineEmits, watchEffect } from "vue";
 import NewProductPriceDialog from "./NewProductPriceDialog.vue";
+import NewProductCategoryDialog from "./NewProductCategoryDialog.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -249,9 +255,13 @@ const items = [
 ];
 
 const priceDialog = ref(false);
+const categoryDialog = ref(false);
 
 const onAddNewPrice = function () {
   priceDialog.value = true;
+};
+const onAddNewCategory = function () {
+  categoryDialog.value = true;
 };
 </script>
 
