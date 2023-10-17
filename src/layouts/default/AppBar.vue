@@ -8,6 +8,7 @@
     <v-divider vertical class="bar-divider" />
     <v-btn icon class="mx-2">
       <v-icon color="#0D0D1E">mdi-bell-outline</v-icon>
+      <notification-menu />
     </v-btn>
     <v-divider vertical class="bar-divider" />
     <v-btn icon>
@@ -29,7 +30,7 @@
 </template>
 
 <script lang="ts" setup>
-//
+import NotificationMenu from "@/components/appbar/NotificationMenu.vue";
 </script>
 <style scoped>
 .bar-divider {
