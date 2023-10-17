@@ -34,7 +34,7 @@
               <div class="d-flex flex-row">
                 <div>
                   <v-img
-                    src="@/assets/svg/notification/message.svg"
+                    src="@/assets/svg/appbar/message.svg"
                     width="28"
                     height="28"
                   />

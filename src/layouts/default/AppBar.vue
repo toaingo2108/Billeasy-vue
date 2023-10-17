@@ -4,6 +4,7 @@
     <v-divider vertical class="bar-divider" />
     <v-btn icon class="mx-2">
       <v-icon color="#0D0D1E">mdi-help-circle-outline</v-icon>
+      <help-menu />
     </v-btn>
     <v-divider vertical class="bar-divider" />
     <v-btn icon class="mx-2">
@@ -31,6 +32,7 @@
 
 <script lang="ts" setup>
 import NotificationMenu from "@/components/appbar/NotificationMenu.vue";
+import HelpMenu from "@/components/appbar/HelpMenu.vue";
 </script>
 <style scoped>
 .bar-divider {
