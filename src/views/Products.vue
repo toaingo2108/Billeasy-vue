@@ -76,6 +76,7 @@
             height="40"
             class="img-button"
             rounded="lg"
+            @click="onProductCategories"
           >
             <v-img
               width="40"
@@ -112,6 +113,11 @@
       :dialog="importDialog"
       @update:dialog="(val) => (importDialog = val)"
     />
+    <product-categories-dialog
+      :dialog="productCategoriesDialog"
+      @update:dialog="(val) => (productCategoriesDialog = val)"
+      v-if="productCategoriesDialog"
+    />
   </div>
 </template>
 
@@ -120,10 +126,12 @@ import { ref } from "vue";
 import NewProductDialog from "@/components/products/NewProductDialog.vue";
 import ProductExportDialog from "@/components/products/ProductExportDialog.vue";
 import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
+import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);
 const importDialog = ref(false);
+const productCategoriesDialog = ref(false);
 
 const headers = [
   { title: "ID", key: "id" },
@@ -488,6 +496,9 @@ const onExportData = function () {
 
 const onImportData = function () {
   importDialog.value = true;
+};
+const onProductCategories = function () {
+  productCategoriesDialog.value = true;
 };
 </script>
 <style scoped>
