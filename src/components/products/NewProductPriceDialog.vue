@@ -58,6 +58,7 @@
             padding-bottom: 10px;
             border-color: #d1d1e2;
           "
+          class="text-none"
           >Cancel</v-btn
         >
         <v-btn
@@ -65,6 +66,7 @@
           @click="closeDialog"
           prepend-icon="mdi-check"
           rounded="lg"
+          class="text-none"
           style="
             background: #20c39d;
             padding-left: 20px;

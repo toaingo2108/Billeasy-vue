@@ -197,6 +197,7 @@
             padding-bottom: 10px;
             border-color: #d1d1e2;
           "
+          class="text-none"
           >Cancel</v-btn
         >
         <v-btn
@@ -211,6 +212,7 @@
             padding-top: 10px;
             padding-bottom: 10px;
           "
+          class="text-none"
           >Save</v-btn
         >
       </v-card-actions>

@@ -116,4 +116,7 @@ html {
 .justify-between {
   justify-content: space-between !important;
 }
+.flex-grow {
+  flex-grow: 1;
+}
 </style>
