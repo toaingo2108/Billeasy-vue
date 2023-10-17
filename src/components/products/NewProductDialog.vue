@@ -176,6 +176,7 @@
             prepend-icon="mdi-plus"
             class="text-none app-medium-font font-14"
             color="#20c39d"
+            @click="onAddNewPrice"
           >
             Add New Price
           </v-btn>
@@ -212,13 +213,17 @@
           >Save</v-btn
         >
       </v-card-actions>
+      <new-product-price-dialog
+        :dialog="priceDialog"
+        @update:dialog="(val) => (priceDialog = val)"
+      />
     </v-card>
-    import { log } from "console";
   </v-dialog>
 </template>
 
 <script lang="ts" setup>
 import { ref, defineProps, defineEmits, watchEffect } from "vue";
+import NewProductPriceDialog from "./NewProductPriceDialog.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -242,6 +247,12 @@ const items = [
   { incl: 1000, excl: 800, quantity: 2, price: "B" },
   { incl: 1000, excl: 800, quantity: 0, price: "C" },
 ];
+
+const priceDialog = ref(false);
+
+const onAddNewPrice = function () {
+  priceDialog.value = true;
+};
 </script>
 
 <style scoped>
