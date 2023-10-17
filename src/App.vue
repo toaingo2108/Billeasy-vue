@@ -95,19 +95,19 @@ html {
   color: #3737c8;
 }
 .dark-font {
-  color: #0d0d1e;
+  color: #0d0d1e !important;
 }
 .black-font {
   color: black;
 }
 .teal-font {
-  color: #20c39d;
+  color: #20c39d !important;
 }
 .white-font {
   color: white !important;
 }
 .blue-600 {
-  color: #8b8ba9;
+  color: #8b8ba9 !important;
 }
 .shade-font {
   color: #59597b;

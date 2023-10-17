@@ -4,7 +4,7 @@
       <v-card-title
         class="app-semibold-font font-20 dark-font mt-6 mx-3 d-flex flex-row justify-between"
       >
-        Product Categories
+        Customer Categories
         <div class="d-flex flex-row">
           <div style="width: 207px">
             <v-text-field
@@ -41,7 +41,7 @@
         <v-data-table :headers="headers" :items="items" items-per-page="7">
         </v-data-table>
       </v-card-text>
-      <new-product-category-dialog
+      <new-customer-category-dialog
         :dialog="categoryDialog"
         @update:dialog="(val) => (categoryDialog = val)"
       />
@@ -51,8 +51,8 @@
 
 <script lang="ts" setup>
 import { ref, defineProps, defineEmits, watch, watchEffect } from "vue";
-import NewProductPriceDialog from "./NewProductPriceDialog.vue";
-import NewProductCategoryDialog from "./NewProductCategoryDialog.vue";
+import NewCustomerPriceDialog from "./NewCustomerPriceDialog.vue";
+import NewCustomerCategoryDialog from "./NewCustomerCategoryDialog.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -68,99 +68,100 @@ const closeDialog = () => {
 };
 
 const headers = [
-  { title: "Article nr.", key: "title" },
-  { title: "Article nr.", key: "description" },
-  { title: "#Articles In Category", key: "count" },
+  { title: "Name", key: "title" },
+  { title: "Description", key: "description" },
+  { title: "#Customers In Category", key: "count" },
   { title: "", key: "action" },
 ];
 
 const items = [
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 1331233,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
   {
-    title: "New Products",
+    title: "New Customers",
     description:
-      "This categories are for all products created the last 30 days",
+      "This categories are for all customers created the last 30 days",
     count: 133,
   },
 ];
 
+const priceDialog = ref(false);
 const categoryDialog = ref(false);
 
 const onAddNewCategory = function () {
