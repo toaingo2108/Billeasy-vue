@@ -109,4 +109,8 @@ html {
 .shade-font {
   color: #59597b;
 }
+
+.justify-between {
+  justify-content: space-between !important;
+}
 </style>

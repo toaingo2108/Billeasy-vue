@@ -30,13 +30,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { useStore } from "vuex";
+// import { useStore } from "vuex";
 
 const router = useRouter();
 const route = useRoute();
-const store = useStore();
+// const store = useStore();
 
 import homeIcon from "@/assets/svg/sideMenu/home.svg";
 import productsIcon from "@/assets/svg/sideMenu/products.svg";
@@ -59,15 +59,33 @@ const menuItems = [
 ];
 const selected = ref(-1);
 
+function checkRoute() {
+  for (let i = 0; i < menuItems.length; i++) {
+    if (route.name === menuItems[i][2]) {
+      selected.value = i;
+      break;
+    }
+  }
+}
+
 function onOpenMenu(name: string, index: number) {
   if (name == "logout") {
-    store.dispatch("auth/logout");
-    router.push({ name: "login" });
+    // store.dispatch("auth/logout");
+    // router.push({ name: "login" });
   } else if (route.name != name) {
     router.push({ name });
   }
   selected.value = index;
 }
+
+watch(
+  () => route.name,
+  () => {
+    checkRoute();
+  }
+);
+
+checkRoute();
 </script>
 <style scoped>
 .left-section {

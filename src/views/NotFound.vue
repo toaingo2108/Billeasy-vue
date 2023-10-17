@@ -24,12 +24,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
-const route = useRoute();
 
 function goToHome() {
-  router.replace({ name: "home" });
+  router.push({ name: "home" });
 }
 </script>
