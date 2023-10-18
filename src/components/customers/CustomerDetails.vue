@@ -318,7 +318,7 @@
                 <div class="d-flex flex-row justify-end mt-2">
                   <v-btn
                     color="white"
-                    @click="onBack"
+                    @click="onAddNewNote"
                     prepend-icon="mdi-plus"
                     rounded="lg"
                     style="
@@ -330,7 +330,7 @@
                       padding-bottom: 10px;
                     "
                     class="text-none"
-                    >New Invoice</v-btn
+                    >New Note</v-btn
                   >
                 </div>
                 <div class="d-flex flex-row align-center mt-8 mb-10">
@@ -594,6 +594,10 @@
         >Save</v-btn
       >
     </div>
+    <add-note-dialog
+      :dialog="addNewNoteDialog"
+      @update:dialog="(val) => (addNewNoteDialog = val)"
+    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -604,9 +608,11 @@ import notesIcon from "@/assets/svg/customers/notes.svg";
 import todosIcon from "@/assets/svg/customers/todos.svg";
 import timeReportIcon from "@/assets/svg/customers/time_report.svg";
 import UpdateHeaderMenu from "./CustomerUpdateHeaderMenu.vue";
+import AddNoteDialog from "./CustomerAddNoteDialog.vue";
 
 const tab = ref(0);
 const addNewDialog = ref(false);
+const addNewNoteDialog = ref(false);
 const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 
 const router = useRouter();
@@ -751,6 +757,10 @@ const noteItems = [
     updated_at: "2023-05-01, 15:55",
   },
 ];
+
+const onAddNewNote = function () {
+  addNewNoteDialog.value = true;
+};
 </script>
 <style scoped>
 div >>> .v-text-field input.v-field__input {
