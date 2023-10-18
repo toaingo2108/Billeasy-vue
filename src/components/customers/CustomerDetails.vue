@@ -352,64 +352,90 @@
                   </v-data-table>
                 </div>
               </div>
-              <div v-else-if="menu.title == 'Contact'">
+              <div v-else-if="menu.title == `To-do's`" class="px-2">
                 <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Phone
-                  </div>
-                  <div style="width: 336px">
+                  <div class="flex-grow me-4 ms-2">
                     <v-text-field
-                      placeholder="Phone"
+                      placeholder="Search"
+                      prepend-inner-icon="mdi-magnify"
                       variant="outlined"
                       rounded="lg"
                       hide-details
                     />
+                  </div>
+                  <div style="width: 130px">
+                    <v-btn
+                      color="white"
+                      @click="onBack"
+                      prepend-icon="mdi-plus"
+                      rounded="lg"
+                      width="100%"
+                      style="
+                        background: #20c39d !important;
+                        color: white !important;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                      "
+                      class="text-none"
+                    >
+                      New To-do
+                    </v-btn>
                   </div>
                 </div>
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Mobile
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Mobile"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                </div>
-                <div class="d-flex flex-row mt-8 mb-10">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font mt-3"
-                  >
-                    Email Address (Up to 3)
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Enter Email"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                    <div>
-                      <v-chip
-                        closable
-                        v-for="email in emails"
-                        class="mt-3 me-3 dark-font font-12 app-regular-font"
-                        close-icon="mdi-close-circle-outline"
-                      >
-                        {{ email }}
-                      </v-chip>
-                    </div>
-                  </div>
+                <div class="d-flex flex-row align-center mt-8 mb-10">
+                  <v-expansion-panels variant="accordion">
+                    <v-expansion-panel v-for="i in 3" :key="i" elevation="0">
+                      <v-expansion-panel-title v-slot="{ expanded }">
+                        <span class="font-14 app-medium-font dark-font me-15"
+                          >Category Name</span
+                        >
+                        <v-btn
+                          variant="text"
+                          prepend-icon="mdi-plus"
+                          class="text-none app-medium-font font-14 ms-2"
+                          color="#20C39D"
+                          rounded="lg"
+                          @click.stop="onAddNewCategory"
+                          @mousedown.stop
+                          @touchstart.stop
+                          v-if="expanded"
+                        >
+                          Add New
+                        </v-btn>
+                      </v-expansion-panel-title>
+                      <v-expansion-panel-text>
+                        <v-card
+                          v-for="(item, index) in todoItems"
+                          :key="index"
+                          class="rounded-xl mt-2"
+                          elevation="0"
+                          color="#F7F7FA"
+                        >
+                          <v-card-text class="d-flex flex-row">
+                            <v-avatar size="24" class="ms-3 me-3">
+                              <v-img :src="item.image" />
+                            </v-avatar>
+                            <div class="flex-grow">
+                              <div class="font-14 app-medium-font dark-font">
+                                {{ item.text }}
+                              </div>
+                              <div class="font-12 shade-font app-regular-font">
+                                {{ item.date }}
+                              </div>
+                            </div>
+                            <div style="width: 220px">
+                              <v-chip>{{ item.status }}</v-chip>
+                            </div>
+                            <v-btn icon size="x-small" flat>
+                              <v-icon>mdi-dots-horizontal</v-icon>
+                            </v-btn>
+                          </v-card-text>
+                        </v-card>
+                      </v-expansion-panel-text>
+                    </v-expansion-panel>
+                  </v-expansion-panels>
                 </div>
               </div>
               <div v-else-if="menu.title == 'Invoice'">
@@ -579,24 +605,6 @@
         </v-card>
       </v-col>
     </v-row>
-    <div class="d-flex flex-row justify-end mt-5">
-      <v-btn
-        color="white"
-        @click="onBack"
-        prepend-icon="mdi-check"
-        rounded="lg"
-        style="
-          background: #20c39d !important;
-          color: white !important;
-          padding-left: 20px;
-          padding-right: 20px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-        "
-        class="text-none"
-        >Save</v-btn
-      >
-    </div>
     <add-note-dialog
       :dialog="addNewNoteDialog"
       @update:dialog="(val) => (addNewNoteDialog = val)"
@@ -617,6 +625,7 @@ import timeReportIcon from "@/assets/svg/customers/time_report.svg";
 import UpdateHeaderMenu from "./CustomerUpdateHeaderMenu.vue";
 import AddNoteDialog from "./CustomerAddNoteDialog.vue";
 import AddCustomFieldDialog from "./CustomerAddCustomFieldDialog.vue";
+import todoImage from "@/assets/sample/profile.png";
 
 const tab = ref(0);
 const addNewDialog = ref(false);
@@ -773,6 +782,27 @@ const noteItems = [
 const onAddNewNote = function () {
   addNewNoteDialog.value = true;
 };
+
+const todoItems = [
+  {
+    image: todoImage,
+    text: "Call Jimmy regarding project",
+    status: "Done",
+    date: "2023/05/01",
+  },
+  {
+    image: todoImage,
+    text: "Call Jimmy regarding project",
+    status: "New",
+    date: "2023/05/01",
+  },
+  {
+    image: todoImage,
+    text: "Call Jimmy regarding project",
+    status: "Started",
+    date: "2023/05/01",
+  },
+];
 </script>
 <style scoped>
 div >>> .v-text-field input.v-field__input {
