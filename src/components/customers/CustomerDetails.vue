@@ -205,7 +205,10 @@
               </div>
               Custom Fields
             </div>
-            <v-btn variant="outlined" class="icon-button"
+            <v-btn
+              variant="outlined"
+              class="icon-button"
+              @click="onAddNewCustomField"
               ><v-icon color="#0d0d1e">mdi-plus</v-icon></v-btn
             >
           </v-card-title>
@@ -598,6 +601,10 @@
       :dialog="addNewNoteDialog"
       @update:dialog="(val) => (addNewNoteDialog = val)"
     />
+    <add-custom-field-dialog
+      :dialog="addNewCustomFieldDialog"
+      @update:dialog="(val) => (addNewCustomFieldDialog = val)"
+    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -609,10 +616,12 @@ import todosIcon from "@/assets/svg/customers/todos.svg";
 import timeReportIcon from "@/assets/svg/customers/time_report.svg";
 import UpdateHeaderMenu from "./CustomerUpdateHeaderMenu.vue";
 import AddNoteDialog from "./CustomerAddNoteDialog.vue";
+import AddCustomFieldDialog from "./CustomerAddCustomFieldDialog.vue";
 
 const tab = ref(0);
 const addNewDialog = ref(false);
 const addNewNoteDialog = ref(false);
+const addNewCustomFieldDialog = ref(false);
 const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 
 const router = useRouter();
@@ -622,6 +631,9 @@ const onBack = function () {
 
 const onAddNewCategory = function () {
   addNewDialog.value = true;
+};
+const onAddNewCustomField = function () {
+  addNewCustomFieldDialog.value = true;
 };
 
 const customFieldsHeaders = ["Name", "Value", ""];
