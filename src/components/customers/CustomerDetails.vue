@@ -1,0 +1,817 @@
+<template>
+  <div class="w-100 h-100 pa-8 d-flex flex-column">
+    <div class="d-flex flex-row mb-5 align-center w-100">
+      <div>
+        <v-btn
+          variant="outlined"
+          prepend-icon="mdi-chevron-left"
+          @click="onBack"
+          rounded="lg"
+          color="#0D0D1E"
+          style="
+            border-color: #d1d1e2;
+            text-decoration: none;
+            margin-right: 24px;
+          "
+          >Back</v-btn
+        >
+      </div>
+      <div class="app-semibold-font font-20 blue-600">Customers</div>
+      <div class="app-semibold-font font-20 dark-font">#1234</div>
+    </div>
+    <v-row>
+      <v-col cols="12" md="5">
+        <v-card class="rounded-xl pa-3">
+          <v-card-title class="d-flex flex-row justify-between">
+            <div class="d-flex flex-row align-center">
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/customers/information.svg"
+                />
+              </div>
+              Information
+            </div>
+            <v-btn variant="outlined" class="icon-button"
+              ><v-icon color="#0d0d1e">mdi-pencil</v-icon></v-btn
+            >
+          </v-card-title>
+          <v-card-text class="mt-5 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font">Company Name</span>
+            <span class="font-13 shade-font app-regular-font"
+              >Company Inc.</span
+            >
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font">Org. Number</span>
+            <span class="font-13 shade-font app-regular-font">11111-11111</span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font">Website</span>
+            <span class="font-13 shade-font app-regular-font">
+              www.website.com
+            </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font">Phone</span>
+            <span class="font-13 shade-font app-regular-font"> 1232933 </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font">Address</span>
+            <span class="font-13 shade-font app-regular-font ms-5">
+              22, House Name, Street, City
+            </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font">City</span>
+            <span class="font-13 shade-font app-regular-font"> Stockholm </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font">Country</span>
+            <span class="font-13 shade-font app-regular-font"> SE </span>
+          </v-card-text>
+        </v-card>
+        <v-card class="rounded-xl pa-3 mt-6">
+          <v-card-title class="d-flex flex-row justify-between">
+            <div class="d-flex flex-row align-center">
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/customers/statistics.svg"
+                />
+              </div>
+              Statistics
+            </div>
+          </v-card-title>
+          <v-card-text class="mt-5 d-flex flex-row">
+            <span class="font-14 dark-font app-medium-font"
+              >Late invoices:</span
+            >
+            <span class="font-13 shade-font app-regular-font ms-3"
+              >10(16%)</span
+            >
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font"
+              >Sum This Year (2023)</span
+            >
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row ms-4">
+            <span class="font-13 dark-font app-medium-font"
+              >All 3 in SEK:
+            </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              130300 :- (3 300 :- VAT),
+            </span>
+            <span class="font-13 dark-font app-medium-font">Netto: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              10 000 :-
+            </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row ms-4">
+            <span class="font-13 dark-font app-medium-font">2 in SEK: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              2 100 :- (300 :- VAT),
+            </span>
+            <span class="font-13 dark-font app-medium-font">Netto: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              1 800 :-
+            </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row ms-4">
+            <span class="font-13 dark-font app-medium-font">1 in EUR: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              11 000 :- (3 000 :- VAT),
+            </span>
+            <span class="font-13 dark-font app-medium-font">Netto: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              7 000 :-
+            </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row justify-between">
+            <span class="font-14 dark-font app-medium-font">Sum In Total</span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row ms-4">
+            <span class="font-13 dark-font app-medium-font"
+              >All 3 in SEK:
+            </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              130300 :- (3 300 :- VAT),
+            </span>
+            <span class="font-13 dark-font app-medium-font">Netto: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              10 000 :-
+            </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row ms-4">
+            <span class="font-13 dark-font app-medium-font">2 in SEK: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              2 100 :- (300 :- VAT),
+            </span>
+            <span class="font-13 dark-font app-medium-font">Netto: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              1 800 :-
+            </span>
+          </v-card-text>
+          <v-card-text class="pt-1 d-flex flex-row ms-4">
+            <span class="font-13 dark-font app-medium-font">1 in EUR: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              11 000 :- (3 000 :- VAT),
+            </span>
+            <span class="font-13 dark-font app-medium-font">Netto: </span>
+            <span class="font-13 shade-font app-regular-font ms-1">
+              7 000 :-
+            </span>
+          </v-card-text>
+        </v-card>
+        <v-card class="rounded-xl pa-3 mt-6">
+          <v-card-title class="d-flex flex-row justify-between">
+            <div class="d-flex flex-row align-center">
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/customers/email.svg"
+                />
+              </div>
+              Email Address
+            </div>
+            <v-btn variant="outlined" class="icon-button"
+              ><v-icon color="#0d0d1e">mdi-plus</v-icon></v-btn
+            >
+          </v-card-title>
+          <v-card-text class="mt-5 d-flex flex-row flex-wrap">
+            <v-chip
+              closable
+              v-for="email in emails"
+              class="mt-3 me-3 dark-font font-12 app-regular-font"
+              close-icon="mdi-close-circle-outline"
+            >
+              {{ email }}
+            </v-chip>
+          </v-card-text>
+        </v-card>
+        <v-card class="rounded-xl pa-3 mt-6">
+          <v-card-title class="d-flex flex-row justify-between">
+            <div class="d-flex flex-row align-center">
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/customers/custom_fields.svg"
+                />
+              </div>
+              Custom Fields
+            </div>
+            <v-btn variant="outlined" class="icon-button"
+              ><v-icon color="#0d0d1e">mdi-plus</v-icon></v-btn
+            >
+          </v-card-title>
+          <v-card-text class="mt-5 d-flex flex-row justify-between">
+            <v-table style="width: 100%">
+              <thead>
+                <tr>
+                  <th
+                    class="text-left font-12 app-semibold-font shade-font"
+                    v-for="header in customFieldsHeaders"
+                    :key="header"
+                  >
+                    {{ header }}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="item in customFields"
+                  :key="item.name"
+                  style="height: 36px"
+                >
+                  <td>
+                    <span class="font-14 dark-font app-medium-font">{{
+                      item.name
+                    }}</span>
+                  </td>
+                  <td>
+                    <span class="font-13 shade-font app-regular-font">
+                      {{ item.value }}
+                    </span>
+                  </td>
+                  <td>
+                    <v-btn icon size="x-small" flat>
+                      <v-icon>mdi-dots-horizontal</v-icon>
+                    </v-btn>
+                  </td>
+                </tr>
+              </tbody>
+            </v-table>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col cols="12" md="7">
+        <v-card class="rounded-xl pa-3">
+          <v-tabs v-model="tab" color="#20C39D">
+            <v-tab
+              :value="index"
+              class="text-none font-14 app-medium-font"
+              :class="tab == index ? 'teal-font' : 'blue-600'"
+              v-for="(menu, index) in menus"
+            >
+              <div class="me-2">
+                <v-img width="18" height="18" :src="menu.icon" />
+              </div>
+              {{ menu.title }}
+            </v-tab>
+          </v-tabs>
+          <v-window v-model="tab">
+            <v-window-item
+              v-for="(menu, index) in menus"
+              :key="index"
+              :value="index"
+            >
+              <div v-if="menu.title == 'Invoices'">
+                <div class="d-flex flex-row justify-end mt-2">
+                  <v-btn
+                    color="white"
+                    @click="onBack"
+                    prepend-icon="mdi-plus"
+                    rounded="lg"
+                    style="
+                      background: #20c39d !important;
+                      color: white !important;
+                      padding-left: 20px;
+                      padding-right: 20px;
+                      padding-top: 10px;
+                      padding-bottom: 10px;
+                    "
+                    class="text-none"
+                    >New Invoice</v-btn
+                  >
+                </div>
+
+                <div class="d-flex flex-row align-center mt-8 mb-10">
+                  <v-data-table
+                    :headers="invoiceHeaders"
+                    :items="invoiceItems"
+                    items-per-page="-1"
+                    hide-default-footer
+                  >
+                    <template v-slot:[`item.sent`]="{ item }">
+                      <v-checkbox
+                        color="#20c39d"
+                        hide-details
+                        v-model="item.sent"
+                      />
+                    </template>
+                    <template v-slot:[`item.paid`]="{ item }">
+                      <v-checkbox
+                        color="#20c39d"
+                        hide-details
+                        v-model="item.paid"
+                      />
+                    </template>
+                  </v-data-table>
+                </div>
+              </div>
+              <div v-else-if="menu.title == 'Address'">
+                <div class="d-flex flex-row align-center mt-8 flex-wrap">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Street Address
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Street Address"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                  <div class="d-flex flex-row align-center ms-4">
+                    <v-radio-group hide-details color="#20C39D">
+                      <div class="d-flex flex-row">
+                        <v-radio value="billing_address">
+                          <template v-slot:label>
+                            <span class="font-14 app-regular-font dark-font">
+                              Billing Address
+                            </span>
+                          </template>
+                        </v-radio>
+                        <v-radio value="shipping_address">
+                          <template v-slot:label>
+                            <span
+                              class="font-14 app-regular-font dark-font"
+                              style="width: 200px"
+                            >
+                              Shipping Address
+                            </span>
+                          </template>
+                        </v-radio>
+                      </div>
+                    </v-radio-group>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    City
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="City"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Zip Code
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Zip Code"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8 mb-6">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Country
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Country"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="menu.title == 'Contact'">
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Phone
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Phone"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Mobile
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Mobile"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                </div>
+                <div class="d-flex flex-row mt-8 mb-10">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font mt-3"
+                  >
+                    Email Address (Up to 3)
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Enter Email"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                    <div>
+                      <v-chip
+                        closable
+                        v-for="email in emails"
+                        class="mt-3 me-3 dark-font font-12 app-regular-font"
+                        close-icon="mdi-close-circle-outline"
+                      >
+                        {{ email }}
+                      </v-chip>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="menu.title == 'Invoice'">
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Terms of payment
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Terms of payment"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                  <div>
+                    <v-btn
+                      variant="text"
+                      prepend-icon="mdi-plus"
+                      class="text-none app-medium-font font-14 ms-2"
+                      color="#20C39D"
+                      rounded="lg"
+                      @click="onAddNewCategory"
+                    >
+                      Add New
+                    </v-btn>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Price list
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Price list"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                  <div>
+                    <v-btn
+                      variant="text"
+                      prepend-icon="mdi-plus"
+                      class="text-none app-medium-font font-14 ms-2"
+                      color="#20C39D"
+                      rounded="lg"
+                      @click="onAddNewCategory"
+                    >
+                      Add New
+                    </v-btn>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Currency
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Currency"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                  <div>
+                    <v-btn
+                      variant="text"
+                      prepend-icon="mdi-plus"
+                      class="text-none app-medium-font font-14 ms-2"
+                      color="#20C39D"
+                      rounded="lg"
+                      @click="onAddNewCategory"
+                    >
+                      Add New
+                    </v-btn>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Reminder flow
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Reminder flow"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                  <div>
+                    <v-btn
+                      variant="text"
+                      prepend-icon="mdi-plus"
+                      class="text-none app-medium-font font-14 ms-2"
+                      color="#20C39D"
+                      rounded="lg"
+                      @click="onAddNewCategory"
+                    >
+                      Add New
+                    </v-btn>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Discount type
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Discount type"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Discount
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Discount"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-center mt-8 mb-3">
+                  <div
+                    style="width: 240px"
+                    class="font-14 app-regular-font dark-font"
+                  >
+                    Send invoices with
+                  </div>
+                  <div style="width: 336px">
+                    <v-text-field
+                      placeholder="Send invoices with"
+                      variant="outlined"
+                      rounded="lg"
+                      hide-details
+                    />
+                  </div>
+                </div>
+              </div>
+            </v-window-item>
+          </v-window>
+        </v-card>
+      </v-col>
+    </v-row>
+    <div class="d-flex flex-row justify-end mt-5">
+      <v-btn
+        color="white"
+        @click="onBack"
+        prepend-icon="mdi-check"
+        rounded="lg"
+        style="
+          background: #20c39d !important;
+          color: white !important;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        "
+        class="text-none"
+        >Save</v-btn
+      >
+    </div>
+  </div>
+</template>
+<script lang="ts" setup>
+import { reactive, ref } from "vue";
+import { useRouter } from "vue-router";
+import invoiceIcon from "@/assets/svg/customers/invoice.svg";
+import notesIcon from "@/assets/svg/customers/notes.svg";
+import todosIcon from "@/assets/svg/customers/todos.svg";
+import timeReportIcon from "@/assets/svg/customers/time_report.svg";
+
+const tab = ref(0);
+const addNewDialog = ref(false);
+const emails = ["test@email.com", "user@email.com", "customer@email.com"];
+
+const router = useRouter();
+const onBack = function () {
+  router.back();
+};
+
+const onAddNewCategory = function () {
+  addNewDialog.value = true;
+};
+
+const customFieldsHeaders = ["Name", "Value", ""];
+const customFields = [
+  {
+    name: "Reg.nr",
+    value: 10,
+  },
+  {
+    name: "Reg.nr",
+    value: 10,
+  },
+  {
+    name: "Reg.nr",
+    value: 10,
+  },
+  {
+    name: "Reg.nr",
+    value: 10,
+  },
+  {
+    name: "Reg.nr",
+    value: 10,
+  },
+  {
+    name: "Reg.nr",
+    value: 10,
+  },
+];
+
+const menus = [
+  {
+    title: "Invoices",
+    icon: invoiceIcon,
+  },
+  {
+    title: "Notes",
+    icon: notesIcon,
+  },
+  {
+    title: "To-do's",
+    icon: todosIcon,
+  },
+  {
+    title: "Time Report",
+    icon: timeReportIcon,
+  },
+];
+
+const invoiceHeaders = [
+  { title: "#", key: "id" },
+  { title: "Amount", key: "amount" },
+  { title: "Currency", key: "currency" },
+  { title: "Due", key: "due" },
+  { title: "Invoice", key: "date" },
+  { title: "Sent", key: "sent" },
+  { title: "Paid", key: "paid" },
+];
+
+const invoiceItems = reactive([
+  {
+    id: "1101",
+    amount: 1100,
+    currency: "SEK",
+    due: "2023-07-01",
+    date: "2023-07-01",
+    sent: true,
+    paid: false,
+  },
+  {
+    id: "1101",
+    amount: 1100,
+    currency: "SEK",
+    due: "2023-07-01",
+    date: "2023-07-01",
+    sent: true,
+    paid: false,
+  },
+  {
+    id: "1101",
+    amount: 1100,
+    currency: "SEK",
+    due: "2023-07-01",
+    date: "2023-07-01",
+    sent: true,
+    paid: false,
+  },
+  {
+    id: "1101",
+    amount: 1100,
+    currency: "SEK",
+    due: "2023-07-01",
+    date: "2023-07-01",
+    sent: false,
+    paid: true,
+  },
+  {
+    id: "1101",
+    amount: 1100,
+    currency: "SEK",
+    due: "2023-07-01",
+    date: "2023-07-01",
+    sent: false,
+    paid: false,
+  },
+]);
+</script>
+<style scoped>
+div >>> .v-text-field input.v-field__input {
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+div >>> .v-label {
+  opacity: 1;
+}
+div >>> .v-chip__close {
+  color: #8b8ba9;
+}
+
+div >>> .icon-button {
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  border-color: #d1d1e2;
+}
+div >>> .v-data-table-header__content {
+  font-size: 13px;
+  color: #0d0d1e !important;
+  font-family: "Poppins-SemiBold" !important;
+}
+
+div >>> .v-data-table__tr > td {
+  font-size: 13px;
+}
+div >>> .v-data-table-footer {
+  display: none !important;
+}
+</style>

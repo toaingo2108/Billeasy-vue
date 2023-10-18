@@ -33,6 +33,14 @@ const routes = [
           ),
       },
       {
+        path: "customer-details",
+        name: "customer-details",
+        component: () =>
+          import(
+            /* webpackChunkName: "home" */ "@/components/customers/CustomerDetails.vue"
+          ),
+      },
+      {
         path: "404",
         name: "404",
         component: () => import("@/views/NotFound.vue"),

@@ -98,7 +98,12 @@
       </div>
     </div>
     <div class="mt-10">
-      <v-data-table :headers="headers" :items="items" items-per-page="15">
+      <v-data-table
+        :headers="headers"
+        :items="items"
+        items-per-page="15"
+        @click:row="onSelectCustomer"
+      >
       </v-data-table>
     </div>
     <customer-export-dialog
@@ -401,6 +406,10 @@ const onImportData = function () {
 };
 const onCustomerCategories = function () {
   customerCategoriesDialog.value = true;
+};
+
+const onSelectCustomer = function (e: any, row: any) {
+  router.push({ name: "customer-details", query: { id: row.item.id } });
 };
 </script>
 <style scoped>
