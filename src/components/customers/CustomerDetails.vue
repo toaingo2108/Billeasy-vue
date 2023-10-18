@@ -439,166 +439,46 @@
                   </v-expansion-panels>
                 </div>
               </div>
-              <div v-else-if="menu.title == 'Invoice'">
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
+              <div v-else-if="menu.title == 'Time Report'">
+                <div class="d-flex flex-row justify-end mt-2">
+                  <v-btn
+                    color="white"
+                    @click="onBack"
+                    prepend-icon="mdi-plus"
+                    rounded="lg"
+                    style="
+                      background: #20c39d !important;
+                      color: white !important;
+                      padding-left: 20px;
+                      padding-right: 20px;
+                      padding-top: 10px;
+                      padding-bottom: 10px;
+                    "
+                    class="text-none"
+                    >New Report</v-btn
                   >
-                    Terms of payment
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Terms of payment"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                  <div>
-                    <v-btn
-                      variant="text"
-                      prepend-icon="mdi-plus"
-                      class="text-none app-medium-font font-14 ms-2"
-                      color="#20C39D"
-                      rounded="lg"
-                      @click="onAddNewCategory"
-                    >
-                      Add New
-                    </v-btn>
-                  </div>
                 </div>
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
+
+                <div class="d-flex flex-row align-center mt-8 mb-10">
+                  <v-data-table
+                    :headers="reportHeaders"
+                    :items="reportItems"
+                    items-per-page="-1"
+                    hide-default-footer
                   >
-                    Price list
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Price list"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                  <div>
-                    <v-btn
-                      variant="text"
-                      prepend-icon="mdi-plus"
-                      class="text-none app-medium-font font-14 ms-2"
-                      color="#20C39D"
-                      rounded="lg"
-                      @click="onAddNewCategory"
-                    >
-                      Add New
-                    </v-btn>
-                  </div>
-                </div>
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Currency
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Currency"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                  <div>
-                    <v-btn
-                      variant="text"
-                      prepend-icon="mdi-plus"
-                      class="text-none app-medium-font font-14 ms-2"
-                      color="#20C39D"
-                      rounded="lg"
-                      @click="onAddNewCategory"
-                    >
-                      Add New
-                    </v-btn>
-                  </div>
-                </div>
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Reminder flow
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Reminder flow"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                  <div>
-                    <v-btn
-                      variant="text"
-                      prepend-icon="mdi-plus"
-                      class="text-none app-medium-font font-14 ms-2"
-                      color="#20C39D"
-                      rounded="lg"
-                      @click="onAddNewCategory"
-                    >
-                      Add New
-                    </v-btn>
-                  </div>
-                </div>
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Discount type
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Discount type"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                </div>
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Discount
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Discount"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                </div>
-                <div class="d-flex flex-row align-center mt-8 mb-3">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Send invoices with
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Send invoices with"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
+                    <template v-slot:[`item.invoiced`]="{ item }">
+                      <v-checkbox
+                        color="#20c39d"
+                        hide-details
+                        v-model="item.invoiced"
+                      />
+                    </template>
+                    <template v-slot:[`item.action`]="{ item }">
+                      <v-btn icon size="x-small" flat>
+                        <v-icon>mdi-dots-horizontal</v-icon>
+                      </v-btn>
+                    </template>
+                  </v-data-table>
                 </div>
               </div>
             </v-window-item>
@@ -780,6 +660,47 @@ const noteItems = [
     updated_at: "2023-05-01, 15:55",
   },
 ];
+
+const reportHeaders = [
+  { title: "Hourly Rate", key: "rate" },
+  { title: "Start Time", key: "start_time" },
+  { title: "End Time", key: "end_time" },
+  { title: "Invoiced", key: "invoiced" },
+  { title: "", key: "action" },
+];
+
+const reportItems = reactive([
+  {
+    rate: "$60",
+    start_time: "2023-07-01, 15:55",
+    end_time: "2023-07-01, 15:55",
+    invoiced: false,
+  },
+  {
+    rate: "$60",
+    start_time: "2023-07-01, 15:55",
+    end_time: "2023-07-01, 15:55",
+    invoiced: true,
+  },
+  {
+    rate: "$60",
+    start_time: "2023-07-01, 15:55",
+    end_time: "2023-07-01, 15:55",
+    invoiced: false,
+  },
+  {
+    rate: "$60",
+    start_time: "2023-07-01, 15:55",
+    end_time: "2023-07-01, 15:55",
+    invoiced: true,
+  },
+  {
+    rate: "$60",
+    start_time: "2023-07-01, 15:55",
+    end_time: "2023-07-01, 15:55",
+    invoiced: false,
+  },
+]);
 
 const onAddNewNote = function () {
   addNewNoteDialog.value = true;
