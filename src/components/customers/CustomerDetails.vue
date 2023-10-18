@@ -314,93 +314,39 @@
                   </v-data-table>
                 </div>
               </div>
-              <div v-else-if="menu.title == 'Address'">
-                <div class="d-flex flex-row align-center mt-8 flex-wrap">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
+              <div v-else-if="menu.title == 'Notes'">
+                <div class="d-flex flex-row justify-end mt-2">
+                  <v-btn
+                    color="white"
+                    @click="onBack"
+                    prepend-icon="mdi-plus"
+                    rounded="lg"
+                    style="
+                      background: #20c39d !important;
+                      color: white !important;
+                      padding-left: 20px;
+                      padding-right: 20px;
+                      padding-top: 10px;
+                      padding-bottom: 10px;
+                    "
+                    class="text-none"
+                    >New Invoice</v-btn
                   >
-                    Street Address
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Street Address"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                  <div class="d-flex flex-row align-center ms-4">
-                    <v-radio-group hide-details color="#20C39D">
-                      <div class="d-flex flex-row">
-                        <v-radio value="billing_address">
-                          <template v-slot:label>
-                            <span class="font-14 app-regular-font dark-font">
-                              Billing Address
-                            </span>
-                          </template>
-                        </v-radio>
-                        <v-radio value="shipping_address">
-                          <template v-slot:label>
-                            <span
-                              class="font-14 app-regular-font dark-font"
-                              style="width: 200px"
-                            >
-                              Shipping Address
-                            </span>
-                          </template>
-                        </v-radio>
-                      </div>
-                    </v-radio-group>
-                  </div>
                 </div>
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
+                <div class="d-flex flex-row align-center mt-8 mb-10">
+                  <v-data-table
+                    :headers="noteHeaders"
+                    :items="noteItems"
+                    items-per-page="-1"
+                    hide-default-footer
                   >
-                    City
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="City"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                </div>
-                <div class="d-flex flex-row align-center mt-8">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Zip Code
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Zip Code"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
-                </div>
-                <div class="d-flex flex-row align-center mt-8 mb-6">
-                  <div
-                    style="width: 240px"
-                    class="font-14 app-regular-font dark-font"
-                  >
-                    Country
-                  </div>
-                  <div style="width: 336px">
-                    <v-text-field
-                      placeholder="Country"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
-                  </div>
+                    <template v-slot:[`item.action`]="{ item }">
+                      <v-btn icon size="x-small" flat>
+                        <v-icon>mdi-dots-horizontal</v-icon>
+                        <update-header-menu />
+                      </v-btn>
+                    </template>
+                  </v-data-table>
                 </div>
               </div>
               <div v-else-if="menu.title == 'Contact'">
@@ -657,6 +603,7 @@ import invoiceIcon from "@/assets/svg/customers/invoice.svg";
 import notesIcon from "@/assets/svg/customers/notes.svg";
 import todosIcon from "@/assets/svg/customers/todos.svg";
 import timeReportIcon from "@/assets/svg/customers/time_report.svg";
+import UpdateHeaderMenu from "./CustomerUpdateHeaderMenu.vue";
 
 const tab = ref(0);
 const addNewDialog = ref(false);
@@ -775,6 +722,35 @@ const invoiceItems = reactive([
     paid: false,
   },
 ]);
+
+const noteHeaders = [
+  { title: "Header", key: "header" },
+  { title: "Updated at", key: "updated_at" },
+  { title: "", key: "action" },
+];
+
+const noteItems = [
+  {
+    header: 123,
+    updated_at: "2023-05-01, 15:55",
+  },
+  {
+    header: 123,
+    updated_at: "2023-05-01, 15:55",
+  },
+  {
+    header: 123,
+    updated_at: "2023-05-01, 15:55",
+  },
+  {
+    header: 123,
+    updated_at: "2023-05-01, 15:55",
+  },
+  {
+    header: 123,
+    updated_at: "2023-05-01, 15:55",
+  },
+];
 </script>
 <style scoped>
 div >>> .v-text-field input.v-field__input {
