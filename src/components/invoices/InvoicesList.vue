@@ -51,19 +51,13 @@
         </template>
       </v-data-table>
     </div>
-    <new-invoice-dialog
-      :dialog="newProductDialog"
-      @update:dialog="(val) => (newProductDialog = val)"
-    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import NewInvoiceDialog from "./NewInvoiceDialog.vue";
 import ItemMenu from "./InvoicesItemMenu.vue";
-
-const newInvoiceDialog = ref(false);
+import { useRouter } from "vue-router";
 
 const headers = [
   { title: "Invoice nr.", key: "id" },
@@ -270,19 +264,9 @@ const items = [
   },
 ];
 
+const router = useRouter();
 const openNewInvoiceDialog = function () {
-  newInvoiceDialog.value = true;
-};
-
-const onExportData = function () {
-  exportDialog.value = true;
-};
-
-const onImportData = function () {
-  importDialog.value = true;
-};
-const onProductCategories = function () {
-  productCategoriesDialog.value = true;
+  router.push({ name: "new-invoice" });
 };
 </script>
 <style scoped>

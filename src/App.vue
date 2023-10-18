@@ -87,6 +87,9 @@ html {
 .w-50 {
   width: 50%;
 }
+.h-50 {
+  height: 50%;
+}
 .w-25 {
   width: 25%;
 }
