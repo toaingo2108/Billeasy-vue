@@ -443,7 +443,7 @@
                 <div class="d-flex flex-row justify-end mt-2">
                   <v-btn
                     color="white"
-                    @click="onBack"
+                    @click="onAddNewReport"
                     prepend-icon="mdi-plus"
                     rounded="lg"
                     style="
@@ -495,6 +495,10 @@
       :dialog="addNewCustomFieldDialog"
       @update:dialog="(val) => (addNewCustomFieldDialog = val)"
     />
+    <add-report-dialog
+      :dialog="addNewReportDialog"
+      @update:dialog="(val) => (addNewReportDialog = val)"
+    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -507,6 +511,7 @@ import timeReportIcon from "@/assets/svg/customers/time_report.svg";
 import UpdateHeaderMenu from "./CustomerUpdateHeaderMenu.vue";
 import AddNoteDialog from "./CustomerAddNoteDialog.vue";
 import AddCustomFieldDialog from "./CustomerAddCustomFieldDialog.vue";
+import AddReportDialog from "./CustomerAddTimeReportDialog.vue";
 import TodoDetailsMenu from "./CustomerTodoDetailsMenu.vue";
 import ReportDetailsMenu from "./CustomerTimeReportDetailsMenu.vue";
 import todoImage from "@/assets/sample/profile.png";
@@ -515,6 +520,7 @@ const tab = ref(0);
 const addNewDialog = ref(false);
 const addNewNoteDialog = ref(false);
 const addNewCustomFieldDialog = ref(false);
+const addNewReportDialog = ref(false);
 const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 
 const router = useRouter();
@@ -527,6 +533,9 @@ const onAddNewCategory = function () {
 };
 const onAddNewCustomField = function () {
   addNewCustomFieldDialog.value = true;
+};
+const onAddNewReport = function () {
+  addNewReportDialog.value = true;
 };
 
 const customFieldsHeaders = ["Name", "Value", ""];
