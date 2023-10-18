@@ -430,6 +430,7 @@
                             </div>
                             <v-btn icon size="x-small" flat>
                               <v-icon>mdi-dots-horizontal</v-icon>
+                              <todo-details-menu />
                             </v-btn>
                           </v-card-text>
                         </v-card>
@@ -625,6 +626,7 @@ import timeReportIcon from "@/assets/svg/customers/time_report.svg";
 import UpdateHeaderMenu from "./CustomerUpdateHeaderMenu.vue";
 import AddNoteDialog from "./CustomerAddNoteDialog.vue";
 import AddCustomFieldDialog from "./CustomerAddCustomFieldDialog.vue";
+import TodoDetailsMenu from "./CustomerTodoDetailsMenu.vue";
 import todoImage from "@/assets/sample/profile.png";
 
 const tab = ref(0);

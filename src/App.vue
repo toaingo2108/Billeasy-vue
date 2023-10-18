@@ -112,6 +112,9 @@ html {
 .shade-font {
   color: #59597b;
 }
+.bright-blue-font {
+  color: #376aee;
+}
 
 .justify-between {
   justify-content: space-between !important;
