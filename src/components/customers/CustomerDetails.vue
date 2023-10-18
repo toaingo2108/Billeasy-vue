@@ -476,6 +476,7 @@
                     <template v-slot:[`item.action`]="{ item }">
                       <v-btn icon size="x-small" flat>
                         <v-icon>mdi-dots-horizontal</v-icon>
+                        <report-details-menu />
                       </v-btn>
                     </template>
                   </v-data-table>
@@ -507,6 +508,7 @@ import UpdateHeaderMenu from "./CustomerUpdateHeaderMenu.vue";
 import AddNoteDialog from "./CustomerAddNoteDialog.vue";
 import AddCustomFieldDialog from "./CustomerAddCustomFieldDialog.vue";
 import TodoDetailsMenu from "./CustomerTodoDetailsMenu.vue";
+import ReportDetailsMenu from "./CustomerTimeReportDetailsMenu.vue";
 import todoImage from "@/assets/sample/profile.png";
 
 const tab = ref(0);
