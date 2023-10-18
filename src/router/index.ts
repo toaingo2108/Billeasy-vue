@@ -41,6 +41,12 @@ const routes = [
           ),
       },
       {
+        path: "invoices",
+        name: "invoices",
+        component: () =>
+          import(/* webpackChunkName: "home" */ "@/views/Invoices.vue"),
+      },
+      {
         path: "404",
         name: "404",
         component: () => import("@/views/NotFound.vue"),

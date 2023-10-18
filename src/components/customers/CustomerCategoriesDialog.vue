@@ -51,7 +51,6 @@
 
 <script lang="ts" setup>
 import { ref, defineProps, defineEmits, watch, watchEffect } from "vue";
-import NewCustomerPriceDialog from "./NewCustomerPriceDialog.vue";
 import NewCustomerCategoryDialog from "./NewCustomerCategoryDialog.vue";
 
 const props = defineProps({
