@@ -2,7 +2,7 @@
   <v-dialog v-model="props.dialog" width="624" persistent>
     <v-card class="rounded-xl">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
-        Import Products
+        Import Customers
       </v-card-title>
       <v-card-text class="d-flex flex-row pb-1 ps-4 align-center">
         <div style="width: 222px">
@@ -11,15 +11,20 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Import Source"
             variant="outlined"
             rounded="lg"
             hide-details
+            v-model="importType"
+            :items="['Fortnox', 'File']"
           />
         </div>
       </v-card-text>
-      <v-card-text class="d-flex flex-row pb-1 ps-4 align-center">
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'Fortnox'"
+      >
         <div style="width: 212px">
           <span class="font-14 app-semibold-font dark-font ps-3">
             Products to Import
@@ -31,19 +36,229 @@
               <v-radio value="one">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font">
-                    All Products
+                    All Customers
                   </span>
                 </template>
               </v-radio>
               <v-radio value="two">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font">
-                    Active Products
+                    Active Customers
                   </span>
                 </template>
               </v-radio>
             </div>
           </v-radio-group>
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3">
+            Upload File (.svg/Excel)
+          </span>
+        </div>
+        <div style="width: 192px">
+          <v-btn
+            color="#0D0D1E"
+            variant="outlined"
+            rounded="lg"
+            height="40"
+            style="
+              padding-left: 20px;
+              padding-right: 20px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              border-color: #d1d1e2;
+            "
+            block
+            class="text-none file-upload-button"
+            >Add File<v-icon>mdi-cloud-upload-outline</v-icon></v-btn
+          >
+        </div>
+        <div class="ms-2">
+          <v-btn
+            variant="plain"
+            width="40"
+            height="40"
+            class="img-button"
+            rounded="lg"
+          >
+            <v-img
+              width="40"
+              height="40"
+              src="@/assets/svg/customers/upload_done.svg"
+            />
+          </v-btn>
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row align-center"
+        v-if="importType == 'File'"
+      >
+        <span
+          class="font-14 app-semibold-font dark-font"
+          style="min-width: 150px"
+          >Map Product Data</span
+        >
+        <v-divider />
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-12 app-semibold-font shade-font ps-3">
+            In Billeasy
+          </span>
+        </div>
+        <div
+          style="width: 192px"
+          class="font-12 app-semibold-font shade-font ps-3"
+        >
+          From File
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3"> Type * </span>
+        </div>
+        <div style="width: 192px">
+          <v-text-field
+            placeholder="Type"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3">
+            First Name *
+          </span>
+        </div>
+        <div style="width: 192px">
+          <v-text-field
+            placeholder="First Name"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3">
+            Last Name *
+          </span>
+        </div>
+        <div style="width: 192px">
+          <v-text-field
+            placeholder="Last Name"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3">
+            Company Name
+          </span>
+        </div>
+        <div style="width: 192px">
+          <v-text-field
+            placeholder="Company Name"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3">
+            Personal/Org. Number
+          </span>
+        </div>
+        <div style="width: 192px">
+          <v-text-field
+            placeholder="Personal/Org. Number"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3">
+            Customer Number
+          </span>
+        </div>
+        <div style="width: 192px">
+          <v-text-field
+            placeholder="Customer Number"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3">
+            VAT Number
+          </span>
+        </div>
+        <div style="width: 192px">
+          <v-text-field
+            placeholder="VAT Number"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
+        </div>
+      </v-card-text>
+      <v-card-text
+        class="d-flex flex-row pb-1 ps-4 align-center"
+        v-if="importType == 'File'"
+      >
+        <div style="width: 222px">
+          <span class="font-14 app-semibold-font dark-font ps-3"> Phone </span>
+        </div>
+        <div style="width: 192px">
+          <v-text-field
+            placeholder="Phone"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
         </div>
       </v-card-text>
       <v-divider class="mt-5" />
@@ -111,6 +326,8 @@ const items = [
 
 const priceDialog = ref(false);
 
+const importType = ref("Fortnox");
+
 const onAddNewPrice = function () {
   priceDialog.value = true;
 };
@@ -123,5 +340,18 @@ div >>> .v-text-field input.v-field__input {
 }
 div >>> .v-label {
   opacity: 1;
+}
+
+div >>> .file-upload-button .v-btn__content {
+  width: 100%;
+  justify-content: space-between;
+}
+div >>> .img-button {
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  max-width: 40px;
 }
 </style>
