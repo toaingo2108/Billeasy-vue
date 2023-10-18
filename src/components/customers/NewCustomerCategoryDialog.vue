@@ -2,13 +2,22 @@
   <v-dialog v-model="props.dialog" width="400" persistent>
     <v-card class="rounded-xl">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
-        New Product Category
+        New Customer Category
       </v-card-title>
       <v-card-text class="d-flex flex-row mx-3 pb-1">
-        <div style="width: 336px">
+        <div class="w-50 me-2">
           <span class="font-13 app-medium-font dark-font">Name *</span>
           <v-text-field
             placeholder="Name"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+          />
+        </div>
+        <div class="w-50 ms-2">
+          <span class="font-13 app-medium-font dark-font">Color *</span>
+          <v-text-field
+            placeholder="Color"
             variant="outlined"
             rounded="lg"
             hide-details
@@ -19,13 +28,33 @@
         <div style="width: 336px">
           <span class="font-13 app-medium-font dark-font">Description</span>
           <v-textarea
-            placeholder="From Quantity"
+            placeholder="Add description..."
             variant="outlined"
             rounded="lg"
             hide-details
             rows="3"
           />
         </div>
+      </v-card-text>
+      <v-card-text class="d-flex flex-column mx-3 pb-1">
+        <span class="font-13 app-medium-font dark-font"
+          >Subscription Template</span
+        >
+        <v-text-field
+          placeholder="Subscription Template"
+          variant="outlined"
+          rounded="lg"
+          hide-details
+        />
+      </v-card-text>
+      <v-card-text class="d-flex flex-column mx-3 pb-1">
+        <span class="font-13 app-medium-font dark-font">Invoice Template</span>
+        <v-text-field
+          placeholder="Invoice Template"
+          variant="outlined"
+          rounded="lg"
+          hide-details
+        />
       </v-card-text>
       <v-divider class="mt-8" />
       <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">

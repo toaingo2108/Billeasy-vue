@@ -528,6 +528,10 @@
         >Save</v-btn
       >
     </div>
+    <new-customer-category-dialog
+      :dialog="addNewCategoryDialog"
+      @update:dialog="(val) => (addNewCategoryDialog = val)"
+    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -537,10 +541,12 @@ import generalIcon from "@/assets/svg/customers/general.svg";
 import addressIcon from "@/assets/svg/customers/address.svg";
 import contactIcon from "@/assets/svg/customers/contact.svg";
 import invoiceIcon from "@/assets/svg/customers/invoice.svg";
+import NewCustomerCategoryDialog from "./NewCustomerCategoryDialog.vue";
 
 const tab = ref(0);
 const customerType = ref("company");
 const addNewDialog = ref(false);
+const addNewCategoryDialog = ref(false);
 const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 
 const router = useRouter();
@@ -549,7 +555,7 @@ const onBack = function () {
 };
 
 const onAddNewCategory = function () {
-  addNewDialog.value = true;
+  addNewCategoryDialog.value = true;
 };
 
 const menus = [
