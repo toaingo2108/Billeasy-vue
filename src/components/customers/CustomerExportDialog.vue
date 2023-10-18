@@ -1,80 +1,148 @@
 <template>
-  <v-dialog v-model="props.dialog" width="592" persistent>
+  <v-dialog v-model="props.dialog" width="848" persistent>
     <v-card class="rounded-xl">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
         Export
       </v-card-title>
       <v-card-text class="d-flex flex-row pb-1 ps-4">
-        <div style="width: 50%">
+        <div style="width: 66.66%">
           <span class="font-14 app-semibold-font dark-font ps-3">
             Fields to include in export
           </span>
-          <div class="d-flex flex-row align-center mt-5">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font">
-                  Product nr.
-                </span>
-              </template>
-            </v-checkbox>
-          </div>
-          <div class="d-flex flex-row align-center">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font"> Name </span>
-              </template>
-            </v-checkbox>
-          </div>
-          <div class="d-flex flex-row align-center">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font"> SKU </span>
-              </template>
-            </v-checkbox>
-          </div>
-          <div class="d-flex flex-row align-center">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font">
-                  Default Price
-                </span>
-              </template>
-            </v-checkbox>
-          </div>
-          <div class="d-flex flex-row align-center">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font">
-                  Quantity in Stock
-                </span>
-              </template>
-            </v-checkbox>
-          </div>
-          <div class="d-flex flex-row align-center">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font"> Unit </span>
-              </template>
-            </v-checkbox>
-          </div>
-          <div class="d-flex flex-row align-center">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font"> EAN </span>
-              </template>
-            </v-checkbox>
-          </div>
-          <div class="d-flex flex-row align-center">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font">
-                  VAT Rate
-                </span>
-              </template>
-            </v-checkbox>
+          <div class="d-flex flex-row">
+            <div class="w-50">
+              <div class="d-flex flex-row align-center mt-5">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Customer nr.
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      First Name
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Last Name
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Personal/Org. Number
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      City
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Country
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Phone
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Mobile
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+            </div>
+            <div class="w-50">
+              <div class="d-flex flex-row align-center mt-5">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Address
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Website
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      VAT Number
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Company Name
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Type
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+              <div class="d-flex flex-row align-center">
+                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                  <template v-slot:label>
+                    <span class="font-14 app-regular-font dark-font">
+                      Category
+                    </span>
+                  </template>
+                </v-checkbox>
+              </div>
+            </div>
           </div>
         </div>
-        <div style="width: 50%">
+        <div style="width: 33.33%">
           <span class="font-14 app-semibold-font dark-font ps-3">
             Sort export on
           </span>
