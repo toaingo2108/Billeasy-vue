@@ -1,5 +1,5 @@
 <template>
-  <v-table style="width: 100%">
+  <v-table style="width: 100%; background-color: #0000">
     <thead>
       <tr>
         <th
@@ -7,10 +7,21 @@
           v-for="(header, index) in headers"
           :key="index"
         >
-          <div v-if="header.checkable">
-            <v-checkbox color="#20c39d" hide-details v-model="isCheckedAll" />
+          <div
+            v-if="header.checkable"
+            class="d-flex flex-row align-center justify-center"
+          >
+            <v-checkbox
+              color="#20c39d"
+              hide-details
+              v-model="isCheckedAll"
+              class="ms-2"
+            />
           </div>
-          <div v-else-if="header.key != 'action'">
+          <div
+            v-else-if="header.key != 'action'"
+            class="d-flex flex-row align-center justify-center"
+          >
             <span class="dark-font app-semibold-font font-13">
               {{ header.title }}
             </span>
@@ -20,46 +31,60 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(item, index) in items" :key="index" style="height: 36px">
+      <tr
+        v-for="(item, index) in items"
+        :key="index"
+        style="height: 50px; padding-top: 3px; padding-bottom: 3px"
+      >
         <td v-for="(header, index) in headers">
-          <v-checkbox
-            color="#20c39d"
-            hide-details
-            v-model="item.checked"
-            v-if="header.key == 'checked'"
-          />
-          <div v-else-if="header.key == 'action'">
-            <v-btn icon size="x-small" flat>
-              <v-icon>mdi-dots-horizontal</v-icon>
-            </v-btn>
-          </div>
           <div
-            v-else-if="header.key == 'status'"
-            class="d-flex flex-row align-center"
+            class="bg-white w-100 d-flex flex-row align-center justify-center"
+            style="
+              margin-top: 3px;
+              margin-bottom: 3px;
+              height: calc(100% - 6px);
+            "
           >
-            <v-img
-              src="@/assets/svg/customers/status_done.svg"
-              width="24"
-              height="24"
-              v-if="item.status"
+            <v-checkbox
+              color="#20c39d"
+              hide-details
+              v-model="item.checked"
+              v-if="header.key == 'checked'"
+              class="ms-2"
             />
-            <v-img
-              src="@/assets/svg/customers/status_paused.svg"
-              width="24"
-              height="24"
-              v-else
-            />
-          </div>
-          <div v-else>
-            <span
-              class="font-13 dark-font app-semibold-font"
-              v-if="header.style == 'bold'"
+            <div v-else-if="header.key == 'action'">
+              <v-btn icon size="x-small" flat>
+                <v-icon>mdi-dots-horizontal</v-icon>
+              </v-btn>
+            </div>
+            <div
+              v-else-if="header.key == 'status'"
+              class="d-flex flex-row align-center"
             >
-              {{ item[`${header.key}`] }}
-            </span>
-            <span class="font-13 shade-font app-medium-font" v-else>
-              {{ item[`${header.key}`] }}
-            </span>
+              <v-img
+                src="@/assets/svg/customers/status_done.svg"
+                width="24"
+                height="24"
+                v-if="item.status"
+              />
+              <v-img
+                src="@/assets/svg/customers/status_paused.svg"
+                width="24"
+                height="24"
+                v-else
+              />
+            </div>
+            <div v-else>
+              <span
+                class="font-13 dark-font app-semibold-font"
+                v-if="header.style == 'bold'"
+              >
+                {{ item[`${header.key}`] }}
+              </span>
+              <span class="font-13 shade-font app-medium-font" v-else>
+                {{ item[`${header.key}`] }}
+              </span>
+            </div>
           </div>
         </td>
       </tr>
@@ -113,4 +138,30 @@ const updateItems = () => {
   emit("update:Items", items);
 };
 </script>
-<style scoped></style>
+<style scoped>
+/* div >>> .white-bottom {
+  border-bottom: 1px solid #0000 !important;
+  background-color: white;
+} */
+
+table {
+  border-collapse: separate;
+  margin-top: -10px; /* correct offset on first border spacing if desired */
+}
+td,
+th {
+  border: solid 0px #0000 !important;
+  border-style: solid none;
+  padding: 0 !important;
+}
+td:first-child > div {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  background-color: white;
+}
+td:last-child > div {
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  background-color: white;
+}
+</style>
