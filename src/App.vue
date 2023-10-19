@@ -97,6 +97,10 @@ html {
   min-height: inherit;
 }
 
+.bg-gray {
+  background-color: #f7f7fa;
+}
+
 .blue-font {
   color: #3737c8;
 }

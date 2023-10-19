@@ -98,13 +98,15 @@
       </div>
     </div>
     <div class="mt-10">
-      <v-data-table
+      <app-data-table
         :headers="headers"
         :items="items"
         items-per-page="15"
         @click:row="onSelectCustomer"
+        style="margin-bottom: 80px"
       >
-      </v-data-table>
+      </app-data-table>
+      <app-data-table-bottom :length="15" />
     </div>
     <customer-export-dialog
       :dialog="exportDialog"
@@ -127,6 +129,8 @@ import { ref } from "vue";
 import CustomerExportDialog from "@/components/customers/CustomerExportDialog.vue";
 import CustomerImportDialog from "@/components/customers/CustomerImportDialog.vue";
 import CustomerCategoriesDialog from "@/components/customers/CustomerCategoriesDialog.vue";
+import AppDataTable from "@/components/default/AppDataTable.vue";
+import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
 
 const exportDialog = ref(false);
 const importDialog = ref(false);
@@ -137,8 +141,8 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const headers = [
-  { title: "ID", key: "id" },
-  { title: "Name", key: "name" },
+  { title: "ID", key: "id", style: "bold" },
+  { title: "Name", key: "name", style: "bold" },
   { title: "#Personal/org", key: "org" },
   { title: "City", key: "city" },
   { title: "Country", key: "country" },
@@ -146,6 +150,7 @@ const headers = [
   { title: "Mobile", key: "mobile" },
   { title: "Category", key: "category" },
   { title: "Status", key: "status" },
+  { title: "", key: "action" },
 ];
 
 const items = [
