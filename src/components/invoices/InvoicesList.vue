@@ -49,11 +49,15 @@
         style="margin-bottom: 80px"
       >
         <template v-slot:action>
-          <item-menu />
+          <item-menu :on-schedule-send-out="onScheduleSendOut" />
         </template>
       </app-data-table>
       <app-data-table-bottom :length="15" />
     </div>
+    <scheduled-send-out-dialog
+      :dialog="scheduleSendDialog"
+      @update:dialog="(val) => (scheduleSendDialog = val)"
+    />
   </div>
 </template>
 
@@ -63,6 +67,7 @@ import ItemMenu from "./InvoicesItemMenu.vue";
 import { useRouter } from "vue-router";
 import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
+import ScheduledSendOutDialog from "@/components/invoices/ScheduleSendOutDialog.vue";
 
 const headers = [
   { title: "Invoice nr.", key: "id", style: "bold" },
@@ -269,9 +274,14 @@ const items = [
   },
 ];
 
+const scheduleSendDialog = ref(false);
 const router = useRouter();
 const openNewInvoiceDialog = function () {
   router.push({ name: "new-invoice" });
+};
+
+const onScheduleSendOut = function () {
+  scheduleSendDialog.value = true;
 };
 </script>
 <style scoped>

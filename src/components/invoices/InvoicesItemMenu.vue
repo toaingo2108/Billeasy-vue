@@ -1,5 +1,5 @@
 <template>
-  <v-menu activator="parent" :close-on-content-click="false">
+  <v-menu activator="parent">
     <v-card width="240" class="rounded-xl pa-3">
       <v-list>
         <v-list-item
@@ -8,6 +8,7 @@
           :value="item"
           color="primary"
           rounded="lg"
+          @click="item.onClick"
         >
           <template v-slot:prepend>
             <v-img :src="item.icon" width="20" height="20" class="me-3" />
@@ -26,12 +27,32 @@ import creditInvoiceIcon from "@/assets/svg/invoices/credit_invoice.svg";
 import duplicateIcon from "@/assets/svg/invoices/duplicate.svg";
 import previewPDFIcon from "@/assets/svg/invoices/preview_pdf.svg";
 
+const props = defineProps({
+  onScheduleSendOut: { type: Function, default: () => {} },
+  onSendInvoice: { type: Function, default: () => {} },
+  onCreditInvoice: { type: Function, default: () => {} },
+  onDuplicate: { type: Function, default: () => {} },
+  onPreviewPDF: { type: Function, default: () => {} },
+});
+
 const items = [
-  { text: "Register Payment", icon: registerPaymentIcon },
-  { text: "Send Invoice", icon: invoiceIcon },
-  { text: "Credit Invoice", icon: creditInvoiceIcon },
-  { text: "Duplicate", icon: duplicateIcon },
-  { text: "Preview PDF", icon: previewPDFIcon },
+  {
+    text: "Register Payment",
+    icon: registerPaymentIcon,
+    onClick: props.onScheduleSendOut,
+  },
+  { text: "Send Invoice", icon: invoiceIcon, onClick: props.onSendInvoice },
+  {
+    text: "Credit Invoice",
+    icon: creditInvoiceIcon,
+    onClick: props.onCreditInvoice,
+  },
+  { text: "Duplicate", icon: duplicateIcon, onClick: props.onDuplicate },
+  {
+    text: "Preview PDF",
+    icon: previewPDFIcon,
+    onClick: props.onPreviewPDF,
+  },
 ];
 </script>
 
