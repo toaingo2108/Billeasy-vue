@@ -98,8 +98,14 @@
       </div>
     </div>
     <div class="mt-10">
-      <v-data-table :headers="headers" :items="items" items-per-page="15">
-      </v-data-table>
+      <app-data-table
+        :headers="headers"
+        :items="items"
+        items-per-page="15"
+        style="margin-bottom: 80px"
+      >
+      </app-data-table>
+      <app-data-table-bottom :length="15" />
     </div>
     <new-product-dialog
       :dialog="newProductDialog"
@@ -127,6 +133,8 @@ import NewProductDialog from "@/components/products/NewProductDialog.vue";
 import ProductExportDialog from "@/components/products/ProductExportDialog.vue";
 import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
+import AppDataTable from "@/components/default/AppDataTable.vue";
+import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);
@@ -134,8 +142,8 @@ const importDialog = ref(false);
 const productCategoriesDialog = ref(false);
 
 const headers = [
-  { title: "ID", key: "id" },
-  { title: "Name", key: "name" },
+  { title: "ID", key: "id", style: "bold" },
+  { title: "Name", key: "name", style: "bold" },
   { title: "SKU", key: "sku" },
   { title: "Price", key: "price" },
   { title: "In Stock", key: "inStock" },
@@ -144,6 +152,7 @@ const headers = [
   { title: "Category", key: "category" },
   { title: "EAN", key: "ean" },
   { title: "Status", key: "status" },
+  { title: "", key: "action" },
 ];
 
 const items = [

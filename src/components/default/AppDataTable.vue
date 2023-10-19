@@ -53,8 +53,9 @@
               class="ms-2"
             />
             <div v-else-if="header.key == 'action'">
-              <v-btn icon size="x-small" flat>
+              <v-btn icon size="x-small" flat class="me-2">
                 <v-icon>mdi-dots-horizontal</v-icon>
+                <slot name="action"></slot>
               </v-btn>
             </div>
             <div

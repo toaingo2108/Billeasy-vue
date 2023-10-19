@@ -42,14 +42,17 @@
       </div>
     </div>
     <div class="mt-10">
-      <v-data-table :headers="headers" :items="items" items-per-page="15">
-        <template v-slot:[`item.action`]="{ item }">
-          <v-btn icon size="x-small" flat>
-            <v-icon>mdi-dots-horizontal</v-icon>
-            <item-menu />
-          </v-btn>
+      <app-data-table
+        :headers="headers"
+        :items="items"
+        items-per-page="15"
+        style="margin-bottom: 80px"
+      >
+        <template v-slot:action>
+          <item-menu />
         </template>
-      </v-data-table>
+      </app-data-table>
+      <app-data-table-bottom :length="15" />
     </div>
   </div>
 </template>
@@ -58,10 +61,12 @@
 import { ref } from "vue";
 import ItemMenu from "./InvoicesItemMenu.vue";
 import { useRouter } from "vue-router";
+import AppDataTable from "@/components/default/AppDataTable.vue";
+import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
 
 const headers = [
-  { title: "Invoice nr.", key: "id" },
-  { title: "OCR", key: "ocr" },
+  { title: "Invoice nr.", key: "id", style: "bold" },
+  { title: "OCR", key: "ocr", style: "bold" },
   { title: "Customer Name", key: "name" },
   { title: "Your Reference", key: "reference" },
   { title: "Invoice Date", key: "invoice_date" },
