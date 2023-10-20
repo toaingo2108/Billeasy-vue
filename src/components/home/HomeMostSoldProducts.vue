@@ -16,7 +16,7 @@
           >mdi-information-outline</v-icon
         >
       </v-card-title>
-      <v-card-text class="pt-0">
+      <v-card-text class="pt-0 mx-2">
         <highcharts
           :options="chartOptions"
           class="homechart_container"
@@ -32,12 +32,8 @@ const chartOptions = {
   chart: {
     backgroundColor: "white",
     renderTo: "container",
-    borderRadius: 20,
-    marginBottom: 50,
-    spaceLeft: 350,
-    marginRight: 20,
-    marginTop: 50,
     type: "bar",
+    marginLeft: 110,
   },
   credits: {
     enabled: false,
@@ -52,20 +48,42 @@ const chartOptions = {
     column: {
       depth: 25,
     },
+    bar: {
+      borderRadius: 6,
+      pointWidth: 25,
+    },
     series: {
       color: "#7024C4",
     },
   },
   xAxis: {
     type: "category",
+    labels: {
+      style: {
+        color: "#0D0D1E",
+        fontSize: "13px",
+        fontFamily: "Poppins-Regular",
+      },
+      align: "left",
+      x: -100,
+    },
+    lineColor: "#E6E6ED",
   },
   yAxis: {
-    opposite: true,
+    opposite: false,
     tickPixelInterval: 150,
     title: {
       text: null,
     },
     max: 50000,
+    labels: {
+      style: {
+        color: "#59597B",
+        fontSize: "11px",
+        fontFamily: "Poppins-SemiBold",
+      },
+    },
+    lineColor: "#E6E6ED",
   },
   series: [
     {

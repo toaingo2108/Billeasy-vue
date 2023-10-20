@@ -12,7 +12,7 @@
       </v-icon>
       <v-spacer />
       <div class="d-flex flex-row align-center">
-        <span class="font-14 app-medium-font blue-600 me-2">Net</span>
+        <span class="font-14 app-medium-font blue-magenta-font me-2">Net</span>
         <v-switch hide-details />
         <span class="font-14 app-medium-font dark-font ms-2">Gross</span>
       </div>
@@ -35,7 +35,7 @@
         <div class="app-regular-font font-13 blue-600">This month</div>
       </div>
     </v-card-text>
-    <v-card-text class="pt-0">
+    <v-card-text class="mt-2">
       <highcharts
         :options="chartOptions"
         class="homechart_container"
@@ -51,11 +51,6 @@ const chartOptions = {
   chart: {
     backgroundColor: "white",
     renderTo: "container",
-    borderRadius: 20,
-    marginBottom: 50,
-    marginLeft: 50,
-    marginRight: 20,
-    marginTop: 50,
     type: "column",
   },
   credits: {
@@ -70,6 +65,7 @@ const chartOptions = {
   plotOptions: {
     column: {
       depth: 25,
+      borderRadius: 6,
     },
     series: {
       color: "#7024C4",
@@ -77,31 +73,46 @@ const chartOptions = {
   },
   xAxis: {
     labels: {
+      style: {
+        color: "#0D0D1E",
+        fontSize: "12px",
+        fontFamily: "Poppins-Regular",
+      },
       formatter: function (this: { value: number }): string {
         let myDate = new Date(this.value);
         return moment(String(myDate)).format("MMM DD");
       },
     },
+    lineColor: "#E6E6ED",
   },
   yAxis: {
     title: "",
+    max: 40,
+    gridLineColor: "#E6E6ED",
+    labels: {
+      style: {
+        color: "#0D0D1E",
+        fontSize: "12px",
+        fontFamily: "Poppins-Regular",
+      },
+    },
   },
   series: [
     {
       showInLegend: false,
       data: [
-        [1356998400000, 24],
-        [1359676800000, 30],
-        [1362096000000, 18],
-        [1364774400000, 22],
-        [1367366400000, 12],
-        [1370044800000, 28],
-        [1372636800000, 40],
-        [1375315200000, 17],
-        [1377993600000, 14],
-        [1380585600000, 21],
-        [1383264000000, 5],
-        [1385856000000, 32],
+        { x: 1356998400000, y: 24, color: "#E6E6ED" },
+        { x: 1359676800000, y: 30, color: "#E6E6ED" },
+        { x: 1362096000000, y: 18, color: "#D1D1E2" },
+        { x: 1364774400000, y: 22, color: "#D1D1E2" },
+        { x: 1367366400000, y: 12, color: "#B2B2CB" },
+        { x: 1370044800000, y: 28, color: "#B2B2CB" },
+        { x: 1372636800000, y: 40, color: "#22B762" },
+        { x: 1375315200000, y: 17, color: "#B2B2CB" },
+        { x: 1377993600000, y: 14, color: "#B2B2CB" },
+        { x: 1380585600000, y: 21, color: "#D1D1E2" },
+        { x: 1383264000000, y: 5, color: "#D1D1E2" },
+        { x: 1385856000000, y: 32, color: "#E6E6ED" },
       ],
     },
   ],

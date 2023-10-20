@@ -125,7 +125,12 @@ html {
 .bright-blue-font {
   color: #376aee;
 }
-
+.forest-font {
+  color: #22b762;
+}
+.blue-magenta-font {
+  color: #b2b2cb;
+}
 .justify-between {
   justify-content: space-between !important;
 }

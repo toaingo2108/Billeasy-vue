@@ -71,14 +71,34 @@
       <v-card-text class="mt-0 pt-0">
         <table class="w-100 h-100">
           <tr>
-            <td>This month:</td>
-            <td>+12 new</td>
-            <td>-2 cancels</td>
+            <td>
+              <span class="font-13 dark-font app-regular-font"
+                >This month:</span
+              >
+            </td>
+            <td>
+              <span class="font-13 forest-font app-semibold-font">+12</span>
+              <span class="font-13 shade-font app-regular-font"> new</span>
+            </td>
+            <td>
+              <span class="font-13 dark-font app-semibold-font">-2</span>
+              <span class="font-13 shade-font app-regular-font"> cancels</span>
+            </td>
           </tr>
           <tr>
-            <td>Last 12 months:</td>
-            <td>+31 new</td>
-            <td>-14 cancels</td>
+            <td>
+              <span class="font-13 dark-font app-regular-font"
+                >Last 12 months:</span
+              >
+            </td>
+            <td>
+              <span class="font-13 forest-font app-semibold-font">+31</span>
+              <span class="font-13 shade-font app-regular-font"> new</span>
+            </td>
+            <td>
+              <span class="font-13 dark-font app-semibold-font">-14</span>
+              <span class="font-13 shade-font app-regular-font"> cancels</span>
+            </td>
           </tr>
         </table>
       </v-card-text>

@@ -20,33 +20,67 @@
         <table class="w-100 h-100 py-5 styled-table">
           <tr>
             <th></th>
-            <th>Amount in SEK</th>
-            <th># Invoices</th>
+            <th>
+              <span class="font-12 app-semibold-font dark-font"
+                >Amount in SEK</span
+              >
+            </th>
+            <th>
+              <span class="font-12 app-semibold-font dark-font"
+                ># Invoices</span
+              >
+            </th>
           </tr>
           <tr>
-            <td class="remove-border-bottom">Not late</td>
-            <td class="remove-border-bottom">1,000,000</td>
-            <td class="remove-border-bottom">10</td>
+            <td class="remove-border-bottom font-14 app-regular-font dark-font">
+              Not late
+            </td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              1,000,000
+            </td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              10
+            </td>
           </tr>
           <tr>
-            <td class="remove-border-bottom">Late up to 15 days</td>
-            <td class="remove-border-bottom">1,000,000</td>
-            <td class="remove-border-bottom">10</td>
+            <td class="remove-border-bottom font-14 app-regular-font dark-font">
+              Late up to 15 days
+            </td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              1,000,000
+            </td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              10
+            </td>
           </tr>
           <tr>
-            <td class="remove-border-bottom">Late between 15 and 30 days</td>
-            <td class="remove-border-bottom">1,000,000</td>
-            <td class="remove-border-bottom">10</td>
+            <td class="remove-border-bottom font-14 app-regular-font dark-font">
+              Late between 15 and 30 days
+            </td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              1,000,000
+            </td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              10
+            </td>
           </tr>
           <tr>
-            <td>Late more than 30 days</td>
-            <td>1,000,000</td>
-            <td>10</td>
+            <td class="font-14 app-regular-font dark-font">
+              Late more than 30 days
+            </td>
+            <td class="font-14 app-medium-font dark-font">1,000,000</td>
+            <td class="font-14 app-medium-font dark-font">10</td>
           </tr>
           <tr class="total-row">
-            <td class="remove-border-bottom"><strong>Total</strong></td>
-            <td class="remove-border-bottom"><strong>4,000,000</strong></td>
-            <td class="remove-border-bottom"><strong>40</strong></td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              <strong>Total</strong>
+            </td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              <strong>4,000,000</strong>
+            </td>
+            <td class="remove-border-bottom font-14 app-medium-font dark-font">
+              <strong>40</strong>
+            </td>
           </tr>
         </table>
       </v-card-text>
