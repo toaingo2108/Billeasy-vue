@@ -14,14 +14,7 @@
     <div class="d-flex justify-between">
       <div class="d-flex">
         <div style="width: 288px">
-          <v-text-field
-            placeholder="Search"
-            prepend-inner-icon="mdi-magnify"
-            variant="outlined"
-            rounded="lg"
-            style="width: 288px"
-            hide-details
-          />
+          <search-field />
         </div>
         <div class="ml-2">
           <v-btn
@@ -138,6 +131,7 @@ import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
 import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
+import SearchField from "@/components/default/SearchField.vue";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);

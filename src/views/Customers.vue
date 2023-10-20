@@ -14,14 +14,7 @@
     <div class="d-flex justify-between">
       <div class="d-flex">
         <div style="width: 288px">
-          <v-text-field
-            placeholder="Search"
-            prepend-inner-icon="mdi-magnify"
-            variant="outlined"
-            rounded="lg"
-            style="width: 288px; background-color: white; border-radius: 8px"
-            hide-details
-          />
+          <search-field />
         </div>
         <div class="ml-2">
           <v-btn
@@ -144,6 +137,7 @@ const importDialog = ref(false);
 const customerCategoriesDialog = ref(false);
 
 import { useRouter } from "vue-router";
+import SearchField from "@/components/default/SearchField.vue";
 
 const router = useRouter();
 
@@ -425,22 +419,6 @@ const onSelectCustomer = function (item: any, index: number) {
 };
 </script>
 <style scoped>
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 40px;
-  padding: 5px;
-}
-
-div :deep(.v-text-field .v-field__outline .v-field__outline__start) {
-  border-color: #d1d1e2;
-  --v-field-border-opacity: 0.8;
-  --v-field-border-width: 1.5px;
-}
-div :deep(.v-text-field .v-field__outline .v-field__outline__end) {
-  border-color: #d1d1e2;
-  --v-field-border-opacity: 0.8;
-  --v-field-border-width: 1.5px;
-}
-
 .img-button {
   width: 40px;
   height: 40px;

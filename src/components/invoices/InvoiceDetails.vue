@@ -141,13 +141,50 @@
               </v-col>
             </v-row>
           </div>
-          <div v-else-if="menu.title == 'Scheduled Events'">
-            <scheduled-events />
+          <div v-else-if="menu.title == 'Notes'">
+            <div class="d-flex justify-between">
+              <div class="d-flex mt-6">
+                <div style="width: 288px">
+                  <search-field />
+                </div>
+              </div>
+              <div class="d-flex align-center">
+                <v-btn
+                  color="#20C39D"
+                  prepend-icon="mdi-plus"
+                  rounded="lg"
+                  elevation="4"
+                  class="text-none white-font app-medium-font font-14"
+                  @click="openNewNoteDialog"
+                >
+                  New Note
+                </v-btn>
+              </div>
+            </div>
+            <div class="mt-10">
+              <app-data-table
+                :headers="noteHeaders"
+                :items="noteItems"
+                items-per-page="15"
+                style="margin-bottom: 80px"
+                :checkable="false"
+              >
+                <template v-slot:action>
+                  <invoice-note-item-menu />
+                </template>
+              </app-data-table>
+              <div
+                style="height: 96px; bottom: 0; width: calc(100% - 300px)"
+                class="bg-gray position-fixed d-flex flex-row align-center justify-end"
+              >
+                <app-data-table-bottom-pagination :length="15" class="me-10" />
+              </div>
+            </div>
           </div>
         </v-window-item>
       </v-window>
     </div>
-    <add-note-dialog
+    <invoice-add-note-dialog
       :dialog="addNewNoteDialog"
       @update:dialog="(val) => (addNewNoteDialog = val)"
     />
@@ -173,6 +210,11 @@ import duplicateIcon from "@/assets/svg/invoices/duplicate.svg";
 import previewPDFIcon from "@/assets/svg/invoices/preview_pdf.svg";
 import cancelInvoiceIcon from "@/assets/svg/invoices/cancel_invoice.svg";
 import todoImage from "@/assets/sample/profile.png";
+import SearchField from "../default/SearchField.vue";
+import AppDataTable from "../default/AppDataTable.vue";
+import InvoiceAddNoteDialog from "./InvoiceAddNoteDialog.vue";
+import InvoiceNoteItemMenu from "./InvoiceNoteItemMenu.vue";
+import AppDataTableBottomPagination from "../default/AppDataTableBottomPagination.vue";
 
 const tab = ref(0);
 const addNewDialog = ref(false);
@@ -195,34 +237,6 @@ const onAddNewCustomField = function () {
 const onAddNewReport = function () {
   addNewReportDialog.value = true;
 };
-
-const customFieldsHeaders = ["Name", "Value", ""];
-const customFields = [
-  {
-    name: "Reg.nr",
-    value: 10,
-  },
-  {
-    name: "Reg.nr",
-    value: 10,
-  },
-  {
-    name: "Reg.nr",
-    value: 10,
-  },
-  {
-    name: "Reg.nr",
-    value: 10,
-  },
-  {
-    name: "Reg.nr",
-    value: 10,
-  },
-  {
-    name: "Reg.nr",
-    value: 10,
-  },
-];
 
 const menus = [
   {
@@ -273,65 +287,43 @@ const invoiceMenuItems = [
   },
 ];
 
-const invoiceHeaders = [
-  { title: "#", key: "id" },
-  { title: "Amount", key: "amount" },
-  { title: "Currency", key: "currency" },
-  { title: "Due", key: "due" },
-  { title: "Invoice", key: "date" },
-  { title: "Sent", key: "sent" },
-  { title: "Paid", key: "paid" },
+const noteHeaders = [
+  { title: "Header", key: "header", style: "bold" },
+  { title: "Updated At", key: "updated_at", style: "bold" },
+  { title: "Created At", key: "created_at" },
+  { title: "Created By", key: "created_by" },
+  { title: "Updated By", key: "updated_by" },
+  { title: "", key: "action" },
 ];
 
-const invoiceItems = reactive([
+const noteItems = [
   {
-    id: "1101",
-    amount: 1100,
-    currency: "SEK",
-    due: "2023-07-01",
-    date: "2023-07-01",
-    sent: true,
-    paid: false,
+    header: "Invoice note",
+    update: "2023-08-01, 17:11",
+    created_at: "2023-08-01, 12:32",
+    updated_at: "2023-08-01, 12:32",
+    created_by: "John Doe",
+    updated_by: "John Doe",
   },
   {
-    id: "1101",
-    amount: 1100,
-    currency: "SEK",
-    due: "2023-07-01",
-    date: "2023-07-01",
-    sent: true,
-    paid: false,
+    header: "Invoice note",
+    update: "2023-08-01, 17:11",
+    created_at: "2023-08-01, 12:32",
+    updated_at: "2023-08-01, 12:32",
+    created_by: "John Doe",
+    updated_by: "John Doe",
   },
   {
-    id: "1101",
-    amount: 1100,
-    currency: "SEK",
-    due: "2023-07-01",
-    date: "2023-07-01",
-    sent: true,
-    paid: false,
+    header: "Invoice note",
+    update: "2023-08-01, 17:11",
+    created_at: "2023-08-01, 12:32",
+    updated_at: "2023-08-01, 12:32",
+    created_by: "John Doe",
+    updated_by: "John Doe",
   },
-  {
-    id: "1101",
-    amount: 1100,
-    currency: "SEK",
-    due: "2023-07-01",
-    date: "2023-07-01",
-    sent: false,
-    paid: true,
-  },
-  {
-    id: "1101",
-    amount: 1100,
-    currency: "SEK",
-    due: "2023-07-01",
-    date: "2023-07-01",
-    sent: false,
-    paid: false,
-  },
-]);
+];
 
-const onAddNewNote = function () {
+const openNewNoteDialog = function () {
   addNewNoteDialog.value = true;
 };
 
@@ -381,17 +373,5 @@ const todoItems = [
   min-height: 32px;
   padding: 0;
   border-color: #d1d1e2;
-}
-.v-data-table-header__content {
-  font-size: 13px;
-  color: #0d0d1e !important;
-  font-family: "Poppins-SemiBold" !important;
-}
-
-.v-data-table__tr > td {
-  font-size: 13px;
-}
-.v-data-table-footer {
-  display: none !important;
 }
 </style>

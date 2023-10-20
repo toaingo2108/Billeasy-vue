@@ -3,14 +3,7 @@
     <div class="d-flex justify-between">
       <div class="d-flex">
         <div style="width: 288px">
-          <v-text-field
-            placeholder="Search"
-            prepend-inner-icon="mdi-magnify"
-            variant="outlined"
-            rounded="lg"
-            style="width: 288px"
-            hide-details
-          />
+          <search-field />
         </div>
         <div class="ml-2">
           <v-btn
@@ -82,6 +75,7 @@ import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
 import ScheduledSendOutDialog from "@/components/invoices/ScheduleSendOutDialog.vue";
 import SendInvoiceDialog from "@/components/invoices/SendInvoiceDialog.vue";
 import RegisterPaymentDialog from "@/components/invoices/RegisterPaymentDialog.vue";
+import SearchField from "../default/SearchField.vue";
 
 const headers = [
   { title: "Invoice nr.", key: "id", style: "bold" },
