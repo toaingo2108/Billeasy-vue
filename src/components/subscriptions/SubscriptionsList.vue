@@ -60,7 +60,7 @@
           rounded="lg"
           elevation="4"
           class="text-none white-font app-medium-font font-14"
-          @click="openNewInvoiceDialog"
+          @click="goToNewSubscription"
         >
           New Subscription
         </v-btn>
@@ -239,8 +239,8 @@ const scheduleSendDialog = ref(false);
 const sendInvoiceDialog = ref(false);
 const registerPaymentDialog = ref(false);
 const router = useRouter();
-const openNewInvoiceDialog = function () {
-  router.push({ name: "new-invoice" });
+const goToNewSubscription = function () {
+  router.push({ name: "new-subscription" });
 };
 
 const onScheduleSendOut = function () {

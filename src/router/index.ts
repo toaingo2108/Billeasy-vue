@@ -69,6 +69,14 @@ const routes = [
           import(/* webpackChunkName: "home" */ "@/views/Subscriptions.vue"),
       },
       {
+        path: "new-subscription",
+        name: "new-subscription",
+        component: () =>
+          import(
+            /* webpackChunkName: "home" */ "@/components/subscriptions/NewSubscription.vue"
+          ),
+      },
+      {
         path: "404",
         name: "404",
         component: () => import("@/views/NotFound.vue"),
