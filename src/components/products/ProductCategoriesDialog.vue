@@ -50,7 +50,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineProps, defineEmits, watch, watchEffect } from "vue";
+import { ref, watch, watchEffect } from "vue";
 import NewProductPriceDialog from "./NewProductPriceDialog.vue";
 import NewProductCategoryDialog from "./NewProductCategoryDialog.vue";
 

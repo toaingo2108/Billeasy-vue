@@ -277,7 +277,6 @@
                 <div class="d-flex flex-row justify-end mt-2">
                   <v-btn
                     color="white"
-                    @click="onBack"
                     prepend-icon="mdi-plus"
                     rounded="lg"
                     style="
@@ -366,7 +365,6 @@
                   <div style="width: 130px">
                     <v-btn
                       color="white"
-                      @click="onBack"
                       prepend-icon="mdi-plus"
                       rounded="lg"
                       width="100%"

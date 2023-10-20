@@ -50,7 +50,11 @@
           v-for="(menu, index) in menus"
         >
           <div class="me-2">
-            <v-img width="18" height="18" :src="menu.icon" />
+            <v-img
+              width="18"
+              height="18"
+              :src="index == tab ? menu.selected_icon : menu.unselected_icon"
+            />
           </div>
           {{ menu.title }}
         </v-tab>
@@ -62,7 +66,10 @@
           :value="index"
         >
           <div v-if="menu.title == 'General'">
-            <div class="d-flex flex-row align-center mt-8">
+            <div
+              class="d-flex flex-row align-center mt-8"
+              v-if="customerType == 'company'"
+            >
               <div
                 style="width: 240px"
                 class="font-14 app-regular-font dark-font"
@@ -78,7 +85,10 @@
                 />
               </div>
             </div>
-            <div class="d-flex flex-row align-center mt-8">
+            <div
+              class="d-flex flex-row align-center mt-8"
+              v-if="customerType == 'company'"
+            >
               <div
                 style="width: 240px"
                 class="font-14 app-regular-font dark-font"
@@ -140,6 +150,44 @@
                 style="width: 240px"
                 class="font-14 app-regular-font dark-font"
               >
+                First Name
+              </div>
+              <div style="width: 336px">
+                <v-text-field
+                  placeholder="First Name"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                />
+              </div>
+            </div>
+            <div
+              class="d-flex flex-row align-center mt-8"
+              v-if="customerType == 'person'"
+            >
+              <div
+                style="width: 240px"
+                class="font-14 app-regular-font dark-font"
+              >
+                Last Name
+              </div>
+              <div style="width: 336px">
+                <v-text-field
+                  placeholder="Last Name"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                />
+              </div>
+            </div>
+            <div
+              class="d-flex flex-row align-center mt-8"
+              v-if="customerType == 'person'"
+            >
+              <div
+                style="width: 240px"
+                class="font-14 app-regular-font dark-font"
+              >
                 Personal Number
               </div>
               <div style="width: 336px">
@@ -175,11 +223,12 @@
                 Category
               </div>
               <div style="width: 336px">
-                <v-text-field
+                <v-select
                   placeholder="Category"
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['Category', 'Category 2']"
                 />
               </div>
               <div>
@@ -213,7 +262,11 @@
                 />
               </div>
               <div class="d-flex flex-row align-center ms-4">
-                <v-radio-group hide-details color="#20C39D">
+                <v-radio-group
+                  hide-details
+                  color="#20C39D"
+                  v-model="addressType"
+                >
                   <div class="d-flex flex-row">
                     <v-radio value="billing_address">
                       <template v-slot:label>
@@ -354,11 +407,12 @@
                 Terms of payment
               </div>
               <div style="width: 336px">
-                <v-text-field
+                <v-select
                   placeholder="Terms of payment"
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['Terms of payment', 'Terms of payment2']"
                 />
               </div>
               <div>
@@ -368,7 +422,6 @@
                   class="text-none app-medium-font font-14 ms-2"
                   color="#20C39D"
                   rounded="lg"
-                  @click="onAddNewCategory"
                 >
                   Add New
                 </v-btn>
@@ -387,6 +440,7 @@
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['Price list', 'Price list2']"
                 />
               </div>
               <div>
@@ -396,7 +450,6 @@
                   class="text-none app-medium-font font-14 ms-2"
                   color="#20C39D"
                   rounded="lg"
-                  @click="onAddNewCategory"
                 >
                   Add New
                 </v-btn>
@@ -415,6 +468,7 @@
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['Currency', 'Currency2']"
                 />
               </div>
               <div>
@@ -424,7 +478,6 @@
                   class="text-none app-medium-font font-14 ms-2"
                   color="#20C39D"
                   rounded="lg"
-                  @click="onAddNewCategory"
                 >
                   Add New
                 </v-btn>
@@ -443,6 +496,7 @@
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['Reminder flow', 'Reminder flow 2']"
                 />
               </div>
               <div>
@@ -452,7 +506,6 @@
                   class="text-none app-medium-font font-14 ms-2"
                   color="#20C39D"
                   rounded="lg"
-                  @click="onAddNewCategory"
                 >
                   Add New
                 </v-btn>
@@ -503,6 +556,7 @@
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['Send invoice with', 'Send invoice with 2']"
                 />
               </div>
             </div>
@@ -537,10 +591,14 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import generalIcon from "@/assets/svg/customers/general.svg";
-import addressIcon from "@/assets/svg/customers/address.svg";
-import contactIcon from "@/assets/svg/customers/contact.svg";
-import invoiceIcon from "@/assets/svg/customers/invoice.svg";
+import generalSelectedIcon from "@/assets/svg/customers/general_selected.svg";
+import addressSelectedIcon from "@/assets/svg/customers/address_selected.svg";
+import contactSelectedIcon from "@/assets/svg/customers/contact_selected.svg";
+import invoiceSelectedIcon from "@/assets/svg/customers/invoice_selected.svg";
+import generalUnselectedIcon from "@/assets/svg/customers/general_unselected.svg";
+import addressUnselectedIcon from "@/assets/svg/customers/address_unselected.svg";
+import contactUnselectedIcon from "@/assets/svg/customers/contact_unselected.svg";
+import invoiceUnselectedIcon from "@/assets/svg/customers/invoice_unselected.svg";
 import NewCustomerCategoryDialog from "./NewCustomerCategoryDialog.vue";
 
 const tab = ref(0);
@@ -548,7 +606,7 @@ const customerType = ref("company");
 const addNewDialog = ref(false);
 const addNewCategoryDialog = ref(false);
 const emails = ["test@email.com", "user@email.com", "customer@email.com"];
-
+const addressType = ref("billing_address");
 const router = useRouter();
 const onBack = function () {
   router.back();
@@ -561,19 +619,23 @@ const onAddNewCategory = function () {
 const menus = [
   {
     title: "General",
-    icon: generalIcon,
+    selected_icon: generalSelectedIcon,
+    unselected_icon: generalUnselectedIcon,
   },
   {
     title: "Address",
-    icon: addressIcon,
+    selected_icon: addressSelectedIcon,
+    unselected_icon: addressUnselectedIcon,
   },
   {
     title: "Contact",
-    icon: contactIcon,
+    selected_icon: contactSelectedIcon,
+    unselected_icon: contactUnselectedIcon,
   },
   {
     title: "Invoice",
-    icon: invoiceIcon,
+    selected_icon: invoiceSelectedIcon,
+    unselected_icon: invoiceUnselectedIcon,
   },
 ];
 </script>

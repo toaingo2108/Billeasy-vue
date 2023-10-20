@@ -65,7 +65,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineProps, defineEmits, watchEffect } from "vue";
+import { ref, watchEffect } from "vue";
 
 const props = defineProps({
   dialog: Boolean,

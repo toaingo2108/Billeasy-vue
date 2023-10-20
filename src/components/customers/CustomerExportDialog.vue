@@ -11,7 +11,10 @@
           </span>
           <div class="d-flex flex-row">
             <div class="w-50">
-              <div class="d-flex flex-row align-center mt-5">
+              <div
+                class="d-flex flex-row align-center mt-5"
+                style="height: 36px"
+              >
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -20,7 +23,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -29,7 +32,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -38,7 +41,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -47,7 +50,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -56,7 +59,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -65,7 +68,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -74,7 +77,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -85,7 +88,10 @@
               </div>
             </div>
             <div class="w-50">
-              <div class="d-flex flex-row align-center mt-5">
+              <div
+                class="d-flex flex-row align-center mt-5"
+                style="height: 36px"
+              >
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -94,7 +100,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -103,7 +109,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -112,7 +118,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -121,7 +127,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -130,7 +136,7 @@
                   </template>
                 </v-checkbox>
               </div>
-              <div class="d-flex flex-row align-center">
+              <div class="d-flex flex-row align-center" style="height: 36px">
                 <v-checkbox color="#20c39d" value="#20c39d" hide-details>
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
@@ -147,7 +153,7 @@
             Sort export on
           </span>
           <v-radio-group class="mt-7">
-            <div class="d-flex flex-row align-center">
+            <div class="d-flex flex-row align-center" style="height: 36px">
               <v-radio value="one">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font">
@@ -156,21 +162,21 @@
                 </template>
               </v-radio>
             </div>
-            <div class="d-flex flex-row align-center mt-4">
+            <div class="d-flex flex-row align-center" style="height: 36px">
               <v-radio value="two">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font"> Name </span>
                 </template>
               </v-radio>
             </div>
-            <div class="d-flex flex-row align-center mt-4">
+            <div class="d-flex flex-row align-center" style="height: 36px">
               <v-radio value="three">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font"> SKU </span>
                 </template>
               </v-radio>
             </div>
-            <div class="d-flex flex-row align-center mt-4">
+            <div class="d-flex flex-row align-center" style="height: 36px">
               <v-radio value="four">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font">
@@ -220,7 +226,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineProps, defineEmits, watchEffect } from "vue";
+import { ref, watchEffect } from "vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -253,11 +259,7 @@ const onAddNewPrice = function () {
 </script>
 
 <style scoped>
-.v-text-field input.v-field__input {
-  min-height: 40px;
-  padding: 5px 10px;
-}
-.v-label {
+div :deep(.v-label) {
   opacity: 1;
 }
 </style>

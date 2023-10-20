@@ -129,11 +129,12 @@
           <span class="font-14 app-semibold-font dark-font ps-3"> Type * </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Type"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Type', 'Type1', 'Type2']"
           />
         </div>
       </v-card-text>
@@ -147,11 +148,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="First Name"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['First Name']"
           />
         </div>
       </v-card-text>
@@ -165,11 +167,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Last Name"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Last Name']"
           />
         </div>
       </v-card-text>
@@ -183,11 +186,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Company Name"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Company Name', 'Company Name2']"
           />
         </div>
       </v-card-text>
@@ -201,11 +205,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Personal/Org. Number"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['#', '##']"
           />
         </div>
       </v-card-text>
@@ -219,11 +224,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Customer Number"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['#', '##']"
           />
         </div>
       </v-card-text>
@@ -237,11 +243,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="VAT Number"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['VAT Number', '##']"
           />
         </div>
       </v-card-text>
@@ -253,11 +260,12 @@
           <span class="font-14 app-semibold-font dark-font ps-3"> Phone </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Phone"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Phone', '##']"
           />
         </div>
       </v-card-text>
@@ -299,7 +307,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineProps, defineEmits, watchEffect } from "vue";
+import { ref, watchEffect } from "vue";
 
 const props = defineProps({
   dialog: Boolean,

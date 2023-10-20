@@ -229,7 +229,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineProps, defineEmits, watchEffect } from "vue";
+import { ref, watchEffect } from "vue";
 import NewProductPriceDialog from "./NewProductPriceDialog.vue";
 import NewProductCategoryDialog from "./NewProductCategoryDialog.vue";
 
@@ -268,7 +268,7 @@ const onAddNewCategory = function () {
 </script>
 
 <style scoped>
-.v-text-field input.v-field__input {
+div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
 }

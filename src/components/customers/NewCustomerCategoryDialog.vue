@@ -16,11 +16,12 @@
         </div>
         <div class="w-50 ms-2">
           <span class="font-13 app-medium-font dark-font">Color *</span>
-          <v-text-field
+          <v-select
             placeholder="Color"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Color', 'Color1']"
           />
         </div>
       </v-card-text>
@@ -40,20 +41,22 @@
         <span class="font-13 app-medium-font dark-font"
           >Subscription Template</span
         >
-        <v-text-field
+        <v-select
           placeholder="Subscription Template"
           variant="outlined"
           rounded="lg"
           hide-details
+          :items="['Subscription Template', 'Subscription Template2']"
         />
       </v-card-text>
       <v-card-text class="d-flex flex-column mx-3 pb-1">
         <span class="font-13 app-medium-font dark-font">Invoice Template</span>
-        <v-text-field
+        <v-select
           placeholder="Invoice Template"
           variant="outlined"
           rounded="lg"
           hide-details
+          :items="['Invoice Template', 'Invoice Template2']"
         />
       </v-card-text>
       <v-divider class="mt-8" />
@@ -94,7 +97,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineProps, defineEmits, watchEffect } from "vue";
+import { ref, watchEffect } from "vue";
 
 const props = defineProps({
   dialog: Boolean,

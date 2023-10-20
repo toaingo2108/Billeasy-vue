@@ -24,19 +24,19 @@
             <th># Invoices</th>
           </tr>
           <tr>
-            <td>Not late</td>
-            <td>1,000,000</td>
-            <td>10</td>
+            <td class="remove-border-bottom">Not late</td>
+            <td class="remove-border-bottom">1,000,000</td>
+            <td class="remove-border-bottom">10</td>
           </tr>
           <tr>
-            <td>Late up to 15 days</td>
-            <td>1,000,000</td>
-            <td>10</td>
+            <td class="remove-border-bottom">Late up to 15 days</td>
+            <td class="remove-border-bottom">1,000,000</td>
+            <td class="remove-border-bottom">10</td>
           </tr>
           <tr>
-            <td>Late between 15 and 30 days</td>
-            <td>1,000,000</td>
-            <td>10</td>
+            <td class="remove-border-bottom">Late between 15 and 30 days</td>
+            <td class="remove-border-bottom">1,000,000</td>
+            <td class="remove-border-bottom">10</td>
           </tr>
           <tr>
             <td>Late more than 30 days</td>
@@ -44,9 +44,9 @@
             <td>10</td>
           </tr>
           <tr class="total-row">
-            <td><strong>Total</strong></td>
-            <td><strong>4,000,000</strong></td>
-            <td><strong>40</strong></td>
+            <td class="remove-border-bottom"><strong>Total</strong></td>
+            <td class="remove-border-bottom"><strong>4,000,000</strong></td>
+            <td class="remove-border-bottom"><strong>40</strong></td>
           </tr>
         </table>
       </v-card-text>

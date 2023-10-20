@@ -52,6 +52,7 @@
               v-model="item.checked"
               v-if="header.key == 'checked'"
               class="ms-2"
+              @click.stop
             />
             <div v-else-if="header.key == 'action'">
               <v-btn
@@ -111,14 +112,7 @@
   </v-table>
 </template>
 <script lang="ts" setup>
-import {
-  ref,
-  defineProps,
-  defineEmits,
-  watchEffect,
-  reactive,
-  watch,
-} from "vue";
+import { ref, watchEffect, reactive, watch } from "vue";
 import { TableHeadersArray, TableItemsArray } from "@/types/interfaces";
 
 const props = defineProps({

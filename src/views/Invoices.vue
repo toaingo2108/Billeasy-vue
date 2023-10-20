@@ -14,7 +14,10 @@
       <div
         class="app-medium-font font-14 teal-font d-flex flex-row align-center"
       >
-        <v-icon color="#20C39D" class="me-2">mdi-vector-square</v-icon>Customize
+        <v-btn variant="plain" class="text-none">
+          <v-icon color="#20C39D" class="me-2">mdi-vector-square</v-icon
+          >Customize
+        </v-btn>
       </div>
     </div>
     <div>

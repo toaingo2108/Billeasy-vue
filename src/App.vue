@@ -132,4 +132,8 @@ html {
 .flex-grow {
   flex-grow: 1;
 }
+
+.remove-border-bottom {
+  border-bottom: 1px solid #0000 !important;
+}
 </style>

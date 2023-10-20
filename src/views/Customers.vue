@@ -5,7 +5,10 @@
       <div
         class="app-medium-font font-14 teal-font d-flex flex-row align-center"
       >
-        <v-icon color="#20C39D" class="me-2">mdi-vector-square</v-icon>Customize
+        <v-btn variant="plain" class="text-none">
+          <v-icon color="#20C39D" class="me-2">mdi-vector-square</v-icon
+          >Customize
+        </v-btn>
       </div>
     </div>
     <div class="d-flex justify-between">
@@ -16,7 +19,7 @@
             prepend-inner-icon="mdi-magnify"
             variant="outlined"
             rounded="lg"
-            style="width: 288px"
+            style="width: 288px; background-color: white; border-radius: 8px"
             hide-details
           />
         </div>
@@ -105,6 +108,9 @@
         :on-row-clicked="onSelectCustomer"
         style="margin-bottom: 80px"
       >
+        <template v-slot:action>
+          <item-menu />
+        </template>
       </app-data-table>
       <app-data-table-bottom :length="15" />
     </div>
@@ -131,6 +137,7 @@ import CustomerImportDialog from "@/components/customers/CustomerImportDialog.vu
 import CustomerCategoriesDialog from "@/components/customers/CustomerCategoriesDialog.vue";
 import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
+import ItemMenu from "@/components/customers/CustomerItemMenu.vue";
 
 const exportDialog = ref(false);
 const importDialog = ref(false);
@@ -418,10 +425,22 @@ const onSelectCustomer = function (item: any, index: number) {
 };
 </script>
 <style scoped>
-.v-text-field input.v-field__input {
+div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px;
 }
+
+div :deep(.v-text-field .v-field__outline .v-field__outline__start) {
+  border-color: #d1d1e2;
+  --v-field-border-opacity: 0.8;
+  --v-field-border-width: 1.5px;
+}
+div :deep(.v-text-field .v-field__outline .v-field__outline__end) {
+  border-color: #d1d1e2;
+  --v-field-border-opacity: 0.8;
+  --v-field-border-width: 1.5px;
+}
+
 .img-button {
   width: 40px;
   height: 40px;
