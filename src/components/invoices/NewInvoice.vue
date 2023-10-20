@@ -579,7 +579,7 @@
           padding-top: 10px;
           padding-bottom: 10px;
         "
-        class="text-none ms-2"
+        class="text-none ms-2 font-14 app-medium-font"
         flat
         >Create</v-btn
       >

@@ -2,21 +2,12 @@
   <v-dialog v-model="props.dialog" width="400" persistent>
     <v-card class="rounded-xl">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
-        Scheduled Send Out
+        Send Invoice
       </v-card-title>
       <v-card-text class="d-flex flex-column mx-3 pb-1">
         <span class="font-13 app-medium-font dark-font">Send Method *</span>
         <v-text-field
           placeholder="Method"
-          variant="outlined"
-          rounded="lg"
-          hide-details
-        />
-      </v-card-text>
-      <v-card-text class="d-flex flex-column mx-3 pb-1">
-        <span class="font-13 app-medium-font dark-font">Send Date</span>
-        <v-text-field
-          placeholder="Date"
           variant="outlined"
           rounded="lg"
           hide-details
@@ -51,7 +42,7 @@
         <v-btn
           color="white"
           @click="closeDialog"
-          prepend-icon="mdi-check"
+          prepend-icon="mdi-send"
           rounded="lg"
           style="
             background: #20c39d;
@@ -61,7 +52,7 @@
             padding-bottom: 10px;
           "
           class="text-none"
-          >Save</v-btn
+          >Send</v-btn
         >
       </v-card-actions>
     </v-card>

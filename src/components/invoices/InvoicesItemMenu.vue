@@ -28,7 +28,8 @@ import duplicateIcon from "@/assets/svg/invoices/duplicate.svg";
 import previewPDFIcon from "@/assets/svg/invoices/preview_pdf.svg";
 
 const props = defineProps({
-  onScheduleSendOut: { type: Function, default: () => {} },
+  onRegisterPayment: { type: Function, default: () => {} },
+  // onScheduleSendOut: { type: Function, default: () => {} },
   onSendInvoice: { type: Function, default: () => {} },
   onCreditInvoice: { type: Function, default: () => {} },
   onDuplicate: { type: Function, default: () => {} },
@@ -39,7 +40,7 @@ const items = [
   {
     text: "Register Payment",
     icon: registerPaymentIcon,
-    onClick: props.onScheduleSendOut,
+    onClick: props.onRegisterPayment,
   },
   { text: "Send Invoice", icon: invoiceIcon, onClick: props.onSendInvoice },
   {

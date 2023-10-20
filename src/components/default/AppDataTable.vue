@@ -35,6 +35,7 @@
         v-for="(item, index) in items"
         :key="index"
         style="height: 50px; padding-top: 3px; padding-bottom: 3px"
+        @click="onRowClicked(item, index)"
       >
         <td v-for="(header, index) in headers">
           <div
@@ -107,6 +108,7 @@ const props = defineProps({
   headers: { type: Array as () => TableHeadersArray, default: [] },
   items: { type: Array as () => TableItemsArray, default: [] },
   checkable: { type: Boolean, default: true },
+  onRowClicked: { type: Function, default: () => {} },
 });
 
 const headers = reactive(

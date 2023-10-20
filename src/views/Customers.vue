@@ -102,7 +102,7 @@
         :headers="headers"
         :items="items"
         items-per-page="15"
-        @click:row="onSelectCustomer"
+        :on-row-clicked="onSelectCustomer"
         style="margin-bottom: 80px"
       >
       </app-data-table>
@@ -413,8 +413,8 @@ const onCustomerCategories = function () {
   customerCategoriesDialog.value = true;
 };
 
-const onSelectCustomer = function (e: any, row: any) {
-  router.push({ name: "customer-details", query: { id: row.item.id } });
+const onSelectCustomer = function (item: any, index: number) {
+  router.push({ name: "customer-details", query: { id: item.id } });
 };
 </script>
 <style scoped>

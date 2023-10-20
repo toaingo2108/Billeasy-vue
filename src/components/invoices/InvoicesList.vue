@@ -47,9 +47,13 @@
         :items="items"
         items-per-page="15"
         style="margin-bottom: 80px"
+        :on-row-clicked="onSelectedInvoice"
       >
         <template v-slot:action>
-          <item-menu :on-schedule-send-out="onScheduleSendOut" />
+          <item-menu
+            :on-register-payment="onRegisterPayment"
+            :on-send-invoice="onSendInvoice"
+          />
         </template>
       </app-data-table>
       <app-data-table-bottom :length="15" />
@@ -57,6 +61,14 @@
     <scheduled-send-out-dialog
       :dialog="scheduleSendDialog"
       @update:dialog="(val) => (scheduleSendDialog = val)"
+    />
+    <send-invoice-dialog
+      :dialog="sendInvoiceDialog"
+      @update:dialog="(val) => (sendInvoiceDialog = val)"
+    />
+    <register-payment-dialog
+      :dialog="registerPaymentDialog"
+      @update:dialog="(val) => (registerPaymentDialog = val)"
     />
   </div>
 </template>
@@ -68,6 +80,8 @@ import { useRouter } from "vue-router";
 import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
 import ScheduledSendOutDialog from "@/components/invoices/ScheduleSendOutDialog.vue";
+import SendInvoiceDialog from "@/components/invoices/SendInvoiceDialog.vue";
+import RegisterPaymentDialog from "@/components/invoices/RegisterPaymentDialog.vue";
 
 const headers = [
   { title: "Invoice nr.", key: "id", style: "bold" },
@@ -275,6 +289,8 @@ const items = [
 ];
 
 const scheduleSendDialog = ref(false);
+const sendInvoiceDialog = ref(false);
+const registerPaymentDialog = ref(false);
 const router = useRouter();
 const openNewInvoiceDialog = function () {
   router.push({ name: "new-invoice" });
@@ -282,6 +298,15 @@ const openNewInvoiceDialog = function () {
 
 const onScheduleSendOut = function () {
   scheduleSendDialog.value = true;
+};
+const onRegisterPayment = function () {
+  registerPaymentDialog.value = true;
+};
+const onSendInvoice = function () {
+  sendInvoiceDialog.value = true;
+};
+const onSelectedInvoice = function (item: any, index: number) {
+  router.push({ name: "invoice-details", query: { id: item.id } });
 };
 </script>
 <style scoped>
