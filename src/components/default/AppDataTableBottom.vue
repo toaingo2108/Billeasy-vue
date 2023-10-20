@@ -1,9 +1,9 @@
 <template>
   <div
-    style="height: 96px; bottom: 0; width: calc(100% - 300px)"
+    style="height: 96px; bottom: 0; width: calc(100% - 300px); left: 300px"
     class="bg-gray position-fixed d-flex flex-row align-center"
   >
-    <div>
+    <div class="ms-10">
       <v-select
         placeholder="Import Source"
         variant="outlined"

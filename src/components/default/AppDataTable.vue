@@ -20,7 +20,8 @@
           </div>
           <div
             v-else-if="header.key != 'action'"
-            class="d-flex flex-row align-center justify-center"
+            class="d-flex flex-row align-center"
+            :class="header.align ? `justify-${header.align}` : 'justify-center'"
           >
             <span class="dark-font app-semibold-font font-13">
               {{ header.title }}
@@ -37,9 +38,13 @@
         style="height: 50px; padding-top: 3px; padding-bottom: 3px"
         @click="onRowClicked(item, index)"
       >
-        <td v-for="(header, index) in headers">
+        <td
+          v-for="(header, index) in headers"
+          :style="header.key == 'checked' ? 'width: 60px' : ''"
+        >
           <div
-            class="bg-white w-100 d-flex flex-row align-center justify-center"
+            class="bg-white w-100 d-flex flex-row align-center"
+            :class="header.align ? `justify-${header.align}` : 'justify-center'"
             style="
               margin-top: 3px;
               margin-bottom: 3px;
