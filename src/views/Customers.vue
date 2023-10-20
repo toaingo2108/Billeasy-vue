@@ -21,7 +21,7 @@
             variant="plain"
             width="40"
             height="40"
-            class="img-button"
+            class="button-40"
             rounded="lg"
           >
             <v-img
@@ -38,7 +38,7 @@
             variant="plain"
             width="40"
             height="40"
-            class="img-button"
+            class="button-40"
             rounded="lg"
             @click="onExportData"
           >
@@ -54,7 +54,7 @@
             variant="plain"
             width="40"
             height="40"
-            class="img-button"
+            class="button-40"
             rounded="lg"
             @click="onImportData"
           >
@@ -70,7 +70,7 @@
             variant="plain"
             width="40"
             height="40"
-            class="img-button"
+            class="button-40"
             rounded="lg"
             @click="onCustomerCategories"
           >
@@ -418,13 +418,4 @@ const onSelectCustomer = function (item: any, index: number) {
   router.push({ name: "customer-details", query: { id: item.id } });
 };
 </script>
-<style scoped>
-.img-button {
-  width: 40px;
-  height: 40px;
-  min-height: 40px;
-  min-width: 40px;
-  max-height: 40px;
-  max-width: 40px;
-}
-</style>
+<style scoped></style>

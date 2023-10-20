@@ -141,4 +141,13 @@ html {
 .remove-border-bottom {
   border-bottom: 1px solid #0000 !important;
 }
+
+.button-40 {
+  width: 40px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  min-width: 40px !important;
+  max-height: 40px !important;
+  max-width: 40px !important;
+}
 </style>

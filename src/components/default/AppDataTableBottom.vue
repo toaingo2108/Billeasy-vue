@@ -18,7 +18,7 @@
       variant="plain"
       width="40"
       height="40"
-      class="img-button ms-2"
+      class="button-40 ms-2"
       rounded="lg"
     >
       <v-img

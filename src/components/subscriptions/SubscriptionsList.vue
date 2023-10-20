@@ -22,6 +22,38 @@
         </div>
       </div>
       <div class="d-flex align-center">
+        <div class="me-3">
+          <v-btn
+            variant="plain"
+            width="40"
+            height="40"
+            class="button-40"
+            rounded="lg"
+            @click="onImportData"
+          >
+            <v-img
+              width="40"
+              height="40"
+              src="@/assets/svg/products/upload.svg"
+            />
+          </v-btn>
+        </div>
+        <div class="me-3">
+          <v-btn
+            variant="plain"
+            width="40"
+            height="40"
+            class="button-40"
+            rounded="lg"
+            @click="onCustomerCategories"
+          >
+            <v-img
+              width="40"
+              height="40"
+              src="@/assets/svg/subscriptions/btn_subscription.svg"
+            />
+          </v-btn>
+        </div>
         <v-btn
           color="#20C39D"
           prepend-icon="mdi-plus"
@@ -30,7 +62,7 @@
           class="text-none white-font app-medium-font font-14"
           @click="openNewInvoiceDialog"
         >
-          New Invoice
+          New Subscription
         </v-btn>
       </div>
     </div>
@@ -68,7 +100,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import ItemMenu from "./InvoicesItemMenu.vue";
+import ItemMenu from "./SubscriptionsItemMenu.vue";
 import { useRouter } from "vue-router";
 import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
@@ -78,12 +110,13 @@ import RegisterPaymentDialog from "@/components/invoices/RegisterPaymentDialog.v
 import SearchField from "../default/SearchField.vue";
 
 const headers = [
-  { title: "Invoice nr.", key: "id", style: "bold" },
-  { title: "OCR", key: "ocr", style: "bold" },
-  { title: "Customer Name", key: "name" },
-  { title: "Your Reference", key: "reference" },
-  { title: "Invoice Date", key: "invoice_date" },
-  { title: "Due Date", key: "due_date" },
+  { title: "Sub nr.", key: "id", style: "bold" },
+  { title: "Customer Name", key: "name", style: "bold" },
+  { title: "#Billing cycles", key: "billing_cycle" },
+  { title: "Interval", key: "interval" },
+  { title: "Start Date", key: "start_date" },
+  { title: "End Date", key: "end_date" },
+  { title: "Last Billed", key: "last_billed" },
   { title: "Total", key: "total" },
   { title: "Status", key: "status" },
   { title: "", key: "action" },
@@ -92,191 +125,111 @@ const headers = [
 const items = [
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },
   {
     id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
-    total: "0101101010",
-    status: true,
-  },
-  {
-    id: 1001,
-    ocr: "Blue t-shirt, XS",
-    name: "1231231234",
-    reference: "Stockholm",
-    invoice_date: "2023-07-01",
-    due_date: "2023-07-01",
+    name: "Blue t-shirt, XS",
+    billing_cycle: 12,
+    interval: 3,
+    start_date: "2023-07-01",
+    end_date: "2023-07-01",
+    last_billed: "2023-07-01",
     total: "0101101010",
     status: true,
   },

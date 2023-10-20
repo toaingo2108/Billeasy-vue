@@ -10,7 +10,7 @@
             variant="plain"
             width="40"
             height="40"
-            class="img-button"
+            class="button-40"
             rounded="lg"
           >
             <v-img
@@ -22,54 +22,6 @@
         </div>
       </div>
       <div class="d-flex align-center">
-        <div class="me-3">
-          <v-btn
-            variant="plain"
-            width="40"
-            height="40"
-            class="img-button"
-            rounded="lg"
-            @click="onExportData"
-          >
-            <v-img
-              width="40"
-              height="40"
-              src="@/assets/svg/products/download.svg"
-            />
-          </v-btn>
-        </div>
-        <div class="me-3">
-          <v-btn
-            variant="plain"
-            width="40"
-            height="40"
-            class="img-button"
-            rounded="lg"
-            @click="onImportData"
-          >
-            <v-img
-              width="40"
-              height="40"
-              src="@/assets/svg/products/upload.svg"
-            />
-          </v-btn>
-        </div>
-        <div class="me-3">
-          <v-btn
-            variant="plain"
-            width="40"
-            height="40"
-            class="img-button"
-            rounded="lg"
-            @click="onProductCategories"
-          >
-            <v-img
-              width="40"
-              height="40"
-              src="@/assets/svg/products/products.svg"
-            />
-          </v-btn>
-        </div>
         <v-btn
           color="#20C39D"
           prepend-icon="mdi-plus"
@@ -239,13 +191,5 @@ const onProductCategories = function () {
 .v-text-field input.v-field__input {
   min-height: 40px;
   padding: 5px;
-}
-.img-button {
-  width: 40px;
-  height: 40px;
-  min-height: 40px;
-  min-width: 40px;
-  max-height: 40px;
-  max-width: 40px;
 }
 </style>

@@ -83,7 +83,7 @@
             variant="plain"
             width="40"
             height="40"
-            class="img-button"
+            class="button-40"
             rounded="lg"
           >
             <v-img
@@ -353,13 +353,5 @@ const onAddNewPrice = function () {
 .file-upload-button .v-btn__content {
   width: 100%;
   justify-content: space-between;
-}
-.img-button {
-  width: 40px;
-  height: 40px;
-  min-height: 40px;
-  min-width: 40px;
-  max-height: 40px;
-  max-width: 40px;
 }
 </style>
