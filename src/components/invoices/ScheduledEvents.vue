@@ -3,14 +3,7 @@
     <div class="d-flex justify-between">
       <div class="d-flex">
         <div style="width: 288px">
-          <v-text-field
-            placeholder="Search"
-            prepend-inner-icon="mdi-magnify"
-            variant="outlined"
-            rounded="lg"
-            style="width: 288px"
-            hide-details
-          />
+          <search-field />
         </div>
         <div class="ml-2">
           <v-btn
@@ -83,9 +76,9 @@
           rounded="lg"
           elevation="4"
           class="text-none white-font app-medium-font font-14"
-          @click="openNewProductDialog"
+          @click="openNewEventDialog"
         >
-          New Product
+          New event
         </v-btn>
       </div>
     </div>
@@ -93,9 +86,9 @@
       <v-data-table :headers="headers" :items="items" items-per-page="15">
       </v-data-table>
     </div>
-    <new-product-dialog
-      :dialog="newProductDialog"
-      @update:dialog="(val) => (newProductDialog = val)"
+    <new-event-dialog
+      :dialog="newEventDialog"
+      @update:dialog="(val) => (newEventDialog = val)"
     />
     <product-export-dialog
       :dialog="exportDialog"
@@ -115,12 +108,13 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import NewProductDialog from "@/components/products/NewProductDialog.vue";
 import ProductExportDialog from "@/components/products/ProductExportDialog.vue";
 import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
+import NewEventDialog from "@/components/invoices/NewEventDialog.vue";
+import SearchField from "../default/SearchField.vue";
 
-const newProductDialog = ref(false);
+const newEventDialog = ref(false);
 const exportDialog = ref(false);
 const importDialog = ref(false);
 const productCategoriesDialog = ref(false);
@@ -478,8 +472,8 @@ const items = [
   },
 ];
 
-const openNewProductDialog = function () {
-  newProductDialog.value = true;
+const openNewEventDialog = function () {
+  newEventDialog.value = true;
 };
 
 const onExportData = function () {

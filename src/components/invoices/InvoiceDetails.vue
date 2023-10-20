@@ -181,6 +181,30 @@
               </div>
             </div>
           </div>
+          <div v-else-if="menu.title == `To-do's`">
+            <div class="d-flex justify-between">
+              <div class="d-flex mt-6">
+                <div style="width: 288px">
+                  <search-field />
+                </div>
+              </div>
+              <div class="d-flex align-center">
+                <v-btn
+                  color="#20C39D"
+                  prepend-icon="mdi-plus"
+                  rounded="lg"
+                  elevation="4"
+                  class="text-none white-font app-medium-font font-14"
+                  @click="openNewNoteDialog"
+                >
+                  New To-do
+                </v-btn>
+              </div>
+            </div>
+            <div class="mt-10">
+              <todo-category-list />
+            </div>
+          </div>
         </v-window-item>
       </v-window>
     </div>
@@ -209,15 +233,15 @@ import creditInvoiceIcon from "@/assets/svg/invoices/credit_invoice.svg";
 import duplicateIcon from "@/assets/svg/invoices/duplicate.svg";
 import previewPDFIcon from "@/assets/svg/invoices/preview_pdf.svg";
 import cancelInvoiceIcon from "@/assets/svg/invoices/cancel_invoice.svg";
-import todoImage from "@/assets/sample/profile.png";
 import SearchField from "../default/SearchField.vue";
 import AppDataTable from "../default/AppDataTable.vue";
 import InvoiceAddNoteDialog from "./InvoiceAddNoteDialog.vue";
 import InvoiceNoteItemMenu from "./InvoiceNoteItemMenu.vue";
 import AppDataTableBottomPagination from "../default/AppDataTableBottomPagination.vue";
+import TodoCategoryList from "../default/to.vue";
 
 const tab = ref(0);
-const addNewDialog = ref(false);
+
 const addNewNoteDialog = ref(false);
 const addNewCustomFieldDialog = ref(false);
 const addNewReportDialog = ref(false);
@@ -228,9 +252,6 @@ const onBack = function () {
   router.back();
 };
 
-const onAddNewCategory = function () {
-  addNewDialog.value = true;
-};
 const onAddNewCustomField = function () {
   addNewCustomFieldDialog.value = true;
 };
@@ -326,27 +347,6 @@ const noteItems = [
 const openNewNoteDialog = function () {
   addNewNoteDialog.value = true;
 };
-
-const todoItems = [
-  {
-    image: todoImage,
-    text: "Call Jimmy regarding project",
-    status: "Done",
-    date: "2023/05/01",
-  },
-  {
-    image: todoImage,
-    text: "Call Jimmy regarding project",
-    status: "New",
-    date: "2023/05/01",
-  },
-  {
-    image: todoImage,
-    text: "Call Jimmy regarding project",
-    status: "Started",
-    date: "2023/05/01",
-  },
-];
 </script>
 <style scoped>
 .v-text-field input.v-field__input {

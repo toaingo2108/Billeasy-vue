@@ -354,13 +354,7 @@
               <div v-else-if="menu.title == `To-do's`" class="px-2">
                 <div class="d-flex flex-row align-center mt-8">
                   <div class="flex-grow me-4 ms-2">
-                    <v-text-field
-                      placeholder="Search"
-                      prepend-inner-icon="mdi-magnify"
-                      variant="outlined"
-                      rounded="lg"
-                      hide-details
-                    />
+                    <search-field />
                   </div>
                   <div style="width: 130px">
                     <v-btn
@@ -383,58 +377,7 @@
                   </div>
                 </div>
                 <div class="d-flex flex-row align-center mt-8 mb-10">
-                  <v-expansion-panels variant="accordion">
-                    <v-expansion-panel v-for="i in 3" :key="i" elevation="0">
-                      <v-expansion-panel-title v-slot="{ expanded }">
-                        <span class="font-14 app-medium-font dark-font me-15"
-                          >Category Name</span
-                        >
-                        <v-btn
-                          variant="text"
-                          prepend-icon="mdi-plus"
-                          class="text-none app-medium-font font-14 ms-2"
-                          color="#20C39D"
-                          rounded="lg"
-                          @click.stop="onAddNewCategory"
-                          @mousedown.stop
-                          @touchstart.stop
-                          v-if="expanded"
-                        >
-                          Add New
-                        </v-btn>
-                      </v-expansion-panel-title>
-                      <v-expansion-panel-text>
-                        <v-card
-                          v-for="(item, index) in todoItems"
-                          :key="index"
-                          class="rounded-xl mt-2"
-                          elevation="0"
-                          color="#F7F7FA"
-                        >
-                          <v-card-text class="d-flex flex-row">
-                            <v-avatar size="24" class="ms-3 me-3">
-                              <v-img :src="item.image" />
-                            </v-avatar>
-                            <div class="flex-grow">
-                              <div class="font-14 app-medium-font dark-font">
-                                {{ item.text }}
-                              </div>
-                              <div class="font-12 shade-font app-regular-font">
-                                {{ item.date }}
-                              </div>
-                            </div>
-                            <div style="width: 220px">
-                              <v-chip>{{ item.status }}</v-chip>
-                            </div>
-                            <v-btn icon size="x-small" flat>
-                              <v-icon>mdi-dots-horizontal</v-icon>
-                              <todo-details-menu />
-                            </v-btn>
-                          </v-card-text>
-                        </v-card>
-                      </v-expansion-panel-text>
-                    </v-expansion-panel>
-                  </v-expansion-panels>
+                  <todo-category-list />
                 </div>
               </div>
               <div v-else-if="menu.title == 'Time Report'">
@@ -513,6 +456,8 @@ import AddReportDialog from "./CustomerAddTimeReportDialog.vue";
 import TodoDetailsMenu from "./CustomerTodoDetailsMenu.vue";
 import ReportDetailsMenu from "./CustomerTimeReportDetailsMenu.vue";
 import todoImage from "@/assets/sample/profile.png";
+import TodoCategoryList from "../default/TodoCategoryList.vue";
+import SearchField from "../default/SearchField.vue";
 
 const tab = ref(0);
 const addNewDialog = ref(false);
@@ -526,9 +471,6 @@ const onBack = function () {
   router.back();
 };
 
-const onAddNewCategory = function () {
-  addNewDialog.value = true;
-};
 const onAddNewCustomField = function () {
   addNewCustomFieldDialog.value = true;
 };
@@ -714,27 +656,6 @@ const reportItems = reactive([
 const onAddNewNote = function () {
   addNewNoteDialog.value = true;
 };
-
-const todoItems = [
-  {
-    image: todoImage,
-    text: "Call Jimmy regarding project",
-    status: "Done",
-    date: "2023/05/01",
-  },
-  {
-    image: todoImage,
-    text: "Call Jimmy regarding project",
-    status: "New",
-    date: "2023/05/01",
-  },
-  {
-    image: todoImage,
-    text: "Call Jimmy regarding project",
-    status: "Started",
-    date: "2023/05/01",
-  },
-];
 </script>
 <style scoped>
 .v-text-field input.v-field__input {
