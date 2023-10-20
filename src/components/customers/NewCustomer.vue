@@ -578,7 +578,7 @@ const menus = [
 ];
 </script>
 <style scoped>
-div >>> .v-text-field input.v-field__input {
+.v-text-field input.v-field__input {
   min-height: 40px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -586,10 +586,10 @@ div >>> .v-text-field input.v-field__input {
   padding-right: 12px;
 }
 
-div >>> .v-label {
+.v-label {
   opacity: 1;
 }
-div >>> .v-chip__close {
+.v-chip__close {
   color: #8b8ba9;
 }
 </style>

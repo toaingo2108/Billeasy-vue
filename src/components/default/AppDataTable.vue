@@ -54,8 +54,25 @@
               class="ms-2"
             />
             <div v-else-if="header.key == 'action'">
-              <v-btn icon size="x-small" flat class="me-2">
-                <v-icon>mdi-dots-horizontal</v-icon>
+              <v-btn
+                size="x-small"
+                flat
+                class="me-5"
+                style="
+                  width: 24px;
+                  height: 24px;
+                  min-height: 24px;
+                  min-width: 24px;
+                  max-height: 24px;
+                  min-height: 24px;
+                  padding: 0;
+                "
+              >
+                <v-img
+                  src="@/assets/svg/datatable/dot_menu.svg"
+                  width="24"
+                  height="24"
+                />
                 <slot name="action"></slot>
               </v-btn>
             </div>
@@ -142,7 +159,7 @@ const updateItems = () => {
 };
 </script>
 <style scoped>
-/* div >>> .white-bottom {
+/*  .white-bottom {
   border-bottom: 1px solid #0000 !important;
   background-color: white;
 } */

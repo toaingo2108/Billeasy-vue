@@ -357,7 +357,7 @@ const todoItems = [
 ];
 </script>
 <style scoped>
-div >>> .v-text-field input.v-field__input {
+.v-text-field input.v-field__input {
   min-height: 40px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -365,14 +365,14 @@ div >>> .v-text-field input.v-field__input {
   padding-right: 12px;
 }
 
-div >>> .v-label {
+.v-label {
   opacity: 1;
 }
-div >>> .v-chip__close {
+.v-chip__close {
   color: #8b8ba9;
 }
 
-div >>> .icon-button {
+.icon-button {
   width: 32px;
   height: 32px;
   max-width: 32px;
@@ -382,16 +382,16 @@ div >>> .icon-button {
   padding: 0;
   border-color: #d1d1e2;
 }
-div >>> .v-data-table-header__content {
+.v-data-table-header__content {
   font-size: 13px;
   color: #0d0d1e !important;
   font-family: "Poppins-SemiBold" !important;
 }
 
-div >>> .v-data-table__tr > td {
+.v-data-table__tr > td {
   font-size: 13px;
 }
-div >>> .v-data-table-footer {
+.v-data-table-footer {
   display: none !important;
 }
 </style>

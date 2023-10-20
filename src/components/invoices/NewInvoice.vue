@@ -675,7 +675,7 @@ const productLists = [
 ];
 </script>
 <style scoped>
-div >>> .v-text-field input.v-field__input {
+.v-text-field input.v-field__input {
   min-height: 40px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -683,27 +683,27 @@ div >>> .v-text-field input.v-field__input {
   padding-right: 12px;
 }
 
-div >>> .v-label {
+.v-label {
   opacity: 1;
 }
-div >>> .v-chip__close {
+.v-chip__close {
   color: #8b8ba9;
 }
 
 @media (max-width: 600px) {
-  div >>> .five-row {
+  .five-row {
     width: 100%;
   }
 }
 @media (min-width: 600px) {
-  div >>> .five-row {
+  .five-row {
     width: 20%;
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 
-div >>> .white-bottom {
+.white-bottom {
   border-bottom: 1px solid #fff;
 }
 </style>

@@ -244,15 +244,15 @@ const onAddNewPrice = function () {
 </script>
 
 <style scoped>
-div >>> .v-text-field input.v-field__input {
+.v-text-field input.v-field__input {
   min-height: 40px;
   padding: 5px 10px;
 }
-div >>> .v-label {
+.v-label {
   opacity: 1;
 }
 
-div >>> .v-checkbox .v-selection-control {
+.v-checkbox .v-selection-control {
   min-height: 40px;
 }
 </style>

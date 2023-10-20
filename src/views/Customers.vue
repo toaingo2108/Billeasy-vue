@@ -418,11 +418,11 @@ const onSelectCustomer = function (item: any, index: number) {
 };
 </script>
 <style scoped>
-div >>> .v-text-field input.v-field__input {
+.v-text-field input.v-field__input {
   min-height: 40px;
   padding: 5px;
 }
-div >>> .img-button {
+.img-button {
   width: 40px;
   height: 40px;
   min-height: 40px;

@@ -329,19 +329,19 @@ const onAddNewPrice = function () {
 </script>
 
 <style scoped>
-div >>> .v-text-field input.v-field__input {
+.v-text-field input.v-field__input {
   min-height: 40px;
   padding: 5px 10px;
 }
-div >>> .v-label {
+.v-label {
   opacity: 1;
 }
 
-div >>> .file-upload-button .v-btn__content {
+.file-upload-button .v-btn__content {
   width: 100%;
   justify-content: space-between;
 }
-div >>> .img-button {
+.img-button {
   width: 40px;
   height: 40px;
   min-height: 40px;

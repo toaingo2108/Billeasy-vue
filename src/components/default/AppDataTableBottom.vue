@@ -103,7 +103,7 @@ const props = defineProps({
 });
 </script>
 <style scoped>
-div >>> .v-field__input {
+.v-field__input {
   padding-top: 5px;
   padding-bottom: 5px;
   height: 40px;
@@ -111,7 +111,7 @@ div >>> .v-field__input {
   min-height: 40px;
 }
 
-div >>> .v-pagination__item--is-active button {
+.v-pagination__item--is-active button {
   background-color: #0d0d1e !important;
 }
 </style>
