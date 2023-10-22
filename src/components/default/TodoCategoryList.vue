@@ -1,10 +1,24 @@
 <template>
-  <v-expansion-panels variant="accordion">
-    <v-expansion-panel v-for="i in 3" :key="i" elevation="0">
+  <v-expansion-panels variant="accordion" :class="`${props.type}-panel`">
+    <v-expansion-panel
+      v-for="(item, index) in todoItems"
+      :key="index"
+      elevation="0"
+      :style="`--panel-before-bg-color: ${item.color}`"
+    >
       <v-expansion-panel-title v-slot="{ expanded }" hide-actions>
         <div
           class="font-14 app-medium-font dark-font me-15 d-flex flex-row align-center"
         >
+          <div
+            style="
+              width: 5px;
+              height: 5px;
+              border-radius: 2.5px;
+              margin-right: 8px;
+            "
+            :style="`background-color: ${item.color}`"
+          />
           Category Name
           <div class="ms-3">
             <v-img
@@ -47,6 +61,29 @@
               <div class="font-12 shade-font app-regular-font">
                 {{ item.date }}
               </div>
+            </div>
+            <div
+              v-if="props.type != 'simple'"
+              style="width: 416px"
+              class="d-flex flex-row align-center"
+            >
+              <span class="font-14 app-regular-font shade-font">
+                Invoice:
+              </span>
+              <span class="font-14 dark-font app-semibold-font">1232332</span>
+              <div
+                style="
+                  width: 5px;
+                  height: 5px;
+                  background-color: #d1d1e2;
+                  border-radius: 2.5px;
+                  margin: 8px;
+                "
+              />
+              <span class="font-14 app-regular-font shade-font">
+                Subscription:
+              </span>
+              <span class="font-14 dark-font app-semibold-font">Premium</span>
             </div>
             <div style="width: 220px">
               <v-chip
@@ -98,6 +135,10 @@ import rightIcon from "@/assets/svg/datatable/right.svg";
 import bottomIcon from "@/assets/svg/datatable/bottom.svg";
 import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
 
+const props = defineProps({
+  type: { type: String, default: "simple" },
+});
+
 const addNewDialog = ref(false);
 const onAddNewCategory = function () {
   addNewDialog.value = true;
@@ -109,19 +150,36 @@ const todoItems = [
     text: "Call Jimmy regarding project",
     status: "Done",
     date: "2023/05/01",
+    color: "#8348FF",
   },
   {
     image: todoImage,
     text: "Call Jimmy regarding project",
     status: "New",
     date: "2023/05/01",
+    color: "#8CCD22",
   },
   {
     image: todoImage,
     text: "Call Jimmy regarding project",
     status: "Started",
     date: "2023/05/01",
+    color: "#F87137",
   },
 ];
 </script>
-<style scoped></style>
+<style scoped>
+.detailed-panel :deep(.v-expansion-panel-text__wrapper::before) {
+  content: ""; /* This is essential for the pseudo-element to be displayed */
+  display: block; /* Ensure it behaves as a block element */
+  position: absolute;
+  left: 0;
+  top: 0; /* Adjust as needed */
+  width: 2px;
+  height: 100%;
+  background-color: var(--panel-before-bg-color, #8348ff);
+}
+.v-expansion-panels :deep(.v-expansion-panel-text) {
+  position: relative;
+}
+</style>

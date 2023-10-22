@@ -16,20 +16,20 @@ const routes = [
         path: "products",
         name: "products",
         component: () =>
-          import(/* webpackChunkName: "home" */ "@/views/Products.vue"),
+          import(/* webpackChunkName: "products" */ "@/views/Products.vue"),
       },
       {
         path: "customers",
         name: "customers",
         component: () =>
-          import(/* webpackChunkName: "home" */ "@/views/Customers.vue"),
+          import(/* webpackChunkName: "customers" */ "@/views/Customers.vue"),
       },
       {
         path: "new-customer",
         name: "new-customer",
         component: () =>
           import(
-            /* webpackChunkName: "home" */ "@/components/customers/NewCustomer.vue"
+            /* webpackChunkName: "new-customer" */ "@/components/customers/NewCustomer.vue"
           ),
       },
       {
@@ -37,21 +37,21 @@ const routes = [
         name: "customer-details",
         component: () =>
           import(
-            /* webpackChunkName: "home" */ "@/components/customers/CustomerDetails.vue"
+            /* webpackChunkName: "customer-details" */ "@/components/customers/CustomerDetails.vue"
           ),
       },
       {
         path: "invoices",
         name: "invoices",
         component: () =>
-          import(/* webpackChunkName: "home" */ "@/views/Invoices.vue"),
+          import(/* webpackChunkName: "invoices" */ "@/views/Invoices.vue"),
       },
       {
         path: "new-invoice",
         name: "new-invoice",
         component: () =>
           import(
-            /* webpackChunkName: "home" */ "@/components/invoices/NewInvoice.vue"
+            /* webpackChunkName: "new-invoice" */ "@/components/invoices/NewInvoice.vue"
           ),
       },
       {
@@ -59,21 +59,23 @@ const routes = [
         name: "invoice-details",
         component: () =>
           import(
-            /* webpackChunkName: "home" */ "@/components/invoices/InvoiceDetails.vue"
+            /* webpackChunkName: "invoice-details" */ "@/components/invoices/InvoiceDetails.vue"
           ),
       },
       {
         path: "subscriptions",
         name: "subscriptions",
         component: () =>
-          import(/* webpackChunkName: "home" */ "@/views/Subscriptions.vue"),
+          import(
+            /* webpackChunkName: "subscriptions" */ "@/views/Subscriptions.vue"
+          ),
       },
       {
         path: "new-subscription",
         name: "new-subscription",
         component: () =>
           import(
-            /* webpackChunkName: "home" */ "@/components/subscriptions/NewSubscription.vue"
+            /* webpackChunkName: "new-subscription" */ "@/components/subscriptions/NewSubscription.vue"
           ),
       },
       {
@@ -81,8 +83,14 @@ const routes = [
         name: "subscription-details",
         component: () =>
           import(
-            /* webpackChunkName: "home" */ "@/components/subscriptions/SubscriptionDetails.vue"
+            /* webpackChunkName: "subscription-details" */ "@/components/subscriptions/SubscriptionDetails.vue"
           ),
+      },
+      {
+        path: "todos",
+        name: "todos",
+        component: () =>
+          import(/* webpackChunkName: "todos" */ "@/views/Todos.vue"),
       },
       {
         path: "404",
