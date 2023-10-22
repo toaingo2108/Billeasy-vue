@@ -1,6 +1,12 @@
 <template>
   <div
-    style="height: 96px; bottom: 0; width: calc(100% - 300px); left: 300px"
+    style="
+      height: 96px;
+      bottom: 0;
+      width: calc(100% - 300px);
+      left: 300px;
+      z-index: 1;
+    "
     class="bg-gray position-fixed d-flex flex-row align-center"
   >
     <div class="ms-10">

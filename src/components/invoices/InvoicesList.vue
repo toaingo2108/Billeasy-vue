@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 h-100 pa-8 d-flex flex-column">
+  <div class="w-100 h-100 py-8 d-flex flex-column">
     <div class="d-flex justify-between">
       <div class="d-flex">
         <div style="width: 288px">

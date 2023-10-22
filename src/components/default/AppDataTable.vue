@@ -83,14 +83,14 @@
               </v-btn>
             </div>
             <div
-              v-else-if="header.key == 'status'"
+              v-else-if="header.key == 'status' || header.style == 'status'"
               class="d-flex flex-row align-center"
             >
               <v-img
                 src="@/assets/svg/customers/status_done.svg"
                 width="24"
                 height="24"
-                v-if="item.status"
+                v-if="item[`${header.key}`]"
               />
               <v-img
                 src="@/assets/svg/customers/status_paused.svg"

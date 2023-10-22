@@ -7,9 +7,10 @@
           flat
           color="#20C39D"
           variant="text"
-          class="ms-3"
-          >Go to Imported Invoice</v-btn
+          class="ms-3 text-none font-14 teal-font app-medium-font"
         >
+          Go to Imported Invoice
+        </v-btn>
       </div>
       <div
         class="app-medium-font font-14 teal-font d-flex flex-row align-center"

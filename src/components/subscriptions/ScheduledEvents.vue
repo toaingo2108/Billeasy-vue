@@ -1,16 +1,5 @@
 <template>
-  <div class="w-100 h-100 pa-8 d-flex flex-column">
-    <div class="d-flex flex-row mb-5 align-center justify-between w-100">
-      <div class="app-semibold-font font-28 dark-font">Subscriptions</div>
-      <div
-        class="app-medium-font font-14 teal-font d-flex flex-row align-center"
-      >
-        <v-btn variant="plain" class="text-none">
-          <v-icon color="#20C39D" class="me-2">mdi-vector-square</v-icon>
-          Customize
-        </v-btn>
-      </div>
-    </div>
+  <div class="w-100 h-100 py-8 d-flex flex-column">
     <div>
       <v-tabs v-model="tab" color="#20C39D">
         <v-tab
@@ -19,9 +8,6 @@
           :class="tab == index ? 'teal-font' : 'blue-600'"
           v-for="(menu, index) in menus"
         >
-          <div class="me-2">
-            <v-img width="18" height="18" :src="menu.icon" />
-          </div>
           {{ menu.title }}
         </v-tab>
       </v-tabs>
@@ -31,11 +17,11 @@
           :key="index"
           :value="index"
         >
-          <div v-if="menu.title == 'Subscription List'">
-            <subscriptions-list />
+          <div v-if="menu.title == 'Subscriptions'">
+            <scheduled-events-subscriptions />
           </div>
-          <div v-else-if="menu.title == 'Scheduled Events'">
-            <scheduled-events />
+          <div v-else-if="menu.title == 'Subscription Rows'">
+            <scheduled-events-subscription-rows />
           </div>
         </v-window-item>
       </v-window>
@@ -66,10 +52,8 @@ import NewProductDialog from "@/components/products/NewProductDialog.vue";
 import ProductExportDialog from "@/components/products/ProductExportDialog.vue";
 import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
-import SubscriptionsList from "@/components/subscriptions/SubscriptionsList.vue";
-import ScheduledEvents from "@/components/subscriptions/ScheduledEvents.vue";
-import subscriptionIcon from "@/assets/svg/subscriptions/subscription.svg";
-import timeReportIcon from "@/assets/svg/customers/time_report.svg";
+import ScheduledEventsSubscriptions from "@/components/subscriptions/ScheduledEventsSubscriptions.vue";
+import ScheduledEventsSubscriptionRows from "./ScheduledEventsSubscriptionRows.vue";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);
@@ -79,12 +63,10 @@ const tab = ref(0);
 
 const menus = [
   {
-    title: "Subscription List",
-    icon: subscriptionIcon,
+    title: "Subscriptions",
   },
   {
-    title: "Scheduled Events",
-    icon: timeReportIcon,
+    title: "Subscription Rows",
   },
 ];
 
