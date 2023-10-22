@@ -4,10 +4,15 @@
     prepend-inner-icon="mdi-magnify"
     variant="outlined"
     rounded="lg"
-    style="width: 288px; background-color: white; border-radius: 8px"
+    :style="`width: ${props.width}; background-color: white; border-radius: 8px`"
     hide-details
   />
 </template>
+<script lang="ts" setup>
+const props = defineProps({
+  width: { type: String, default: "288px" },
+});
+</script>
 <style scoped>
 .v-text-field :deep(input.v-field__input) {
   min-height: 40px;

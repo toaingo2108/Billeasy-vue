@@ -45,7 +45,7 @@
             height="40"
             class="button-40"
             rounded="lg"
-            @click="onCustomerCategories"
+            @click="onSubscriptionCategories"
           >
             <v-img
               width="40"
@@ -83,9 +83,10 @@
       </app-data-table>
       <app-data-table-bottom :length="15" />
     </div>
-    <scheduled-send-out-dialog
-      :dialog="scheduleSendDialog"
-      @update:dialog="(val) => (scheduleSendDialog = val)"
+    <subscription-categories-dialog
+      :dialog="subCategoriesDialog"
+      @update:dialog="(val) => (subCategoriesDialog = val)"
+      v-if="subCategoriesDialog"
     />
     <send-invoice-dialog
       :dialog="sendInvoiceDialog"
@@ -104,10 +105,10 @@ import ItemMenu from "./SubscriptionsItemMenu.vue";
 import { useRouter } from "vue-router";
 import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
-import ScheduledSendOutDialog from "@/components/invoices/ScheduleSendOutDialog.vue";
 import SendInvoiceDialog from "@/components/invoices/SendInvoiceDialog.vue";
 import RegisterPaymentDialog from "@/components/invoices/RegisterPaymentDialog.vue";
 import SearchField from "../default/SearchField.vue";
+import SubscriptionCategoriesDialog from "@/components/subscriptions/SubscriptionCategoriesDialog.vue";
 
 const headers = [
   { title: "Sub nr.", key: "id", style: "bold" },
@@ -235,16 +236,16 @@ const items = [
   },
 ];
 
-const scheduleSendDialog = ref(false);
 const sendInvoiceDialog = ref(false);
 const registerPaymentDialog = ref(false);
+const subCategoriesDialog = ref(false);
 const router = useRouter();
 const goToNewSubscription = function () {
   router.push({ name: "new-subscription" });
 };
 
-const onScheduleSendOut = function () {
-  scheduleSendDialog.value = true;
+const onSubscriptionCategories = function () {
+  subCategoriesDialog.value = true;
 };
 const onRegisterPayment = function () {
   registerPaymentDialog.value = true;
