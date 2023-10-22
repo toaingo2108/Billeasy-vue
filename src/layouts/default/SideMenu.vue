@@ -45,6 +45,8 @@ import invoicesIcon from "@/assets/svg/sideMenu/invoices.svg";
 import subscriptionsIcon from "@/assets/svg/sideMenu/subscriptions.svg";
 import todosIcon from "@/assets/svg/sideMenu/todos.svg";
 import reportsIcon from "@/assets/svg/sideMenu/reports.svg";
+import settingsIcon from "@/assets/svg/sideMenu/settings.svg";
+import eventLogIcon from "@/assets/svg/sideMenu/event_log.svg";
 import usersIcon from "@/assets/svg/sideMenu/users.svg";
 
 const menuItems = [
@@ -55,6 +57,8 @@ const menuItems = [
   [subscriptionsIcon, "Subscriptions", "subscriptions"],
   [todosIcon, "To-do's", "todos"],
   [reportsIcon, "Reports", "reports"],
+  [settingsIcon, "Settings", "settings"],
+  [eventLogIcon, "Event log", "event_log"],
   [usersIcon, "Users", "users"],
 ];
 const selected = ref(-1);

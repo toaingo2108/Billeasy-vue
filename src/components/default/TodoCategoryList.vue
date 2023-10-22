@@ -1,10 +1,11 @@
 <template>
-  <v-expansion-panels variant="accordion" :class="`${props.type}-panel`">
+  <v-expansion-panels variant="accordion">
     <v-expansion-panel
       v-for="(item, index) in todoItems"
       :key="index"
       elevation="0"
       :style="`--panel-before-bg-color: ${item.color}`"
+      :class="`${props.type}-panel bg-${props.theme}-color`"
     >
       <v-expansion-panel-title v-slot="{ expanded }" hide-actions>
         <div
@@ -49,6 +50,7 @@
           class="rounded-xl mt-2"
           elevation="0"
           color="#F7F7FA"
+          :class="props.type == 'detailed' ? 'ms-8' : ''"
         >
           <v-card-text class="d-flex flex-row">
             <v-avatar size="24" class="ms-3 me-3">
@@ -137,6 +139,7 @@ import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
 
 const props = defineProps({
   type: { type: String, default: "simple" },
+  theme: { type: String, default: "light" },
 });
 
 const addNewDialog = ref(false);
@@ -169,6 +172,13 @@ const todoItems = [
 ];
 </script>
 <style scoped>
+.bg-light-color {
+  background-color: white;
+}
+.bg-dark-color {
+  background-color: #0000;
+}
+
 .detailed-panel :deep(.v-expansion-panel-text__wrapper::before) {
   content: ""; /* This is essential for the pseudo-element to be displayed */
   display: block; /* Ensure it behaves as a block element */
@@ -177,9 +187,14 @@ const todoItems = [
   top: 0; /* Adjust as needed */
   width: 2px;
   height: 100%;
+  margin-left: 38px;
   background-color: var(--panel-before-bg-color, #8348ff);
 }
 .v-expansion-panels :deep(.v-expansion-panel-text) {
   position: relative;
+}
+
+.v-expansion-panels :deep(.v-expansion-panel-title__overlay) {
+  opacity: 0;
 }
 </style>

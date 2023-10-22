@@ -70,7 +70,7 @@
       </div>
     </div>
     <div class="mt-10">
-      <todo-category-list type="detailed" />
+      <todo-category-list type="detailed" theme="dark" />
     </div>
     <customer-export-dialog
       :dialog="exportDialog"
