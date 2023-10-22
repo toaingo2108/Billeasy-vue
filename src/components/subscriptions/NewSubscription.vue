@@ -186,32 +186,43 @@
         <div class="h-100 pt-4">
           <v-card class="rounded-xl pa-6" height="100%">
             <v-row>
-              <v-col cols="12" md="4">
+              <v-col cols="12" md="6">
                 <span class="font-13 app-medium-font dark-font"
-                  >Invoice Date</span
+                  >Start Date</span
                 >
                 <v-text-field
-                  placeholder="Invoice Date"
+                  placeholder="Start Date"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                 />
               </v-col>
-              <v-col cols="12" md="4">
-                <span class="font-13 app-medium-font dark-font"
-                  >Payment Terms</span
-                >
+              <v-col cols="12" md="6" style="opacity: 50%">
+                <span class="font-13 app-medium-font dark-font">End Date</span>
                 <v-text-field
-                  placeholder="Payment Terms"
+                  placeholder="End Date"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                 />
               </v-col>
-              <v-col cols="12" md="4">
-                <span class="font-13 app-medium-font dark-font">Due Date</span>
+              <v-col cols="12" md="6">
+                <span class="font-13 app-medium-font dark-font"
+                  >Billing Cycles</span
+                >
                 <v-text-field
-                  placeholder="Due Date"
+                  placeholder="Billing Cycles"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                />
+              </v-col>
+              <v-col cols="12" md="6">
+                <span class="font-13 app-medium-font dark-font"
+                  >Period Interval</span
+                >
+                <v-text-field
+                  placeholder="Period Interval"
                   variant="outlined"
                   rounded="lg"
                   hide-details
@@ -228,7 +239,7 @@
                   hide-details
                 />
               </v-col>
-              <v-col cols="12" md="4">
+              <v-col cols="12" md="4" style="opacity: 50%">
                 <span class="font-13 app-medium-font dark-font"
                   >Period End</span
                 >
@@ -240,7 +251,46 @@
                 />
               </v-col>
               <v-col cols="12" md="4">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+                <span class="font-13 app-medium-font dark-font"
+                  >Payment Terms</span
+                >
+                <v-select
+                  placeholder="Payment Terms"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                  :items="['30', '40', '50']"
+                />
+              </v-col>
+              <v-col cols="12" md="4">
+                <span class="font-13 app-medium-font dark-font">Currency</span>
+                <v-select
+                  placeholder="Currency"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                  :items="['EUR', 'USD']"
+                />
+              </v-col>
+              <v-col cols="12" md="4">
+                <span class="font-13 app-medium-font dark-font"
+                  >Price List</span
+                >
+                <v-select
+                  placeholder="Price List"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                  :items="['A', 'B', 'C']"
+                />
+              </v-col>
+              <v-col cols="12" md="4">
+                <v-checkbox
+                  color="#20c39d"
+                  value="#20c39d"
+                  hide-details
+                  class="mt-4"
+                >
                   <template v-slot:label>
                     <span class="font-14 app-regular-font dark-font">
                       Prices Incl. VAT
@@ -248,58 +298,103 @@
                   </template>
                 </v-checkbox>
               </v-col>
-              <v-col cols="12" md="4">
-                <span class="font-13 app-medium-font dark-font">Currency</span>
-                <v-text-field
-                  placeholder="Currency"
-                  variant="outlined"
-                  rounded="lg"
-                  hide-details
-                />
-              </v-col>
-              <v-col cols="12" md="4">
-                <span class="font-13 app-medium-font dark-font"
-                  >Price List</span
-                >
-                <v-text-field
-                  placeholder="Price List"
-                  variant="outlined"
-                  rounded="lg"
-                  hide-details
-                />
-              </v-col>
             </v-row>
           </v-card>
         </div>
       </v-col>
       <v-col cols="12" md="6" class="h-100">
-        <div class="h-50 pt-4">
-          <v-card class="rounded-xl pa-2" height="100%">
-            <v-card-text>
-              <span class="font-13 app-medium-font dark-font"
-                >Invoice Text</span
-              >
-              <v-textarea
-                placeholder="Enter text..."
-                variant="outlined"
-                rounded="lg"
-                hide-details
-                rows="2"
-              />
-            </v-card-text>
-          </v-card>
+        <div class="pt-4">
+          <v-row>
+            <v-col cols="12" md="6">
+              <v-card class="rounded-xl pa-2" height="100%">
+                <v-card-text class="d-flex flex-column">
+                  <span class="font-13 app-medium-font dark-font"
+                    >Invoice Text</span
+                  >
+                  <v-textarea
+                    placeholder="Enter text..."
+                    variant="outlined"
+                    rounded="lg"
+                    hide-details
+                    rows="6"
+                    class="flex-grow mt-2"
+                  />
+                </v-card-text>
+              </v-card>
+            </v-col>
+            <v-col cols="12" md="6">
+              <v-card class="rounded-xl pa-6" height="100%">
+                <v-card-title class="font-20 app-semibold-font dark-font">
+                  Auto-tasks
+                </v-card-title>
+                <v-card-text class="mt-2 d-flex flex-row justify-between">
+                  <div class="d-flex flex-row">
+                    <v-img
+                      width="18"
+                      height="18"
+                      src="@/assets/svg/subscriptions/check.svg"
+                    />
+                    <span class="font-14 dark-font app-medium-font ms-2"
+                      >Create invoices</span
+                    >
+                  </div>
+                  <v-icon color="#8B8BA9">mdi-help-circle-outline</v-icon>
+                </v-card-text>
+                <v-card-text class="pt-0 d-flex flex-row justify-between">
+                  <div class="d-flex flex-row">
+                    <v-img
+                      width="18"
+                      height="18"
+                      src="@/assets/svg/subscriptions/check.svg"
+                    />
+                    <span class="font-14 dark-font app-medium-font ms-2"
+                      >Send invoices</span
+                    >
+                  </div>
+                  <v-icon color="#8B8BA9">mdi-help-circle-outline</v-icon>
+                </v-card-text>
+                <v-card-text class="pt-0 d-flex flex-row justify-between">
+                  <div class="d-flex flex-row">
+                    <v-img
+                      width="18"
+                      height="18"
+                      src="@/assets/svg/subscriptions/check.svg"
+                    />
+                    <span class="font-14 dark-font app-medium-font ms-2"
+                      >Update prices</span
+                    >
+                  </div>
+                  <v-icon color="#8B8BA9">mdi-help-circle-outline</v-icon>
+                </v-card-text>
+                <v-card-text class="pt-0 d-flex flex-row justify-between pb-0">
+                  <div class="d-flex flex-row">
+                    <v-img
+                      width="18"
+                      height="18"
+                      src="@/assets/svg/subscriptions/check.svg"
+                    />
+                    <span class="font-14 dark-font app-medium-font ms-2"
+                      >Update according to template</span
+                    >
+                  </div>
+                  <v-icon color="#8B8BA9">mdi-help-circle-outline</v-icon>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
         </div>
-        <div class="h-50 pt-4">
+        <div class="pt-4">
           <v-card class="rounded-xl pa-2 mt-0" height="100%">
             <v-card-text>
               <span class="font-13 app-medium-font dark-font"
                 >Payment Methods</span
               >
-              <v-text-field
+              <v-select
                 placeholder="Enter method..."
                 variant="outlined"
                 rounded="lg"
                 hide-details
+                :items="['Swish', 'Bankgiro']"
               />
               <div>
                 <v-chip
@@ -426,6 +521,7 @@
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  value="New Customers"
                 />
               </td>
             </tr>
