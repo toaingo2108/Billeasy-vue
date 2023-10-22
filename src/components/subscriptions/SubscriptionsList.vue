@@ -72,7 +72,7 @@
         :items="items"
         items-per-page="15"
         style="margin-bottom: 80px"
-        :on-row-clicked="onSelectedInvoice"
+        :on-row-clicked="onSelectedSubscription"
       >
         <template v-slot:action>
           <item-menu
@@ -253,8 +253,8 @@ const onRegisterPayment = function () {
 const onSendInvoice = function () {
   sendInvoiceDialog.value = true;
 };
-const onSelectedInvoice = function (item: any, index: number) {
-  router.push({ name: "invoice-details", query: { id: item.id } });
+const onSelectedSubscription = function (item: any, index: number) {
+  router.push({ name: "subscription-details", query: { id: item.id } });
 };
 </script>
 <style scoped>

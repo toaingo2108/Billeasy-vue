@@ -77,6 +77,14 @@ const routes = [
           ),
       },
       {
+        path: "subscription-details",
+        name: "subscription-details",
+        component: () =>
+          import(
+            /* webpackChunkName: "home" */ "@/components/subscriptions/SubscriptionDetails.vue"
+          ),
+      },
+      {
         path: "404",
         name: "404",
         component: () => import("@/views/NotFound.vue"),
