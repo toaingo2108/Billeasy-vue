@@ -75,10 +75,7 @@
         :on-row-clicked="onSelectedSubscription"
       >
         <template v-slot:action>
-          <item-menu
-            :on-register-payment="onRegisterPayment"
-            :on-send-invoice="onSendInvoice"
-          />
+          <item-menu />
         </template>
       </app-data-table>
       <app-data-table-bottom :length="15" />
@@ -88,13 +85,9 @@
       @update:dialog="(val) => (subCategoriesDialog = val)"
       v-if="subCategoriesDialog"
     />
-    <send-invoice-dialog
-      :dialog="sendInvoiceDialog"
-      @update:dialog="(val) => (sendInvoiceDialog = val)"
-    />
-    <register-payment-dialog
-      :dialog="registerPaymentDialog"
-      @update:dialog="(val) => (registerPaymentDialog = val)"
+    <subscription-import-dialog
+      :dialog="importDialog"
+      @update:dialog="(val) => (importDialog = val)"
     />
   </div>
 </template>
@@ -105,8 +98,7 @@ import ItemMenu from "./SubscriptionsItemMenu.vue";
 import { useRouter } from "vue-router";
 import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
-import SendInvoiceDialog from "@/components/invoices/SendInvoiceDialog.vue";
-import RegisterPaymentDialog from "@/components/invoices/RegisterPaymentDialog.vue";
+import SubscriptionImportDialog from "@/components/subscriptions/SubscriptionImportDialog.vue";
 import SearchField from "../default/SearchField.vue";
 import SubscriptionCategoriesDialog from "@/components/subscriptions/SubscriptionCategoriesDialog.vue";
 
@@ -236,7 +228,7 @@ const items = [
   },
 ];
 
-const sendInvoiceDialog = ref(false);
+const importDialog = ref(false);
 const registerPaymentDialog = ref(false);
 const subCategoriesDialog = ref(false);
 const router = useRouter();
@@ -247,12 +239,11 @@ const goToNewSubscription = function () {
 const onSubscriptionCategories = function () {
   subCategoriesDialog.value = true;
 };
-const onRegisterPayment = function () {
-  registerPaymentDialog.value = true;
+const onImportData = function () {
+  importDialog.value = true;
 };
-const onSendInvoice = function () {
-  sendInvoiceDialog.value = true;
-};
+
+onImportData;
 const onSelectedSubscription = function (item: any, index: number) {
   router.push({ name: "subscription-details", query: { id: item.id } });
 };
