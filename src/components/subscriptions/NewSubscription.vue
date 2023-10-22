@@ -434,15 +434,16 @@
                 <v-icon>mdi-unfold-more-horizontal</v-icon>
               </td>
               <td class="ps-0 white-bottom">
-                <v-text-field
+                <v-select
                   placeholder="Enter Text"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                   v-model="item.product"
+                  :items="['Enter Text', 'Enter Text 2']"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -451,7 +452,7 @@
                   v-model="item.description"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -460,7 +461,17 @@
                   v-model="item.quantity"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
+                <v-select
+                  placeholder="Unit"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                  v-model="item.unit"
+                  :items="['Pcs', 'Pcs2']"
+                />
+              </td>
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -469,16 +480,17 @@
                   v-model="item.price"
                 />
               </td>
-              <td class="white-bottom">
-                <v-text-field
+              <td class="ps-0 white-bottom">
+                <v-select
                   placeholder="Enter Text"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                   v-model="item.rate"
+                  :items="['25%', '50%', '100%']"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -487,16 +499,17 @@
                   v-model="item.disc"
                 />
               </td>
-              <td class="white-bottom">
-                <v-text-field
+              <td class="ps-0 white-bottom">
+                <v-select
                   placeholder="Enter Text"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                   v-model="item.disc_type"
+                  :items="['%', '%%']"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -505,9 +518,26 @@
                   v-model="item.total"
                 />
               </td>
-              <td class="white-bottom">
-                <v-btn icon size="x-small" flat>
-                  <v-icon>mdi-dots-horizontal</v-icon>
+              <td class="ps-0 white-bottom">
+                <v-btn
+                  size="x-small"
+                  flat
+                  class="me-5"
+                  style="
+                    width: 24px;
+                    height: 24px;
+                    min-height: 24px;
+                    min-width: 24px;
+                    max-height: 24px;
+                    min-height: 24px;
+                    padding: 0;
+                  "
+                >
+                  <v-img
+                    src="@/assets/svg/datatable/dot_menu.svg"
+                    width="24"
+                    height="24"
+                  />
                 </v-btn>
               </td>
             </tr>
@@ -715,7 +745,6 @@ import { useDisplay } from "vuetify";
 const { mdAndUp } = useDisplay();
 
 const tab = ref(0);
-const customerType = ref("company");
 const addNewDialog = ref(false);
 const addNewCategoryDialog = ref(false);
 const paymentMethods = ["Swish", "Bankgiro"];
@@ -787,18 +816,10 @@ const productLists = [
 ];
 </script>
 <style scoped>
-.v-text-field input.v-field__input {
-  min-height: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.v-label {
+div :deep(.v-label) {
   opacity: 1;
 }
-.v-chip__close {
+div :deep(.v-chip__close) {
   color: #8b8ba9;
 }
 

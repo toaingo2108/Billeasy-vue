@@ -395,8 +395,25 @@
                 />
               </td>
               <td class="white-bottom">
-                <v-btn icon size="x-small" flat>
-                  <v-icon>mdi-dots-horizontal</v-icon>
+                <v-btn
+                  size="x-small"
+                  flat
+                  class="me-5"
+                  style="
+                    width: 24px;
+                    height: 24px;
+                    min-height: 24px;
+                    min-width: 24px;
+                    max-height: 24px;
+                    min-height: 24px;
+                    padding: 0;
+                  "
+                >
+                  <v-img
+                    src="@/assets/svg/datatable/dot_menu.svg"
+                    width="24"
+                    height="24"
+                  />
                 </v-btn>
               </td>
             </tr>
@@ -675,18 +692,10 @@ const productLists = [
 ];
 </script>
 <style scoped>
-.v-text-field input.v-field__input {
-  min-height: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.v-label {
+div :deep(.v-label) {
   opacity: 1;
 }
-.v-chip__close {
+div :deep(.v-chip__close) {
   color: #8b8ba9;
 }
 

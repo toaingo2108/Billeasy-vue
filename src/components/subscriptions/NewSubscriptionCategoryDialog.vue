@@ -2,7 +2,7 @@
   <v-dialog v-model="props.dialog" width="400" persistent>
     <v-card class="rounded-xl">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
-        New Customer Category
+        New Subscription Category
       </v-card-title>
       <v-card-text class="d-flex flex-row mx-3 pb-1">
         <div class="w-50 me-2">
@@ -25,18 +25,6 @@
           />
         </div>
       </v-card-text>
-      <v-card-text class="d-flex flex-row mx-3 pb-1">
-        <div style="width: 336px">
-          <span class="font-13 app-medium-font dark-font">Description</span>
-          <v-textarea
-            placeholder="Add description..."
-            variant="outlined"
-            rounded="lg"
-            hide-details
-            rows="3"
-          />
-        </div>
-      </v-card-text>
       <v-card-text class="d-flex flex-column mx-3 pb-1">
         <span class="font-13 app-medium-font dark-font"
           >Subscription Template</span
@@ -49,15 +37,17 @@
           :items="['Subscription Template', 'Subscription Template2']"
         />
       </v-card-text>
-      <v-card-text class="d-flex flex-column mx-3 pb-1">
-        <span class="font-13 app-medium-font dark-font">Invoice Template</span>
-        <v-select
-          placeholder="Invoice Template"
-          variant="outlined"
-          rounded="lg"
-          hide-details
-          :items="['Invoice Template', 'Invoice Template2']"
-        />
+      <v-card-text class="d-flex flex-row mx-3 pb-1">
+        <div style="width: 336px">
+          <span class="font-13 app-medium-font dark-font">Description</span>
+          <v-textarea
+            placeholder="Add description..."
+            variant="outlined"
+            rounded="lg"
+            hide-details
+            rows="3"
+          />
+        </div>
       </v-card-text>
       <v-divider class="mt-8" />
       <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
@@ -130,7 +120,11 @@ const onAddNewPrice = function () {
 </script>
 
 <style scoped>
-.v-text-field input.v-field__input {
+div :deep(.v-text-field input.v-field__input) {
+  min-height: 40px;
+  padding: 5px 10px;
+}
+div :deep(.v-select .v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
 }

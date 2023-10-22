@@ -342,11 +342,11 @@ const onAddNewPrice = function () {
 </script>
 
 <style scoped>
-.v-text-field input.v-field__input {
+div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
 }
-.v-label {
+div :deep(.v-label) {
   opacity: 1;
 }
 

@@ -173,7 +173,7 @@ watchEffect(() => {
 </script>
 
 <style scoped>
-.v-text-field input.v-field__input {
+div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
 }
