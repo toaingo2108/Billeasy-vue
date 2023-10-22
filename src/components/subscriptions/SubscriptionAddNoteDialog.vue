@@ -2,7 +2,7 @@
   <v-dialog v-model="props.dialog" width="400" persistent>
     <v-card class="rounded-xl">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
-        New Invoice Note
+        New Subscriptions Note
       </v-card-title>
       <v-card-text class="d-flex flex-row mx-3 pb-1">
         <div style="width: 336px">
@@ -57,7 +57,7 @@
             padding-bottom: 10px;
           "
           class="text-none"
-          >Update</v-btn
+          >Save</v-btn
         >
       </v-card-actions>
     </v-card>
