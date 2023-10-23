@@ -228,7 +228,19 @@
                   >New Note</v-btn
                 >
               </div>
-              <div class="d-flex flex-row align-center mt-8 mb-10"></div>
+              <div class="d-flex flex-row align-center mt-8 mb-10 mx-4">
+                <app-data-table
+                  :headers="noteHeaders"
+                  :items="noteItems"
+                  items-per-page="15"
+                  style="margin-bottom: 80px"
+                  :checkable="false"
+                >
+                  <template v-slot:action>
+                    <todo-note-item-menu />
+                  </template>
+                </app-data-table>
+              </div>
             </div>
           </v-window-item>
         </v-window>
@@ -276,6 +288,8 @@ import todoUnselectedIcon from "@/assets/svg/customers/todos_unselected.svg";
 import todoSelectedIcon from "@/assets/svg/customers/todos.svg";
 import notesIcon from "@/assets/svg/customers/notes.svg";
 import notesUnselectedIcon from "@/assets/svg/customers/notes_unselected.svg";
+import AppDataTable from "../default/AppDataTable.vue";
+import TodoNoteItemMenu from "./TodoNoteItemMenu.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -300,6 +314,35 @@ const tabMenus = [
     title: "To-do Notes",
     selected_icon: notesIcon,
     unselected_icon: notesUnselectedIcon,
+  },
+];
+
+const noteHeaders = [
+  { title: "Header", key: "header", style: "bold", align: "left" },
+  { title: "Updated at", key: "updated_at", align: "left" },
+  { title: "", key: "action" },
+];
+
+const noteItems = [
+  {
+    header: "123",
+    updated_at: "2023-08-01, 12:32",
+  },
+  {
+    header: "123",
+    updated_at: "2023-08-01, 12:32",
+  },
+  {
+    header: "123",
+    updated_at: "2023-08-01, 12:32",
+  },
+  {
+    header: "123",
+    updated_at: "2023-08-01, 12:32",
+  },
+  {
+    header: "123",
+    updated_at: "2023-08-01, 12:32",
   },
 ];
 </script>
