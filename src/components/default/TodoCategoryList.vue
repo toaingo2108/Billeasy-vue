@@ -121,7 +121,7 @@
                   width="24"
                   height="24"
                 />
-                <customer-todo-details-menu />
+                <slot name="action"></slot>
               </v-btn>
             </div>
           </v-card-text>
@@ -135,7 +135,6 @@ import { ref } from "vue";
 import todoImage from "@/assets/sample/profile.png";
 import rightIcon from "@/assets/svg/datatable/right.svg";
 import bottomIcon from "@/assets/svg/datatable/bottom.svg";
-import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
 
 const props = defineProps({
   type: { type: String, default: "simple" },

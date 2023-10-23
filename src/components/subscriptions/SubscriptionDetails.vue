@@ -143,7 +143,11 @@
               </div>
             </div>
             <div class="mt-10">
-              <todo-category-list />
+              <todo-category-list>
+                <template v-slot:action>
+                  <customer-todo-details-menu />
+                </template>
+              </todo-category-list>
             </div>
           </div>
         </v-window-item>
@@ -153,43 +157,28 @@
       :dialog="addNewNoteDialog"
       @update:dialog="(val) => (addNewNoteDialog = val)"
     />
-    <add-custom-field-dialog
-      :dialog="addNewCustomFieldDialog"
-      @update:dialog="(val) => (addNewCustomFieldDialog = val)"
-    />
-    <add-report-dialog
-      :dialog="addNewReportDialog"
-      @update:dialog="(val) => (addNewReportDialog = val)"
-    />
   </div>
 </template>
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import invoiceIcon from "@/assets/svg/customers/invoice.svg";
 import subscriptionIcon from "@/assets/svg/subscriptions/subscription.svg";
 import subscriptionUnselectedIcon from "@/assets/svg/subscriptions/subscription_unselected.svg";
 import notesIcon from "@/assets/svg/customers/notes.svg";
 import notesUnselectedIcon from "@/assets/svg/customers/notes_unselected.svg";
 import todosIcon from "@/assets/svg/customers/todos.svg";
 import todosUnselectedIcon from "@/assets/svg/customers/todos_unselected.svg";
-import registerPaymentIcon from "@/assets/svg/invoices/register_payment.svg";
-import creditInvoiceIcon from "@/assets/svg/invoices/credit_invoice.svg";
-import duplicateIcon from "@/assets/svg/invoices/duplicate.svg";
-import previewPDFIcon from "@/assets/svg/invoices/preview_pdf.svg";
-import cancelInvoiceIcon from "@/assets/svg/invoices/cancel_invoice.svg";
 import SearchField from "../default/SearchField.vue";
 import AppDataTable from "../default/AppDataTable.vue";
 import AppDataTableBottomPagination from "../default/AppDataTableBottomPagination.vue";
 import TodoCategoryList from "../default/TodoCategoryList.vue";
 import SubscriptionAddNoteDialog from "./SubscriptionAddNoteDialog.vue";
 import SubscriptionNoteItemMenu from "./SubscriptionNoteItemMenu.vue";
+import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
 
 const tab = ref(0);
 
 const addNewNoteDialog = ref(false);
-const addNewCustomFieldDialog = ref(false);
-const addNewReportDialog = ref(false);
 
 const router = useRouter();
 const onBack = function () {

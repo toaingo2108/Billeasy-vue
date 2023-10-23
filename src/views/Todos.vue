@@ -70,7 +70,11 @@
       </div>
     </div>
     <div class="mt-10">
-      <todo-category-list type="detailed" theme="dark" />
+      <todo-category-list type="detailed" theme="dark">
+        <template v-slot:action>
+          <todo-details-update-menu />
+        </template>
+      </todo-category-list>
     </div>
     <customer-export-dialog
       :dialog="exportDialog"
@@ -94,6 +98,7 @@ import CustomerExportDialog from "@/components/customers/CustomerExportDialog.vu
 import CustomerImportDialog from "@/components/customers/CustomerImportDialog.vue";
 import CustomerCategoriesDialog from "@/components/customers/CustomerCategoriesDialog.vue";
 import TodoCategoryList from "@/components/default/TodoCategoryList.vue";
+import TodoDetailsUpdateMenu from "@/components/todos/TodoDetailsUpdateMenu.vue";
 
 const exportDialog = ref(false);
 const importDialog = ref(false);

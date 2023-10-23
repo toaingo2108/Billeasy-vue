@@ -202,7 +202,11 @@
               </div>
             </div>
             <div class="mt-10">
-              <todo-category-list />
+              <todo-category-list>
+                <template v-slot:action>
+                  <customer-todo-details-menu />
+                </template>
+              </todo-category-list>
             </div>
           </div>
         </v-window-item>
@@ -211,14 +215,6 @@
     <invoice-add-note-dialog
       :dialog="addNewNoteDialog"
       @update:dialog="(val) => (addNewNoteDialog = val)"
-    />
-    <add-custom-field-dialog
-      :dialog="addNewCustomFieldDialog"
-      @update:dialog="(val) => (addNewCustomFieldDialog = val)"
-    />
-    <add-report-dialog
-      :dialog="addNewReportDialog"
-      @update:dialog="(val) => (addNewReportDialog = val)"
     />
   </div>
 </template>
@@ -239,24 +235,15 @@ import InvoiceAddNoteDialog from "./InvoiceAddNoteDialog.vue";
 import InvoiceNoteItemMenu from "./InvoiceNoteItemMenu.vue";
 import AppDataTableBottomPagination from "../default/AppDataTableBottomPagination.vue";
 import TodoCategoryList from "../default/TodoCategoryList.vue";
+import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
 
 const tab = ref(0);
 
 const addNewNoteDialog = ref(false);
-const addNewCustomFieldDialog = ref(false);
-const addNewReportDialog = ref(false);
-const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 
 const router = useRouter();
 const onBack = function () {
   router.back();
-};
-
-const onAddNewCustomField = function () {
-  addNewCustomFieldDialog.value = true;
-};
-const onAddNewReport = function () {
-  addNewReportDialog.value = true;
 };
 
 const menus = [

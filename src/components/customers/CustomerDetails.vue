@@ -411,7 +411,11 @@
                   </div>
                 </div>
                 <div class="d-flex flex-row align-center mt-8 mb-10">
-                  <todo-category-list />
+                  <todo-category-list>
+                    <template v-slot:action>
+                      <todo-details-menu />
+                    </template>
+                  </todo-category-list>
                 </div>
               </div>
               <div v-else-if="menu.title == 'Time Report'">
