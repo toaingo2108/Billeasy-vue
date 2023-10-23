@@ -51,6 +51,7 @@
           elevation="0"
           color="#F7F7FA"
           :class="props.type == 'detailed' ? 'ms-8' : ''"
+          @click="props.onItemClicked"
         >
           <v-card-text class="d-flex flex-row">
             <v-avatar size="24" class="ms-3 me-3">
@@ -139,6 +140,7 @@ import bottomIcon from "@/assets/svg/datatable/bottom.svg";
 const props = defineProps({
   type: { type: String, default: "simple" },
   theme: { type: String, default: "light" },
+  onItemClicked: { type: String, default: () => {} },
 });
 
 const addNewDialog = ref(false);

@@ -93,6 +93,14 @@ const routes = [
           import(/* webpackChunkName: "todos" */ "@/views/Todos.vue"),
       },
       {
+        path: "todos-details",
+        name: "todos-details",
+        component: () =>
+          import(
+            /* webpackChunkName: "todos-details" */ "@/components/todos/TodosDetails.vue"
+          ),
+      },
+      {
         path: "404",
         name: "404",
         component: () => import("@/views/NotFound.vue"),

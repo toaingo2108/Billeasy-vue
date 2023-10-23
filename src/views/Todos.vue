@@ -70,7 +70,11 @@
       </div>
     </div>
     <div class="mt-10">
-      <todo-category-list type="detailed" theme="dark">
+      <todo-category-list
+        type="detailed"
+        theme="dark"
+        :on-item-clicked="onTodoDetails"
+      >
         <template v-slot:action>
           <todo-details-update-menu />
         </template>
@@ -110,7 +114,11 @@ import SearchField from "@/components/default/SearchField.vue";
 const router = useRouter();
 
 const openNewTodoDialog = function () {
-  router.push({ name: "new-customer" });
+  // router.push({ name: "new-customer" });
+};
+
+const onTodoDetails = () => {
+  router.push({ name: "todos-details" });
 };
 
 const onImportData = function () {

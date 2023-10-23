@@ -125,6 +125,15 @@ html {
 .bright-blue-font {
   color: #376aee;
 }
+.light-blue-font {
+  color: #8348ff;
+}
+.lime-green-font {
+  color: #7ab618;
+}
+.pumpkin-font {
+  color: #f87037;
+}
 .forest-font {
   color: #22b762;
 }
@@ -149,5 +158,13 @@ html {
   min-width: 40px !important;
   max-height: 40px !important;
   max-width: 40px !important;
+}
+.button-32 {
+  width: 32px !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  min-width: 32px !important;
+  max-height: 32px !important;
+  max-width: 32px !important;
 }
 </style>
