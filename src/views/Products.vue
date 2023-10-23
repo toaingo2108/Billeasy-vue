@@ -100,6 +100,9 @@
         items-per-page="15"
         style="margin-bottom: 80px"
       >
+        <template v-slot:action>
+          <item-menu />
+        </template>
       </app-data-table>
       <app-data-table-bottom :length="15" />
     </div>
@@ -132,6 +135,7 @@ import ProductCategoriesDialog from "@/components/products/ProductCategoriesDial
 import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
 import SearchField from "@/components/default/SearchField.vue";
+import ItemMenu from "@/components/products/ProductItemMenu.vue";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);

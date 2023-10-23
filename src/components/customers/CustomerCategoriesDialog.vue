@@ -107,7 +107,7 @@
                     width="24"
                     height="24"
                   />
-                  <slot name="action"></slot>
+                  <customer-category-item-menu />
                 </v-btn>
               </td>
             </tr>
@@ -136,6 +136,7 @@
 import { ref, watch, watchEffect } from "vue";
 import NewCustomerCategoryDialog from "./NewCustomerCategoryDialog.vue";
 import AppDataTableBottomPagination from "../default/AppDataTableBottomPagination.vue";
+import CustomerCategoryItemMenu from "./CustomerCategoryItemMenu.vue";
 
 const props = defineProps({
   dialog: Boolean,

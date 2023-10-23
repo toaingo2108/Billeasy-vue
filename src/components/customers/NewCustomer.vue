@@ -435,7 +435,7 @@
                 Price list
               </div>
               <div style="width: 336px">
-                <v-text-field
+                <v-select
                   placeholder="Price list"
                   variant="outlined"
                   rounded="lg"
@@ -463,7 +463,7 @@
                 Currency
               </div>
               <div style="width: 336px">
-                <v-text-field
+                <v-select
                   placeholder="Currency"
                   variant="outlined"
                   rounded="lg"
@@ -491,7 +491,7 @@
                 Reminder flow
               </div>
               <div style="width: 336px">
-                <v-text-field
+                <v-select
                   placeholder="Reminder flow"
                   variant="outlined"
                   rounded="lg"
@@ -519,11 +519,12 @@
                 Discount type
               </div>
               <div style="width: 336px">
-                <v-text-field
+                <v-select
                   placeholder="Discount type"
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['Discount type', 'Discount typ2']"
                 />
               </div>
             </div>
@@ -551,7 +552,7 @@
                 Send invoices with
               </div>
               <div style="width: 336px">
-                <v-text-field
+                <v-select
                   placeholder="Send invoices with"
                   variant="outlined"
                   rounded="lg"
@@ -609,7 +610,7 @@ const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 const addressType = ref("billing_address");
 const router = useRouter();
 const onBack = function () {
-  router.back();
+  router.push({ name: "customers" });
 };
 
 const onAddNewCategory = function () {
@@ -647,7 +648,13 @@ div :deep(.v-text-field input.v-field__input) {
   padding-left: 12px;
   padding-right: 12px;
 }
-
+div :deep(.v-select .v-field__input) {
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
 div :deep(.v-label) {
   opacity: 1;
 }

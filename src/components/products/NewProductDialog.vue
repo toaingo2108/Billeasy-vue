@@ -16,11 +16,12 @@
         </div>
         <div style="width: 224px" class="ms-12">
           <span class="font-13 app-medium-font dark-font">VAT rate</span>
-          <v-text-field
+          <v-select
             placeholder="VAT rate"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['25%', '50%', '100%']"
           />
         </div>
         <div class="mt-6 ms-2">
@@ -46,11 +47,12 @@
         </div>
         <div style="width: 224px" class="ms-12">
           <span class="font-13 app-medium-font dark-font">Unit</span>
-          <v-text-field
+          <v-select
             placeholder="Unit"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['st', 'st1', 'st2']"
           />
         </div>
         <div class="mt-6 ms-2">
@@ -76,11 +78,12 @@
         </div>
         <div style="width: 224px" class="ms-12">
           <span class="font-13 app-medium-font dark-font">Category</span>
-          <v-text-field
+          <v-select
             placeholder="Category"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['New categories', 'Old categories', 'Very old categories']"
           />
         </div>
         <div class="mt-6 ms-2">
@@ -131,7 +134,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in items" :key="item.name">
+            <tr v-for="(item, index) in items" :key="index">
               <td>
                 <v-text-field
                   placeholder="PRICE Incl. VAT"
@@ -160,13 +163,19 @@
                 />
               </td>
               <td>
-                <v-text-field
+                <v-select
                   placeholder="PRICELIST"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                   v-model="item.price"
+                  :items="['A', 'B', 'C', 'X']"
                 />
+              </td>
+              <td>
+                <v-btn flat icon size="small"
+                  ><v-icon color="#8B8BA9">mdi-close</v-icon></v-btn
+                >
               </td>
             </tr>
           </tbody>
@@ -271,5 +280,33 @@ const onAddNewCategory = function () {
 div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
+}
+div :deep(.v-select .v-field__input) {
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.v-card::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.v-card::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px light-grey;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* Handle */
+.v-card::-webkit-scrollbar-thumb {
+  background: #f0a00055;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+.v-dialog::-webkit-scrollbar-thumb:hover {
+  background: #f0a00055;
 }
 </style>

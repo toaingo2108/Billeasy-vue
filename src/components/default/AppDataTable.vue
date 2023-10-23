@@ -38,80 +38,87 @@
         style="height: 50px; padding-top: 3px; padding-bottom: 3px"
         @click="onRowClicked(item, index)"
       >
-        <td
-          v-for="(header, index) in headers"
-          :style="header.key == 'checked' ? 'width: 60px' : ''"
-        >
-          <div
-            class="bg-white w-100 d-flex flex-row align-center"
-            :class="header.align ? `justify-${header.align}` : 'justify-center'"
-            style="
-              margin-top: 3px;
-              margin-bottom: 3px;
-              height: calc(100% - 6px);
-            "
+        <v-hover v-slot="{ isHovering, props }">
+          <td
+            v-for="(header, index) in headers"
+            :style="header.key == 'checked' ? 'width: 60px' : ''"
+            v-bind="props"
           >
-            <v-checkbox
-              color="#20c39d"
-              hide-details
-              v-model="item.checked"
-              v-if="header.key == 'checked'"
-              class="ms-2"
-              @click.stop
-            />
-            <div v-else-if="header.key == 'action'">
-              <v-btn
-                size="x-small"
-                flat
-                class="me-5"
-                style="
-                  width: 24px;
-                  height: 24px;
-                  min-height: 24px;
-                  min-width: 24px;
-                  max-height: 24px;
-                  min-height: 24px;
-                  padding: 0;
-                "
+            <div
+              class="w-100 d-flex flex-row align-center"
+              :class="[
+                header.align ? `justify-${header.align}` : 'justify-center',
+                isHovering ? 'bg-hover' : 'bg-white',
+              ]"
+              style="
+                margin-top: 3px;
+                margin-bottom: 3px;
+                height: calc(100% - 6px);
+              "
+            >
+              <v-checkbox
+                color="#20c39d"
+                hide-details
+                v-model="item.checked"
+                v-if="header.key == 'checked'"
+                class="ms-2"
+                @click.stop
+              />
+              <div v-else-if="header.key == 'action'">
+                <v-btn
+                  size="x-small"
+                  flat
+                  class="me-5"
+                  style="
+                    width: 24px;
+                    height: 24px;
+                    min-height: 24px;
+                    min-width: 24px;
+                    max-height: 24px;
+                    min-height: 24px;
+                    padding: 0;
+                    background-color: #0000;
+                  "
+                >
+                  <v-img
+                    src="@/assets/svg/datatable/dot_menu.svg"
+                    width="24"
+                    height="24"
+                  />
+                  <slot name="action"></slot>
+                </v-btn>
+              </div>
+              <div
+                v-else-if="header.key == 'status' || header.style == 'status'"
+                class="d-flex flex-row align-center"
               >
                 <v-img
-                  src="@/assets/svg/datatable/dot_menu.svg"
+                  src="@/assets/svg/customers/status_done.svg"
                   width="24"
                   height="24"
+                  v-if="item[`${header.key}`]"
                 />
-                <slot name="action"></slot>
-              </v-btn>
+                <v-img
+                  src="@/assets/svg/customers/status_paused.svg"
+                  width="24"
+                  height="24"
+                  v-else
+                />
+              </div>
+              <div v-else>
+                <span
+                  class="font-13 dark-font app-semibold-font"
+                  v-if="header.style == 'bold'"
+                >
+                  {{ item[`${header.key}`] }}
+                </span>
+                <span class="font-13 shade-font app-medium-font" v-else>
+                  {{ item[`${header.key}`] }}
+                </span>
+              </div>
             </div>
-            <div
-              v-else-if="header.key == 'status' || header.style == 'status'"
-              class="d-flex flex-row align-center"
-            >
-              <v-img
-                src="@/assets/svg/customers/status_done.svg"
-                width="24"
-                height="24"
-                v-if="item[`${header.key}`]"
-              />
-              <v-img
-                src="@/assets/svg/customers/status_paused.svg"
-                width="24"
-                height="24"
-                v-else
-              />
-            </div>
-            <div v-else>
-              <span
-                class="font-13 dark-font app-semibold-font"
-                v-if="header.style == 'bold'"
-              >
-                {{ item[`${header.key}`] }}
-              </span>
-              <span class="font-13 shade-font app-medium-font" v-else>
-                {{ item[`${header.key}`] }}
-              </span>
-            </div>
-          </div>
-        </td>
+          </td>
+        </v-hover>
       </tr>
     </tbody>
   </v-table>
@@ -182,5 +189,8 @@ td:last-child > div {
   border-bottom-right-radius: 16px;
   border-top-right-radius: 16px;
   background-color: white;
+}
+.bg-hover {
+  background-color: #eef3f8 !important;
 }
 </style>

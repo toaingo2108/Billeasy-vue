@@ -27,7 +27,7 @@
       >
         <div style="width: 212px">
           <span class="font-14 app-semibold-font dark-font ps-3">
-            Products to Import
+            Customers to Import
           </span>
         </div>
         <div class="flex-grow">

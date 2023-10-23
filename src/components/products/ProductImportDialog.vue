@@ -36,14 +36,14 @@
               <v-radio value="one">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font">
-                    All Customers
+                    All Products
                   </span>
                 </template>
               </v-radio>
               <v-radio value="two">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font">
-                    Active Customers
+                    Active Products
                   </span>
                 </template>
               </v-radio>
@@ -131,11 +131,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Product nr."
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Product nr.', 'Product nr2']"
           />
         </div>
       </v-card-text>
@@ -147,11 +148,12 @@
           <span class="font-14 app-semibold-font dark-font ps-3"> Name * </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Name"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Name', 'Name2']"
           />
         </div>
       </v-card-text>
@@ -163,11 +165,12 @@
           <span class="font-14 app-semibold-font dark-font ps-3"> SKU </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="SKU"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['SKU', 'SKU2']"
           />
         </div>
       </v-card-text>
@@ -181,11 +184,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Default Price"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Default Price', 'Default Price 2']"
           />
         </div>
       </v-card-text>
@@ -199,11 +203,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Quantity In Stock"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Quantity In Stock', 'Quantity In Stock2']"
           />
         </div>
       </v-card-text>
@@ -215,11 +220,12 @@
           <span class="font-14 app-semibold-font dark-font ps-3"> Unit </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="Unit"
             variant="outlined"
             rounded="lg"
             hide-details
+            :item="['Unit', 'Unit2']"
           />
         </div>
       </v-card-text>
@@ -231,11 +237,12 @@
           <span class="font-14 app-semibold-font dark-font ps-3"> EAN </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="EAN"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['EAN', 'EAN2']"
           />
         </div>
       </v-card-text>
@@ -249,11 +256,12 @@
           </span>
         </div>
         <div style="width: 192px">
-          <v-text-field
+          <v-select
             placeholder="VAT Rate"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['VAT Rate', 'VAT Rate 2']"
           />
         </div>
       </v-card-text>
@@ -336,9 +344,38 @@ div :deep(.v-text-field input.v-field__input) {
 div :deep(.v-label) {
   opacity: 1;
 }
+div :deep(.v-select .v-field__input) {
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
 
 .file-upload-button .v-btn__content {
   width: 100%;
   justify-content: space-between;
+}
+
+.v-card::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.v-card::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px light-grey;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* Handle */
+.v-card::-webkit-scrollbar-thumb {
+  background: #f0a00055;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+.v-dialog::-webkit-scrollbar-thumb:hover {
+  background: #f0a00055;
 }
 </style>

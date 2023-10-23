@@ -30,7 +30,11 @@
           v-for="(menu, index) in menus"
         >
           <div class="me-2">
-            <v-img width="18" height="18" :src="menu.icon" />
+            <v-img
+              width="18"
+              height="18"
+              :src="index == tab ? menu.selected_icon : menu.unselected_icon"
+            />
           </div>
           {{ menu.title }}
         </v-tab>
@@ -78,8 +82,10 @@ import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
 import InvoicesList from "@/components/invoices/InvoicesList.vue";
 import ScheduledEvents from "@/components/invoices/ScheduledEvents.vue";
-import invoiceIcon from "@/assets/svg/customers/invoice.svg";
-import timeReportIcon from "@/assets/svg/customers/time_report.svg";
+import invoiceIcon from "@/assets/svg/customers/invoice_selected.svg";
+import invoiceUnselectedIcon from "@/assets/svg/customers/invoice_unselected.svg";
+import timeReportIcon from "@/assets/svg/customers/time_report_selected.svg";
+import timeReportUnselectedIcon from "@/assets/svg/customers/time_report.svg";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);
@@ -90,28 +96,15 @@ const tab = ref(0);
 const menus = [
   {
     title: "Invoices List",
-    icon: invoiceIcon,
+    selected_icon: invoiceIcon,
+    unselected_icon: invoiceUnselectedIcon,
   },
   {
     title: "Scheduled Events",
-    icon: timeReportIcon,
+    selected_icon: timeReportIcon,
+    unselected_icon: timeReportUnselectedIcon,
   },
 ];
-
-const openNewProductDialog = function () {
-  newProductDialog.value = true;
-};
-
-const onExportData = function () {
-  exportDialog.value = true;
-};
-
-const onImportData = function () {
-  importDialog.value = true;
-};
-const onProductCategories = function () {
-  productCategoriesDialog.value = true;
-};
 </script>
 <style scoped>
 div :deep(.v-text-field input.v-field__input) {

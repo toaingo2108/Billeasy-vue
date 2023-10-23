@@ -20,17 +20,17 @@
 <script lang="ts" setup>
 const props = defineProps({
   onDelete: { type: Function, default: () => {} },
-  onToggleActive: { type: Function, default: () => {} },
+  onEdit: { type: Function, default: () => {} },
 });
 
 const items = [
   {
-    text: "Delete",
-    onClick: props.onDelete,
+    text: "Edit",
+    onClick: props.onEdit,
   },
   {
-    text: "Active / Inactive",
-    onClick: props.onToggleActive,
+    text: "Delete",
+    onClick: props.onDelete,
   },
 ];
 </script>

@@ -1,5 +1,9 @@
 <template>
-  <v-menu activator="parent" :close-on-content-click="false">
+  <v-menu
+    activator="parent"
+    :close-on-content-click="false"
+    v-model="menuDialog"
+  >
     <v-card class="rounded-xl pa-2" width="608">
       <v-card-text class="d-flex flex-row pb-1 w-100">
         <div style="width: 33.33%" class="px-2">
@@ -213,33 +217,9 @@
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
 
-const props = defineProps({
-  dialog: Boolean,
-});
-
-const emit = defineEmits();
-
+const menuDialog = ref(false);
 const closeDialog = () => {
-  emit("update:dialog", false);
-};
-
-const headers = [
-  "PRICE Incl. VAT",
-  "PRICE excl. VAT",
-  "FROM QUANTITY",
-  "PRICELIST",
-];
-
-const items = [
-  { incl: 1000, excl: 800, quantity: 0, price: "A" },
-  { incl: 1000, excl: 800, quantity: 2, price: "B" },
-  { incl: 1000, excl: 800, quantity: 0, price: "C" },
-];
-
-const priceDialog = ref(false);
-
-const onAddNewPrice = function () {
-  priceDialog.value = true;
+  menuDialog.value = false;
 };
 </script>
 

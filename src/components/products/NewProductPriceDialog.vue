@@ -7,11 +7,12 @@
       <v-card-text class="d-flex flex-row mx-3 pb-1">
         <div style="width: 224px">
           <span class="font-13 app-medium-font dark-font">Price List *</span>
-          <v-text-field
+          <v-select
             placeholder="Price List"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['A', 'B', 'C', 'X']"
           />
         </div>
         <div style="width: 224px" class="ms-12">

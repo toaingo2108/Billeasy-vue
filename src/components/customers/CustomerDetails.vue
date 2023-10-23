@@ -33,7 +33,10 @@
               </div>
               Information
             </div>
-            <v-btn variant="outlined" class="icon-button"
+            <v-btn
+              variant="outlined"
+              class="icon-button"
+              @click="onCustomerInformationDetails"
               ><v-icon color="#0d0d1e">mdi-pencil</v-icon></v-btn
             >
           </v-card-title>
@@ -305,32 +308,75 @@
                       padding-bottom: 10px;
                     "
                     class="text-none"
+                    @click="onNewInvoice"
                     >New Invoice</v-btn
                   >
                 </div>
 
                 <div class="d-flex flex-row align-center mt-8 mb-10">
-                  <v-data-table
-                    :headers="invoiceHeaders"
-                    :items="invoiceItems"
-                    items-per-page="-1"
-                    hide-default-footer
-                  >
-                    <template v-slot:[`item.sent`]="{ item }">
-                      <v-checkbox
-                        color="#20c39d"
-                        hide-details
-                        v-model="item.sent"
-                      />
-                    </template>
-                    <template v-slot:[`item.paid`]="{ item }">
-                      <v-checkbox
-                        color="#20c39d"
-                        hide-details
-                        v-model="item.paid"
-                      />
-                    </template>
-                  </v-data-table>
+                  <v-table style="width: 100%">
+                    <thead>
+                      <tr>
+                        <th
+                          class="text-left font-13 app-semibold-font dark-font"
+                          v-for="(header, index) in invoiceHeaders"
+                          :key="index"
+                        >
+                          {{ header.title }}
+                          <v-icon color="#59597B" v-if="header.title"
+                            >mdi-unfold-more-horizontal</v-icon
+                          >
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr
+                        v-for="(item, index) in invoiceItems"
+                        :key="index"
+                        style="height: 36px"
+                      >
+                        <td class="remove-border-bottom">
+                          <span class="font-13 dark-font app-semibold-font">
+                            1001.
+                          </span>
+                        </td>
+                        <td class="remove-border-bottom">
+                          <span class="font-13 dark-font app-semibold-font">
+                            1100
+                          </span>
+                        </td>
+                        <td class="remove-border-bottom">
+                          <span class="font-13 shade-font app-medium-font">
+                            SEK
+                          </span>
+                        </td>
+                        <td class="remove-border-bottom">
+                          <span class="font-13 shade-font app-medium-font">
+                            2023-07-01
+                          </span>
+                        </td>
+                        <td class="remove-border-bottom">
+                          <span class="font-13 shade-font app-medium-font">
+                            2023-07-01
+                          </span>
+                        </td>
+                        <td class="remove-border-bottom">
+                          <v-checkbox
+                            color="#20c39d"
+                            hide-details
+                            v-model="item.sent"
+                          />
+                        </td>
+                        <td class="remove-border-bottom">
+                          <v-checkbox
+                            color="#20c39d"
+                            hide-details
+                            v-model="item.paid"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </v-table>
                 </div>
               </div>
               <div v-else-if="menu.title == 'Notes'">
@@ -352,37 +398,16 @@
                     >New Note</v-btn
                   >
                 </div>
-                <div class="d-flex flex-row align-center mt-8 mb-10">
-                  <v-data-table
+                <div class="d-flex flex-row align-center mt-8 mb-10 ms-6">
+                  <app-data-table
                     :headers="noteHeaders"
                     :items="noteItems"
-                    items-per-page="-1"
-                    hide-default-footer
+                    :checkable="false"
                   >
-                    <template v-slot:[`item.action`]="{ item }">
-                      <v-btn
-                        size="x-small"
-                        flat
-                        class="me-5"
-                        style="
-                          width: 24px;
-                          height: 24px;
-                          min-height: 24px;
-                          min-width: 24px;
-                          max-height: 24px;
-                          min-height: 24px;
-                          padding: 0;
-                        "
-                      >
-                        <v-img
-                          src="@/assets/svg/datatable/dot_menu.svg"
-                          width="24"
-                          height="24"
-                        />
-                        <update-header-menu />
-                      </v-btn>
+                    <template v-slot:action>
+                      <update-header-menu />
                     </template>
-                  </v-data-table>
+                  </app-data-table>
                 </div>
               </div>
               <div v-else-if="menu.title == `To-do's`" class="px-2">
@@ -510,20 +535,20 @@ import AddCustomFieldDialog from "./CustomerAddCustomFieldDialog.vue";
 import AddReportDialog from "./CustomerAddTimeReportDialog.vue";
 import TodoDetailsMenu from "./CustomerTodoDetailsMenu.vue";
 import ReportDetailsMenu from "./CustomerTimeReportDetailsMenu.vue";
-import todoImage from "@/assets/sample/profile.png";
 import TodoCategoryList from "../default/TodoCategoryList.vue";
 import SearchField from "../default/SearchField.vue";
+import AppDataTable from "../default/AppDataTable.vue";
 
 const tab = ref(0);
-const addNewDialog = ref(false);
 const addNewNoteDialog = ref(false);
 const addNewCustomFieldDialog = ref(false);
 const addNewReportDialog = ref(false);
+const addNewInvoiceDialog = ref(false);
 const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 
 const router = useRouter();
-const onBack = function () {
-  router.back();
+const onBack = () => {
+  router.push({ name: "customers" });
 };
 
 const onAddNewCustomField = function () {
@@ -639,8 +664,8 @@ const invoiceItems = reactive([
 ]);
 
 const noteHeaders = [
-  { title: "Header", key: "header" },
-  { title: "Updated at", key: "updated_at" },
+  { title: "Header", key: "header", align: "left", style: "bold" },
+  { title: "Updated at", key: "updated_at", align: "left" },
   { title: "", key: "action" },
 ];
 
@@ -710,6 +735,12 @@ const reportItems = reactive([
 
 const onAddNewNote = function () {
   addNewNoteDialog.value = true;
+};
+const onCustomerInformationDetails = () => {
+  router.push({ name: "new-customer" });
+};
+const onNewInvoice = () => {
+  router.push({ name: "new-invoice" });
 };
 </script>
 <style scoped>

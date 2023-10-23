@@ -184,30 +184,33 @@ const emit = defineEmits();
 const closeDialog = () => {
   emit("update:dialog", false);
 };
-
-const headers = [
-  "PRICE Incl. VAT",
-  "PRICE excl. VAT",
-  "FROM QUANTITY",
-  "PRICELIST",
-];
-
-const items = [
-  { incl: 1000, excl: 800, quantity: 0, price: "A" },
-  { incl: 1000, excl: 800, quantity: 2, price: "B" },
-  { incl: 1000, excl: 800, quantity: 0, price: "C" },
-];
-
-const priceDialog = ref(false);
-
-const onAddNewPrice = function () {
-  priceDialog.value = true;
-};
 </script>
 
 <style scoped>
 div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
+}
+
+.v-card::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.v-card::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px light-grey;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* Handle */
+.v-card::-webkit-scrollbar-thumb {
+  background: #f0a00055;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+.v-dialog::-webkit-scrollbar-thumb:hover {
+  background: #f0a00055;
 }
 </style>

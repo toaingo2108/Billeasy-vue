@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="props.dialog" width="592" persistent>
-    <v-card class="rounded-xl">
+    <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
         Export
       </v-card-title>
@@ -9,7 +9,7 @@
           <span class="font-14 app-semibold-font dark-font ps-3">
             Fields to include in export
           </span>
-          <div class="d-flex flex-row align-center mt-5">
+          <div class="d-flex flex-row align-center mt-1">
             <v-checkbox color="#20c39d" value="#20c39d" hide-details>
               <template v-slot:label>
                 <span class="font-14 app-regular-font dark-font">
@@ -78,7 +78,7 @@
           <span class="font-14 app-semibold-font dark-font ps-3">
             Sort export on
           </span>
-          <v-radio-group class="mt-7">
+          <v-radio-group class="mt-3">
             <div class="d-flex flex-row align-center">
               <v-radio value="one">
                 <template v-slot:label>
@@ -88,21 +88,21 @@
                 </template>
               </v-radio>
             </div>
-            <div class="d-flex flex-row align-center mt-4">
+            <div class="d-flex flex-row align-center">
               <v-radio value="two">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font"> Name </span>
                 </template>
               </v-radio>
             </div>
-            <div class="d-flex flex-row align-center mt-4">
+            <div class="d-flex flex-row align-center">
               <v-radio value="three">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font"> SKU </span>
                 </template>
               </v-radio>
             </div>
-            <div class="d-flex flex-row align-center mt-4">
+            <div class="d-flex flex-row align-center">
               <v-radio value="four">
                 <template v-slot:label>
                   <span class="font-14 app-regular-font dark-font">
@@ -163,25 +163,6 @@ const emit = defineEmits();
 const closeDialog = () => {
   emit("update:dialog", false);
 };
-
-const headers = [
-  "PRICE Incl. VAT",
-  "PRICE excl. VAT",
-  "FROM QUANTITY",
-  "PRICELIST",
-];
-
-const items = [
-  { incl: 1000, excl: 800, quantity: 0, price: "A" },
-  { incl: 1000, excl: 800, quantity: 2, price: "B" },
-  { incl: 1000, excl: 800, quantity: 0, price: "C" },
-];
-
-const priceDialog = ref(false);
-
-const onAddNewPrice = function () {
-  priceDialog.value = true;
-};
 </script>
 
 <style scoped>
@@ -189,7 +170,36 @@ div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
 }
+div :deep(.v-checkbox) {
+  min-height: 36px;
+  height: 36px;
+}
+div :deep(.v-radio) {
+  min-height: 36px;
+  height: 36px;
+}
 div :deep(.v-label) {
   opacity: 1;
+}
+.v-card::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.v-card::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px light-grey;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* Handle */
+.v-card::-webkit-scrollbar-thumb {
+  background: #f0a00055;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+.v-dialog::-webkit-scrollbar-thumb:hover {
+  background: #f0a00055;
 }
 </style>
