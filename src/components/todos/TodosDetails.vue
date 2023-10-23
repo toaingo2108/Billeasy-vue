@@ -40,7 +40,7 @@
             height="40"
             class="button-40"
             rounded="lg"
-            @click="onImportData"
+            @click="onTodoStatus"
           >
             <v-img width="40" height="40" src="@/assets/svg/todos/graph.svg" />
           </v-btn>
@@ -52,7 +52,7 @@
             height="40"
             class="button-40"
             rounded="lg"
-            @click="onCustomerCategories"
+            @click="onTodoCategory"
           >
             <v-img width="40" height="40" src="@/assets/svg/todos/check.svg" />
           </v-btn>
@@ -629,33 +629,26 @@
         </v-col>
       </v-row>
     </div>
-    <customer-export-dialog
-      :dialog="exportDialog"
-      @update:dialog="(val) => (exportDialog = val)"
+    <new-todo-category-dialog
+      :dialog="newTodoCategoryDialog"
+      @update:dialog="(val) => (newTodoCategoryDialog = val)"
+      v-if="newTodoCategoryDialog"
     />
-    <customer-import-dialog
-      :dialog="importDialog"
-      @update:dialog="(val) => (importDialog = val)"
-    />
-    <customer-categories-dialog
-      :dialog="customerCategoriesDialog"
-      @update:dialog="(val) => (customerCategoriesDialog = val)"
-      v-if="customerCategoriesDialog"
+    <new-todo-status-dialog
+      :dialog="newTodoStatusDialog"
+      @update:dialog="(val) => (newTodoStatusDialog = val)"
+      v-if="newTodoStatusDialog"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import CustomerExportDialog from "@/components/customers/CustomerExportDialog.vue";
-import CustomerImportDialog from "@/components/customers/CustomerImportDialog.vue";
-import CustomerCategoriesDialog from "@/components/customers/CustomerCategoriesDialog.vue";
-import TodoCategoryList from "@/components/default/TodoCategoryList.vue";
-import TodoDetailsUpdateMenu from "@/components/todos/TodoDetailsUpdateMenu.vue";
+import NewTodoCategoryDialog from "@/components/todos/NewTodoCategoryDialog.vue";
+import NewTodoStatusDialog from "@/components/todos/NewTodoStatusDialog.vue";
 
-const exportDialog = ref(false);
-const importDialog = ref(false);
-const customerCategoriesDialog = ref(false);
+const newTodoCategoryDialog = ref(false);
+const newTodoStatusDialog = ref(false);
 
 import { useRouter } from "vue-router";
 import SearchField from "@/components/default/SearchField.vue";
@@ -666,11 +659,11 @@ const openNewTodoDialog = function () {
   router.push({ name: "new-customer" });
 };
 
-const onImportData = function () {
-  importDialog.value = true;
+const onTodoStatus = function () {
+  newTodoStatusDialog.value = true;
 };
-const onCustomerCategories = function () {
-  customerCategoriesDialog.value = true;
+const onTodoCategory = function () {
+  newTodoCategoryDialog.value = true;
 };
 </script>
 <style scoped></style>
