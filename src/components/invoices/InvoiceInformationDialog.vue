@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="props.dialog" width="848" persistent>
+  <v-dialog v-model="dialog" width="848">
     <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="d-flex flex-row mx-4">
         <div class="w-50">
@@ -104,12 +104,7 @@
           </div>
         </div>
         <div class="w-50 pe-4 pt-8">
-          <v-timeline
-            side="center"
-            align="start"
-            truncate-line="both"
-            line-color="#D1D1E2"
-          >
+          <v-timeline align="start" truncate-line="both" line-color="#D1D1E2">
             <v-timeline-item
               dot-color="#F2F2F7"
               icon="mdi-calendar-month-outline"
@@ -284,11 +279,12 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watchEffect } from "vue";
-
+import { ref, watchEffect, watch } from "vue";
 const props = defineProps({
   dialog: Boolean,
 });
+
+const dialog = ref(props.dialog);
 
 const emit = defineEmits();
 
@@ -296,7 +292,16 @@ const closeDialog = () => {
   emit("update:dialog", false);
 };
 
-const scheduled = ref(false);
+watchEffect(() => {
+  if (!dialog.value) closeDialog();
+});
+
+watch(
+  () => props.dialog,
+  (newValue) => {
+    dialog.value = newValue;
+  }
+);
 </script>
 
 <style scoped>
