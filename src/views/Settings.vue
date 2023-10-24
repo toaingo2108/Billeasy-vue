@@ -30,8 +30,8 @@
           <div v-if="menu.title == 'Invoice Settings'">
             <invoice-settings />
           </div>
-          <div v-else-if="menu.title == 'Scheduled Events'">
-            <scheduled-events />
+          <div v-else-if="menu.title == 'Subscription Settings'">
+            <subscription-settings />
           </div>
         </v-window-item>
       </v-window>
@@ -63,7 +63,7 @@ import ProductExportDialog from "@/components/products/ProductExportDialog.vue";
 import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
 import InvoiceSettings from "@/components/settings/InvoiceSettings.vue";
-import ScheduledEvents from "@/components/subscriptions/ScheduledEvents.vue";
+import SubscriptionSettings from "@/components/settings/SubscriptionSettings.vue";
 import invoiceIcon from "@/assets/svg/customers/invoice_selected.svg";
 import invoiceUnselectedIcon from "@/assets/svg/customers/invoice_unselected.svg";
 import subscriptionIcon from "@/assets/svg/subscriptions/subscription.svg";
