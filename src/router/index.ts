@@ -101,6 +101,12 @@ const routes = [
           ),
       },
       {
+        path: "settings",
+        name: "settings",
+        component: () =>
+          import(/* webpackChunkName: "settings" */ "@/views/Settings.vue"),
+      },
+      {
         path: "404",
         name: "404",
         component: () => import("@/views/NotFound.vue"),
