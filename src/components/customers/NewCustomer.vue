@@ -422,6 +422,7 @@
                   class="text-none app-medium-font font-14 ms-2"
                   color="#20C39D"
                   rounded="lg"
+                  @click="onAddNewPaymentTerms"
                 >
                   Add New
                 </v-btn>
@@ -450,6 +451,7 @@
                   class="text-none app-medium-font font-14 ms-2"
                   color="#20C39D"
                   rounded="lg"
+                  @click="onAddNewPriceList"
                 >
                   Add New
                 </v-btn>
@@ -478,6 +480,7 @@
                   class="text-none app-medium-font font-14 ms-2"
                   color="#20C39D"
                   rounded="lg"
+                  @click="onAddNewCurrency"
                 >
                   Add New
                 </v-btn>
@@ -506,6 +509,7 @@
                   class="text-none app-medium-font font-14 ms-2"
                   color="#20C39D"
                   rounded="lg"
+                  @click="onAddNewReminderFlow"
                 >
                   Add New
                 </v-btn>
@@ -587,6 +591,22 @@
       :dialog="addNewCategoryDialog"
       @update:dialog="(val) => (addNewCategoryDialog = val)"
     />
+    <new-currency-dialog
+      :dialog="addNewCurrencyDialog"
+      @update:dialog="(val) => (addNewCurrencyDialog = val)"
+    />
+    <new-payment-terms-dialog
+      :dialog="addNewPaymentTermsDialog"
+      @update:dialog="(val) => (addNewPaymentTermsDialog = val)"
+    />
+    <new-price-list-dialog
+      :dialog="addNewPriceListDialog"
+      @update:dialog="(val) => (addNewPriceListDialog = val)"
+    />
+    <new-reminder-flow-dialog
+      :dialog="addNewReminderFlowDialog"
+      @update:dialog="(val) => (addNewReminderFlowDialog = val)"
+    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -601,11 +621,20 @@ import addressUnselectedIcon from "@/assets/svg/customers/address_unselected.svg
 import contactUnselectedIcon from "@/assets/svg/customers/contact_unselected.svg";
 import invoiceUnselectedIcon from "@/assets/svg/customers/invoice_unselected.svg";
 import NewCustomerCategoryDialog from "./NewCustomerCategoryDialog.vue";
+import NewCurrencyDialog from "./NewCurrencyDialog.vue";
+import NewPaymentTermsDialog from "./NewPaymentTermsDialog.vue";
+import NewPriceListDialog from "./NewPriceListDialog.vue";
+import NewReminderFlowDialog from "./NewReminderFlowDialog.vue";
 
 const tab = ref(0);
 const customerType = ref("company");
-const addNewDialog = ref(false);
+
 const addNewCategoryDialog = ref(false);
+const addNewCurrencyDialog = ref(false);
+const addNewPaymentTermsDialog = ref(false);
+const addNewPriceListDialog = ref(false);
+const addNewReminderFlowDialog = ref(false);
+
 const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 const addressType = ref("billing_address");
 const router = useRouter();
@@ -615,6 +644,18 @@ const onBack = function () {
 
 const onAddNewCategory = function () {
   addNewCategoryDialog.value = true;
+};
+const onAddNewCurrency = () => {
+  addNewCurrencyDialog.value = true;
+};
+const onAddNewPaymentTerms = () => {
+  addNewPaymentTermsDialog.value = true;
+};
+const onAddNewPriceList = () => {
+  addNewPriceListDialog.value = true;
+};
+const onAddNewReminderFlow = () => {
+  addNewReminderFlowDialog.value = true;
 };
 
 const menus = [

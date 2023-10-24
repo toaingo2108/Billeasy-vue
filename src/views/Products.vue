@@ -99,6 +99,7 @@
         :items="items"
         items-per-page="15"
         style="margin-bottom: 80px"
+        :on-row-clicked="onEditProduct"
       >
         <template v-slot:action>
           <item-menu />
@@ -109,6 +110,10 @@
     <new-product-dialog
       :dialog="newProductDialog"
       @update:dialog="(val) => (newProductDialog = val)"
+    />
+    <edit-product-dialog
+      :dialog="editProductDialog"
+      @update:dialog="(val) => (editProductDialog = val)"
     />
     <product-export-dialog
       :dialog="exportDialog"
@@ -129,6 +134,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import NewProductDialog from "@/components/products/NewProductDialog.vue";
+import EditProductDialog from "@/components/products/EditProductDialog.vue";
 import ProductExportDialog from "@/components/products/ProductExportDialog.vue";
 import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
@@ -138,6 +144,7 @@ import SearchField from "@/components/default/SearchField.vue";
 import ItemMenu from "@/components/products/ProductItemMenu.vue";
 
 const newProductDialog = ref(false);
+const editProductDialog = ref(false);
 const exportDialog = ref(false);
 const importDialog = ref(false);
 const productCategoriesDialog = ref(false);
@@ -499,7 +506,9 @@ const items = [
 const openNewProductDialog = function () {
   newProductDialog.value = true;
 };
-
+const onEditProduct = () => {
+  editProductDialog.value = true;
+};
 const onExportData = function () {
   exportDialog.value = true;
 };
