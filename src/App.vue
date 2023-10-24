@@ -45,6 +45,9 @@
 .font-10 {
   font-size: 10px !important;
 }
+.font-11 {
+  font-size: 11px !important;
+}
 .font-12 {
   font-size: 12px !important;
 }

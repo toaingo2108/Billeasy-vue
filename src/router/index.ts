@@ -55,11 +55,27 @@ const routes = [
           ),
       },
       {
+        path: "edit-invoice",
+        name: "edit-invoice",
+        component: () =>
+          import(
+            /* webpackChunkName: "edit-invoice" */ "@/components/invoices/EditInvoice.vue"
+          ),
+      },
+      {
         path: "invoice-details",
         name: "invoice-details",
         component: () =>
           import(
             /* webpackChunkName: "invoice-details" */ "@/components/invoices/InvoiceDetails.vue"
+          ),
+      },
+      {
+        path: "imported-invoices",
+        name: "imported-invoices",
+        component: () =>
+          import(
+            /* webpackChunkName: "imported-invoices" */ "@/components/invoices/ImportedInvoices.vue"
           ),
       },
       {

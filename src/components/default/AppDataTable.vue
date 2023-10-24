@@ -11,7 +11,7 @@
             v-if="header.checkable"
             class="d-flex flex-row align-center justify-center"
           >
-            <app-checkbox v-model="isCheckedAll" class="ms-2" />
+            <app-checkbox v-model="isCheckedAll" />
           </div>
           <div
             v-else-if="header.key != 'action'"
@@ -53,7 +53,6 @@
             >
               <app-checkbox
                 v-model="item.checked"
-                class="ms-2"
                 v-if="header.key == 'checked'"
               />
               <div v-else-if="header.key == 'action'">

@@ -14,7 +14,7 @@
           :items="['Method', 'Method 2']"
         />
       </v-card-text>
-      <v-card-text class="d-flex flex-column mx-3 pb-1">
+      <v-card-text class="d-flex flex-column mx-3 pb-1" v-if="scheduled">
         <span class="font-13 app-medium-font dark-font">Send Date</span>
         <v-text-field
           placeholder="Date"
@@ -25,7 +25,12 @@
         />
       </v-card-text>
       <v-card-text class="d-flex flex-row mx-3 pb-1">
-        <v-checkbox color="#20c39d" value="#20c39d" hide-details>
+        <v-checkbox
+          color="#20c39d"
+          value="#20c39d"
+          hide-details
+          v-model="scheduled"
+        >
           <template v-slot:label>
             <span class="font-14 app-regular-font dark-font">
               Scheduled Send Out
@@ -82,6 +87,8 @@ const emit = defineEmits();
 const closeDialog = () => {
   emit("update:dialog", false);
 };
+
+const scheduled = ref(false);
 </script>
 
 <style scoped>

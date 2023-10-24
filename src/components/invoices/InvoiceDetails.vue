@@ -62,6 +62,7 @@
                   class="text-none"
                   rounded="lg"
                   block
+                  @click="onUpdateInvoice"
                   >Update Invoice
                 </v-btn>
                 <v-card class="rounded-xl pa-3 mt-6" elevation="0">
@@ -199,7 +200,7 @@
                   rounded="lg"
                   elevation="4"
                   class="text-none white-font app-medium-font font-14"
-                  @click="openNewNoteDialog"
+                  @click="openNewTodoDialog"
                 >
                   New To-do
                 </v-btn>
@@ -219,6 +220,10 @@
     <invoice-add-note-dialog
       :dialog="addNewNoteDialog"
       @update:dialog="(val) => (addNewNoteDialog = val)"
+    />
+    <new-todo-item-dialog
+      :dialog="addNewTodoDialog"
+      @update:dialog="(val) => (addNewTodoDialog = val)"
     />
   </div>
 </template>
@@ -243,10 +248,12 @@ import InvoiceNoteItemMenu from "./InvoiceNoteItemMenu.vue";
 import AppDataTableBottomPagination from "../default/AppDataTableBottomPagination.vue";
 import TodoCategoryList from "../default/TodoCategoryList.vue";
 import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
+import NewTodoItemDialog from "../todos/NewTodoItemDialog.vue";
 
 const tab = ref(0);
 
 const addNewNoteDialog = ref(false);
+const addNewTodoDialog = ref(false);
 
 const router = useRouter();
 const onBack = function () {
@@ -343,6 +350,12 @@ const noteItems = [
 
 const openNewNoteDialog = function () {
   addNewNoteDialog.value = true;
+};
+const openNewTodoDialog = function () {
+  addNewTodoDialog.value = true;
+};
+const onUpdateInvoice = () => {
+  router.push({ name: "edit-invoice" });
 };
 </script>
 <style scoped>

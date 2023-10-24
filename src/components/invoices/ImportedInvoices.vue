@@ -1,19 +1,23 @@
 <template>
   <div class="w-100 h-100 pa-8 d-flex flex-column">
-    <div class="d-flex flex-row mb-5 align-center justify-between w-100">
-      <div class="app-semibold-font font-28 dark-font">
-        Invoices
+    <div class="d-flex flex-row mb-5 align-center w-100">
+      <div>
         <v-btn
-          append-icon="mdi-chevron-right"
-          flat
-          color="#20C39D"
-          variant="text"
-          class="ms-3 text-none font-14 teal-font app-medium-font"
-          @click="goToImportedInvoice"
+          variant="outlined"
+          prepend-icon="mdi-chevron-left"
+          @click="onBack"
+          rounded="lg"
+          color="#0D0D1E"
+          style="
+            border-color: #d1d1e2;
+            text-decoration: none;
+            margin-right: 24px;
+          "
+          >Back</v-btn
         >
-          Go to Imported Invoice
-        </v-btn>
       </div>
+      <div class="app-semibold-font font-28 dark-font">Imported Invoices</div>
+      <v-spacer />
       <div
         class="app-medium-font font-14 teal-font d-flex flex-row align-center"
       >
@@ -47,11 +51,11 @@
           :key="index"
           :value="index"
         >
-          <div v-if="menu.title == 'Invoices List'">
-            <invoices-list />
+          <div v-if="menu.title == 'Invoices'">
+            <imported-invoices-list />
           </div>
-          <div v-else-if="menu.title == 'Scheduled Events'">
-            <scheduled-events />
+          <div v-else-if="menu.title == 'Rules'">
+            <imported-invoices-rules />
           </div>
         </v-window-item>
       </v-window>
@@ -82,12 +86,12 @@ import NewProductDialog from "@/components/products/NewProductDialog.vue";
 import ProductExportDialog from "@/components/products/ProductExportDialog.vue";
 import ProductImportDialog from "@/components/products/ProductImportDialog.vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
-import InvoicesList from "@/components/invoices/InvoicesList.vue";
-import ScheduledEvents from "@/components/invoices/ScheduledEvents.vue";
+import ImportedInvoicesList from "@/components/invoices/ImportedInvoicesList.vue";
+import ImportedInvoicesRules from "@/components/invoices/ImportedInvoicesRules.vue";
 import invoiceIcon from "@/assets/svg/customers/invoice_selected.svg";
 import invoiceUnselectedIcon from "@/assets/svg/customers/invoice_unselected.svg";
-import timeReportIcon from "@/assets/svg/customers/time_report_selected.svg";
-import timeReportUnselectedIcon from "@/assets/svg/customers/time_report.svg";
+import ruleIcon from "@/assets/svg/invoices/rule_selected.svg";
+import ruleUnselectedIcon from "@/assets/svg/invoices/rule_unselected.svg";
 import router from "@/router";
 
 const newProductDialog = ref(false);
@@ -98,19 +102,19 @@ const tab = ref(0);
 
 const menus = [
   {
-    title: "Invoices List",
+    title: "Invoices",
     selected_icon: invoiceIcon,
     unselected_icon: invoiceUnselectedIcon,
   },
   {
-    title: "Scheduled Events",
-    selected_icon: timeReportIcon,
-    unselected_icon: timeReportUnselectedIcon,
+    title: "Rules",
+    selected_icon: ruleIcon,
+    unselected_icon: ruleUnselectedIcon,
   },
 ];
 
-const goToImportedInvoice = () => {
-  router.push({ name: "imported-invoices" });
+const onBack = () => {
+  router.push({ name: "invoices" });
 };
 </script>
 <style scoped>
