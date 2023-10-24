@@ -6,11 +6,12 @@
       </v-card-title>
       <v-card-text class="d-flex flex-column mx-3 pb-1">
         <span class="font-13 app-medium-font dark-font">Send Method *</span>
-        <v-text-field
+        <v-select
           placeholder="Method"
           variant="outlined"
           rounded="lg"
           hide-details
+          :items="['Customer Specific', 'Method 2']"
         />
       </v-card-text>
       <v-card-text class="d-flex flex-row mx-3 pb-1">
@@ -71,30 +72,18 @@ const emit = defineEmits();
 const closeDialog = () => {
   emit("update:dialog", false);
 };
-
-const headers = [
-  "PRICE Incl. VAT",
-  "PRICE excl. VAT",
-  "FROM QUANTITY",
-  "PRICELIST",
-];
-
-const items = [
-  { incl: 1000, excl: 800, quantity: 0, price: "A" },
-  { incl: 1000, excl: 800, quantity: 2, price: "B" },
-  { incl: 1000, excl: 800, quantity: 0, price: "C" },
-];
-
-const priceDialog = ref(false);
-
-const onAddNewPrice = function () {
-  priceDialog.value = true;
-};
 </script>
 
 <style scoped>
 div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
+}
+div :deep(.v-select .v-field__input) {
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 </style>

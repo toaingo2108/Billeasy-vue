@@ -28,7 +28,11 @@
           v-for="(menu, index) in menus"
         >
           <div class="me-2">
-            <v-img width="18" height="18" :src="menu.icon" />
+            <v-img
+              width="18"
+              height="18"
+              :src="tab == index ? menu.selected_icon : menu.unselected_icon"
+            />
           </div>
           {{ menu.title }}
         </v-tab>
@@ -102,7 +106,7 @@
                         font-size: 14px;
                         font-family: 'Poppins-Medium' !important;
                       "
-                      color="#E6E6ED"
+                      color="#20C39D"
                       class="text-none"
                       >See all</v-btn
                     >
@@ -221,9 +225,12 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import invoiceIcon from "@/assets/svg/customers/invoice.svg";
+import invoiceIcon from "@/assets/svg/customers/invoice_selected.svg";
+import invoiceUnselectedIcon from "@/assets/svg/customers/invoice_unselected.svg";
 import notesIcon from "@/assets/svg/customers/notes.svg";
+import notesUnselectedIcon from "@/assets/svg/customers/notes_unselected.svg";
 import todosIcon from "@/assets/svg/customers/todos.svg";
+import todosUnselectedIcon from "@/assets/svg/customers/todos_unselected.svg";
 import registerPaymentIcon from "@/assets/svg/invoices/register_payment.svg";
 import creditInvoiceIcon from "@/assets/svg/invoices/credit_invoice.svg";
 import duplicateIcon from "@/assets/svg/invoices/duplicate.svg";
@@ -249,15 +256,18 @@ const onBack = function () {
 const menus = [
   {
     title: "Invoices",
-    icon: invoiceIcon,
+    selected_icon: invoiceIcon,
+    unselected_icon: invoiceUnselectedIcon,
   },
   {
     title: "Notes",
-    icon: notesIcon,
+    selected_icon: notesIcon,
+    unselected_icon: notesUnselectedIcon,
   },
   {
     title: "To-do's",
-    icon: todosIcon,
+    selected_icon: todosIcon,
+    unselected_icon: todosUnselectedIcon,
   },
 ];
 

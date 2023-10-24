@@ -22,22 +22,24 @@
       <div class="d-flex flex-row flex-wrap">
         <div class="five-row">
           <span class="font-13 app-medium-font dark-font">Customer</span>
-          <v-text-field
+          <v-select
             placeholder="Customer"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Customer', 'Customer2']"
           />
         </div>
         <div class="five-row">
           <span class="font-13 app-medium-font dark-font"
             >Invoice template</span
           >
-          <v-text-field
+          <v-select
             placeholder="Invoice template"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Standard', 'Special']"
           />
         </div>
         <div class="five-row">
@@ -47,6 +49,7 @@
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Remind', 'Remind2']"
           />
         </div>
         <div class="five-row">
@@ -60,11 +63,12 @@
         </div>
         <div class="five-row">
           <span class="font-13 app-medium-font dark-font">Time report</span>
-          <v-text-field
+          <v-select
             placeholder="Time report"
             variant="outlined"
             rounded="lg"
             hide-details
+            :items="['Time report', 'Time report2']"
           />
         </div>
       </div>
@@ -185,11 +189,12 @@
                 <span class="font-13 app-medium-font dark-font"
                   >Payment Terms</span
                 >
-                <v-text-field
+                <v-select
                   placeholder="Payment Terms"
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['30', '40', '50']"
                 />
               </v-col>
               <v-col cols="12" md="4">
@@ -234,22 +239,24 @@
               </v-col>
               <v-col cols="12" md="4">
                 <span class="font-13 app-medium-font dark-font">Currency</span>
-                <v-text-field
+                <v-select
                   placeholder="Currency"
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['EUR', 'USD']"
                 />
               </v-col>
               <v-col cols="12" md="4">
                 <span class="font-13 app-medium-font dark-font"
                   >Price List</span
                 >
-                <v-text-field
+                <v-select
                   placeholder="Price List"
                   variant="outlined"
                   rounded="lg"
                   hide-details
+                  :items="['A', 'B', 'C']"
                 />
               </v-col>
             </v-row>
@@ -279,11 +286,12 @@
               <span class="font-13 app-medium-font dark-font"
                 >Payment Methods</span
               >
-              <v-text-field
+              <v-select
                 placeholder="Enter method..."
                 variant="outlined"
                 rounded="lg"
                 hide-details
+                :items="['Swish', 'Bankgiro']"
               />
               <div>
                 <v-chip
@@ -323,15 +331,16 @@
                 <v-icon>mdi-unfold-more-horizontal</v-icon>
               </td>
               <td class="ps-0 white-bottom">
-                <v-text-field
+                <v-select
                   placeholder="Enter Text"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                   v-model="item.product"
+                  :items="['Enter Text', 'Enter Text2']"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -340,7 +349,7 @@
                   v-model="item.description"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -349,25 +358,36 @@
                   v-model="item.quantity"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
+                <v-select
+                  placeholder="Unit"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                  v-model="item.unit"
+                  :items="['Pcs', 'Pcs2']"
+                />
+              </td>
+              <td class="ps-0 white-bottom">
                 <v-text-field
-                  placeholder="Enter Text"
+                  placeholder="Price"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                   v-model="item.price"
                 />
               </td>
-              <td class="white-bottom">
-                <v-text-field
-                  placeholder="Enter Text"
+              <td class="ps-0 white-bottom">
+                <v-select
+                  placeholder="VAT Rate"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                   v-model="item.rate"
+                  :items="['25%', '50%', '100%']"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -376,16 +396,17 @@
                   v-model="item.disc"
                 />
               </td>
-              <td class="white-bottom">
-                <v-text-field
+              <td class="ps-0 white-bottom">
+                <v-select
                   placeholder="Enter Text"
                   variant="outlined"
                   rounded="lg"
                   hide-details
                   v-model="item.disc_type"
+                  :items="['%', '%%']"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="ps-0 white-bottom">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -394,7 +415,7 @@
                   v-model="item.total"
                 />
               </td>
-              <td class="white-bottom">
+              <td class="px-0 white-bottom">
                 <v-btn
                   size="x-small"
                   flat
@@ -414,6 +435,7 @@
                     width="24"
                     height="24"
                   />
+                  <invoice-products-row-menu />
                 </v-btn>
               </td>
             </tr>
@@ -421,7 +443,7 @@
               <td class="pe-0">
                 <v-icon>mdi-unfold-more-horizontal</v-icon>
               </td>
-              <td colspan="9" class="ps-0">
+              <td colspan="10" class="ps-0">
                 <v-text-field
                   placeholder="Enter Text"
                   variant="outlined"
@@ -440,7 +462,7 @@
         <v-btn
           color="white"
           @click="onBack"
-          prepend-icon="mdi-check"
+          prepend-icon="mdi-plus"
           rounded="lg"
           style="
             background: #20c39d !important;
@@ -455,7 +477,7 @@
         >
         <v-btn
           @click="onBack"
-          prepend-icon="mdi-check"
+          prepend-icon="mdi-plus"
           rounded="lg"
           style="
             color: #0d0d1e !important;
@@ -479,11 +501,12 @@
               <span class="font-13 app-medium-font dark-font"
                 >Discount type</span
               >
-              <v-text-field
+              <v-select
                 placeholder="Percent"
                 variant="outlined"
                 rounded="lg"
                 hide-details
+                :items="['Percent', 'Percent 2']"
               />
             </v-col>
             <v-col cols="12" md="4">
@@ -500,33 +523,36 @@
               <span class="font-13 app-medium-font dark-font"
                 >PDF template, invoice</span
               >
-              <v-text-field
+              <v-select
                 placeholder="PDF-template, invoice"
                 variant="outlined"
                 rounded="lg"
                 hide-details
+                :items="['Percent', 'Percent 2']"
               />
             </v-col>
             <v-col cols="12" md="4">
               <span class="font-13 app-medium-font dark-font"
                 >PDF-template, reminder</span
               >
-              <v-text-field
+              <v-select
                 placeholder="Percent"
                 variant="outlined"
                 rounded="lg"
                 hide-details
+                :items="['Percent', 'Percent 2']"
               />
             </v-col>
             <v-col cols="12" md="4">
               <span class="font-13 app-medium-font dark-font"
                 >PDF-template, inkasso</span
               >
-              <v-text-field
+              <v-select
                 placeholder="Percent"
                 variant="outlined"
                 rounded="lg"
                 hide-details
+                :items="['Percent', 'Percent 2']"
               />
             </v-col>
           </v-row>
@@ -534,7 +560,18 @@
       </v-col>
       <v-col cols="12" md="5">
         <v-card class="rounded-xl pa-6" height="100%">
-          <v-card-title> Total </v-card-title>
+          <v-card-title
+            class="d-flex flex-row align-center font-20 app-semibold-font dark-font"
+          >
+            <div class="me-3">
+              <v-img
+                width="28"
+                height="28"
+                src="@/assets/svg/invoices/bill.svg"
+              />
+            </div>
+            Total
+          </v-card-title>
           <v-card-text class="mt-2 d-flex flex-row justify-between">
             <span class="font-14 dark-font app-medium-font">Total fees</span>
             <span class="font-13 shade-font app-regular-font">2180,00</span>
@@ -593,8 +630,8 @@
           color: white !important;
           padding-left: 20px;
           padding-right: 20px;
-          padding-top: 10px;
-          padding-bottom: 10px;
+          padding-top: 5px;
+          padding-bottom: 5px;
         "
         class="text-none ms-2 font-14 app-medium-font"
         flat
@@ -614,7 +651,7 @@ import generalIcon from "@/assets/svg/customers/general.svg";
 import addressIcon from "@/assets/svg/customers/address.svg";
 import contactIcon from "@/assets/svg/customers/contact.svg";
 import invoiceIcon from "@/assets/svg/customers/invoice.svg";
-// import NewCustomerCategoryDialog from "./NewCustomerCategoryDialog.vue";
+import InvoiceProductsRowMenu from "./InvoiceProductsRowMenu.vue";
 
 import { useDisplay } from "vuetify";
 const { mdAndUp } = useDisplay();
@@ -717,6 +754,13 @@ div :deep(.v-chip__close) {
 }
 
 div :deep(.v-text-field input.v-field__input) {
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+div :deep(.v-select .v-field__input) {
   min-height: 40px;
   padding-top: 5px;
   padding-bottom: 5px;

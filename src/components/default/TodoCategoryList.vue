@@ -140,7 +140,7 @@ import bottomIcon from "@/assets/svg/datatable/bottom.svg";
 const props = defineProps({
   type: { type: String, default: "simple" },
   theme: { type: String, default: "light" },
-  onItemClicked: { type: String, default: () => {} },
+  onItemClicked: { type: Function, default: () => {} },
 });
 
 const addNewDialog = ref(false);

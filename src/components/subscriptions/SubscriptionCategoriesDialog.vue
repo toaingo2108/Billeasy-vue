@@ -112,7 +112,7 @@
                     width="24"
                     height="24"
                   />
-                  <slot name="action"></slot>
+                  <subscription-products-row-menu />
                 </v-btn>
               </td>
             </tr>
@@ -142,6 +142,7 @@ import { ref, reactive, watchEffect } from "vue";
 import NewSubscriptionCategoryDialog from "./NewSubscriptionCategoryDialog.vue";
 import AppDataTableBottomPagination from "../default/AppDataTableBottomPagination.vue";
 import SearchField from "../default/SearchField.vue";
+import SubscriptionProductsRowMenu from "./SubscriptionProductsRowMenu.vue";
 
 const props = defineProps({
   dialog: Boolean,

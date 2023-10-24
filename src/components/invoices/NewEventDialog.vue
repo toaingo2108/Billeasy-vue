@@ -82,17 +82,18 @@ const emit = defineEmits();
 const closeDialog = () => {
   emit("update:dialog", false);
 };
-
-const priceDialog = ref(false);
-
-const onAddNewPrice = function () {
-  priceDialog.value = true;
-};
 </script>
 
 <style scoped>
 div :deep(.v-text-field input.v-field__input) {
   min-height: 40px;
   padding: 5px 10px;
+}
+div :deep(.v-select .v-field__input) {
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 </style>

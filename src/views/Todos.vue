@@ -5,7 +5,7 @@
       <div
         class="app-medium-font font-14 teal-font d-flex flex-row align-center"
       >
-        <v-btn variant="plain" class="text-none">
+        <v-btn variant="plain" class="text-none" @click="onTodoCustomize">
           <v-icon color="#20C39D" class="me-2">mdi-vector-square </v-icon>
           Customize
         </v-btn>
@@ -90,18 +90,25 @@
       @update:dialog="(val) => (newTodoStatusDialog = val)"
       v-if="newTodoStatusDialog"
     />
+    <new-todo-item-dialog
+      :dialog="newTodoItemDialog"
+      @update:dialog="(val) => (newTodoItemDialog = val)"
+      v-if="newTodoItemDialog"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
 import NewTodoCategoryDialog from "@/components/todos/NewTodoCategoryDialog.vue";
+import NewTodoItemDialog from "@/components/todos/NewTodoItemDialog.vue";
 import NewTodoStatusDialog from "@/components/todos/NewTodoStatusDialog.vue";
 import TodoCategoryList from "@/components/default/TodoCategoryList.vue";
 import TodoDetailsUpdateMenu from "@/components/todos/TodoDetailsUpdateMenu.vue";
 
 const newTodoCategoryDialog = ref(false);
 const newTodoStatusDialog = ref(false);
+const newTodoItemDialog = ref(false);
 
 import { useRouter } from "vue-router";
 import SearchField from "@/components/default/SearchField.vue";
@@ -109,11 +116,15 @@ import SearchField from "@/components/default/SearchField.vue";
 const router = useRouter();
 
 const openNewTodoDialog = function () {
-  // router.push({ name: "new-customer" });
+  console.log("asdfasdfasdf");
+  newTodoItemDialog.value = true;
 };
 
 const onTodoDetails = () => {
-  router.push({ name: "todos-details" });
+  newTodoItemDialog.value = true;
+};
+const onTodoCustomize = () => {
+  router.push({ name: "todos-customize" });
 };
 
 const onTodoCategory = function () {

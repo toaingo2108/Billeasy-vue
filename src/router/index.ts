@@ -93,11 +93,11 @@ const routes = [
           import(/* webpackChunkName: "todos" */ "@/views/Todos.vue"),
       },
       {
-        path: "todos-details",
-        name: "todos-details",
+        path: "todos-customize",
+        name: "todos-customize",
         component: () =>
           import(
-            /* webpackChunkName: "todos-details" */ "@/components/todos/TodosDetails.vue"
+            /* webpackChunkName: "todos-customize" */ "@/components/todos/TodosCustomize.vue"
           ),
       },
       {

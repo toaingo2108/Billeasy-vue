@@ -27,6 +27,9 @@
             items-per-page="15"
             style="margin-bottom: 80px"
           >
+            <template v-slot:action>
+              <subscription-products-row-menu />
+            </template>
           </app-data-table>
           <app-data-table-bottom :length="15" />
         </div>
@@ -45,20 +48,30 @@
             </div>
             Schedule New Event
           </v-card-title>
-          <v-card-text class="d-flex flex-row mx-3 pb-1 mt-6">
-            <div class="w-50 me-2">
-              <span class="font-13 app-medium-font dark-font"
-                >Subscription *</span
-              >
+          <v-card-text class="d-flex flex-column mx-3 pb-1 mt-6">
+            <span class="font-13 app-medium-font dark-font"
+              >Subscription *</span
+            >
+            <v-select
+              placeholder="Subscription"
+              variant="outlined"
+              rounded="lg"
+              hide-details
+              :items="['Subscription', 'Subscription2']"
+            />
+          </v-card-text>
+          <v-card-text class="d-flex flex-row mx-3 pb-1">
+            <div class="w-50">
+              <span class="font-13 app-medium-font dark-font">Row *</span>
               <v-select
-                placeholder="Subscription"
+                placeholder="Event"
                 variant="outlined"
                 rounded="lg"
                 hide-details
-                :items="['Subscription', 'Subscription2']"
+                :items="['30', '40', '50']"
               />
             </div>
-            <div class="w-50 ms-2">
+            <div class="w-50 ps-2">
               <span class="font-13 app-medium-font dark-font"
                 >Event Date *</span
               >
@@ -70,26 +83,26 @@
               />
             </div>
           </v-card-text>
-          <v-card-text class="d-flex flex-column mx-3 pb-1">
-            <span class="font-13 app-medium-font dark-font">Event *</span>
-            <v-select
-              placeholder="Event"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['30', '40', '50']"
-            />
-          </v-card-text>
-          <v-card-text class="d-flex flex-column mx-3 pb-1">
-            <span class="font-13 app-medium-font dark-font"
-              >Number of Events</span
-            >
-            <v-text-field
-              placeholder="Number of Events"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-            />
+          <v-card-text class="d-flex flex-row mx-3 pb-1">
+            <div class="w-50">
+              <span class="font-13 app-medium-font dark-font">Event *</span>
+              <v-select
+                placeholder="Event"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['30', '40', '50']"
+              />
+            </div>
+            <div class="w-50 ps-2">
+              <span class="font-13 app-medium-font dark-font"># Events *</span>
+              <v-text-field
+                placeholder="Date"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+              />
+            </div>
           </v-card-text>
           <v-card-text class="d-flex flex-column mx-3 pb-1">
             <v-checkbox color="#20c39d" value="#20c39d" hide-details>
@@ -146,6 +159,7 @@ import SendInvoiceDialog from "@/components/invoices/SendInvoiceDialog.vue";
 import RegisterPaymentDialog from "@/components/invoices/RegisterPaymentDialog.vue";
 import SearchField from "../default/SearchField.vue";
 import SubscriptionCategoriesDialog from "@/components/subscriptions/SubscriptionCategoriesDialog.vue";
+import SubscriptionProductsRowMenu from "./SubscriptionProductsRowMenu.vue";
 
 const headers = [
   { title: "Sub nr.", key: "id", style: "bold" },

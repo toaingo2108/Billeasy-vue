@@ -20,7 +20,11 @@
           v-for="(menu, index) in menus"
         >
           <div class="me-2">
-            <v-img width="18" height="18" :src="menu.icon" />
+            <v-img
+              width="18"
+              height="18"
+              :src="tab == index ? menu.selected_icon : menu.unselected_icon"
+            />
           </div>
           {{ menu.title }}
         </v-tab>
@@ -69,7 +73,9 @@ import ProductCategoriesDialog from "@/components/products/ProductCategoriesDial
 import SubscriptionsList from "@/components/subscriptions/SubscriptionsList.vue";
 import ScheduledEvents from "@/components/subscriptions/ScheduledEvents.vue";
 import subscriptionIcon from "@/assets/svg/subscriptions/subscription.svg";
-import timeReportIcon from "@/assets/svg/customers/time_report.svg";
+import subscriptionUnselectedIcon from "@/assets/svg/subscriptions/subscription_unselected.svg";
+import timeReportIcon from "@/assets/svg/customers/time_report_selected.svg";
+import timeReportUnselectedIcon from "@/assets/svg/customers/time_report.svg";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);
@@ -80,11 +86,13 @@ const tab = ref(0);
 const menus = [
   {
     title: "Subscription List",
-    icon: subscriptionIcon,
+    selected_icon: subscriptionIcon,
+    unselected_icon: subscriptionUnselectedIcon,
   },
   {
     title: "Scheduled Events",
-    icon: timeReportIcon,
+    selected_icon: timeReportIcon,
+    unselected_icon: timeReportUnselectedIcon,
   },
 ];
 

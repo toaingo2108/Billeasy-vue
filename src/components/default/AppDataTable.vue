@@ -11,12 +11,7 @@
             v-if="header.checkable"
             class="d-flex flex-row align-center justify-center"
           >
-            <v-checkbox
-              color="#20c39d"
-              hide-details
-              v-model="isCheckedAll"
-              class="ms-2"
-            />
+            <app-checkbox v-model="isCheckedAll" class="ms-2" />
           </div>
           <div
             v-else-if="header.key != 'action'"
@@ -56,13 +51,10 @@
                 height: calc(100% - 6px);
               "
             >
-              <v-checkbox
-                color="#20c39d"
-                hide-details
+              <app-checkbox
                 v-model="item.checked"
-                v-if="header.key == 'checked'"
                 class="ms-2"
-                @click.stop
+                v-if="header.key == 'checked'"
               />
               <div v-else-if="header.key == 'action'">
                 <v-btn
@@ -126,6 +118,7 @@
 <script lang="ts" setup>
 import { ref, watchEffect, reactive, watch } from "vue";
 import { TableHeadersArray, TableItemsArray } from "@/types/interfaces";
+import AppCheckbox from "./AppCheckbox.vue";
 
 const props = defineProps({
   headers: { type: Array as () => TableHeadersArray, default: [] },

@@ -182,7 +182,7 @@ const addNewNoteDialog = ref(false);
 
 const router = useRouter();
 const onBack = function () {
-  router.back();
+  router.push({ name: "subscriptions" });
 };
 
 const menus = [
