@@ -33,6 +33,9 @@
           <div v-else-if="menu.title == 'Subscription Settings'">
             <subscription-settings />
           </div>
+          <div v-else-if="menu.title == 'Integration Settings'">
+            <integration-settings />
+          </div>
         </v-window-item>
       </v-window>
     </div>
@@ -70,6 +73,7 @@ import subscriptionIcon from "@/assets/svg/subscriptions/subscription.svg";
 import subscriptionUnselectedIcon from "@/assets/svg/subscriptions/subscription_unselected.svg";
 import settingIcon from "@/assets/svg/settings/setting.svg";
 import settingUnselectedIcon from "@/assets/svg/settings/setting_unselected.svg";
+import IntegrationSettings from "@/components/settings/IntegrationSettings.vue";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);
