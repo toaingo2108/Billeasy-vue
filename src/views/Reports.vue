@@ -30,14 +30,14 @@
           <div v-if="menu.title == 'Overall'">
             <reports-overall />
           </div>
-          <div v-else-if="menu.title == 'Subscriptions'">
-            <subscription-settings />
+          <div v-else-if="menu.title == 'Subscription'">
+            <reports-subscription />
           </div>
           <div v-else-if="menu.title == 'Customers'">
-            <integration-settings />
+            <reports-customers />
           </div>
           <div v-else-if="menu.title == 'Products'">
-            <integration-settings />
+            <reports-subscription />
           </div>
         </v-window-item>
       </v-window>
@@ -54,7 +54,7 @@
 import { ref } from "vue";
 import ProductCategoriesDialog from "@/components/products/ProductCategoriesDialog.vue";
 import ReportsOverall from "@/components/reports/ReportsOverall.vue";
-import SubscriptionSettings from "@/components/settings/SubscriptionSettings.vue";
+import ReportsSubscription from "@/components/reports/ReportsSubscription.vue";
 import overallIcon from "@/assets/svg/reports/overall_selected.svg";
 import overallUnselectedIcon from "@/assets/svg/reports/overall_unselected.svg";
 import subscriptionIcon from "@/assets/svg/reports/subscriptions_selected.svg";
@@ -63,6 +63,7 @@ import customersIcon from "@/assets/svg/reports/customers_selected.svg";
 import customersUnselectedIcon from "@/assets/svg/reports/customers_unselected.svg";
 import productsIcon from "@/assets/svg/reports/products_selected.svg";
 import productsUnselectedIcon from "@/assets/svg/reports/products_unselected.svg";
+import ReportsCustomers from "@/components/reports/ReportsCustomers.vue";
 
 const productCategoriesDialog = ref(false);
 const tab = ref(0);
