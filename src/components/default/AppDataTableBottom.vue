@@ -9,7 +9,7 @@
     "
     class="bg-gray position-fixed d-flex flex-row align-center"
   >
-    <div class="ms-10">
+    <div class="ms-10" v-if="!props.hideButton">
       <v-select
         placeholder="Import Source"
         variant="outlined"
@@ -26,6 +26,7 @@
       height="40"
       class="button-40 ms-2"
       rounded="lg"
+      v-if="!props.hideButton"
     >
       <v-img
         width="40"
@@ -45,6 +46,7 @@ const type = ref("Activate");
 
 const props = defineProps({
   length: { type: Number, default: 0 },
+  hideButton: { type: Boolean, default: false },
 });
 </script>
 <style scoped>

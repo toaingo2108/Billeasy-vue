@@ -58,7 +58,7 @@ const menuItems = [
   [todosIcon, "To-do's", "todos"],
   [reportsIcon, "Reports", "reports"],
   [settingsIcon, "Settings", "settings"],
-  [eventLogIcon, "Event log", "event_log"],
+  [eventLogIcon, "Event log", "event-log"],
   [usersIcon, "Users", "users"],
 ];
 const selected = ref(-1);

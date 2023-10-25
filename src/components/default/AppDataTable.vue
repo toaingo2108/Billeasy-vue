@@ -108,7 +108,10 @@
                   v-else-if="`${item[`${header.key}`]}` == 'cancel'"
                 />
               </div>
-              <div v-else>
+              <div
+                v-else
+                :style="header.width ? `width: ${header.width};` : ''"
+              >
                 <span
                   class="font-13 dark-font app-semibold-font"
                   v-if="header.style == 'bold'"
