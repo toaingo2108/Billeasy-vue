@@ -492,10 +492,6 @@
         >Save</v-btn
       >
     </div>
-    <new-customer-category-dialog
-      :dialog="addNewCategoryDialog"
-      @update:dialog="(val) => (addNewCategoryDialog = val)"
-    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -559,35 +555,35 @@ const productListsHeaders = [
 const productLists = [
   {
     country: "SE",
-    var_rate: "25.00%",
+    vat_rate: "25.00%",
     account_type: "Sales",
     customer_type: "Private",
     account_number: "3001 - SE sales 25%",
   },
   {
     country: "EU",
-    var_rate: "25.00%",
+    vat_rate: "25.00%",
     account_type: "Sales",
     customer_type: "Private",
     account_number: "3001 - SE sales 25%",
   },
   {
     country: "Export",
-    var_rate: "25.00%",
+    vat_rate: "25.00%",
     account_type: "Sales",
     customer_type: "Private",
     account_number: "3001 - SE sales 25%",
   },
   {
     country: "US",
-    var_rate: "25.00%",
+    vat_rate: "25.00%",
     account_type: "Sales",
     customer_type: "Private",
     account_number: "3001 - SE sales 25%",
   },
   {
     country: "DK",
-    var_rate: "25.00%",
+    vat_rate: "25.00%",
     account_type: "Sales",
     customer_type: "Private",
     account_number: "3001 - SE sales 25%",

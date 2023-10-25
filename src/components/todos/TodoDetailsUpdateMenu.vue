@@ -4,7 +4,7 @@
     :close-on-content-click="false"
     v-model="menuDialog"
   >
-    <v-card class="rounded-xl pa-2" width="672">
+    <v-card class="rounded-xl pa-2" width="672" color="#F2F2F7">
       <v-card-title class=""> Item #5 </v-card-title>
       <v-card-text class="d-flex flex-column pb-1 w-100">
         <v-tabs v-model="tab" color="#20C39D">
@@ -72,6 +72,7 @@
                   </div>
                   <div class="mt-1">
                     <v-select
+                      bg-color="white"
                       placeholder="Assignee / Person"
                       variant="outlined"
                       rounded="lg"
@@ -106,6 +107,7 @@
                   </div>
                   <div class="mt-1">
                     <v-select
+                      bg-color="white"
                       placeholder="Assignee / Person"
                       variant="outlined"
                       rounded="lg"
@@ -120,6 +122,7 @@
                   </div>
                   <div class="mt-1">
                     <v-select
+                      bg-color="white"
                       placeholder="Assignee / Person"
                       variant="outlined"
                       rounded="lg"
@@ -143,6 +146,7 @@
                   </div>
                   <div class="mt-1">
                     <v-select
+                      bg-color="white"
                       placeholder="Invoice"
                       variant="outlined"
                       rounded="lg"
@@ -175,6 +179,7 @@
                   </div>
                   <div class="mt-1">
                     <v-select
+                      bg-color="white"
                       placeholder="Person"
                       variant="outlined"
                       rounded="lg"
@@ -246,7 +251,7 @@
         </v-window>
       </v-card-text>
       <v-divider class="mt-5" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"

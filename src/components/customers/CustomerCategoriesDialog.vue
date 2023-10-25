@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="dialog" width="1120">
-    <v-card class="rounded-xl">
+    <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title
         class="app-semibold-font font-20 dark-font mt-6 mx-3 d-flex flex-row justify-between"
       >

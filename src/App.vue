@@ -174,6 +174,8 @@ html {
 div .v-text-field input.v-field__input {
   min-height: 40px;
   padding: 7px 10px !important;
+  background-color: white;
+  border-radius: 10px;
 }
 
 div .v-select .v-field__input {

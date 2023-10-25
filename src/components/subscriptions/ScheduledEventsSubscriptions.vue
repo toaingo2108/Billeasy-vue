@@ -54,6 +54,7 @@
                 >Subscription *</span
               >
               <v-select
+                bg-color="white"
                 placeholder="Subscription"
                 variant="outlined"
                 rounded="lg"
@@ -76,6 +77,7 @@
           <v-card-text class="d-flex flex-column mx-3 pb-1">
             <span class="font-13 app-medium-font dark-font">Event *</span>
             <v-select
+              bg-color="white"
               placeholder="Event"
               variant="outlined"
               rounded="lg"
@@ -111,7 +113,7 @@
               </template>
             </v-checkbox>
           </v-card-text>
-          <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+          <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
             <v-btn
               color="white"
               @click="saveEvent"

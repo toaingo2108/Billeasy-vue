@@ -11,6 +11,7 @@
   >
     <div class="ms-10" v-if="!props.hideButton">
       <v-select
+        bg-color="white"
         placeholder="Import Source"
         variant="outlined"
         rounded="lg"

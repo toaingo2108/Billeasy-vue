@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="props.dialog" width="704" persistent>
-    <v-card class="rounded-xl">
+    <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
         Edit Product
       </v-card-title>
@@ -17,6 +17,7 @@
         <div style="width: 224px" class="ms-12">
           <span class="font-13 app-medium-font dark-font">VAT rate</span>
           <v-select
+            bg-color="white"
             placeholder="VAT rate"
             variant="outlined"
             rounded="lg"
@@ -30,6 +31,7 @@
             prepend-icon="mdi-plus"
             class="text-none app-medium-font font-14"
             color="#20c39d"
+            @click="onAddNewVATRate"
           >
             Add New
           </v-btn>
@@ -48,6 +50,7 @@
         <div style="width: 224px" class="ms-12">
           <span class="font-13 app-medium-font dark-font">Unit</span>
           <v-select
+            bg-color="white"
             placeholder="Unit"
             variant="outlined"
             rounded="lg"
@@ -61,6 +64,7 @@
             prepend-icon="mdi-plus"
             class="text-none app-medium-font font-14"
             color="#20c39d"
+            @click="onAddNewUnit"
           >
             Add New
           </v-btn>
@@ -79,6 +83,7 @@
         <div style="width: 224px" class="ms-12">
           <span class="font-13 app-medium-font dark-font">Category</span>
           <v-select
+            bg-color="white"
             placeholder="Category"
             variant="outlined"
             rounded="lg"
@@ -164,6 +169,7 @@
               </td>
               <td>
                 <v-select
+                  bg-color="white"
                   placeholder="PRICELIST"
                   variant="outlined"
                   rounded="lg"
@@ -193,7 +199,7 @@
         </div>
       </v-card-text>
       <v-divider class="mt-10" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"
@@ -233,6 +239,14 @@
         :dialog="categoryDialog"
         @update:dialog="(val) => (categoryDialog = val)"
       />
+      <new-unit-dialog
+        :dialog="newUnitDialog"
+        @update:dialog="(val) => (newUnitDialog = val)"
+      />
+      <new-vat-rate-dialog
+        :dialog="newVatRateDialog"
+        @update:dialog="(val) => (newVatRateDialog = val)"
+      />
     </v-card>
   </v-dialog>
 </template>
@@ -241,6 +255,8 @@
 import { ref, watchEffect } from "vue";
 import NewProductPriceDialog from "./NewProductPriceDialog.vue";
 import NewProductCategoryDialog from "./NewProductCategoryDialog.vue";
+import NewUnitDialog from "../settings/NewUnitDialog.vue";
+import NewVatRateDialog from "../settings/NewVatRateDialog.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -257,6 +273,7 @@ const headers = [
   "PRICE excl. VAT",
   "FROM QUANTITY",
   "PRICELIST",
+  "",
 ];
 
 const items = [
@@ -267,12 +284,20 @@ const items = [
 
 const priceDialog = ref(false);
 const categoryDialog = ref(false);
+const newUnitDialog = ref(false);
+const newVatRateDialog = ref(false);
 
 const onAddNewPrice = function () {
   priceDialog.value = true;
 };
 const onAddNewCategory = function () {
   categoryDialog.value = true;
+};
+const onAddNewUnit = () => {
+  newUnitDialog.value = true;
+};
+const onAddNewVATRate = () => {
+  newVatRateDialog.value = true;
 };
 </script>
 

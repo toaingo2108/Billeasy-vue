@@ -1,6 +1,6 @@
 <template>
   <v-menu activator="parent" :close-on-content-click="false" v-model="menu">
-    <v-card class="rounded-xl">
+    <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
         New Invoice Note
       </v-card-title>
@@ -28,7 +28,7 @@
         </div>
       </v-card-text>
       <v-divider class="mt-8" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"
@@ -65,11 +65,6 @@
 </template>
 
 <script lang="ts" setup>
-import registerPaymentIcon from "@/assets/svg/invoices/register_payment.svg";
-import invoiceIcon from "@/assets/svg/customers/invoice.svg";
-import creditInvoiceIcon from "@/assets/svg/invoices/credit_invoice.svg";
-import duplicateIcon from "@/assets/svg/invoices/duplicate.svg";
-import previewPDFIcon from "@/assets/svg/invoices/preview_pdf.svg";
 import { ref } from "vue";
 
 const props = defineProps({

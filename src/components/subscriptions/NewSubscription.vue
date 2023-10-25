@@ -742,10 +742,6 @@
         >Create</v-btn
       >
     </div>
-    <new-customer-category-dialog
-      :dialog="addNewCategoryDialog"
-      @update:dialog="(val) => (addNewCategoryDialog = val)"
-    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -760,8 +756,6 @@ import SubscriptionProductsRowMenu from "./SubscriptionProductsRowMenu.vue";
 import { useDisplay } from "vuetify";
 const { mdAndUp } = useDisplay();
 
-const tab = ref(0);
-const addNewDialog = ref(false);
 const addNewCategoryDialog = ref(false);
 const paymentMethods = ["Swish", "Bankgiro"];
 

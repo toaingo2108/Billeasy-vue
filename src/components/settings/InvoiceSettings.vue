@@ -489,7 +489,6 @@
     <div class="mt-6 d-flex flex-row justify-end">
       <v-btn
         color="#0D0D1E"
-        @click="closeDialog"
         variant="outlined"
         rounded="lg"
         style="
@@ -504,7 +503,6 @@
       >
       <v-btn
         color="white"
-        @click="closeDialog"
         prepend-icon="mdi-check"
         rounded="lg"
         style="
@@ -555,7 +553,6 @@ const vatRate = ref(false);
 const includeOCR = ref(false);
 
 import { useRouter } from "vue-router";
-import SearchField from "@/components/default/SearchField.vue";
 
 const router = useRouter();
 

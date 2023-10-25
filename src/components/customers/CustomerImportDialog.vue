@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="props.dialog" width="624" persistent>
-    <v-card class="rounded-xl">
+    <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
         Import Customers
       </v-card-title>
@@ -12,6 +12,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Import Source"
             variant="outlined"
             rounded="lg"
@@ -130,6 +131,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Type"
             variant="outlined"
             rounded="lg"
@@ -149,6 +151,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="First Name"
             variant="outlined"
             rounded="lg"
@@ -168,6 +171,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Last Name"
             variant="outlined"
             rounded="lg"
@@ -187,6 +191,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Company Name"
             variant="outlined"
             rounded="lg"
@@ -206,6 +211,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Personal/Org. Number"
             variant="outlined"
             rounded="lg"
@@ -225,6 +231,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Customer Number"
             variant="outlined"
             rounded="lg"
@@ -244,6 +251,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="VAT Number"
             variant="outlined"
             rounded="lg"
@@ -261,6 +269,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Phone"
             variant="outlined"
             rounded="lg"
@@ -270,7 +279,7 @@
         </div>
       </v-card-text>
       <v-divider class="mt-5" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"

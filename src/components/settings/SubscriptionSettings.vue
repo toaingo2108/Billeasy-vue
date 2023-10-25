@@ -276,7 +276,6 @@
     <div class="mt-6 d-flex flex-row justify-end">
       <v-btn
         color="#0D0D1E"
-        @click="closeDialog"
         variant="outlined"
         rounded="lg"
         style="
@@ -291,7 +290,6 @@
       >
       <v-btn
         color="white"
-        @click="closeDialog"
         prepend-icon="mdi-check"
         rounded="lg"
         style="
@@ -306,23 +304,11 @@
         >Save</v-btn
       >
     </div>
-    <new-todo-category-dialog
-      :dialog="newTodoCategoryDialog"
-      @update:dialog="(val) => (newTodoCategoryDialog = val)"
-      v-if="newTodoCategoryDialog"
-    />
-    <new-todo-status-dialog
-      :dialog="newTodoStatusDialog"
-      @update:dialog="(val) => (newTodoStatusDialog = val)"
-      v-if="newTodoStatusDialog"
-    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import NewTodoCategoryDialog from "@/components/todos/NewTodoCategoryDialog.vue";
-import NewTodoStatusDialog from "@/components/todos/NewTodoStatusDialog.vue";
 import AppCheckbox from "@/components/default/AppCheckbox.vue";
 
 const autoBillSubscription = ref(false);

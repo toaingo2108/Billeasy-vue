@@ -2,7 +2,7 @@
   <v-dialog v-model="props.dialog" width="400" persistent>
     <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
-        New Price List
+        New Unit
       </v-card-title>
       <v-card-text class="d-flex flex-column mx-3 pb-1">
         <span class="font-13 app-medium-font dark-font">Code *</span>
@@ -23,7 +23,7 @@
           rows="3"
         />
       </v-card-text>
-      <v-card-text class="d-flex flex-row pb-1">
+      <!-- <v-card-text class="d-flex flex-row pb-1">
         <v-checkbox color="#20c39d" value="#20c39d" hide-details>
           <template v-slot:label>
             <span class="font-14 app-regular-font dark-font">
@@ -31,7 +31,7 @@
             </span>
           </template>
         </v-checkbox>
-      </v-card-text>
+      </v-card-text> -->
       <v-divider class="mt-8" />
       <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn

@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="props.dialog" width="624" persistent>
-    <v-card class="rounded-xl">
+    <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
         Import Products
       </v-card-title>
@@ -12,6 +12,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Import Source"
             variant="outlined"
             rounded="lg"
@@ -132,6 +133,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Product nr."
             variant="outlined"
             rounded="lg"
@@ -149,6 +151,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Name"
             variant="outlined"
             rounded="lg"
@@ -166,6 +169,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="SKU"
             variant="outlined"
             rounded="lg"
@@ -185,6 +189,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Default Price"
             variant="outlined"
             rounded="lg"
@@ -204,6 +209,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Quantity In Stock"
             variant="outlined"
             rounded="lg"
@@ -221,6 +227,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="Unit"
             variant="outlined"
             rounded="lg"
@@ -238,6 +245,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="EAN"
             variant="outlined"
             rounded="lg"
@@ -257,6 +265,7 @@
         </div>
         <div style="width: 192px">
           <v-select
+            bg-color="white"
             placeholder="VAT Rate"
             variant="outlined"
             rounded="lg"
@@ -266,7 +275,7 @@
         </div>
       </v-card-text>
       <v-divider class="mt-5" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"

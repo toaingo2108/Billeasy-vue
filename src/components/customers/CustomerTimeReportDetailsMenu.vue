@@ -4,7 +4,7 @@
     :close-on-content-click="false"
     v-model="menuDialog"
   >
-    <v-card class="rounded-xl pa-2" width="608">
+    <v-card class="rounded-xl pa-2" width="608" color="#F2F2F7">
       <v-card-text class="d-flex flex-row pb-1 w-100">
         <div style="width: 33.33%" class="px-2">
           <div>
@@ -178,7 +178,7 @@
         </div>
       </v-card-text>
       <v-divider class="mt-5" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"

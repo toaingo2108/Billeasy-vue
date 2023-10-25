@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="props.dialog" width="400" persistent>
-    <v-card class="rounded-xl">
+    <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
         New Customer Note
       </v-card-title>
@@ -28,7 +28,7 @@
         </div>
       </v-card-text>
       <v-divider class="mt-8" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"

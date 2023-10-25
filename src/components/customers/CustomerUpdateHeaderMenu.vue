@@ -1,6 +1,6 @@
 <template>
   <v-menu activator="parent" :close-on-content-click="false">
-    <v-card class="rounded-xl pa-2" width="400">
+    <v-card class="rounded-xl pa-2" width="400" color="#F2F2F7">
       <v-card-text class="d-flex flex-column pb-1 ps-4">
         <div>
           <span class="font-13 app-medium-font dark-font"> Header </span>
@@ -51,7 +51,7 @@
         </div>
       </v-card-text>
       <v-divider class="mt-5" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"

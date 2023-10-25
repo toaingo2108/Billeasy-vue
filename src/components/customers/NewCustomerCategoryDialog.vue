@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="props.dialog" width="400" persistent>
-    <v-card class="rounded-xl">
+    <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
         New Customer Category
       </v-card-title>
@@ -17,6 +17,7 @@
         <div class="w-50 ms-2">
           <span class="font-13 app-medium-font dark-font">Color *</span>
           <v-select
+            bg-color="white"
             placeholder="Color"
             variant="outlined"
             rounded="lg"
@@ -42,6 +43,7 @@
           >Subscription Template</span
         >
         <v-select
+          bg-color="white"
           placeholder="Subscription Template"
           variant="outlined"
           rounded="lg"
@@ -52,6 +54,7 @@
       <v-card-text class="d-flex flex-column mx-3 pb-1">
         <span class="font-13 app-medium-font dark-font">Invoice Template</span>
         <v-select
+          bg-color="white"
           placeholder="Invoice Template"
           variant="outlined"
           rounded="lg"
@@ -60,7 +63,7 @@
         />
       </v-card-text>
       <v-divider class="mt-8" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"

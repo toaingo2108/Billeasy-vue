@@ -4,6 +4,7 @@
       <div style="width: 224px">
         <span class="font-13 app-medium-font dark-font">Period</span>
         <v-select
+          bg-color="white"
           placeholder="Period"
           variant="outlined"
           rounded="lg"
@@ -15,6 +16,7 @@
       <div style="width: 224px" class="ms-12">
         <span class="font-13 app-medium-font dark-font">Currency</span>
         <v-select
+          bg-color="white"
           placeholder="VAT rate"
           variant="outlined"
           rounded="lg"

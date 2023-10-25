@@ -12,6 +12,7 @@
             variant="outlined"
             rounded="lg"
             hide-details
+            bg-color="white"
           />
         </div>
         <div style="width: 20%; padding-left: 10px">
@@ -21,6 +22,7 @@
             variant="outlined"
             rounded="lg"
             hide-details
+            bg-color="white"
           />
         </div>
         <div style="width: 20%; padding-left: 10px">
@@ -30,6 +32,7 @@
             variant="outlined"
             rounded="lg"
             hide-details
+            bg-color="white"
           />
         </div>
         <div style="width: 20%; padding-left: 10px">
@@ -39,6 +42,7 @@
             variant="outlined"
             rounded="lg"
             hide-details
+            bg-color="white"
           />
         </div>
         <div style="width: 20%; padding-left: 10px">
@@ -48,17 +52,27 @@
             variant="outlined"
             rounded="lg"
             hide-details
+            bg-color="white"
           />
         </div>
       </v-card-text>
-      <v-card-text class="d-flex flex-column mx-3 pb-1">
-        <span class="font-13 app-medium-font dark-font">Description</span>
-        <v-text-field
-          placeholder="description"
-          variant="outlined"
-          rounded="lg"
-          hide-details
-        />
+      <v-card-text class="d-flex flex-row mx-3 pb-1">
+        <div class="flex-grow">
+          <span class="font-13 app-medium-font dark-font">Description</span>
+          <v-text-field
+            placeholder="description"
+            variant="outlined"
+            rounded="lg"
+            hide-details
+            bg-color="white"
+          />
+        </div>
+        <div class="mt-6 d-flex flex-row align-center">
+          <app-checkbox v-model="defaultReminder" class="me-3 ms-4" />
+          <span class="font-14 dark-font app-regular-font"
+            >Default<br />reminder flow</span
+          >
+        </div>
       </v-card-text>
       <v-card-text class="d-flex flex-row pb-1 align-center">
         <span class="font-14 app-semibold-font dark-font" style="width: 120px">
@@ -86,6 +100,7 @@
                 rounded="lg"
                 hide-details
                 :items="['Day', 'Month']"
+                bg-color="white"
               />
             </div>
           </v-timeline-item>
@@ -169,7 +184,10 @@
         </v-timeline>
       </v-card-text>
       <v-divider class="mt-8" />
-      <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+      <v-card-actions
+        class="py-7 px-8 d-flex flex-row justify-end"
+        style="background-color: #f7f7fa"
+      >
         <v-btn
           color="#0D0D1E"
           @click="closeDialog"
@@ -207,6 +225,7 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
+import AppCheckbox from "../default/AppCheckbox.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -217,6 +236,8 @@ const emit = defineEmits();
 const closeDialog = () => {
   emit("update:dialog", false);
 };
+
+const defaultReminder = ref(false);
 </script>
 
 <style scoped></style>

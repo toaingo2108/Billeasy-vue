@@ -638,10 +638,6 @@
         >Create</v-btn
       >
     </div>
-    <new-customer-category-dialog
-      :dialog="addNewCategoryDialog"
-      @update:dialog="(val) => (addNewCategoryDialog = val)"
-    />
   </div>
 </template>
 <script lang="ts" setup>

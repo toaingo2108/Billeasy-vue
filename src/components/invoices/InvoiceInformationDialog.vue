@@ -80,6 +80,7 @@
           <div class="d-flex flex-row mt-10 mb-6">
             <div>
               <v-select
+                bg-color="white"
                 placeholder="Import Source"
                 variant="outlined"
                 rounded="lg"
