@@ -337,45 +337,12 @@ const onAddNewPrice = function () {
 </script>
 
 <style scoped>
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 40px;
-  padding: 5px 10px;
-}
 div :deep(.v-label) {
   opacity: 1;
-}
-div :deep(.v-select .v-field__input) {
-  min-height: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .file-upload-button .v-btn__content {
   width: 100%;
   justify-content: space-between;
-}
-
-.v-card::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-.v-card::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 2px light-grey;
-  border-radius: 3px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-/* Handle */
-.v-card::-webkit-scrollbar-thumb {
-  background: #f0a00055;
-  border-radius: 3px;
-}
-
-/* Handle on hover */
-.v-dialog::-webkit-scrollbar-thumb:hover {
-  background: #f0a00055;
 }
 </style>

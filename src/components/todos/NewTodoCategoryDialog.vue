@@ -88,13 +88,4 @@ const closeDialog = () => {
 };
 </script>
 
-<style scoped>
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 40px;
-  padding: 5px 10px;
-}
-div :deep(.v-select .v-field__input) {
-  min-height: 40px;
-  padding: 5px 10px;
-}
-</style>
+<style scoped></style>

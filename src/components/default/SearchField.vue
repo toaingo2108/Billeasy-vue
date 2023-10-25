@@ -14,11 +14,6 @@ const props = defineProps({
 });
 </script>
 <style scoped>
-.v-text-field :deep(input.v-field__input) {
-  min-height: 40px;
-  padding: 5px;
-}
-
 .v-text-field :deep(.v-field__outline .v-field__outline__start) {
   border-color: #d1d1e2;
   --v-field-border-opacity: 0.8;

@@ -257,19 +257,6 @@ const onSelectedSubscription = function (item: any, index: number) {
 };
 </script>
 <style scoped>
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 40px;
-  padding: 7px !important;
-  padding-left: 12px !important;
-  padding-right: 12px !important;
-}
-div :deep(.v-select .v-field__input) {
-  min-height: 40px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
 div :deep(.v-label) {
   opacity: 1;
 }

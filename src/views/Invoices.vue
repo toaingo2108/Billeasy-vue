@@ -113,9 +113,4 @@ const goToImportedInvoice = () => {
   router.push({ name: "imported-invoices" });
 };
 </script>
-<style scoped>
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 40px;
-  padding: 5px;
-}
-</style>
+<style scoped></style>

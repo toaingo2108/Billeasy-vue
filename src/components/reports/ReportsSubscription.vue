@@ -559,19 +559,4 @@ const menus = [
   height: 100%;
   width: 100%;
 }
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
-  background-color: white;
-}
-div :deep(.v-select .v-field__input) {
-  min-height: 40px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
 </style>

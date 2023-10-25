@@ -170,4 +170,39 @@ html {
   max-height: 32px !important;
   max-width: 32px !important;
 }
+
+div .v-text-field input.v-field__input {
+  min-height: 40px;
+  padding: 7px 10px !important;
+}
+
+div .v-select .v-field__input {
+  min-height: 40px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.v-card::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.v-card::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px light-grey;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* Handle */
+.v-card::-webkit-scrollbar-thumb {
+  background: #5271ff55;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+.v-dialog::-webkit-scrollbar-thumb:hover {
+  background: #5271ff55;
+}
 </style>

@@ -161,6 +161,28 @@ const routes = [
     ],
   },
   {
+    path: "/landing",
+    component: () => import("@/layouts/default/Default.vue"),
+    children: [
+      {
+        path: "",
+        name: "home",
+        component: () =>
+          import(/* webpackChunkName: "home" */ "@/views/landing/Index.vue"),
+      },
+      {
+        path: "404",
+        name: "404",
+        component: () => import("@/views/NotFound.vue"),
+      },
+      {
+        path: "/500",
+        name: "500",
+        component: () => import("@/views/ServerError.vue"),
+      },
+    ],
+  },
+  {
     path: "/:pathMatch(.*)*",
     redirect: "/404",
   },

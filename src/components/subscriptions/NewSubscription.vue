@@ -863,19 +863,4 @@ div :deep(.v-chip__close) {
 .white-bottom {
   border-bottom: 1px solid #fff;
 }
-
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-div :deep(.v-select .v-field__input) {
-  min-height: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
 </style>

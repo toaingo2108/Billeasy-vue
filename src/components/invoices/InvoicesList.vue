@@ -303,9 +303,4 @@ const onSelectedInvoice = function (item: any, index: number) {
   router.push({ name: "invoice-details", query: { id: item.id } });
 };
 </script>
-<style scoped>
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 40px;
-  padding: 5px;
-}
-</style>
+<style scoped></style>
