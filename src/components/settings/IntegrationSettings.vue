@@ -51,6 +51,7 @@
               border-color: #d1d1e2;
               color: #0d0d1e;
             "
+            @click="onEditSetting"
           >
             Edit Settings
           </v-btn>
@@ -121,6 +122,10 @@ const onIntegrationPage = () => {
   integrationSettings.push({ title: "Fortnox" });
   integrationSettings.push({ title: "Fortnox" });
   integrationSettings.push({ title: "Fortnox" });
+};
+
+const onEditSetting = () => {
+  router.push({ name: "fortnox-settings" });
 };
 </script>
 <style scoped>

@@ -123,6 +123,14 @@ const routes = [
           import(/* webpackChunkName: "settings" */ "@/views/Settings.vue"),
       },
       {
+        path: "fortnox-settings",
+        name: "fortnox-settings",
+        component: () =>
+          import(
+            /* webpackChunkName: "fortnox-settings" */ "@/components/settings/FortnoxSettings.vue"
+          ),
+      },
+      {
         path: "404",
         name: "404",
         component: () => import("@/views/NotFound.vue"),
