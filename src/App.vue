@@ -75,6 +75,15 @@
 .font-30 {
   font-size: 30px !important;
 }
+.font-32 {
+  font-size: 32px !important;
+}
+.font-56 {
+  font-size: 56px;
+}
+.font-80 {
+  font-size: 80px;
+}
 .font-160 {
   font-size: 160px !important;
 }

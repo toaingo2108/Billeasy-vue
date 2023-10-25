@@ -162,7 +162,7 @@ const routes = [
   },
   {
     path: "/landing",
-    component: () => import("@/layouts/default/Default.vue"),
+    component: () => import("@/layouts/default/Landing.vue"),
     children: [
       {
         path: "",
