@@ -87,13 +87,25 @@
                   src="@/assets/svg/customers/status_done.svg"
                   width="24"
                   height="24"
-                  v-if="item[`${header.key}`]"
+                  v-if="`${item[`${header.key}`]}` == 'true'"
                 />
                 <v-img
                   src="@/assets/svg/customers/status_paused.svg"
                   width="24"
                   height="24"
-                  v-else
+                  v-else-if="`${item[`${header.key}`]}` == 'false'"
+                />
+                <v-img
+                  src="@/assets/svg/customers/status_alert.svg"
+                  width="24"
+                  height="24"
+                  v-else-if="`${item[`${header.key}`]}` == 'alert'"
+                />
+                <v-img
+                  src="@/assets/svg/customers/status_close.svg"
+                  width="24"
+                  height="24"
+                  v-else-if="`${item[`${header.key}`]}` == 'cancel'"
                 />
               </div>
               <div v-else>
