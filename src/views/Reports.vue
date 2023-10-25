@@ -37,7 +37,7 @@
             <reports-customers />
           </div>
           <div v-else-if="menu.title == 'Products'">
-            <reports-subscription />
+            <reports-products />
           </div>
         </v-window-item>
       </v-window>
@@ -64,6 +64,7 @@ import customersUnselectedIcon from "@/assets/svg/reports/customers_unselected.s
 import productsIcon from "@/assets/svg/reports/products_selected.svg";
 import productsUnselectedIcon from "@/assets/svg/reports/products_unselected.svg";
 import ReportsCustomers from "@/components/reports/ReportsCustomers.vue";
+import ReportsProducts from "@/components/reports/ReportsProducts.vue";
 
 const productCategoriesDialog = ref(false);
 const tab = ref(0);

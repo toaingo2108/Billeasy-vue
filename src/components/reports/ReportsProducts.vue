@@ -88,10 +88,14 @@
         class="app-semibold-font font-20 dark-font d-flex flex-row ms-4 align-center"
       >
         <div class="me-3">
-          <v-img width="28" height="28" src="@/assets/svg/home/sales.svg" />
+          <v-img
+            width="28"
+            height="28"
+            src="@/assets/svg/reports/total_revenue.svg"
+          />
         </div>
         <div>
-          Total Sales<span class="font-13 blue-600 ms-2">$550,000,000</span>
+          Total Revenue<span class="font-13 blue-600 ms-2">$550,000,000</span>
         </div>
         <v-spacer />
         <v-btn
@@ -108,26 +112,13 @@
         class="d-flex flex-row mx-4 mt-5 pb-0 d-flex flex-row align-center"
       >
         <span class="font-14 dark-font app-medium-font">
-          Sales to specific customer
-        </span>
-        <div
-          style="
-            width: 8px;
-            height: 8px;
-            border-radius: 4px;
-            margin-right: 12px;
-            margin-left: 29px;
-            background-color: #e6e6ed;
-          "
-        />
-        <span class="font-14 shade-font app-medium-font">
-          12 - Sara Carlsson
+          Upcoming revenue, active subscriptions
         </span>
       </v-card-text>
       <v-card-text class="mt-2">
         <highcharts
           :options="chartOptions2"
-          class="homechart_container2"
+          class="homechart_container"
         ></highcharts>
       </v-card-text>
     </v-card>
@@ -136,10 +127,14 @@
         class="app-semibold-font font-20 dark-font d-flex flex-row ms-4 align-center"
       >
         <div class="me-3">
-          <v-img width="28" height="28" src="@/assets/svg/home/sales.svg" />
+          <v-img
+            width="28"
+            height="28"
+            src="@/assets/svg/reports/total_revenue.svg"
+          />
         </div>
         <div>
-          Total Sales<span class="font-13 blue-600 ms-2">$550,000,000</span>
+          Total Revenue<span class="font-13 blue-600 ms-2">$550,000,000</span>
         </div>
         <v-spacer />
         <v-btn
@@ -156,122 +151,14 @@
         class="d-flex flex-row mx-4 mt-5 pb-0 d-flex flex-row align-center"
       >
         <span class="font-14 dark-font app-medium-font">
-          Sales to specific customer category
+          Upcoming revenue, active subscriptions
         </span>
-        <div
-          style="
-            width: 8px;
-            height: 8px;
-            border-radius: 4px;
-            margin-right: 12px;
-            margin-left: 29px;
-            background-color: #e6e6ed;
-          "
-        />
-        <span class="font-14 shade-font app-medium-font"> Old customers </span>
       </v-card-text>
       <v-card-text class="mt-2">
         <highcharts
           :options="chartOptions2"
-          class="homechart_container2"
+          class="homechart_container"
         ></highcharts>
-      </v-card-text>
-    </v-card>
-    <v-card class="mt-6 d-flex flex-column rounded-xl mb-4" elevation="0">
-      <v-card-title
-        class="app-semibold-font font-20 dark-font d-flex flex-row mt-4 ms-4 align-center"
-      >
-        <div class="me-3">
-          <v-img
-            width="28"
-            height="28"
-            src="@/assets/svg/reports/total_revenue.svg"
-          />
-        </div>
-        Late Payments
-      </v-card-title>
-      <v-card-text class="d-flex ms-4 mt-6 pb-0">
-        <div style="width: 288px">
-          <search-field />
-        </div>
-        <div class="ml-2">
-          <v-btn
-            variant="plain"
-            width="40"
-            height="40"
-            class="button-40"
-            rounded="lg"
-          >
-            <v-img
-              width="40"
-              height="40"
-              src="@/assets/svg/products/filter.svg"
-            />
-          </v-btn>
-        </div>
-      </v-card-text>
-      <v-card-text class="ms-4 mb-2 pt-0">
-        <table class="w-100 h-100 py-5 styled-table">
-          <tr>
-            <th style="text-align: left; height: 48px; width: 120px">
-              <span class="font-13 app-semibold-font dark-font">
-                #Customer
-              </span>
-            </th>
-            <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font"> Name </span>
-            </th>
-            <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font"> Total </span>
-            </th>
-            <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font">
-                #Late Invoices
-              </span>
-            </th>
-            <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font">
-                Avg. Time (days)
-              </span>
-            </th>
-            <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font">
-                Avg. Amount
-              </span>
-            </th>
-            <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font">
-                #Avg. Reminders Need
-              </span>
-            </th>
-          </tr>
-          <tr v-for="n in 9">
-            <td
-              class="remove-border-bottom font-13 app-medium-font dark-font"
-              style="height: 36px"
-            >
-              12
-            </td>
-            <td class="remove-border-bottom font-13 app-medium-font dark-font">
-              Sara
-            </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
-              Carlsson
-            </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
-              10 / 80 (12,5%)
-            </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
-              7,8
-            </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
-              3
-            </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
-              3
-            </td>
-          </tr>
-        </table>
       </v-card-text>
     </v-card>
   </div>
@@ -281,7 +168,6 @@
 import AppCheckbox from "@/components/default/AppCheckbox.vue";
 import moment from "moment";
 import { ref } from "vue";
-import SearchField from "../default/SearchField.vue";
 const chartOptions = {
   showInLegend: false,
   chart: {
@@ -462,7 +348,7 @@ const chartOptions2 = {
   },
   series: [
     {
-      color: "#EB801D",
+      color: "#9231DE",
       data: [
         30000, 26000, 17000, 42000, 33000, 15000, 31000, 6000, 40000, 19000,
         28000, 20000,
@@ -489,11 +375,6 @@ const menus = [
 <style scoped>
 .homechart_container {
   min-height: 420px;
-  height: 100%;
-  width: 100%;
-}
-.homechart_container2 {
-  min-height: 300px;
   height: 100%;
   width: 100%;
 }
