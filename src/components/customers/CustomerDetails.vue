@@ -282,7 +282,13 @@
               v-for="(menu, index) in menus"
             >
               <div class="me-2">
-                <v-img width="18" height="18" :src="menu.icon" />
+                <v-img
+                  width="18"
+                  height="18"
+                  :src="
+                    tab == index ? menu.selected_icon : menu.unselected_icon
+                  "
+                />
               </div>
               {{ menu.title }}
             </v-tab>
@@ -525,10 +531,14 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import invoiceIcon from "@/assets/svg/customers/invoice.svg";
+import invoiceIcon from "@/assets/svg/customers/invoice_selected.svg";
 import notesIcon from "@/assets/svg/customers/notes.svg";
 import todosIcon from "@/assets/svg/customers/todos.svg";
-import timeReportIcon from "@/assets/svg/customers/time_report.svg";
+import timeReportIcon from "@/assets/svg/customers/time_report_selected.svg";
+import invoiceUnselectedIcon from "@/assets/svg/customers/invoice_unselected.svg";
+import notesUnselectedIcon from "@/assets/svg/customers/notes_unselected.svg";
+import todosUnselectedIcon from "@/assets/svg/customers/todos_unselected.svg";
+import timeReportUnselectedIcon from "@/assets/svg/customers/time_report_unselected.svg";
 import UpdateHeaderMenu from "./CustomerUpdateHeaderMenu.vue";
 import AddNoteDialog from "./CustomerAddNoteDialog.vue";
 import AddCustomFieldDialog from "./CustomerAddCustomFieldDialog.vue";
@@ -589,19 +599,23 @@ const customFields = [
 const menus = [
   {
     title: "Invoices",
-    icon: invoiceIcon,
+    selected_icon: invoiceIcon,
+    unselected_icon: invoiceUnselectedIcon,
   },
   {
     title: "Notes",
-    icon: notesIcon,
+    selected_icon: notesIcon,
+    unselected_icon: notesUnselectedIcon,
   },
   {
     title: "To-do's",
-    icon: todosIcon,
+    selected_icon: todosIcon,
+    unselected_icon: todosUnselectedIcon,
   },
   {
     title: "Time Report",
-    icon: timeReportIcon,
+    selected_icon: timeReportIcon,
+    unselected_icon: timeReportUnselectedIcon,
   },
 ];
 
