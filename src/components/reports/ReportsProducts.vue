@@ -31,7 +31,7 @@
       </div>
       <v-spacer />
       <div style="width: 224px">
-        <span class="font-13 app-medium-font dark-font">Customer</span>
+        <span class="font-13 app-medium-font dark-font">Product</span>
         <v-select
           placeholder="Customer"
           variant="outlined"
@@ -64,7 +64,7 @@
             src="@/assets/svg/home/best_customers.svg"
           />
         </div>
-        <div>Top 10 Customers</div>
+        <div>Top 10 Products</div>
         <v-spacer />
         <v-btn
           variant="outlined"
@@ -88,14 +88,10 @@
         class="app-semibold-font font-20 dark-font d-flex flex-row ms-4 align-center"
       >
         <div class="me-3">
-          <v-img
-            width="28"
-            height="28"
-            src="@/assets/svg/reports/total_revenue.svg"
-          />
+          <v-img width="28" height="28" src="@/assets/svg/home/sales.svg" />
         </div>
         <div>
-          Total Revenue<span class="font-13 blue-600 ms-2">$550,000,000</span>
+          Total Sales<span class="font-13 blue-600 ms-2">$550,000,000</span>
         </div>
         <v-spacer />
         <v-btn
@@ -112,13 +108,26 @@
         class="d-flex flex-row mx-4 mt-5 pb-0 d-flex flex-row align-center"
       >
         <span class="font-14 dark-font app-medium-font">
-          Upcoming revenue, active subscriptions
+          Sales to specific product
+        </span>
+        <div
+          style="
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            margin-right: 12px;
+            margin-left: 29px;
+            background-color: #e6e6ed;
+          "
+        />
+        <span class="font-14 shade-font app-medium-font">
+          12 - Blue t-shirt, XS
         </span>
       </v-card-text>
       <v-card-text class="mt-2">
         <highcharts
           :options="chartOptions2"
-          class="homechart_container"
+          class="homechart_container2"
         ></highcharts>
       </v-card-text>
     </v-card>
@@ -127,14 +136,10 @@
         class="app-semibold-font font-20 dark-font d-flex flex-row ms-4 align-center"
       >
         <div class="me-3">
-          <v-img
-            width="28"
-            height="28"
-            src="@/assets/svg/reports/total_revenue.svg"
-          />
+          <v-img width="28" height="28" src="@/assets/svg/home/sales.svg" />
         </div>
         <div>
-          Total Revenue<span class="font-13 blue-600 ms-2">$550,000,000</span>
+          Total Sales<span class="font-13 blue-600 ms-2">$550,000,000</span>
         </div>
         <v-spacer />
         <v-btn
@@ -151,13 +156,24 @@
         class="d-flex flex-row mx-4 mt-5 pb-0 d-flex flex-row align-center"
       >
         <span class="font-14 dark-font app-medium-font">
-          Upcoming revenue, active subscriptions
+          Sales to specific product category
         </span>
+        <div
+          style="
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            margin-right: 12px;
+            margin-left: 29px;
+            background-color: #e6e6ed;
+          "
+        />
+        <span class="font-14 shade-font app-medium-font"> Bohemian items </span>
       </v-card-text>
       <v-card-text class="mt-2">
         <highcharts
           :options="chartOptions2"
-          class="homechart_container"
+          class="homechart_container2"
         ></highcharts>
       </v-card-text>
     </v-card>
@@ -228,54 +244,54 @@ const chartOptions = {
       showInLegend: false,
       data: [
         {
-          name: "12 - Sara Carlsson1",
+          name: "12 - Blue t-shirt, XS1",
           y: 78000,
-          color: "#575D96",
+          color: "#E47F19",
         },
         {
-          name: "12 - Sara Carlsson2",
+          name: "12 - Blue t-shirt, XS2",
           y: 69000,
-          color: "#777DAE",
+          color: "#E18B35",
         },
         {
-          name: "12 - Sara Carlsson3",
+          name: "12 - Blue t-shirt, XS3",
           y: 54000,
-          color: "#8A8FBB",
+          color: "#EE9740",
         },
         {
-          name: "12 - Sara Carlsson4",
+          name: "12 - Blue t-shirt, XS4",
           y: 42000,
-          color: "#9B9FC2",
+          color: "#F3A352",
         },
         {
-          name: "12 - Sara Carlsson5",
+          name: "12 - Blue t-shirt, XS5",
           y: 27500,
-          color: "#A6A9C6",
+          color: "#F8B068",
         },
         {
-          name: "12 - Sara Carlsson6",
+          name: "12 - Blue t-shirt, XS6",
           y: 17500,
-          color: "#AAADC8",
+          color: "#FABA7B",
         },
         {
-          name: "12 - Sara Carlsson7",
+          name: "12 - Blue t-shirt, XS7",
           y: 16000,
-          color: "#C0C2DD",
+          color: "#FAC693",
         },
         {
-          name: "12 - Sara Carlsson8",
+          name: "12 - Blue t-shirt, XS8",
           y: 11000,
-          color: "#CDCFE3",
+          color: "#FBCC9E",
         },
         {
-          name: "12 - Sara Carlsson9",
+          name: "12 - Blue t-shirt, XS9",
           y: 7500,
-          color: "#D2D4E7",
+          color: "#FFDBB8",
         },
         {
-          name: "12 - Sara Carlsson10",
+          name: "12 - Blue t-shirt, XS10",
           y: 4500,
-          color: "#E2E4F4",
+          color: "#FFE1C3",
         },
       ],
     },
@@ -348,7 +364,7 @@ const chartOptions2 = {
   },
   series: [
     {
-      color: "#9231DE",
+      color: "#EB1D72",
       data: [
         30000, 26000, 17000, 42000, 33000, 15000, 31000, 6000, 40000, 19000,
         28000, 20000,
@@ -375,6 +391,11 @@ const menus = [
 <style scoped>
 .homechart_container {
   min-height: 420px;
+  height: 100%;
+  width: 100%;
+}
+.homechart_container2 {
+  min-height: 300px;
   height: 100%;
   width: 100%;
 }
