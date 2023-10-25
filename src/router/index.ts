@@ -143,6 +143,12 @@ const routes = [
           import(/* webpackChunkName: "event-log" */ "@/views/EventLog.vue"),
       },
       {
+        path: "reports",
+        name: "reports",
+        component: () =>
+          import(/* webpackChunkName: "reports" */ "@/views/Reports.vue"),
+      },
+      {
         path: "404",
         name: "404",
         component: () => import("@/views/NotFound.vue"),
