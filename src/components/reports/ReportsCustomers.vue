@@ -25,7 +25,7 @@
       </div>
       <div class="ms-12 mt-7">
         <app-checkbox v-model="showAmountIncl" />
-        <span class="font-14 app-regular-font dark-font">
+        <span class="font-14 app-regular-font dark-font ms-2">
           Show amounts incl. VAT
         </span>
       </div>
@@ -464,8 +464,8 @@ const chartOptions2 = {
     {
       color: "#EB801D",
       data: [
-        30000, 26000, 17000, 42000, 33000, 15000, 31000, 6000, 40000, 19000,
-        28000, 20000,
+        13000, 26000, 17000, 20000, 8000, 26000, 20000, 34000, 23000, 5000,
+        11000, 22000,
       ],
     },
   ],

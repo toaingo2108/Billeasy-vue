@@ -31,12 +31,12 @@
           </div>
         </div>
       </v-card-title>
-      <v-card-text class="d-flex flex-column mx-3 pb-1 align-end">
-        <v-table style="width: 100%">
+      <v-card-text class="d-flex flex-column pb-1 align-end px-0">
+        <v-table style="width: 100%; background-color: #0000" class="px-6">
           <thead>
             <tr>
               <th
-                class="text-left font-13 app-semibold-font dark-font"
+                class="text-left font-13 app-semibold-font dark-font remove-border-bottom"
                 v-for="(header, index) in headers"
                 :key="index"
               >
@@ -106,6 +106,7 @@
                     max-height: 24px;
                     min-height: 24px;
                     padding: 0;
+                    background-color: #0000;
                   "
                 >
                   <v-img
@@ -119,12 +120,17 @@
             </tr>
           </tbody>
         </v-table>
+        <v-divider class="w-100" />
         <div
           style="
             height: 96px;
             display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: flex-end;
+            background-color: #f7f7fa;
+            width: 100%;
+            padding-right: 20px;
           "
         >
           <app-data-table-bottom-pagination :length="15" />

@@ -10,7 +10,6 @@
           rounded="lg"
           hide-details
           :items="['12 months', '2 years']"
-          bg-color="white"
         />
       </div>
       <div style="width: 224px" class="ms-12">
@@ -22,12 +21,11 @@
           rounded="lg"
           hide-details
           :items="['SEK', 'USD']"
-          bg-color="white"
         />
       </div>
       <div class="ms-12 mt-7">
         <app-checkbox v-model="showAmountIncl" />
-        <span class="font-14 app-regular-font dark-font">
+        <span class="font-14 app-regular-font dark-font ms-2">
           Show amounts incl. VAT
         </span>
       </div>

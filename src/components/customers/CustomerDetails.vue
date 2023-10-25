@@ -319,70 +319,13 @@
                   >
                 </div>
 
-                <div class="d-flex flex-row align-center mt-8 mb-10">
-                  <v-table style="width: 100%">
-                    <thead>
-                      <tr>
-                        <th
-                          class="text-left font-13 app-semibold-font dark-font"
-                          v-for="(header, index) in invoiceHeaders"
-                          :key="index"
-                        >
-                          {{ header.title }}
-                          <v-icon color="#59597B" v-if="header.title"
-                            >mdi-unfold-more-horizontal</v-icon
-                          >
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr
-                        v-for="(item, index) in invoiceItems"
-                        :key="index"
-                        style="height: 36px"
-                      >
-                        <td class="remove-border-bottom">
-                          <span class="font-13 dark-font app-semibold-font">
-                            1001.
-                          </span>
-                        </td>
-                        <td class="remove-border-bottom">
-                          <span class="font-13 dark-font app-semibold-font">
-                            1100
-                          </span>
-                        </td>
-                        <td class="remove-border-bottom">
-                          <span class="font-13 shade-font app-medium-font">
-                            SEK
-                          </span>
-                        </td>
-                        <td class="remove-border-bottom">
-                          <span class="font-13 shade-font app-medium-font">
-                            2023-07-01
-                          </span>
-                        </td>
-                        <td class="remove-border-bottom">
-                          <span class="font-13 shade-font app-medium-font">
-                            2023-07-01
-                          </span>
-                        </td>
-                        <td class="remove-border-bottom">
-                          <v-checkbox
-                            color="#20c39d"
-                            hide-details
-                            v-model="item.sent"
-                          />
-                        </td>
-                        <td class="remove-border-bottom">
-                          <v-checkbox
-                            color="#20c39d"
-                            hide-details
-                            v-model="item.paid"
-                          />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </v-table>
+                <div class="d-flex flex-row align-center mt-8 mb-10 mx-4">
+                  <app-data-table
+                    :headers="invoiceHeaders"
+                    :items="invoiceItems"
+                    :checkable="false"
+                    row-color="#f7f7fa"
+                  />
                 </div>
               </div>
               <div v-else-if="menu.title == 'Notes'">
@@ -404,11 +347,12 @@
                     >New Note</v-btn
                   >
                 </div>
-                <div class="d-flex flex-row align-center mt-8 mb-10 ms-6">
+                <div class="d-flex flex-row align-center mt-8 mb-10 mx-4">
                   <app-data-table
                     :headers="noteHeaders"
                     :items="noteItems"
                     :checkable="false"
+                    row-color="#f7f7fa"
                   >
                     <template v-slot:action>
                       <update-header-menu />
@@ -436,6 +380,7 @@
                         padding-bottom: 10px;
                       "
                       class="text-none"
+                      @click="onAddNewTodo"
                     >
                       New To-do
                     </v-btn>
@@ -469,44 +414,17 @@
                   >
                 </div>
 
-                <div class="d-flex flex-row align-center mt-8 mb-10">
-                  <v-data-table
+                <div class="d-flex flex-row align-center mt-8 mb-10 mx-4">
+                  <app-data-table
                     :headers="reportHeaders"
                     :items="reportItems"
-                    items-per-page="-1"
-                    hide-default-footer
+                    :checkable="false"
+                    row-color="#f7f7fa"
                   >
-                    <template v-slot:[`item.invoiced`]="{ item }">
-                      <v-checkbox
-                        color="#20c39d"
-                        hide-details
-                        v-model="item.invoiced"
-                      />
+                    <template v-slot:action>
+                      <report-details-menu />
                     </template>
-                    <template v-slot:[`item.action`]="{ item }">
-                      <v-btn
-                        size="x-small"
-                        flat
-                        class="me-5"
-                        style="
-                          width: 24px;
-                          height: 24px;
-                          min-height: 24px;
-                          min-width: 24px;
-                          max-height: 24px;
-                          min-height: 24px;
-                          padding: 0;
-                        "
-                      >
-                        <v-img
-                          src="@/assets/svg/datatable/dot_menu.svg"
-                          width="24"
-                          height="24"
-                        />
-                        <report-details-menu />
-                      </v-btn>
-                    </template>
-                  </v-data-table>
+                  </app-data-table>
                 </div>
               </div>
             </v-window-item>
@@ -525,6 +443,10 @@
     <add-report-dialog
       :dialog="addNewReportDialog"
       @update:dialog="(val) => (addNewReportDialog = val)"
+    />
+    <new-todo-item-dialog
+      :dialog="addNewTodoDialog"
+      @update:dialog="(val) => (addNewTodoDialog = val)"
     />
   </div>
 </template>
@@ -548,11 +470,13 @@ import ReportDetailsMenu from "./CustomerTimeReportDetailsMenu.vue";
 import TodoCategoryList from "../default/TodoCategoryList.vue";
 import SearchField from "../default/SearchField.vue";
 import AppDataTable from "../default/AppDataTable.vue";
+import NewTodoItemDialog from "../todos/NewTodoItemDialog.vue";
 
 const tab = ref(0);
 const addNewNoteDialog = ref(false);
 const addNewCustomFieldDialog = ref(false);
 const addNewReportDialog = ref(false);
+const addNewTodoDialog = ref(false);
 const addNewInvoiceDialog = ref(false);
 const emails = ["test@email.com", "user@email.com", "customer@email.com"];
 
@@ -620,13 +544,13 @@ const menus = [
 ];
 
 const invoiceHeaders = [
-  { title: "#", key: "id" },
+  { title: "#", key: "id", align: "left" },
   { title: "Amount", key: "amount" },
   { title: "Currency", key: "currency" },
   { title: "Due", key: "due" },
   { title: "Invoice", key: "date" },
-  { title: "Sent", key: "sent" },
-  { title: "Paid", key: "paid" },
+  { title: "Sent", key: "sent", style: "checkbox" },
+  { title: "Paid", key: "paid", style: "checkbox" },
 ];
 
 const invoiceItems = reactive([
@@ -707,10 +631,10 @@ const noteItems = [
 ];
 
 const reportHeaders = [
-  { title: "Hourly Rate", key: "rate" },
+  { title: "Hourly Rate", key: "rate", align: "left", style: "bold" },
   { title: "Start Time", key: "start_time" },
   { title: "End Time", key: "end_time" },
-  { title: "Invoiced", key: "invoiced" },
+  { title: "Invoiced", key: "invoiced", style: "checkbox" },
   { title: "", key: "action" },
 ];
 
@@ -750,6 +674,9 @@ const reportItems = reactive([
 const onAddNewNote = function () {
   addNewNoteDialog.value = true;
 };
+const onAddNewTodo = () => {
+  addNewTodoDialog.value = true;
+};
 const onCustomerInformationDetails = () => {
   router.push({ name: "new-customer" });
 };
@@ -774,17 +701,5 @@ div :deep(.v-chip__close) {
   min-height: 32px;
   padding: 0;
   border-color: #d1d1e2;
-}
-.v-data-table-header__content {
-  font-size: 13px;
-  color: #0d0d1e !important;
-  font-family: "Poppins-SemiBold" !important;
-}
-
-.v-data-table__tr > td {
-  font-size: 13px;
-}
-.v-data-table-footer {
-  display: none !important;
 }
 </style>

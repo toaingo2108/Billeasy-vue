@@ -312,6 +312,7 @@
                     >Invoice Text</span
                   >
                   <v-textarea
+                    bg-color="white"
                     placeholder="Enter text..."
                     variant="outlined"
                     rounded="lg"
@@ -573,8 +574,8 @@
             color: white !important;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
           "
           class="text-none"
           >New Invoice Row</v-btn
@@ -587,8 +588,8 @@
             color: #0d0d1e !important;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
             border-color: #20c39d;
           "
           class="text-none ms-2"

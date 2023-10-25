@@ -7,13 +7,7 @@
         Customer Categories
         <div class="d-flex flex-row">
           <div style="width: 207px">
-            <v-text-field
-              placeholder="Search"
-              prepend-inner-icon="mdi-magnify"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-            />
+            <search-field width="207px" />
           </div>
           <div>
             <v-btn
@@ -38,7 +32,7 @@
         </div>
       </v-card-title>
       <v-card-text class="d-flex flex-column mx-3 pb-1 align-end">
-        <v-table style="width: 100%">
+        <v-table style="width: 100%; background-color: #0000">
           <thead>
             <tr>
               <th
@@ -137,6 +131,7 @@ import { ref, watch, watchEffect } from "vue";
 import NewCustomerCategoryDialog from "./NewCustomerCategoryDialog.vue";
 import AppDataTableBottomPagination from "../default/AppDataTableBottomPagination.vue";
 import CustomerCategoryItemMenu from "./CustomerCategoryItemMenu.vue";
+import SearchField from "../default/SearchField.vue";
 
 const props = defineProps({
   dialog: Boolean,

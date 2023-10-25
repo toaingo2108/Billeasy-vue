@@ -44,7 +44,7 @@
         </div>
         <div class="five-row">
           <span class="font-13 app-medium-font dark-font">Reminder flow</span>
-          <v-text-field
+          <v-select
             placeholder="Remind"
             variant="outlined"
             rounded="lg"
@@ -271,6 +271,7 @@
                 >Invoice Text</span
               >
               <v-textarea
+                bg-color="white"
                 placeholder="Enter text..."
                 variant="outlined"
                 rounded="lg"
@@ -413,6 +414,7 @@
                   rounded="lg"
                   hide-details
                   v-model="item.total"
+                  disabled
                 />
               </td>
               <td class="px-0 white-bottom">
@@ -469,8 +471,8 @@
             color: white !important;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
           "
           class="text-none"
           >New Invoice Row</v-btn
@@ -483,8 +485,8 @@
             color: #0d0d1e !important;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
             border-color: #20c39d;
           "
           class="text-none ms-2"

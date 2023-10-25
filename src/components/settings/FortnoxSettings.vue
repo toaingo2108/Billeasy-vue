@@ -64,7 +64,13 @@
           >From Billeasy</span
         >
         <div>
-          <v-switch hide-details />
+          <v-switch
+            hide-details
+            v-model="fromBilleasy"
+            :style="`--v-theme-surface-variant: ${
+              fromBilleasy ? '178,178,203' : '32,195,157'
+            }`"
+          />
         </div>
         <span class="font-14 app-medium-font dark-font ms-2">To Billeasy</span>
       </v-card-title>
@@ -446,8 +452,8 @@
             color: #20c39d !important;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
           "
           class="text-none"
           variant="text"
@@ -506,7 +512,7 @@ import AppCheckbox from "@/components/default/AppCheckbox.vue";
 import { useDisplay } from "vuetify";
 const { mdAndUp } = useDisplay();
 
-const addNewCategoryDialog = ref(false);
+const fromBilleasy = ref(false);
 const paymentMethods = ["Swish", "Bankgiro"];
 
 const router = useRouter();

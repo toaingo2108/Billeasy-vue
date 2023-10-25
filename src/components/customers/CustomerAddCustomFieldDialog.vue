@@ -30,6 +30,7 @@
         <div style="width: 336px">
           <span class="font-13 app-medium-font dark-font">Description</span>
           <v-textarea
+            bg-color="white"
             placeholder="Enter description..."
             variant="outlined"
             rounded="lg"

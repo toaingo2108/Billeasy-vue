@@ -35,7 +35,7 @@
           class="text-none app-medium-font font-14 ms-2"
           color="#20C39D"
           rounded="lg"
-          @click.stop="onAddNewCategory"
+          @click.stop="onAddNewTodo"
           @mousedown.stop
           @touchstart.stop
           v-if="expanded"
@@ -130,12 +130,17 @@
       </v-expansion-panel-text>
     </v-expansion-panel>
   </v-expansion-panels>
+  <new-todo-item-dialog
+    :dialog="addNewDialog"
+    @update:dialog="(val) => (addNewDialog = val)"
+  />
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
 import todoImage from "@/assets/sample/profile.png";
 import rightIcon from "@/assets/svg/datatable/right.svg";
 import bottomIcon from "@/assets/svg/datatable/bottom.svg";
+import NewTodoItemDialog from "../todos/NewTodoItemDialog.vue";
 
 const props = defineProps({
   type: { type: String, default: "simple" },
@@ -144,7 +149,7 @@ const props = defineProps({
 });
 
 const addNewDialog = ref(false);
-const onAddNewCategory = function () {
+const onAddNewTodo = function () {
   addNewDialog.value = true;
 };
 

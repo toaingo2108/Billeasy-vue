@@ -1,7 +1,7 @@
 <template>
-  <div class="w-100 h-100 py-8 d-flex flex-column">
+  <div class="w-100 h-100 pt-8 d-flex flex-column">
     <v-alert
-      class="mb-5 app-regular-font font-14"
+      class="mb-5 app-regular-font font-14 mx-8"
       icon="mdi-alert-circle-outline"
       text="Here you set default settings for your invoices. These settings will be applied to all invoices automatically, but can be overwritten in each respective invoice and invoice template."
       variant="outlined"
@@ -10,483 +10,496 @@
       width="632"
       style="border-color: #8b8ba9; background-color: white"
     />
-    <v-row>
-      <v-col cols="12" md="4">
-        <v-card rounded="xl" class="pa-2">
-          <v-card-title
-            class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
-          >
-            <div class="me-2">
-              <v-img
-                width="28"
-                height="28"
-                src="@/assets/svg/settings/invoice.svg"
-              />
-            </div>
-            Invoice Resources
-          </v-card-title>
-          <v-card-text class="pb-3 pt-8">
-            <span class="font-13 app-medium-font dark-font"
-              >PDF template, invoice</span
+    <div class="mx-8">
+      <v-row>
+        <v-col cols="12" md="4">
+          <v-card rounded="xl" class="pa-2">
+            <v-card-title
+              class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
             >
-            <v-select
-              placeholder="PDF-template, invoice"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span class="font-13 app-medium-font dark-font"
-              >PDF template, Reminders</span
-            >
-            <v-select
-              placeholder="PDF-template, invoice"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span class="font-13 app-medium-font dark-font"
-              >PDF template, Inkasso</span
-            >
-            <v-select
-              placeholder="PDF-template, Inkasso"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span class="font-13 app-medium-font dark-font">Currency</span>
-            <v-select
-              placeholder="Currency"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span class="font-13 app-medium-font dark-font">
-              Payment Terms
-            </span>
-            <v-select
-              placeholder="Payment Terms"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span class="font-13 app-medium-font dark-font">
-              Reminder Flow
-            </span>
-            <v-select
-              placeholder="Reminder Flow"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span class="font-13 app-medium-font dark-font"> Send Method </span>
-            <v-select
-              placeholder="Send Method"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span class="font-13 app-medium-font dark-font"> Price List </span>
-            <v-select
-              placeholder="Price List"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="pt-3 pb-10">
-            <span class="font-13 app-medium-font dark-font">
-              Payment Methods
-            </span>
-            <v-select
-              placeholder="Payment Methods"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['Swish', 'Bankgiro']"
-            />
-            <div>
-              <v-chip
-                v-for="payment in paymentMethods"
-                :key="payment"
-                closable
-                class="mt-2 me-2"
-                >{{ payment }}</v-chip
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/settings/invoice.svg"
+                />
+              </div>
+              Invoice Resources
+            </v-card-title>
+            <v-card-text class="pb-3 pt-8">
+              <span class="font-13 app-medium-font dark-font"
+                >PDF template, invoice</span
               >
-            </div>
-          </v-card-text>
-        </v-card>
-        <v-card rounded="xl" class="pa-2 mt-6">
-          <v-card-title
-            class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
-          >
-            <div class="me-2">
-              <v-img
-                width="28"
-                height="28"
-                src="@/assets/svg/settings/invoice.svg"
+              <v-select
+                placeholder="PDF-template, invoice"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
               />
-            </div>
-            Reminder Settings
-          </v-card-title>
-          <v-card-text class="pb-3 pt-8">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              Text on Reminder Invoice
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-            <v-textarea
-              placeholder="Enter text..."
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              rows="3"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              Text on Collection Invoice
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-            <v-textarea
-              placeholder="Enter text..."
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              rows="3"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="useAttorney" class="me-2" />
-                Use attorney to send inkasso
-              </div>
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-          </v-card-text>
-          <v-card-text class="pt-3 pb-5">
-            <span class="font-13 app-medium-font dark-font">Attorney</span>
-            <v-select
-              placeholder="Attorney"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="4">
-        <v-card rounded="xl" class="pa-2">
-          <v-card-title
-            class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
-          >
-            <div class="me-2">
-              <v-img
-                width="28"
-                height="28"
-                src="@/assets/svg/settings/invoice.svg"
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span class="font-13 app-medium-font dark-font"
+                >PDF template, Reminders</span
+              >
+              <v-select
+                placeholder="PDF-template, invoice"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
               />
-            </div>
-            Invoice Info Display
-          </v-card-title>
-          <v-card-text class="pb-3 pt-8">
-            <span class="font-13 app-medium-font dark-font">Rounding</span>
-            <v-select
-              placeholder="PDF-template, invoice"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['None', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="showPrices" class="me-2" />
-                Show prices incl. VAT
-              </div>
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span class="font-13 app-medium-font dark-font"
-              >Invoice Header</span
-            >
-            <v-select
-              placeholder="PDF-template, invoice"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              Invoice Text
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-            <v-textarea
-              placeholder="Enter text..."
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              rows="3"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              Footer Header 1
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-            <v-select
-              placeholder="Footer Header 1"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              Footer Header 2
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-            <v-select
-              placeholder="Footer Header 2"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              Footer Value 1
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-            <v-select
-              placeholder="Footer Value 1"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-          <v-card-text class="pt-3 pb-5">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              Footer Value 2
-              <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
-            </span>
-            <v-select
-              placeholder="Footer Value 2"
-              variant="outlined"
-              rounded="lg"
-              hide-details
-              :items="['John Doe', 'Percent 2']"
-            />
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="4">
-        <v-card rounded="xl" class="pa-2">
-          <v-card-title
-            class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
-          >
-            <div class="me-2">
-              <v-img
-                width="28"
-                height="28"
-                src="@/assets/svg/settings/invoice.svg"
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span class="font-13 app-medium-font dark-font"
+                >PDF template, Inkasso</span
+              >
+              <v-select
+                placeholder="PDF-template, Inkasso"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
               />
-            </div>
-            Fields to Show
-            <v-spacer />
-            <v-icon color="#8B8BA9" size="20">mdi-help-circle-outline </v-icon>
-          </v-card-title>
-          <v-card-text class="pb-3 pt-8">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="yourReference" class="me-2" />
-                Your reference
-              </div>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="ourReference" class="me-2" />
-                Our reference
-              </div>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="orderReference" class="me-2" />
-                Buyers order reference
-              </div>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="referenceField1" class="me-2" />
-                Reference field 1
-              </div>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="referenceField2" class="me-2" />
-                Reference field 2
-              </div>
-            </span>
-          </v-card-text>
-        </v-card>
-        <v-card rounded="xl" class="pa-2 mt-6">
-          <v-card-title
-            class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
-          >
-            <div class="me-2">
-              <v-img
-                width="28"
-                height="28"
-                src="@/assets/svg/settings/invoice.svg"
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span class="font-13 app-medium-font dark-font">Currency</span>
+              <v-select
+                placeholder="Currency"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
               />
-            </div>
-            Row Fields to Show
-            <v-spacer />
-            <v-icon color="#8B8BA9" size="20">mdi-help-circle-outline </v-icon>
-          </v-card-title>
-          <v-card-text class="pb-3 pt-8">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="productNumber" class="me-2" />
-                Product number
-              </div>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="priceInclVAT" class="me-2" />
-                Price incl. VAT
-              </div>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="priceExclVAT" class="me-2" />
-                Price excl. VAT
-              </div>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="unit" class="me-2" />
-                Unit
-              </div>
-            </span>
-          </v-card-text>
-          <v-card-text class="py-3">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
-              <div>
-                <app-checkbox v-model="vatRate" class="me-2" />
-                VAT rate
-              </div>
-            </span>
-          </v-card-text>
-        </v-card>
-        <v-card rounded="xl" class="pa-2 mt-6">
-          <v-card-title
-            class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
-          >
-            <div class="me-2">
-              <v-img
-                width="28"
-                height="28"
-                src="@/assets/svg/settings/invoice.svg"
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span class="font-13 app-medium-font dark-font">
+                Payment Terms
+              </span>
+              <v-select
+                placeholder="Payment Terms"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
               />
-            </div>
-            Other
-          </v-card-title>
-          <v-card-text class="pb-3 pt-8">
-            <span
-              class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
-            >
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span class="font-13 app-medium-font dark-font">
+                Reminder Flow
+              </span>
+              <v-select
+                placeholder="Reminder Flow"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span class="font-13 app-medium-font dark-font">
+                Send Method
+              </span>
+              <v-select
+                placeholder="Send Method"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span class="font-13 app-medium-font dark-font">
+                Price List
+              </span>
+              <v-select
+                placeholder="Price List"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
+              />
+            </v-card-text>
+            <v-card-text class="pt-3 pb-10">
+              <span class="font-13 app-medium-font dark-font">
+                Payment Methods
+              </span>
+              <v-select
+                placeholder="Payment Methods"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['Swish', 'Bankgiro']"
+              />
               <div>
-                <app-checkbox v-model="includeOCR" class="me-2" />
-                Include OCR-numbers
+                <v-chip
+                  v-for="payment in paymentMethods"
+                  :key="payment"
+                  closable
+                  class="mt-2 me-2"
+                  >{{ payment }}</v-chip
+                >
               </div>
-            </span>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-    <div class="mt-6 d-flex flex-row justify-end">
+            </v-card-text>
+          </v-card>
+          <v-card rounded="xl" class="pa-2 mt-6">
+            <v-card-title
+              class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
+            >
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/settings/invoice.svg"
+                />
+              </div>
+              Reminder Settings
+            </v-card-title>
+            <v-card-text class="pb-3 pt-8">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                Text on Reminder Invoice
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+              <v-textarea
+                bg-color="white"
+                placeholder="Enter text..."
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                rows="3"
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                Text on Collection Invoice
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+              <v-textarea
+                bg-color="white"
+                placeholder="Enter text..."
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                rows="3"
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="useAttorney" class="me-2" />
+                  Use attorney to send inkasso
+                </div>
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+            </v-card-text>
+            <v-card-text class="pt-3 pb-5">
+              <span class="font-13 app-medium-font dark-font">Attorney</span>
+              <v-select
+                placeholder="Attorney"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
+              />
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="4">
+          <v-card rounded="xl" class="pa-2">
+            <v-card-title
+              class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
+            >
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/settings/invoice.svg"
+                />
+              </div>
+              Invoice Info Display
+            </v-card-title>
+            <v-card-text class="pb-3 pt-8">
+              <span class="font-13 app-medium-font dark-font">Rounding</span>
+              <v-select
+                placeholder="PDF-template, invoice"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['None', 'Percent 2']"
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="showPrices" class="me-2" />
+                  Show prices incl. VAT
+                </div>
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span class="font-13 app-medium-font dark-font"
+                >Invoice Header</span
+              >
+              <v-text-field
+                placeholder="PDF-template, invoice"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                Invoice Text
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+              <v-textarea
+                bg-color="white"
+                placeholder="Enter text..."
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                rows="3"
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                Footer Header 1
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+              <v-text-field
+                placeholder="Footer Header 1"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                Footer Header 2
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+              <v-text-field
+                placeholder="Footer Header 2"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
+              />
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                Footer Value 1
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+              <v-text-field
+                placeholder="Footer Value 1"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
+              />
+            </v-card-text>
+            <v-card-text class="pt-3 pb-5">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                Footer Value 2
+                <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
+              </span>
+              <v-text-field
+                placeholder="Footer Value 2"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+                :items="['John Doe', 'Percent 2']"
+              />
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="4">
+          <v-card rounded="xl" class="pa-2">
+            <v-card-title
+              class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
+            >
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/settings/invoice.svg"
+                />
+              </div>
+              Fields to Show
+              <v-spacer />
+              <v-icon color="#8B8BA9" size="20"
+                >mdi-help-circle-outline
+              </v-icon>
+            </v-card-title>
+            <v-card-text class="pb-3 pt-8">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="yourReference" class="me-2" />
+                  Your reference
+                </div>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="ourReference" class="me-2" />
+                  Our reference
+                </div>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="orderReference" class="me-2" />
+                  Buyers order reference
+                </div>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="referenceField1" class="me-2" />
+                  Reference field 1
+                </div>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="referenceField2" class="me-2" />
+                  Reference field 2
+                </div>
+              </span>
+            </v-card-text>
+          </v-card>
+          <v-card rounded="xl" class="pa-2 mt-6">
+            <v-card-title
+              class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
+            >
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/settings/invoice.svg"
+                />
+              </div>
+              Row Fields to Show
+              <v-spacer />
+              <v-icon color="#8B8BA9" size="20"
+                >mdi-help-circle-outline
+              </v-icon>
+            </v-card-title>
+            <v-card-text class="pb-3 pt-8">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="productNumber" class="me-2" />
+                  Product number
+                </div>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="priceInclVAT" class="me-2" />
+                  Price incl. VAT
+                </div>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="priceExclVAT" class="me-2" />
+                  Price excl. VAT
+                </div>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="unit" class="me-2" />
+                  Unit
+                </div>
+              </span>
+            </v-card-text>
+            <v-card-text class="py-3">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="vatRate" class="me-2" />
+                  VAT rate
+                </div>
+              </span>
+            </v-card-text>
+          </v-card>
+          <v-card rounded="xl" class="pa-2 mt-6">
+            <v-card-title
+              class="font-20 app-semibold-font dark-font d-flex flex-row align-center"
+            >
+              <div class="me-2">
+                <v-img
+                  width="28"
+                  height="28"
+                  src="@/assets/svg/settings/invoice.svg"
+                />
+              </div>
+              Other
+            </v-card-title>
+            <v-card-text class="pb-3 pt-8">
+              <span
+                class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
+              >
+                <div>
+                  <app-checkbox v-model="includeOCR" class="me-2" />
+                  Include OCR-numbers
+                </div>
+              </span>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
+    <v-divider class="mt-6" />
+    <div class="pa-6 d-flex flex-row justify-end bg-gray">
       <v-btn
         color="#0D0D1E"
         variant="outlined"

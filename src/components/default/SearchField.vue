@@ -6,6 +6,7 @@
     rounded="lg"
     :style="`width: ${props.width}; background-color: white; border-radius: 8px`"
     hide-details
+    bg-color="white"
   />
 </template>
 <script lang="ts" setup>

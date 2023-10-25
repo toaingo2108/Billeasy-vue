@@ -30,6 +30,7 @@
         <div style="width: 336px">
           <span class="font-13 app-medium-font dark-font">Description</span>
           <v-textarea
+            bg-color="white"
             placeholder="Add description..."
             variant="outlined"
             rounded="lg"
@@ -72,8 +73,8 @@
           style="
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
             border-color: #d1d1e2;
           "
           class="text-none"
@@ -88,8 +89,8 @@
             background: #20c39d;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
           "
           class="text-none"
           >Save</v-btn

@@ -1,13 +1,13 @@
 <template>
-  <div class="w-100 h-100 pa-8 d-flex flex-column">
+  <div class="w-100 h-100 pt-8 d-flex flex-column">
     <div class="d-flex flex-row mb-5 align-center justify-between w-100">
-      <div class="app-semibold-font font-28 dark-font">Settings</div>
+      <div class="app-semibold-font font-28 dark-font mx-8">Settings</div>
     </div>
     <div>
       <v-tabs v-model="tab" color="#20C39D">
         <v-tab
           :value="index"
-          class="text-none font-14 app-medium-font"
+          class="text-none font-14 app-medium-font mx-8"
           :class="tab == index ? 'teal-font' : 'blue-600'"
           v-for="(menu, index) in menus"
         >

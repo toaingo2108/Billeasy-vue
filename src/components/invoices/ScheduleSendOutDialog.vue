@@ -13,6 +13,7 @@
           rounded="lg"
           hide-details
           :items="['Method', 'Method 2']"
+          value="Method"
         />
       </v-card-text>
       <v-card-text class="d-flex flex-column mx-3 pb-1" v-if="scheduled">
@@ -49,8 +50,8 @@
           style="
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
             border-color: #d1d1e2;
           "
           class="text-none"
@@ -65,8 +66,8 @@
             background: #20c39d;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
           "
           class="text-none"
           >Save</v-btn

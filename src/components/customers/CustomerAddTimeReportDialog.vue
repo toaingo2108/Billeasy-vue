@@ -121,14 +121,11 @@
             hide-details
           />
         </div>
-        <div style="width: 33.33%" class="ps-2 mt-4">
-          <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-            <template v-slot:label>
-              <span class="font-14 app-regular-font dark-font">
-                Rate includes VAT
-              </span>
-            </template>
-          </v-checkbox>
+        <div style="width: 33.33%" class="ps-2 mt-8">
+          <app-checkbox v-model="rateVat" />
+          <span class="font-14 app-regular-font dark-font ms-1">
+            Rate includes VAT
+          </span>
         </div>
       </v-card-text>
       <v-card-text class="mx-3">
@@ -145,8 +142,8 @@
           style="
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
             border-color: #d1d1e2;
           "
           class="text-none"
@@ -161,8 +158,8 @@
             background: #20c39d;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
           "
           class="text-none"
           >Save</v-btn
@@ -174,6 +171,7 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
+import AppCheckbox from "../default/AppCheckbox.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -184,6 +182,8 @@ const emit = defineEmits();
 const closeDialog = () => {
   emit("update:dialog", false);
 };
+
+const rateVat = ref(false);
 </script>
 
 <style scoped></style>

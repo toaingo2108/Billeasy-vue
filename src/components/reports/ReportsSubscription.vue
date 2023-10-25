@@ -10,13 +10,11 @@
           rounded="lg"
           hide-details
           :items="['12 months', '2 years']"
-          bg-color="white"
         />
       </div>
       <div style="width: 224px" class="ms-12">
         <span class="font-13 app-medium-font dark-font">Currency</span>
         <v-select
-          bg-color="white"
           placeholder="VAT rate"
           variant="outlined"
           rounded="lg"
@@ -27,7 +25,7 @@
       </div>
       <div class="ms-12 mt-7">
         <app-checkbox v-model="showAmountIncl" />
-        <span class="font-14 app-regular-font dark-font">
+        <span class="font-14 app-regular-font dark-font ms-2">
           Show amounts incl. VAT
         </span>
       </div>
@@ -533,8 +531,8 @@ const chartOptions2 = {
     {
       color: "#9231DE",
       data: [
-        30000, 26000, 17000, 42000, 33000, 15000, 31000, 6000, 40000, 19000,
-        28000, 20000,
+        13000, 26000, 17000, 20000, 8000, 26000, 20000, 34000, 23000, 5000,
+        11000, 22000,
       ],
     },
   ],

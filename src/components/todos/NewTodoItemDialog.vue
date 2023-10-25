@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="props.dialog" width="672" persistent>
-    <v-card class="rounded-xl pa-2" width="672" color="#F2F2F7">
+    <v-card class="rounded-xl pa-2" width="672">
       <v-card-title class=""> Item #5 </v-card-title>
       <v-card-text class="d-flex flex-column pb-1 w-100">
         <v-tabs v-model="tab" color="#20C39D">
@@ -87,6 +87,7 @@
                   </div>
                   <div class="mt-1">
                     <v-textarea
+                      bg-color="white"
                       placeholder="Enter description..."
                       variant="outlined"
                       rounded="lg"
@@ -236,6 +237,7 @@
                   items-per-page="15"
                   style="margin-bottom: 80px"
                   :checkable="false"
+                  row-color="#f7f7fa"
                 >
                   <template v-slot:action>
                     <todo-note-item-menu />
@@ -257,8 +259,8 @@
           style="
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
             border-color: #d1d1e2;
           "
           >Cancel</v-btn
@@ -273,8 +275,8 @@
             background: #20c39d;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
           "
           >Add</v-btn
         >

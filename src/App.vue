@@ -207,4 +207,29 @@ div .v-select .v-field__input {
 .v-dialog::-webkit-scrollbar-thumb:hover {
   background: #5271ff55;
 }
+
+.v-text-field .v-field__outline .v-field__outline__start {
+  border-color: #d1d1e2;
+  --v-field-border-opacity: 0.8;
+  --v-field-border-width: 1.5px;
+}
+.v-text-field .v-field__outline .v-field__outline__end {
+  border-color: #d1d1e2;
+  --v-field-border-opacity: 0.8;
+  --v-field-border-width: 1.5px;
+}
+
+.v-text-field:hover .v-field__outline .v-field__outline__start {
+  border-color: #d1d1e2;
+  --v-field-border-opacity: 1;
+  --v-field-border-width: 1.5px;
+}
+.v-text-field:hover .v-field__outline .v-field__outline__end {
+  border-color: #d1d1e2;
+  --v-field-border-opacity: 1;
+  --v-field-border-width: 1.5px;
+}
+.v-btn {
+  opacity: 1 !important;
+}
 </style>

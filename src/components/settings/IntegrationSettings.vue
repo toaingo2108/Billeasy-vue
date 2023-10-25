@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 h-100 py-8 d-flex flex-column">
+  <div class="w-100 h-100 pa-8 d-flex flex-column">
     <div v-if="integrationSettings.length">
       <v-alert
         class="mb-5 app-regular-font font-14"

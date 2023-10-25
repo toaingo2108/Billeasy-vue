@@ -1,5 +1,8 @@
 <template>
-  <v-table style="width: 100%; background-color: #0000">
+  <v-table
+    style="width: 100%; background-color: #0000"
+    :style="`--app-data-table-row-color: ${props.rowColor}`"
+  >
     <thead>
       <tr>
         <th
@@ -34,16 +37,12 @@
         @click="onRowClicked(item, index)"
       >
         <v-hover v-slot="{ isHovering, props }">
-          <td
-            v-for="(header, index) in headers"
-            :style="header.key == 'checked' ? 'width: 60px' : ''"
-            v-bind="props"
-          >
+          <td v-for="(header, index) in headers" v-bind="props">
             <div
               class="w-100 d-flex flex-row align-center"
               :class="[
                 header.align ? `justify-${header.align}` : 'justify-center',
-                isHovering ? 'bg-hover' : 'bg-white',
+                isHovering ? 'bg-hover' : 'bg-row',
               ]"
               style="
                 margin-top: 3px;
@@ -109,6 +108,12 @@
                 />
               </div>
               <div
+                v-else-if="header.style == 'checkbox'"
+                class="d-flex flex-row align-center"
+              >
+                <app-checkbox v-model="item[`${header.key}`]" />
+              </div>
+              <div
                 v-else
                 :style="header.width ? `width: ${header.width};` : ''"
               >
@@ -139,6 +144,7 @@ const props = defineProps({
   items: { type: Array as () => TableItemsArray, default: [] },
   checkable: { type: Boolean, default: true },
   onRowClicked: { type: Function, default: () => {} },
+  rowColor: { type: String, default: "white" },
 });
 
 const headers = reactive(
@@ -187,17 +193,24 @@ th {
   border-style: solid none;
   padding: 0 !important;
 }
+th:first-child > div {
+  padding-left: 12px;
+}
 td:first-child > div {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
-  background-color: white;
+  background-color: var(--app-data-table-row-color, white);
+  padding-left: 12px;
 }
 td:last-child > div {
   border-bottom-right-radius: 16px;
   border-top-right-radius: 16px;
-  background-color: white;
+  background-color: var(--app-data-table-row-color, white);
 }
 .bg-hover {
   background-color: #eef3f8 !important;
+}
+.bg-row {
+  background-color: var(--app-data-table-row-color, white) !important;
 }
 </style>

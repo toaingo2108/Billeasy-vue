@@ -367,6 +367,7 @@
                             >Invoice Text</span
                           >
                           <v-textarea
+                            bg-color="white"
                             placeholder="Enter text..."
                             variant="outlined"
                             rounded="lg"

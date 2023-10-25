@@ -109,6 +109,7 @@
                       "
                       color="#20C39D"
                       class="text-none"
+                      @click="seeAllInvoice"
                       >See all</v-btn
                     >
                   </v-card-title>
@@ -225,6 +226,10 @@
       :dialog="addNewTodoDialog"
       @update:dialog="(val) => (addNewTodoDialog = val)"
     />
+    <invoice-information-dialog
+      :dialog="invoiceInformationDialog"
+      @update:dialog="(val) => (invoiceInformationDialog = val)"
+    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -249,11 +254,13 @@ import AppDataTableBottomPagination from "../default/AppDataTableBottomPaginatio
 import TodoCategoryList from "../default/TodoCategoryList.vue";
 import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
 import NewTodoItemDialog from "../todos/NewTodoItemDialog.vue";
+import InvoiceInformationDialog from "./InvoiceInformationDialog.vue";
 
 const tab = ref(0);
 
 const addNewNoteDialog = ref(false);
 const addNewTodoDialog = ref(false);
+const invoiceInformationDialog = ref(false);
 
 const router = useRouter();
 const onBack = function () {
@@ -293,7 +300,7 @@ const invoiceMenuItems = [
     icon: registerPaymentIcon,
     onClick: onRegisterPayment,
   },
-  { text: "Send Invoice", icon: invoiceIcon, onClick: onSendInvoice },
+  { text: "Send Invoice", icon: invoiceUnselectedIcon, onClick: onSendInvoice },
   {
     text: "Credit Invoice",
     icon: creditInvoiceIcon,
@@ -356,6 +363,9 @@ const openNewTodoDialog = function () {
 };
 const onUpdateInvoice = () => {
   router.push({ name: "edit-invoice" });
+};
+const seeAllInvoice = () => {
+  invoiceInformationDialog.value = true;
 };
 </script>
 <style scoped>

@@ -20,6 +20,7 @@
         </div>
         <div class="mt-1">
           <v-textarea
+            bg-color="white"
             placeholder="Enter note..."
             variant="outlined"
             rounded="lg"
@@ -61,8 +62,8 @@
           style="
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
             border-color: #d1d1e2;
           "
           >Cancel</v-btn
@@ -77,8 +78,8 @@
             background: #20c39d;
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-bottom: 7px;
           "
           >Update</v-btn
         >
