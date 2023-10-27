@@ -179,7 +179,12 @@ html {
   max-height: 32px !important;
   max-width: 32px !important;
 }
-
+.app-border {
+  border-color: #e6e6ed;
+  border-radius: 16px;
+  border-width: 1px;
+  border-style: solid;
+}
 div .v-text-field input.v-field__input {
   min-height: 40px;
   padding: 7px 10px !important;
