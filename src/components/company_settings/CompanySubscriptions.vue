@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rounded-xl me-8 mt-8" elevation="0">
+  <v-card class="rounded-xl me-8 my-8" elevation="0">
     <v-card-title
       class="app-semibold-font font-20 dark-font mt-6 mx-3 d-flex flex-row"
     >
@@ -30,10 +30,32 @@
         </v-window-item>
       </v-window>
     </v-card-text>
-    <v-card-actions class="d-flex flex-row justify-end">
+    <v-divider class="mt-8" v-if="tab == 0" />
+    <v-card-actions
+      class="py-7 px-8 d-flex flex-row justify-end bg-gray"
+      v-if="tab == 0"
+    >
+      <v-btn
+        color="E91818"
+        prepend-icon="mdi-close-circle-outline"
+        rounded="lg"
+        style="
+          border-color: #d1d1e2;
+          color: #e91818 !important;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 7px;
+          padding-bottom: 7px;
+        "
+        class="text-none"
+        variant="outlined"
+        @click="onCancelSubscription"
+      >
+        Cancel Subscription
+      </v-btn>
       <v-btn
         color="white"
-        prepend-icon="mdi-check"
+        prepend-icon="mdi-sync"
         rounded="lg"
         style="
           background: #20c39d !important;
@@ -42,21 +64,31 @@
           padding-right: 20px;
           padding-top: 7px;
           padding-bottom: 7px;
-          margin-right: 48px;
-          margin-bottom: 35px;
+          margin-left: 8px;
         "
         class="text-none"
-        >Save</v-btn
       >
+        Update Subscription
+      </v-btn>
     </v-card-actions>
   </v-card>
+  <cancel-subscription-dialog
+    :dialog="cancelSubscriptionDialog"
+    @update:dialog="(val) => (cancelSubscriptionDialog = val)"
+  />
 </template>
 <script lang="ts" setup>
 import { ref, watch, watchEffect } from "vue";
 import CompanySubscriptionsPackage from "./CompanySubscriptionsPackage.vue";
+import CancelSubscriptionDialog from "./CancelSubscriptionDialog.vue";
 
 const tab = ref(0);
 const menus = ["Package", "Payments", "Integration"];
+const cancelSubscriptionDialog = ref(false);
+
+const onCancelSubscription = () => {
+  cancelSubscriptionDialog.value = true;
+};
 </script>
 
 <style scoped></style>
