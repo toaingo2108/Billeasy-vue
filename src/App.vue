@@ -112,6 +112,15 @@ html {
 .bg-gray {
   background-color: #f7f7fa;
 }
+.bg-pumpkin-orange {
+  background-color: #f58d13;
+}
+.bg-forest {
+  background-color: #22b762;
+}
+.bg-cerulean {
+  background-color: #229cb7;
+}
 
 .blue-font {
   color: #3737c8;
