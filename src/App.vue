@@ -162,6 +162,9 @@ html {
 .remove-border-bottom {
   border-bottom: 1px solid #0000 !important;
 }
+.hover-item:hover {
+  background-color: #eef3f8;
+}
 
 .button-40 {
   width: 40px !important;
@@ -181,7 +184,13 @@ html {
 }
 .app-border {
   border-color: #e6e6ed;
-  border-radius: 16px;
+  border-radius: 24px;
+  border-width: 1px;
+  border-style: solid;
+}
+.app-dark-border {
+  border-color: #20c39d;
+  border-radius: 24px;
   border-width: 1px;
   border-style: solid;
 }

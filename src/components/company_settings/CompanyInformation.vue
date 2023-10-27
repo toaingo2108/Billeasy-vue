@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rounded-xl me-8" elevation="0">
+  <v-card class="rounded-xl me-8 mt-8" elevation="0">
     <v-card-title
       class="app-semibold-font font-20 dark-font mt-6 mx-3 d-flex flex-row"
     >
@@ -231,7 +231,7 @@
         </v-col>
       </v-row>
     </v-card-text>
-    <v-card-action class="d-flex flex-row justify-end">
+    <v-card-actions class="d-flex flex-row justify-end">
       <v-btn
         color="white"
         prepend-icon="mdi-check"
@@ -249,7 +249,7 @@
         class="text-none"
         >Save</v-btn
       >
-    </v-card-action>
+    </v-card-actions>
   </v-card>
 </template>
 <script lang="ts" setup>
