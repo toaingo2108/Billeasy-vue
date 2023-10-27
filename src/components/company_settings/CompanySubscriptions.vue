@@ -27,6 +27,7 @@
       <v-window v-model="tab">
         <v-window-item v-for="n in 3" :key="n" :value="n">
           <company-subscriptions-package v-if="tab == 0" />
+          <company-subscriptions-payments v-else-if="tab == 1" />
         </v-window-item>
       </v-window>
     </v-card-text>
@@ -81,6 +82,7 @@
 import { ref, watch, watchEffect } from "vue";
 import CompanySubscriptionsPackage from "./CompanySubscriptionsPackage.vue";
 import CancelSubscriptionDialog from "./CancelSubscriptionDialog.vue";
+import CompanySubscriptionsPayments from "./CompanySubscriptionsPayments.vue";
 
 const tab = ref(0);
 const menus = ["Package", "Payments", "Integration"];
