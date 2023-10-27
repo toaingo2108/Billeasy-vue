@@ -287,7 +287,169 @@
           </v-col>
         </v-row>
       </div>
-      <div></div>
+      <div class="bg-landing2 w-100">
+        <v-row>
+          <v-col cols="12" md="6" class="d-flex flex-column align-center">
+            <div class="w-100 d-flex flex-row align-center justify-center">
+              <div
+                class="d-flex flex-column"
+                style="
+                  max-width: 640px;
+                  margin-top: 128px;
+                  margin-bottom: 120px;
+                  width: 100%;
+                "
+              >
+                <div>
+                  <v-img
+                    width="64"
+                    height="64"
+                    src="@/assets/landing/portal.svg"
+                  />
+                </div>
+                <span
+                  class="font-32 dark-font app-semibold-font mt-8"
+                  style="max-width: 640px; width: 100%"
+                  >Self Service Portal</span
+                >
+                <span class="font-18 app-medium-font shade-font mt-6"
+                  >Beautiful and intuitive graphs allow for you to quickly see
+                  your accounts receivable, accounts payable, get highlighted
+                  alerts on what bills are in danger zone and how to take
+                  action</span
+                >
+              </div>
+            </div>
+            <div style="max-width: 960px; max-height: 776px; width: 100%">
+              <v-img
+                width="100%"
+                height="100%"
+                src="@/assets/landing/screenshot2.png"
+              />
+            </div>
+          </v-col>
+          <v-col cols="12" md="6" class="d-flex flex-column align-center">
+            <div class="w-100 d-flex flex-row align-center justify-center">
+              <div
+                class="d-flex flex-column"
+                style="
+                  max-width: 640px;
+                  margin-top: 128px;
+                  margin-bottom: 96px;
+                  width: 100%;
+                "
+              >
+                <div>
+                  <v-img
+                    width="64"
+                    height="64"
+                    src="@/assets/landing/portal.svg"
+                  />
+                </div>
+                <span
+                  class="font-32 dark-font app-semibold-font mt-8"
+                  style="width: 640px"
+                  >Customizable Portal</span
+                >
+                <span class="font-18 app-medium-font shade-font mt-6"
+                  >Fully control which products and categories are visible to
+                  which customers.</span
+                >
+              </div>
+            </div>
+            <div class="w-100 d-flex flex-row align-center justify-center">
+              <div
+                class="d-flex flex-column"
+                style="width: 640px; margin-bottom: 96px"
+              >
+                <div>
+                  <v-img
+                    width="64"
+                    height="64"
+                    src="@/assets/landing/customer_pricing.svg"
+                  />
+                </div>
+                <span
+                  class="font-32 dark-font app-semibold-font mt-8"
+                  style="width: 640px"
+                  >Customer Specific Pricing</span
+                >
+                <span class="font-18 app-medium-font shade-font mt-6"
+                  >Set buyer-specific prices and assign them right to the
+                  company profile</span
+                >
+              </div>
+            </div>
+            <div class="w-100 d-flex flex-row align-center justify-center">
+              <div
+                class="d-flex flex-column"
+                style="width: 640px; margin-bottom: 96px"
+              >
+                <div>
+                  <v-img
+                    width="64"
+                    height="64"
+                    src="@/assets/landing/customer_segment.svg"
+                  />
+                </div>
+                <span
+                  class="font-32 dark-font app-semibold-font mt-8"
+                  style="width: 640px"
+                  >Customer Segment</span
+                >
+                <span class="font-18 app-medium-font shade-font mt-6"
+                  >Install the web app, connect to your accounting and configure
+                  your account settings.</span
+                >
+              </div>
+            </div>
+            <div class="w-100 d-flex flex-row align-center justify-center">
+              <div
+                class="d-flex flex-column"
+                style="width: 640px; margin-bottom: 96px"
+              >
+                <div>
+                  <v-img
+                    width="64"
+                    height="64"
+                    src="@/assets/landing/campaign.svg"
+                  />
+                </div>
+                <span
+                  class="font-32 dark-font app-semibold-font mt-8"
+                  style="width: 640px"
+                >
+                  Campaign & Communication Tools
+                </span>
+                <span class="font-18 app-medium-font shade-font mt-6">
+                  Send newsletters, create campaigns and blog posts to keep your
+                  customers informed on the latest offerings.
+                </span>
+              </div>
+            </div>
+            <div style="width: 660px">
+              <v-btn
+                flat
+                class="text-none font-16 app-semibold-font"
+                color="white"
+                rounded="lg"
+                style="
+                  background-color: #20c39d !important;
+                  color: white !important;
+                  height: 64px;
+                  width: 176px;
+                  font-size: 16px;
+                  margin-left: 12px;
+                  margin-bottom: 120px;
+                "
+                append-icon="mdi-chevron-right"
+              >
+                Learn More
+              </v-btn>
+            </div>
+          </v-col>
+        </v-row>
+      </div>
     </div>
   </div>
 </template>
@@ -296,6 +458,11 @@
 <style scoped>
 .bg-landing {
   background-image: url("@/assets/landing/bg_landing.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.bg-landing2 {
+  background-image: url("@/assets/landing/bg_landing2.png");
   background-size: cover;
   background-position: 50% 50%;
 }

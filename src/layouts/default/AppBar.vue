@@ -22,6 +22,7 @@
     <v-divider vertical class="bar-divider" />
     <v-btn icon>
       <v-icon color="#8B8BA9" size="16">mdi-chevron-down</v-icon>
+      <profile-menu />
     </v-btn>
     <div class="app-semibold-font font-14">Jane</div>
     <v-avatar size="32" class="ms-3 me-5">
@@ -33,6 +34,7 @@
 <script lang="ts" setup>
 import NotificationMenu from "@/components/appbar/NotificationMenu.vue";
 import HelpMenu from "@/components/appbar/HelpMenu.vue";
+import ProfileMenu from "@/components/appbar/ProfileMenu.vue";
 </script>
 <style scoped>
 .bar-divider {
