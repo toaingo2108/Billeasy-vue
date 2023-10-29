@@ -1,23 +1,15 @@
 <template>
-  <v-dialog v-model="props.dialog" width="400" persistent>
+  <v-dialog v-model="props.dialog" width="592" persistent>
     <v-card class="rounded-xl" color="#F2F2F7">
       <v-card-title class="app-semibold-font font-20 dark-font mt-6 mx-3">
-        New Currency
+        Confirm integration inactivation
       </v-card-title>
-      <v-card-text class="d-flex flex-column mx-3 pb-1">
-        <span class="font-13 app-medium-font dark-font">Country Code *</span>
-        <v-select
-          bg-color="white"
-          placeholder="Method"
-          variant="outlined"
-          rounded="lg"
-          hide-details
-          :items="['25%', 'Method 2']"
-        />
-      </v-card-text>
-      <v-card-text>
-        <app-checkbox v-model="defaultCurrency" class="me-3 ms-4" />
-        <span class="font-14 dark-font app-regular-font">Default currency</span>
+      <v-card-text class="font-14 shade-font app-regular-font mx-1">
+        <span class="app-semibold-font">Note:</span> The module will remain
+        active for the period you have already paid for
+
+        <br /><br />
+        Kindly confirm that you wish to inactivate the Fortnox integration
       </v-card-text>
       <v-divider class="mt-8" />
       <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
@@ -49,7 +41,7 @@
             padding-bottom: 7px;
           "
           class="text-none"
-          >Save</v-btn
+          >Confirm</v-btn
         >
       </v-card-actions>
     </v-card>
@@ -58,9 +50,8 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
-import AppCheckbox from "../default/AppCheckbox.vue";
+import AppCheckbox from "@/components/default/AppCheckbox.vue";
 
-const defaultCurrency = ref(false);
 const props = defineProps({
   dialog: Boolean,
 });
@@ -70,6 +61,8 @@ const emit = defineEmits();
 const closeDialog = () => {
   emit("update:dialog", false);
 };
+
+const agree = ref(false);
 </script>
 
 <style scoped></style>

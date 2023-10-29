@@ -228,14 +228,11 @@
                   hide-details
                 />
               </v-col>
-              <v-col cols="12" md="4">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Prices Incl. VAT
-                    </span>
-                  </template>
-                </v-checkbox>
+              <v-col cols="12" md="4" class="mt-7">
+                <app-checkbox v-model="priceVat" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Prices Incl. VAT
+                </span>
               </v-col>
               <v-col cols="12" md="4">
                 <span class="font-13 app-medium-font dark-font">Currency</span>
@@ -652,17 +649,19 @@ import invoiceIcon from "@/assets/svg/customers/invoice.svg";
 import InvoiceProductsRowMenu from "./InvoiceProductsRowMenu.vue";
 
 import { useDisplay } from "vuetify";
+import AppCheckbox from "../default/AppCheckbox.vue";
 const { mdAndUp } = useDisplay();
 
 const tab = ref(0);
 const customerType = ref("company");
-const addNewDialog = ref(false);
+const priceVat = ref(false);
 const addNewCategoryDialog = ref(false);
 const paymentMethods = ["Swish", "Bankgiro"];
 
 const router = useRouter();
 const onBack = function () {
-  router.back();
+  // router.back();
+  router.push({ name: "invoices" });
 };
 
 const onAddNewCategory = function () {

@@ -30,6 +30,12 @@
           />
         </div>
       </v-card-text>
+      <v-card-text>
+        <app-checkbox v-model="defaultItem" class="me-3 ms-4" />
+        <span class="font-14 dark-font app-regular-font"
+          >Default terms of payment</span
+        >
+      </v-card-text>
       <v-divider class="mt-8" />
       <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
         <v-btn
@@ -69,6 +75,7 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
+import AppCheckbox from "../default/AppCheckbox.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -94,6 +101,7 @@ const items = [
 ];
 
 const priceDialog = ref(false);
+const defaultItem = ref(false);
 
 const onAddNewPrice = function () {
   priceDialog.value = true;

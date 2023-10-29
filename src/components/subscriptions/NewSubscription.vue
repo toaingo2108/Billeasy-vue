@@ -295,8 +295,7 @@
                     <span class="font-14 app-regular-font dark-font">
                       Prices Incl. VAT
                     </span>
-                  </template>
-                </v-checkbox>
+                  
               </v-col>
             </v-row>
           </v-card>

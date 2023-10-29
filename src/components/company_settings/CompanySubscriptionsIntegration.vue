@@ -149,12 +149,17 @@
       :dialog="integrationDialog"
       @update:dialog="(val) => (integrationDialog = val)"
     />
+    <confirm-integration-inactivation-dialog
+      :dialog="cancelIntegrationDialog"
+      @update:dialog="(val) => (cancelIntegrationDialog = val)"
+    />
   </div>
 </template>
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import fortnoxImg from "@/assets/sample/img_fortnox.png";
 import FortnoxBilleasyIntegrationDialog from "./FortnoxBilleasyIntegrationDialog.vue";
+import ConfirmIntegrationInactivationDialog from "./ConfirmIntegrationInactivationDialog.vue";
 
 const option = ref(0);
 
@@ -210,6 +215,7 @@ const items = [
 ];
 
 const integrationDialog = ref(false);
+const cancelIntegrationDialog = ref(false);
 const onSelectOption = (index: number) => {
   option.value = index;
 };
@@ -225,5 +231,7 @@ const onClickedButton = (status: string) => {
 const onActivate = () => {
   integrationDialog.value = true;
 };
-const onInactivate = () => {};
+const onInactivate = () => {
+  cancelIntegrationDialog.value = true;
+};
 </script>

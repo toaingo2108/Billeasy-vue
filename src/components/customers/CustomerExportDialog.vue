@@ -15,76 +15,46 @@
                 class="d-flex flex-row align-center mt-5"
                 style="height: 36px"
               >
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Customer nr.
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="customerNr" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Customer nr.
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      First Name
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="firstName" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  First Name
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Last Name
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="lastName" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Last Name
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Personal/Org. Number
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="personalNumber" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Personal/Org. Number
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      City
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="city" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font"> City </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Country
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="country" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Country
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Phone
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="phone" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font"> Phone </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Mobile
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="mobile" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font"> Mobile </span>
               </div>
             </div>
             <div class="w-50">
@@ -92,58 +62,38 @@
                 class="d-flex flex-row align-center mt-5"
                 style="height: 36px"
               >
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Address
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="address" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Address
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Website
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="website" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Website
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      VAT Number
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="vatNumber" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  VAT Number
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Company Name
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="companyName" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Company Name
+                </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Type
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="type" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font"> Type </span>
               </div>
               <div class="d-flex flex-row align-center" style="height: 36px">
-                <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Category
-                    </span>
-                  </template>
-                </v-checkbox>
+                <app-checkbox v-model="category" class="me-2 ms-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Category
+                </span>
               </div>
             </div>
           </div>
@@ -227,6 +177,7 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
+import AppCheckbox from "../default/AppCheckbox.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -238,18 +189,20 @@ const closeDialog = () => {
   emit("update:dialog", false);
 };
 
-const headers = [
-  "PRICE Incl. VAT",
-  "PRICE excl. VAT",
-  "FROM QUANTITY",
-  "PRICELIST",
-];
-
-const items = [
-  { incl: 1000, excl: 800, quantity: 0, price: "A" },
-  { incl: 1000, excl: 800, quantity: 2, price: "B" },
-  { incl: 1000, excl: 800, quantity: 0, price: "C" },
-];
+const customerNr = ref(false);
+const firstName = ref(false);
+const lastName = ref(false);
+const personalNumber = ref(false);
+const city = ref(false);
+const country = ref(false);
+const phone = ref(false);
+const mobile = ref(false);
+const address = ref(false);
+const website = ref(false);
+const vatNumber = ref(false);
+const companyName = ref(false);
+const type = ref(false);
+const category = ref(false);
 
 const priceDialog = ref(false);
 

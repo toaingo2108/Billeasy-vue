@@ -24,6 +24,7 @@
       <company-information v-if="menuIndex == 0" />
       <account-settings v-else-if="menuIndex == 1" />
       <company-subscriptions v-else-if="menuIndex == 2" />
+      <company-register-settings v-else-if="menuIndex == 3" />
     </div>
   </div>
 </template>
@@ -33,6 +34,7 @@ import { ref } from "vue";
 import CompanyInformation from "@/components/company_settings/CompanyInformation.vue";
 import AccountSettings from "@/components/company_settings/AccountSettings.vue";
 import CompanySubscriptions from "@/components/company_settings/CompanySubscriptions.vue";
+import CompanyRegisterSettings from "@/components/company_settings/CompanyRegisterSettings.vue";
 const menuIndex = ref(0);
 const menus = [
   "Company Information",
