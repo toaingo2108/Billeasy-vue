@@ -26,6 +26,7 @@
       <company-subscriptions v-else-if="menuIndex == 2" />
       <company-register-settings v-else-if="menuIndex == 3" />
       <custom-invoice-fields v-else-if="menuIndex == 4" />
+      <custom-reminder-flows v-else-if="menuIndex == 5" />
     </div>
   </div>
 </template>
@@ -37,6 +38,7 @@ import AccountSettings from "@/components/company_settings/AccountSettings.vue";
 import CompanySubscriptions from "@/components/company_settings/CompanySubscriptions.vue";
 import CompanyRegisterSettings from "@/components/company_settings/CompanyRegisterSettings.vue";
 import CustomInvoiceFields from "@/components/company_settings/CustomInvoiceFields.vue";
+import CustomReminderFlows from "@/components/company_settings/CustomReminderFlows.vue";
 const menuIndex = ref(0);
 const menus = [
   "Company Information",
