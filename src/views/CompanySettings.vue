@@ -14,46 +14,74 @@
               @click="onSelectMenu(index)"
               width="250"
             >
-              {{ item }}
+              {{ item.title }}
             </v-btn>
           </div>
         </div>
       </div>
     </div>
     <div class="w-100 px-0">
-      <company-information v-if="menuIndex == 0" />
-      <account-settings v-else-if="menuIndex == 1" />
-      <company-subscriptions v-else-if="menuIndex == 2" />
-      <company-register-settings v-else-if="menuIndex == 3" />
-      <custom-invoice-fields v-else-if="menuIndex == 4" />
-      <custom-reminder-flows v-else-if="menuIndex == 5" />
+      <router-view />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import CompanyInformation from "@/components/company_settings/CompanyInformation.vue";
-import AccountSettings from "@/components/company_settings/AccountSettings.vue";
-import CompanySubscriptions from "@/components/company_settings/CompanySubscriptions.vue";
-import CompanyRegisterSettings from "@/components/company_settings/CompanyRegisterSettings.vue";
-import CustomInvoiceFields from "@/components/company_settings/CustomInvoiceFields.vue";
-import CustomReminderFlows from "@/components/company_settings/CustomReminderFlows.vue";
+import { useRouter, useRoute } from "vue-router";
 const menuIndex = ref(0);
 const menus = [
-  "Company Information",
-  "Account Settings",
-  "Subscriptions",
-  "Register",
-  "Custom Fields",
-  "Reminder Flows",
-  "Templates",
-  "Payment Methods",
+  {
+    title: "Company Information",
+    route: "company-information",
+  },
+  {
+    title: "Account Settings",
+    route: "company-account",
+  },
+  {
+    title: "Subscriptions",
+    route: "company-subscriptions",
+  },
+  {
+    title: "Register",
+    route: "company-register",
+  },
+  {
+    title: "Custom Fields",
+    route: "company-custom-fields",
+  },
+  {
+    title: "Reminder Flows",
+    route: "company-reminder-flows",
+  },
+  {
+    title: "Templates",
+    route: "company-templates",
+  },
+  {
+    title: "Payment Methods",
+    route: "company-payment-methods",
+  },
 ];
+
+const router = useRouter();
+const route = useRoute();
 
 const onSelectMenu = (index: number) => {
   menuIndex.value = index;
+  router.push({ name: menus[index].route });
 };
+
+const checkRoute = () => {
+  for (let i = 0; i < menus.length; i++) {
+    if (route.name == menus[i].route) {
+      menuIndex.value = i;
+    }
+  }
+};
+
+checkRoute();
 </script>
 <style scoped>
 .setting-left-section {

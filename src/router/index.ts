@@ -153,8 +153,74 @@ const routes = [
         name: "company-setting",
         component: () =>
           import(
-            /* webpackChunkName: "reports" */ "@/views/CompanySettings.vue"
+            /* webpackChunkName: "company-settings" */ "@/views/CompanySettings.vue"
           ),
+        children: [
+          {
+            path: "information",
+            name: "company-information",
+            component: () =>
+              import(
+                /* webpackChunkName: "company-settings-information" */ "@/components/company_settings/CompanyInformation.vue"
+              ),
+          },
+          {
+            path: "account",
+            name: "company-account",
+            component: () =>
+              import(
+                /* webpackChunkName: "company-settings-account" */ "@/components/company_settings/AccountSettings.vue"
+              ),
+          },
+          {
+            path: "subscriptions",
+            name: "company-subscriptions",
+            component: () =>
+              import(
+                /* webpackChunkName: "company-settings-subscriptions" */ "@/components/company_settings/CompanySubscriptions.vue"
+              ),
+          },
+          {
+            path: "register",
+            name: "company-register",
+            component: () =>
+              import(
+                /* webpackChunkName: "company-settings-register" */ "@/components/company_settings/CompanyRegisterSettings.vue"
+              ),
+          },
+          {
+            path: "custom-fields",
+            name: "company-custom-fields",
+            component: () =>
+              import(
+                /* webpackChunkName: "company-settings-custom-fields" */ "@/components/company_settings/CustomInvoiceFields.vue"
+              ),
+          },
+          {
+            path: "reminder-flows",
+            name: "company-reminder-flows",
+            component: () =>
+              import(
+                /* webpackChunkName: "company-settings-reminder-flows" */ "@/components/company_settings/CustomReminderFlows.vue"
+              ),
+          },
+          {
+            path: "templates",
+            name: "company-templates",
+            component: () =>
+              import(
+                /* webpackChunkName: "company-settings-templates" */ "@/components/company_settings/CompanyTemplates.vue"
+              ),
+          },
+          {
+            path: "payment-methods",
+            name: "company-payment-methods",
+            component: () =>
+              import(
+                /* webpackChunkName: "company-settings-payment-methods" */ "@/components/company_settings/CompanyPaymentMethods.vue"
+              ),
+          },
+        ],
       },
       {
         path: "404",

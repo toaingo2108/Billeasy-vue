@@ -284,18 +284,11 @@
                   :items="['A', 'B', 'C']"
                 />
               </v-col>
-              <v-col cols="12" md="4">
-                <v-checkbox
-                  color="#20c39d"
-                  value="#20c39d"
-                  hide-details
-                  class="mt-4"
-                >
-                  <template v-slot:label>
-                    <span class="font-14 app-regular-font dark-font">
-                      Prices Incl. VAT
-                    </span>
-                  
+              <v-col cols="12" md="4" class="mt-7">
+                <app-checkbox v-model="priceIncl" class="me-2 me-3" />
+                <span class="font-14 app-regular-font dark-font">
+                  Prices Incl. VAT
+                </span>
               </v-col>
             </v-row>
           </v-card>
@@ -754,6 +747,7 @@ import invoiceIcon from "@/assets/svg/customers/invoice.svg";
 import SubscriptionProductsRowMenu from "./SubscriptionProductsRowMenu.vue";
 
 import { useDisplay } from "vuetify";
+import AppCheckbox from "../default/AppCheckbox.vue";
 const { mdAndUp } = useDisplay();
 
 const addNewCategoryDialog = ref(false);
@@ -824,6 +818,8 @@ const productLists = [
     total: 2,
   },
 ];
+
+const priceIncl = ref(false);
 </script>
 <style scoped>
 div :deep(.v-label) {
