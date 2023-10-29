@@ -121,6 +121,7 @@
                 color="#0D0D1E"
                 style="border-color: #d1d1e2"
                 rounded="lg"
+                @click="onClickedButton(item.status)"
               >
                 {{
                   item.status == "Not Activated"
@@ -144,11 +145,17 @@
         </v-col>
       </v-row>
     </div>
+    <fortnox-billeasy-integration-dialog
+      :dialog="integrationDialog"
+      @update:dialog="(val) => (integrationDialog = val)"
+    />
   </div>
 </template>
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import fortnoxImg from "@/assets/sample/img_fortnox.png";
+import FortnoxBilleasyIntegrationDialog from "./FortnoxBilleasyIntegrationDialog.vue";
+
 const option = ref(0);
 
 const items = [
@@ -201,7 +208,22 @@ const items = [
     term: "100 :- excl. VAT / month",
   },
 ];
+
+const integrationDialog = ref(false);
 const onSelectOption = (index: number) => {
   option.value = index;
 };
+
+const onClickedButton = (status: string) => {
+  if (status == "Activated") {
+    onInactivate();
+  } else {
+    onActivate();
+  }
+};
+
+const onActivate = () => {
+  integrationDialog.value = true;
+};
+const onInactivate = () => {};
 </script>
