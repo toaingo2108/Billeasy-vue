@@ -17,97 +17,94 @@
         <v-col cols="12" md="6">
           <div class="d-flex flex-column">
             <span class="font-12 app-semibold-font shade-font">
-              COMPANY INFORMATION
+              BANK TRANSFER
             </span>
-            <v-btn
-              style="
-                height: 80px;
-                width: 224px;
-                margin-top: 27px;
-                border-color: #e6e6ed;
-              "
-              rounded="xl"
-              variant="outlined"
-            >
-              <div>
-                <v-img
-                  width="32"
-                  height="32"
-                  src="@/assets/svg/company_settings/image.svg"
-                />
-              </div>
-              <div class="d-flex flex-column ms-4">
-                <span class="font-13 shade-font app-medium-font">
-                  Upload Logo
-                </span>
-                <span class="font-14 teal-font app-semibold-font">
-                  Browse Files
-                </span>
-              </div>
-            </v-btn>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1">
-              Company Name
-            </span>
-            <div style="width: 224px">
-              <v-text-field
-                placeholder="Company Name"
-                variant="outlined"
-                rounded="lg"
-                hide-details
-              />
-            </div>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1">
-              Organization Number
-            </span>
-            <div style="width: 224px">
-              <v-text-field
-                placeholder="Organization Number"
-                variant="outlined"
-                rounded="lg"
-                hide-details
-              />
-            </div>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1"
-              >VAT Number</span
-            >
-            <div style="width: 224px">
-              <v-text-field
-                placeholder="Organization Number"
-                variant="outlined"
-                rounded="lg"
-                hide-details
-              />
-            </div>
-            <div class="mt-6 mb-1">
-              <app-checkbox v-model="vatRegistered" />
-              <span class="font-14 app-regular-font dark-font ms-1">
-                VAT Registered
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Owner of bank account
               </span>
-            </div>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1">
-              Standard VAT
-            </span>
-            <div style="width: 224px">
-              <v-select
-                placeholder="Standard VAT"
+              <v-text-field
+                placeholder="Owner of bank account"
                 variant="outlined"
                 rounded="lg"
                 hide-details
-                :items="['25%', '50%']"
               />
             </div>
-            <div class="mt-6 mb-1">
-              <app-checkbox v-model="approvedVAT" />
-              <span class="font-14 app-regular-font dark-font ms-1">
-                Approved for VAT
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Account number
               </span>
-            </div>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1">
-              Website
-            </span>
-            <div style="width: 224px">
               <v-text-field
-                placeholder="Website"
+                placeholder="Account number"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+              />
+            </div>
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Clearing number
+              </span>
+              <v-text-field
+                placeholder="Clearing number"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+              />
+            </div>
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Bank
+              </span>
+              <v-text-field
+                placeholder="Bank"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+              />
+            </div>
+            <span class="font-12 app-semibold-font shade-font mt-12">
+              IBAN
+            </span>
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                IBAN
+              </span>
+              <v-text-field
+                placeholder="IBAN"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+              />
+            </div>
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                SWIFT/BIC
+              </span>
+              <v-text-field
+                placeholder="SWIFT/BIC"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+              />
+            </div>
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Bank
+              </span>
+              <v-text-field
+                placeholder="Bank"
+                variant="outlined"
+                rounded="lg"
+                hide-details
+              />
+            </div>
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Bank
+              </span>
+              <v-text-field
+                placeholder="Bank"
                 variant="outlined"
                 rounded="lg"
                 hide-details
@@ -117,50 +114,44 @@
         </v-col>
         <v-col cols="12" md="6">
           <div class="d-flex flex-column">
-            <span class="font-12 app-semibold-font shade-font"> ADDRESS </span>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1">
-              Street address
-            </span>
-            <div style="width: 224px">
+            <span class="font-12 app-semibold-font shade-font"> PLUSGIRO </span>
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Plusgiro account
+              </span>
               <v-text-field
-                placeholder="Street address"
+                placeholder="Plusgiro account"
                 variant="outlined"
                 rounded="lg"
                 hide-details
               />
             </div>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1">
-              Zip code
+            <span class="font-12 app-semibold-font shade-font mt-12">
+              BANKGIRO
             </span>
-            <div style="width: 224px">
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Bankgiro account
+              </span>
               <v-text-field
-                placeholder="Zip code"
+                placeholder="Bankgiro account"
                 variant="outlined"
                 rounded="lg"
                 hide-details
               />
             </div>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1">
-              City
+            <span class="font-12 app-semibold-font shade-font mt-12">
+              SWISH
             </span>
-            <div style="width: 224px">
+            <div class="d-flex flex-row align-center mt-6 mb-1">
+              <span class="font-13 app-medium-font dark-font wx-200">
+                Swish
+              </span>
               <v-text-field
-                placeholder="City"
+                placeholder="Swish"
                 variant="outlined"
                 rounded="lg"
                 hide-details
-              />
-            </div>
-            <span class="font-13 app-medium-font dark-font mt-6 mb-1">
-              Country
-            </span>
-            <div style="width: 224px">
-              <v-select
-                placeholder="Country"
-                variant="outlined"
-                rounded="lg"
-                hide-details
-                :items="['Sweden', 'United State']"
               />
             </div>
           </div>

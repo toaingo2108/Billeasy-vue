@@ -105,6 +105,9 @@ html {
 .hx-36 {
   height: 36px;
 }
+.wx-200 {
+  width: 200px;
+}
 .w-25 {
   width: 25%;
 }
