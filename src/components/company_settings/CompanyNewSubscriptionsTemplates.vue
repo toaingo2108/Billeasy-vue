@@ -19,7 +19,7 @@
         Back
       </v-btn>
       <span class="font-16 dark-font app-semibold-font ms-6"
-        >Create Invoice Template</span
+        >Create Subscription Template</span
       >
     </div>
     <div class="mt-8">

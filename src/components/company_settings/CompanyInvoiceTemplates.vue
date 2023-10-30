@@ -77,6 +77,6 @@ const invoiceItems = reactive([
 
 const router = useRouter();
 const onAddNew = () => {
-  router.push({ name: "company-templates-subscription-new" });
+  router.push({ name: "company-templates-invoice-new" });
 };
 </script>

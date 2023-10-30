@@ -32,11 +32,17 @@
     </v-card-text>
     <v-divider
       class="mt-8"
-      v-if="route.name == 'company-templates-subscription-new'"
+      v-if="
+        route.name == 'company-templates-subscription-new' ||
+        route.name == 'company-templates-invoice-new'
+      "
     />
     <v-card-actions
       class="py-7 px-8 d-flex flex-row justify-end bg-gray"
-      v-if="route.name == 'company-templates-subscription-new'"
+      v-if="
+        route.name == 'company-templates-subscription-new' ||
+        route.name == 'company-templates-invoice-new'
+      "
     >
       <v-btn
         color="#0D0D1E"
@@ -98,6 +104,25 @@ watch(
         break;
       case 1:
         router.push({ name: "company-templates-invoice" });
+        break;
+    }
+  }
+);
+watch(
+  () => route.name,
+  (newValue) => {
+    switch (route.name) {
+      case "company-templates-subscription":
+        tab.value = 0;
+        break;
+      case "company-templates-subscription-new":
+        tab.value = 0;
+        break;
+      case "company-templates-invoice":
+        tab.value = 1;
+        break;
+      case "company-templates-invoice-new":
+        tab.value = 1;
         break;
     }
   }

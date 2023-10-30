@@ -236,6 +236,14 @@ const routes = [
                     /* webpackChunkName: "company-templates-invoice" */ "@/components/company_settings/CompanyInvoiceTemplates.vue"
                   ),
               },
+              {
+                path: "new-invoice",
+                name: "company-templates-invoice-new",
+                component: () =>
+                  import(
+                    /* webpackChunkName: "company-templates-invoice-new" */ "@/components/company_settings/CompanyNewInvoiceTemplates.vue"
+                  ),
+              },
             ],
           },
           {
