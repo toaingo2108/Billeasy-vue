@@ -143,6 +143,9 @@ html {
 .white-font {
   color: white !important;
 }
+.light-font {
+  color: #d1d1e2;
+}
 .blue-600 {
   color: #8b8ba9 !important;
 }
