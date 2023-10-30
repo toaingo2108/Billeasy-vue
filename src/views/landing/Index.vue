@@ -452,7 +452,7 @@
       </v-row>
     </div>
     <div class="bg-landing3 w-100">
-      <v-row>
+      <v-row class="mb-0">
         <v-col cols="12" md="6" class="d-flex flex-column align-center">
           <div class="w-100 d-flex flex-column align-center justify-center">
             <div
@@ -668,6 +668,78 @@
         </v-col>
       </v-row>
     </div>
+    <div class="w-100 d-flex flex-row justify-center">
+      <div style="margin-top: 144px; max-width: 1600px; margin-bottom: 192px">
+        <v-row>
+          <v-col cols="12" md="4">
+            <div class="bg-card bg-dark">
+              <div style="margin-top: 80px">
+                <v-img
+                  width="120"
+                  height="120"
+                  src="@/assets/sample/profile2.png"
+                />
+              </div>
+              <span class="font-32 teal-font mt-12 app-semibold-font"
+                >Jane Cooper</span
+              >
+              <span class="font-24 teal-font app-medium-font">Designation</span>
+              <span class="light-font font-18 app-medium-font mt-10 mx-15"
+                >Praesent molestie massa eu auctor tristique. Quisque vitae
+                massa ut elit elementum bibendum. Vivamus non tempus dui.
+                Curabitur tincidunt massa risus, mollis molestie tortor egestas
+                vel. Pellentesque at sodales eros, aliquam iaculis ligula. Morbi
+                non dolor tellus.
+              </span>
+            </div>
+          </v-col>
+          <v-col cols="12" md="4">
+            <div class="bg-card-dark bg-white">
+              <div style="margin-top: 80px">
+                <v-img
+                  width="120"
+                  height="120"
+                  src="@/assets/sample/profile3.png"
+                />
+              </div>
+              <span class="font-32 teal-font mt-12 app-semibold-font">
+                Wade Warren
+              </span>
+              <span class="font-24 teal-font app-medium-font">Designation</span>
+              <span class="light-font font-18 app-medium-font mt-10 mx-15"
+                >Praesent molestie massa eu auctor tristique. Quisque vitae
+                massa ut elit elementum bibendum. Vivamus non tempus dui.
+                Curabitur tincidunt massa risus, mollis molestie tortor egestas
+                vel. Pellentesque at sodales eros, aliquam iaculis ligula. Morbi
+                non dolor tellus.
+              </span>
+            </div>
+          </v-col>
+          <v-col cols="12" md="4">
+            <div class="bg-card-dark bg-white">
+              <div style="margin-top: 80px">
+                <v-img
+                  width="120"
+                  height="120"
+                  src="@/assets/sample/profile4.png"
+                />
+              </div>
+              <span class="font-32 teal-font mt-12 app-semibold-font">
+                Annette Black
+              </span>
+              <span class="font-24 teal-font app-medium-font">Designation</span>
+              <span class="light-font font-18 app-medium-font mt-10 mx-15"
+                >Praesent molestie massa eu auctor tristique. Quisque vitae
+                massa ut elit elementum bibendum. Vivamus non tempus dui.
+                Curabitur tincidunt massa risus, mollis molestie tortor egestas
+                vel. Pellentesque at sodales eros, aliquam iaculis ligula. Morbi
+                non dolor tellus.
+              </span>
+            </div>
+          </v-col>
+        </v-row>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -687,5 +759,27 @@
   background-image: url("@/assets/landing/bg_landing3.png");
   background-size: cover;
   background-position: 50% 50%;
+}
+.bg-card {
+  background-image: url("@/assets/landing/quote.svg");
+  background-size: 131px 99px;
+  background-position: 18px 15px;
+  border-radius: 48px;
+  width: 501.33px;
+  height: 672px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bg-card-dark {
+  background-image: url("@/assets/landing/quote_dark.svg");
+  background-size: 131px 99px;
+  background-position: 18px 15px;
+  border-radius: 48px;
+  width: 501.33px;
+  height: 672px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

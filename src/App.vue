@@ -127,6 +127,9 @@ html {
 .bg-cerulean {
   background-color: #229cb7;
 }
+.bg-dark {
+  background-color: #0d0d1e;
+}
 
 .blue-font {
   color: #3737c8;
