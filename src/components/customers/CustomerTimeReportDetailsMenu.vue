@@ -121,13 +121,10 @@
         </div>
         <div style="width: 33.33%" class="px-2">
           <div class="mt-6">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font">
-                  Rate includes VAT
-                </span>
-              </template>
-            </v-checkbox>
+            <app-checkbox v-model="firstName" class="me-2 ms-3" />
+            <span class="font-14 app-regular-font dark-font">
+              Rate includes VAT
+            </span>
           </div>
         </div>
       </v-card-text>

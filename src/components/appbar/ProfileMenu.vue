@@ -25,7 +25,7 @@ const onLogOut = () => {
   router.push({ name: "landing-index" });
 };
 const onCompanySetting = () => {
-  router.push({ name: "company-setting" });
+  router.push({ name: "company-information" });
 };
 
 const items = [

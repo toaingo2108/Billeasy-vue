@@ -104,16 +104,14 @@
               />
             </div>
           </v-card-text>
-          <v-card-text class="d-flex flex-column mx-3 pb-1">
-            <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-              <template v-slot:label>
-                <span class="font-14 app-regular-font dark-font">
-                  Recurring event
-                </span>
-              </template>
-            </v-checkbox>
+          <v-card-text class="d-flex flex-row mx-3 pb-1 align-center">
+            <app-checkbox v-model="recurringEvent" class="me-2" />
+            <span class="font-14 app-regular-font dark-font">
+              Recurring event
+            </span>
           </v-card-text>
-          <v-card-actions class="py-7 px-8 d-flex flex-row justify-end">
+          <v-divider class="mt-8" />
+          <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
             <v-btn
               color="white"
               @click="saveEvent"
@@ -160,6 +158,7 @@ import RegisterPaymentDialog from "@/components/invoices/RegisterPaymentDialog.v
 import SearchField from "../default/SearchField.vue";
 import SubscriptionCategoriesDialog from "@/components/subscriptions/SubscriptionCategoriesDialog.vue";
 import SubscriptionProductsRowMenu from "./SubscriptionProductsRowMenu.vue";
+import AppCheckbox from "../default/AppCheckbox.vue";
 
 const headers = [
   { title: "Sub nr.", key: "id", style: "bold" },
@@ -242,6 +241,8 @@ const items = [
 const sendInvoiceDialog = ref(false);
 const registerPaymentDialog = ref(false);
 const subCategoriesDialog = ref(false);
+const recurringEvent = ref(false);
+
 const router = useRouter();
 const goToNewSubscription = function () {
   router.push({ name: "new-subscription" });

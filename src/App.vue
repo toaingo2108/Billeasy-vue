@@ -102,6 +102,9 @@ html {
 .h-50 {
   height: 50%;
 }
+.hx-36 {
+  height: 36px;
+}
 .w-25 {
   width: 25%;
 }
