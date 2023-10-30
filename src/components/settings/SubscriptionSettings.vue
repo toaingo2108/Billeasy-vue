@@ -64,7 +64,7 @@
                 Days before period start to bill
                 <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
               </span>
-              <v-text-feidl
+              <v-text-field
                 placeholder="Billing based on"
                 variant="outlined"
                 rounded="lg"

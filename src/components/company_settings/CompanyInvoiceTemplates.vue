@@ -2,8 +2,8 @@
   <div>
     <div class="d-flex flex-row justify-between">
       <div class="font-14 app-regular-font shade-font ms-3 mt-6">
-        Here you can create subscription templates with default<br />
-        settings to use when creating subscriptions.
+        Here you can create invoice templates with default settings<br />
+        to use when creating invoices.
       </div>
       <div class="me-4 mt-6">
         <v-btn
@@ -20,7 +20,7 @@
           class="text-none font-14 app-medium-font"
           @click="onAddNew"
         >
-          Add Subscription Template
+          Add Invoice Template
         </v-btn>
       </div>
     </div>
@@ -47,7 +47,7 @@ const invoiceHeaders = [
   { title: "Name", key: "name", align: "left", style: "bold" },
   { title: "Code", key: "code", style: "bold" },
   { title: "Description", key: "description", width: "380px" },
-  { title: "# Subscriptions", key: "subscriptions" },
+  { title: "# Invoices", key: "subscriptions" },
   { title: "", key: "action" },
 ];
 

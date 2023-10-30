@@ -26,51 +26,47 @@
       <v-divider />
       <v-window v-model="tab">
         <v-window-item v-for="n in 3" :key="n" :value="n">
-          <company-subscriptions-templates v-if="tab == 0" />
-          <company-subscriptions-payments v-else-if="tab == 1" />
+          <router-view />
         </v-window-item>
       </v-window>
     </v-card-text>
-    <v-divider class="mt-8" v-if="tab == 0" />
+    <v-divider
+      class="mt-8"
+      v-if="route.name == 'company-templates-subscription-new'"
+    />
     <v-card-actions
       class="py-7 px-8 d-flex flex-row justify-end bg-gray"
-      v-if="tab == 0"
+      v-if="route.name == 'company-templates-subscription-new'"
     >
       <v-btn
-        color="E91818"
-        prepend-icon="mdi-close-circle-outline"
+        color="#0D0D1E"
+        variant="outlined"
         rounded="lg"
         style="
-          border-color: #d1d1e2;
-          color: #e91818 !important;
           padding-left: 20px;
           padding-right: 20px;
-          padding-top: 7px;
-          padding-bottom: 7px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          border-color: #d1d1e2;
         "
         class="text-none"
-        variant="outlined"
-        @click="onCancelSubscription"
+        >Cancel</v-btn
       >
-        Cancel Subscription
-      </v-btn>
       <v-btn
         color="white"
-        prepend-icon="mdi-sync"
+        prepend-icon="mdi-check"
         rounded="lg"
         style="
           background: #20c39d !important;
           color: white !important;
           padding-left: 20px;
           padding-right: 20px;
-          padding-top: 7px;
-          padding-bottom: 7px;
-          margin-left: 8px;
+          padding-top: 5px;
+          padding-bottom: 5px;
         "
-        class="text-none"
+        class="text-none ms-2"
+        >Save</v-btn
       >
-        Update Subscription
-      </v-btn>
     </v-card-actions>
   </v-card>
   <cancel-subscription-dialog
@@ -81,8 +77,7 @@
 <script lang="ts" setup>
 import { ref, watch, watchEffect } from "vue";
 import CancelSubscriptionDialog from "./CancelSubscriptionDialog.vue";
-import CompanySubscriptionsPayments from "./CompanySubscriptionsPayments.vue";
-import CompanySubscriptionsTemplates from "./CompanySubscriptionsTemplates.vue";
+import { useRouter, useRoute } from "vue-router";
 
 const tab = ref(0);
 const menus = ["Subscription Templates", "Invoice Templates"];
@@ -91,6 +86,21 @@ const cancelSubscriptionDialog = ref(false);
 const onCancelSubscription = () => {
   cancelSubscriptionDialog.value = true;
 };
-</script>
 
+const router = useRouter();
+const route = useRoute();
+watch(
+  () => tab.value,
+  (newValue) => {
+    switch (newValue) {
+      case 0:
+        router.push({ name: "company-templates-subscription" });
+        break;
+      case 1:
+        router.push({ name: "company-templates-invoice" });
+        break;
+    }
+  }
+);
+</script>
 <style scoped></style>

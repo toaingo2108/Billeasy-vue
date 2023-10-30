@@ -57,7 +57,7 @@ const menus = [
   },
   {
     title: "Templates",
-    route: "company-templates",
+    route: "company-templates-subscription",
   },
   {
     title: "Payment Methods",

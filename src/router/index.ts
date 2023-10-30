@@ -211,6 +211,32 @@ const routes = [
               import(
                 /* webpackChunkName: "company-settings-templates" */ "@/components/company_settings/CompanyTemplates.vue"
               ),
+            children: [
+              {
+                path: "subscription",
+                name: "company-templates-subscription",
+                component: () =>
+                  import(
+                    /* webpackChunkName: "company-templates-subscription" */ "@/components/company_settings/CompanySubscriptionsTemplates.vue"
+                  ),
+              },
+              {
+                path: "new-subscription",
+                name: "company-templates-subscription-new",
+                component: () =>
+                  import(
+                    /* webpackChunkName: "company-templates-subscription-new" */ "@/components/company_settings/CompanyNewSubscriptionsTemplates.vue"
+                  ),
+              },
+              {
+                path: "invoice",
+                name: "company-templates-invoice",
+                component: () =>
+                  import(
+                    /* webpackChunkName: "company-templates-invoice" */ "@/components/company_settings/CompanyInvoiceTemplates.vue"
+                  ),
+              },
+            ],
           },
           {
             path: "payment-methods",
