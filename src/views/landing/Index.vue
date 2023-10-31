@@ -1140,6 +1140,107 @@
         </v-row>
       </div>
     </div>
+    <div class="bg-dark-blue" style="padding-top: 80px">
+      <v-row style="margin-bottom: 108px">
+        <v-col cols="12" md="5">
+          <div class="d-flex flex-column align-center justify-center">
+            <div style="width: 458px">
+              <div>
+                <v-img width="120" height="104" src="@/assets/logo.png" />
+              </div>
+              <div
+                class="font-18 app-regular-font blue-magenta-font"
+                style="margin-top: 48px"
+              >
+                Billeasy is a web and mobile app which helps companies and
+                organisations to produce, manage, share, digitally sign and
+                store documents and sales proposals.
+              </div>
+            </div>
+          </div>
+        </v-col>
+        <v-col cols="12" md="7">
+          <div class="d-flex flex-row">
+            <div class="d-flex flex-column" style="width: 388px">
+              <span class="font-28 app-semibold-font white-font">
+                Resources
+              </span>
+              <span class="font-18 app-medium-font blue-magenta-font mt-12">
+                Request Integration or Feature
+              </span>
+              <span
+                class="font-18 app-medium-font blue-magenta-font"
+                style="margin-top: 18px"
+              >
+                Privacy Policy
+              </span>
+              <span
+                class="font-18 app-medium-font blue-magenta-font"
+                style="margin-top: 18px"
+              >
+                Terms & Conditions
+              </span>
+              <span
+                class="font-18 app-medium-font blue-magenta-font"
+                style="margin-top: 18px"
+              >
+                Partnerships
+              </span>
+            </div>
+            <div class="d-flex flex-column">
+              <span class="font-28 app-semibold-font white-font">
+                Features
+              </span>
+              <span class="font-18 app-medium-font blue-magenta-font mt-12">
+                Backrupsy Monitoring
+              </span>
+              <span
+                class="font-18 app-medium-font blue-magenta-font"
+                style="margin-top: 18px"
+              >
+                Bankrupsy Automated Fillings
+              </span>
+              <span
+                class="font-18 app-medium-font blue-magenta-font"
+                style="margin-top: 18px"
+              >
+                Corporate Event Alerts
+              </span>
+              <span
+                class="font-18 app-medium-font blue-magenta-font"
+                style="margin-top: 18px"
+              >
+                AI Trained Custom Action Flow
+              </span>
+              <span
+                class="font-18 app-medium-font blue-magenta-font"
+                style="margin-top: 18px"
+              >
+                Recommendation Advisor
+              </span>
+              <span
+                class="font-18 app-medium-font blue-magenta-font"
+                style="margin-top: 18px"
+              >
+                Business Analytics
+              </span>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
+      <div
+        style="
+          margin-left: calc(20.8333% - 236px);
+          margin-right: calc(20.8333% - 236px);
+          margin-bottom: 50px;
+        "
+      >
+        <v-divider color="#59597B" class="mb-5" />
+        <span class="font-18 app-medium-font blue-magenta-font">
+          © 2023 Billeasy l All rights reserved
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -133,6 +133,9 @@ html {
 .bg-dark {
   background-color: #0d0d1e;
 }
+.bg-dark-blue {
+  background-color: #383856;
+}
 
 .blue-font {
   color: #3737c8;
