@@ -20,6 +20,7 @@
             variant="text"
             class="font-16 app-regular-font text-none"
             color="white"
+            @click="goToFeatures"
           >
             Features
           </v-btn>
@@ -1248,6 +1249,7 @@
 import { ref, reactive } from "vue";
 import MinusIcon from "@/assets/landing/minus.svg";
 import PlusIcon from "@/assets/landing/plus.svg";
+import { useRouter } from "vue-router";
 
 const option = ref(0);
 const onSelectOption = (index: number) => {
@@ -1276,6 +1278,11 @@ const questions = reactive([
     expand: false,
   },
 ]);
+
+const router = useRouter();
+const goToFeatures = () => {
+  router.push({ name: "landing-features" });
+};
 </script>
 <style scoped>
 .bg-landing {

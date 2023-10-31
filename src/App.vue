@@ -197,7 +197,9 @@ html {
 .hover-item:hover {
   background-color: #eef3f8;
 }
-
+.cursor-pointer {
+  cursor: pointer;
+}
 .button-40 {
   width: 40px !important;
   height: 40px !important;

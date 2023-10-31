@@ -276,7 +276,17 @@ const routes = [
         path: "",
         name: "landing-index",
         component: () =>
-          import(/* webpackChunkName: "home" */ "@/views/landing/Index.vue"),
+          import(
+            /* webpackChunkName: "landing-index" */ "@/views/landing/Index.vue"
+          ),
+      },
+      {
+        path: "features",
+        name: "landing-features",
+        component: () =>
+          import(
+            /* webpackChunkName: "landing-features" */ "@/views/landing/Features.vue"
+          ),
       },
     ],
   },
