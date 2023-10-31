@@ -1094,6 +1094,52 @@
         </v-card>
       </div>
     </div>
+    <div class="bg-landing d-flex flex-column align-center">
+      <div style="margin-top: 174px; margin-bottom: 174px; width: 100%">
+        <v-row>
+          <v-col cols="12" md="6">
+            <div class="d-flex flex-column justify-center w-100 align-center">
+              <div style="width: 603px">
+                <div class="font-32 light-font app-medium-font d-flex flex-row">
+                  Seamlessly interact with any piece of corporate filings
+                  data—from bankrupsy filings, notifications to case details,
+                  emails, parsed PDFs, aggregate statistics, and case
+                  filing—within a single platform.
+                </div>
+              </div>
+              <div style="width: 603px">
+                <v-btn
+                  flat
+                  class="text-none font-16 app-semibold-font"
+                  color="white"
+                  rounded="lg"
+                  style="
+                    background-color: #20c39d !important;
+                    color: white !important;
+                    height: 64px;
+                    width: 184px;
+                    font-size: 16px;
+                    margin-top: 72px;
+                  "
+                  append-icon="mdi-chevron-right"
+                >
+                  Get Started
+                </v-btn>
+              </div>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6">
+            <div class="font-24 white-font app-medium-font mx-10">
+              <v-img
+                src="@/assets/landing/home_second.png"
+                width="746"
+                height="500"
+              />
+            </div>
+          </v-col>
+        </v-row>
+      </div>
+    </div>
   </div>
 </template>
 
