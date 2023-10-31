@@ -740,10 +740,396 @@
         </v-row>
       </div>
     </div>
+    <div class="w-100 bg-white d-flex flex-column align-center">
+      <span
+        class="font-56 dark-font app-semibold-font"
+        style="margin-top: 112px; margin-bottom: 112px"
+      >
+        Integrated with leading ERP's
+      </span>
+      <div
+        class="d-flex flex-row align-center justify-around w-100"
+        style="margin-bottom: 147px"
+      >
+        <div>
+          <v-btn flat rounded="circle" variant="text" class="button-64">
+            <v-img width="64" height="64" src="@/assets/landing/left.svg" />
+          </v-btn>
+        </div>
+        <div>
+          <v-img
+            width="240"
+            height="121"
+            src="@/assets/landing/integrated_logo1.png"
+          />
+        </div>
+        <div>
+          <v-img
+            width="240"
+            height="63"
+            src="@/assets/landing/integrated_logo2.png"
+          />
+        </div>
+        <div>
+          <v-img
+            width="240"
+            height="93"
+            src="@/assets/landing/integrated_logo3.png"
+          />
+        </div>
+        <div>
+          <v-btn flat rounded="circle" variant="text" class="button-64">
+            <v-img width="64" height="64" src="@/assets/landing/right.svg" />
+          </v-btn>
+        </div>
+      </div>
+    </div>
+    <div class="w-100 bg-gray d-flex flex-column align-center">
+      <span
+        class="font-56 dark-font app-semibold-font"
+        style="margin-top: 144px"
+      >
+        Pricing
+      </span>
+      <div style="margin-top: 56px; margin-bottom: 80px">
+        <div>
+          <v-btn
+            style="height: 64px; max-height: 64px; min-height: 64px"
+            :style="
+              option == 0
+                ? 'background-color: #20C39D'
+                : 'background-color: white'
+            "
+            class="font-18 text-none app-medium-font rounded-0"
+            :class="option == 0 ? 'white-font' : 'dark-font'"
+            rounded="s-xl"
+            @click="onSelectOption(0)"
+            flat
+            >Quarterly payment</v-btn
+          >
+          <v-btn
+            style="height: 64px; max-height: 64px; min-height: 64px"
+            :style="
+              option == 1
+                ? 'background-color: #20C39D'
+                : 'background-color: white'
+            "
+            class="font-18 text-none app-medium-font rounded-0"
+            :class="option == 1 ? 'white-font' : 'dark-font'"
+            rounded="e-xl"
+            @click="onSelectOption(1)"
+            flat
+          >
+            Monthly payment
+          </v-btn>
+        </div>
+      </div>
+      <div style="max-width: 1600px">
+        <v-row>
+          <v-col cols="12" md="4">
+            <v-card
+              rounded="xl"
+              elevation="0"
+              color="white"
+              style="width: 501.33px; height: 784px; padding: 48px"
+            >
+              <v-card-title class="font-24 app-medium-font dark-font pa-0 mt-4">
+                Standard Package
+              </v-card-title>
+              <v-card-text style="line-height: 1; padding: 0; margin-top: 40px">
+                <span class="font-72 dark-font app-bold-font">780</span>
+                <span class="font-32 blue-600 app-regular-font">/ month</span>
+              </v-card-text>
+              <v-card-text class="pa-0">
+                <v-btn
+                  flat
+                  class="text-none font-16 app-semibold-font"
+                  color="white"
+                  rounded="lg"
+                  style="
+                    background-color: #20c39d !important;
+                    color: white !important;
+                    height: 56px;
+                    margin-top: 64px;
+                  "
+                  block
+                >
+                  Sign Up
+                </v-btn>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="margin-top: 64px; height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  Up to 20 company watches
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  Up to 2 users
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  Up to 2 Automation Rules
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  Basic Analytics
+                </span>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="4">
+            <v-card
+              rounded="xl"
+              elevation="0"
+              color="#0D0D1E"
+              style="width: 501.33px; height: 784px; padding: 48px"
+            >
+              <v-card-title
+                class="font-24 app-medium-font white-font pa-0 mt-4"
+              >
+                Standard Package
+              </v-card-title>
+              <v-card-text style="line-height: 1; padding: 0; margin-top: 40px">
+                <span class="font-72 white-font app-bold-font">1200</span>
+                <span class="font-32 blue-600 app-regular-font">/ month</span>
+              </v-card-text>
+              <v-card-text class="pa-0">
+                <v-btn
+                  flat
+                  class="text-none font-16 app-semibold-font"
+                  color="white"
+                  rounded="lg"
+                  style="
+                    background-color: #20c39d !important;
+                    color: white !important;
+                    height: 56px;
+                    margin-top: 64px;
+                  "
+                  block
+                >
+                  Sign Up
+                </v-btn>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="margin-top: 64px; height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 light-font app-medium-font ms-4">
+                  Up to 50 company watches
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 light-font app-medium-font ms-4">
+                  Up to 5 users
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 light-font app-medium-font ms-4">
+                  Up till 5 Automation Rules
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 light-font app-medium-font ms-4">
+                  Extended Analytics
+                </span>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="4">
+            <v-card
+              rounded="xl"
+              elevation="0"
+              color="white"
+              style="width: 501.33px; height: 784px; padding: 48px"
+            >
+              <v-card-title class="font-24 app-medium-font dark-font pa-0 mt-4">
+                ENTERPRISE Package
+              </v-card-title>
+              <v-card-text style="line-height: 1; padding: 0; margin-top: 40px">
+                <span class="font-72 dark-font app-bold-font">780</span>
+                <span class="font-32 blue-600 app-regular-font">/ month</span>
+              </v-card-text>
+              <v-card-text class="pa-0">
+                <v-btn
+                  flat
+                  class="text-none font-16 app-semibold-font"
+                  color="white"
+                  rounded="lg"
+                  style="
+                    background-color: #20c39d !important;
+                    color: white !important;
+                    height: 56px;
+                    margin-top: 64px;
+                  "
+                  block
+                >
+                  Sign Up
+                </v-btn>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="margin-top: 64px; height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  Up to 200 company watches
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  Up to 10 users
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  Unlimited Automation Rules
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  AI Assistant
+                </span>
+              </v-card-text>
+              <v-card-text
+                class="d-flex flex-row align-center pa-0"
+                style="height: 68px"
+              >
+                <v-icon color="#20C39D">mdi-check</v-icon>
+                <span class="font-24 dark-font app-medium-font ms-4">
+                  Premium analytics
+                </span>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </div>
+      <span
+        class="font-56 dark-font app-semibold-font"
+        style="margin-top: 284px"
+      >
+        Frequently Asked Questions
+      </span>
+      <div style="width: 1104px; margin-top: 80px; margin-bottom: 189px">
+        <v-card
+          elevation="0"
+          style="
+            border-radius: 28px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 56px;
+            padding-right: 56px;
+            margin-bottom: 12px;
+          "
+          v-for="item in questions"
+        >
+          <v-card-title class="d-flex flex-row align-center justify-between">
+            <span class="font-24 dark-font app-semibold-font">
+              {{ item.title }}
+            </span>
+            <div>
+              <v-btn
+                flat
+                rounded="lg"
+                class="button-36"
+                @click="item.expand = !item.expand"
+              >
+                <v-img
+                  width="36"
+                  height="36"
+                  :src="item.expand ? MinusIcon : PlusIcon"
+                />
+              </v-btn>
+            </div>
+          </v-card-title>
+          <v-card-text
+            class="font-18 shade-font app-medium-font"
+            v-if="item.expand"
+            style="padding-bottom: 14px; margin-top: 32px"
+          >
+            {{ item.text }}
+          </v-card-text>
+        </v-card>
+      </div>
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { ref, reactive } from "vue";
+import MinusIcon from "@/assets/landing/minus.svg";
+import PlusIcon from "@/assets/landing/plus.svg";
+
+const option = ref(0);
+const onSelectOption = (index: number) => {
+  option.value = index;
+};
+
+const questions = reactive([
+  {
+    title: "Do you have a setup cost?",
+    text: "Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis aliquet convallis arcu dictum. Ut nisi tellus erat nisi pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam neque at turpis. Volutpat placerat et nunc a amet sapien. Purus massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque lacus vel eget amet. Libero enim lectus lectus eu volutpat lobortis.",
+    expand: false,
+  },
+  {
+    title: "Do you have a setup cost?",
+    text: "Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis aliquet convallis arcu dictum. Ut nisi tellus erat nisi pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam neque at turpis. Volutpat placerat et nunc a amet sapien. Purus massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque lacus vel eget amet. Libero enim lectus lectus eu volutpat lobortis.",
+    expand: false,
+  },
+  {
+    title: "Do you have a setup cost?",
+    text: "Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis aliquet convallis arcu dictum. Ut nisi tellus erat nisi pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam neque at turpis. Volutpat placerat et nunc a amet sapien. Purus massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque lacus vel eget amet. Libero enim lectus lectus eu volutpat lobortis.",
+    expand: false,
+  },
+  {
+    title: "Do you have a setup cost?",
+    text: "Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis aliquet convallis arcu dictum. Ut nisi tellus erat nisi pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam neque at turpis. Volutpat placerat et nunc a amet sapien. Purus massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque lacus vel eget amet. Libero enim lectus lectus eu volutpat lobortis.",
+    expand: false,
+  },
+]);
+</script>
 <style scoped>
 .bg-landing {
   background-image: url("@/assets/landing/bg_landing.png");

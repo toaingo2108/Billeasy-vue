@@ -61,7 +61,7 @@
   font-size: 16px;
 }
 .font-18 {
-  font-size: 18px;
+  font-size: 18px !important;
 }
 .font-20 {
   font-size: 20px !important;
@@ -80,6 +80,9 @@
 }
 .font-56 {
   font-size: 56px;
+}
+.font-72 {
+  font-size: 72px;
 }
 .font-80 {
   font-size: 80px;
@@ -176,6 +179,11 @@ html {
 .justify-between {
   justify-content: space-between !important;
 }
+
+.justify-around {
+  justify-content: space-around !important;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -202,6 +210,22 @@ html {
   min-width: 32px !important;
   max-height: 32px !important;
   max-width: 32px !important;
+}
+.button-36 {
+  width: 36px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  min-width: 36px !important;
+  max-height: 36px !important;
+  max-width: 36px !important;
+}
+.button-64 {
+  height: 64px;
+  max-height: 64px;
+  min-height: 64px;
+  width: 64px;
+  max-width: 64px;
+  min-width: 64px;
 }
 .app-border {
   border-color: #e6e6ed;
