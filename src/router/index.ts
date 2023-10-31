@@ -288,6 +288,14 @@ const routes = [
             /* webpackChunkName: "landing-features" */ "@/views/landing/Features.vue"
           ),
       },
+      {
+        path: "about",
+        name: "landing-about",
+        component: () =>
+          import(
+            /* webpackChunkName: "landing-about" */ "@/views/landing/AboutUs.vue"
+          ),
+      },
     ],
   },
   {

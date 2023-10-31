@@ -18,15 +18,16 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none selected-button"
+            class="font-16 app-regular-font text-none"
             color="white"
+            @click="goToFeatures"
           >
             Features
           </v-btn>
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="font-16 app-regular-font text-none ms-10 selected-button"
             color="white"
             @click="goToAboutUs"
           >
@@ -81,197 +82,227 @@
           class="font-80 app-semibold-font white-font text-center"
           style="margin-top: 160px; line-height: 1.2"
         >
-          Big bold tagline here<br />
-          about Features
+          About Billeasy
         </div>
         <div
           class="font-20 white-font text-center app-medium-font"
-          style="width: 772px; margin-top: 64px; margin-bottom: 208px"
+          style="width: 1152px; margin-top: 64px; margin-bottom: 208px"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nulla
-          ipsum, gravida pellentesque massa nec, feugiat sagittis erat.
+          White label refers to a product or service that is developed by one
+          company and sold to another company that puts its own logo and brand
+          name on the product or service. White label is nothing but a readymade
+          product with very little customization and investment.<br /><br />
+          Our white label solution for B2B Portal is basically a readymade and
+          fully integrated website with your own domain name and logo, which
+          make branding very easy. <br /><br />
+          As a reseller you will be free from concerns about needing to spend
+          time and money on development. You can add your own branding and
+          identity, and start business immediately. With your own white label
+          you can provide your customers a prepackaged solution to meet their
+          need immediately. To achieve your business goals you need to get
+          maximum from available resources and competencies. With a white label
+          software you do not deviate from your core competency and business
+          model. You have to just concentrate on marketing, networking and
+          customer care after all your network is the measurement of your net
+          worth.
         </div>
       </div>
     </div>
-    <div class="bg-landing2 w-100" style="padding-bottom: 320px">
-      <v-row>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div class="w-100 d-flex flex-row align-center justify-center">
-            <div
-              class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
-            >
-              <div>
-                <v-img
-                  width="64"
-                  height="64"
-                  src="@/assets/landing/portal.svg"
-                />
-              </div>
-              <span
-                class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
-                >Feature Name</span
-              >
-              <span class="font-18 app-medium-font shade-font mt-6"
-                >Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis
-                aliquet convallis arcu dictum. Ut nisi tellus erat nisi
-                pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam
-                neque at turpis. Volutpat placerat et nunc a amet sapien. Purus
-                massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque
-                lacus vel eget amet. Libero enim lectus lectus eu volutpat
-                lobortis.</span
-              >
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div
-            class="w-100 d-flex flex-column align-center justify-center"
-            style="margin-top: 244px"
+    <div class="d-flex flex-column align-center">
+      <span
+        class="font-56 dark-font app-semibold-font"
+        style="margin-top: 192px"
+      >
+        How Billeasy Works
+      </span>
+      <span class="font-18 app-medium-font shade-font" style="width: 1120px"
+        >Our mission is to empower businesses who are already active with B2B
+        commerce or looking to start with their B2B offerings by providing a one
+        stop shop solution which requires no major technical knowledge or
+        investment. We built the platform to do one thing and one thing well -
+        to make your B2B commerce enjoyable.</span
+      >
+      <div style="margin-top: 96px">
+        <div class="d-flex flex-row justify-center">
+          <v-card
+            color="#0D0D1E"
+            width="501"
+            height="352"
+            rounded="xl"
+            elevation="0"
+            class="d-flex flex-column align-center justify-center mx-6"
           >
-            <div>
-              <v-img
-                width="688"
-                height="464"
-                src="@/assets/landing/home_shadowed.png"
-              />
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div
-            class="w-100 d-flex flex-column align-center justify-center"
-            style="margin-top: 244px"
-          >
-            <div>
-              <v-img
-                width="688"
-                height="464"
-                src="@/assets/landing/home_shadowed.png"
-              />
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div class="w-100 d-flex flex-row align-center justify-center">
-            <div
-              class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
+            <span
+              style="
+                width: 64px;
+                height: 64px;
+                color: white;
+                border-radius: 32px;
+                background-color: #20c39d;
+              "
+              class="font-32 app-semibold-font d-flex align-center justify-center mx-6"
             >
-              <div>
-                <v-img
-                  width="64"
-                  height="64"
-                  src="@/assets/landing/portal.svg"
-                />
-              </div>
-              <span
-                class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
-                >Feature Name</span
-              >
-              <span class="font-18 app-medium-font shade-font mt-6"
-                >Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis
-                aliquet convallis arcu dictum. Ut nisi tellus erat nisi
-                pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam
-                neque at turpis. Volutpat placerat et nunc a amet sapien. Purus
-                massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque
-                lacus vel eget amet. Libero enim lectus lectus eu volutpat
-                lobortis.</span
-              >
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div class="w-100 d-flex flex-row align-center justify-center">
-            <div
-              class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
+              1
+            </span>
+            <span
+              class="font-24 app-semibold-font white-font mt-12 text-center"
             >
-              <div>
-                <v-img
-                  width="64"
-                  height="64"
-                  src="@/assets/landing/portal.svg"
-                />
-              </div>
-              <span
-                class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
-                >Feature Name</span
-              >
-              <span class="font-18 app-medium-font shade-font mt-6"
-                >Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis
-                aliquet convallis arcu dictum. Ut nisi tellus erat nisi
-                pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam
-                neque at turpis. Volutpat placerat et nunc a amet sapien. Purus
-                massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque
-                lacus vel eget amet. Libero enim lectus lectus eu volutpat
-                lobortis.</span
-              >
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div
-            class="w-100 d-flex flex-column align-center justify-center"
-            style="margin-top: 244px"
+              Launch your B2B shop with<br />
+              no development cost.
+            </span>
+          </v-card>
+          <v-card
+            color="white"
+            width="501"
+            height="352"
+            rounded="xl"
+            elevation="0"
+            class="d-flex flex-column align-center justify-center mx-6"
           >
-            <div>
-              <v-img
-                width="688"
-                height="464"
-                src="@/assets/landing/home_shadowed.png"
-              />
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div
-            class="w-100 d-flex flex-column align-center justify-center"
-            style="margin-top: 244px"
-          >
-            <div>
-              <v-img
-                width="688"
-                height="464"
-                src="@/assets/landing/home_shadowed.png"
-              />
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div class="w-100 d-flex flex-row align-center justify-center">
-            <div
-              class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
+            <span
+              style="
+                width: 64px;
+                height: 64px;
+                color: white;
+                border-radius: 32px;
+                background-color: #20c39d;
+              "
+              class="font-32 app-semibold-font d-flex align-center justify-center"
             >
-              <div>
-                <v-img
-                  width="64"
-                  height="64"
-                  src="@/assets/landing/portal.svg"
-                />
-              </div>
-              <span
-                class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
-                >Feature Name</span
-              >
-              <span class="font-18 app-medium-font shade-font mt-6"
-                >Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis
-                aliquet convallis arcu dictum. Ut nisi tellus erat nisi
-                pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam
-                neque at turpis. Volutpat placerat et nunc a amet sapien. Purus
-                massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque
-                lacus vel eget amet. Libero enim lectus lectus eu volutpat
-                lobortis.</span
-              >
-            </div>
-          </div>
-        </v-col>
-      </v-row>
+              2
+            </span>
+            <span class="font-24 app-semibold-font dark-font mt-12 text-center">
+              Save on expenses by<br />
+              outsourcing the development<br />
+              and maintenance of your<br />
+              B2B shop.
+            </span>
+          </v-card>
+          <v-card
+            color="white"
+            width="501"
+            height="352"
+            rounded="xl"
+            elevation="0"
+            class="d-flex flex-column align-center justify-center mx-6"
+          >
+            <span
+              style="
+                width: 64px;
+                height: 64px;
+                color: white;
+                border-radius: 32px;
+                background-color: #20c39d;
+              "
+              class="font-32 app-semibold-font d-flex align-center justify-center"
+            >
+              3
+            </span>
+            <span class="font-24 app-semibold-font dark-font mt-12 text-center">
+              Connect to ERP for an<br />
+              automated flow of product <br />
+              and orders.
+            </span>
+          </v-card>
+        </div>
+        <div class="d-flex flex-row justify-center" style="margin-top: 48px">
+          <v-card
+            color="white"
+            width="501"
+            height="352"
+            rounded="xl"
+            elevation="0"
+            class="d-flex flex-column align-center justify-center mx-6"
+          >
+            <span
+              style="
+                width: 64px;
+                height: 64px;
+                color: white;
+                border-radius: 32px;
+                background-color: #20c39d;
+              "
+              class="font-32 app-semibold-font d-flex align-center justify-center"
+            >
+              4
+            </span>
+            <span class="font-24 app-semibold-font dark-font mt-12 text-center">
+              Your domain. Your branding.<br />
+              Your style. Fully brand your <br />
+              B2B Portal with a few clicks.
+            </span>
+          </v-card>
+          <v-card
+            color="white"
+            width="501"
+            height="352"
+            rounded="xl"
+            elevation="0"
+            class="d-flex flex-column align-center justify-center mx-6"
+          >
+            <span
+              style="
+                width: 64px;
+                height: 64px;
+                color: white;
+                border-radius: 32px;
+                background-color: #20c39d;
+              "
+              class="font-32 app-semibold-font d-flex align-center justify-center"
+            >
+              5
+            </span>
+            <span class="font-24 app-semibold-font dark-font mt-12 text-center">
+              Free Support included with <br />
+              paid SLA packages <br />
+              available.
+            </span>
+          </v-card>
+          <v-card
+            color="white"
+            width="501"
+            height="352"
+            rounded="xl"
+            elevation="0"
+            class="d-flex flex-column align-center justify-center mx-6"
+          >
+            <span
+              style="
+                width: 64px;
+                height: 64px;
+                color: white;
+                border-radius: 32px;
+                background-color: #20c39d;
+              "
+              class="font-32 app-semibold-font d-flex align-center justify-center"
+            >
+              6
+            </span>
+            <span class="font-24 app-semibold-font dark-font mt-12 text-center">
+              Focus on your business's <br />
+              core competency
+            </span>
+          </v-card>
+        </div>
+      </div>
+      <v-btn
+        flat
+        class="text-none font-16 app-semibold-font"
+        color="white"
+        rounded="lg"
+        style="
+          background-color: #20c39d !important;
+          color: white !important;
+          height: 80px;
+          width: 352px;
+          font-size: 16px;
+          margin-top: 96px;
+          margin-bottom: 176px;
+        "
+        append-icon="mdi-chevron-right"
+      >
+        Book a Demo
+      </v-btn>
     </div>
     <div class="bg-dark-blue" style="padding-top: 80px">
       <v-row style="margin-bottom: 108px">
@@ -384,6 +415,9 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const goHome = () => {
   router.push({ name: "landing-index" });
+};
+const goToFeatures = () => {
+  router.push({ name: "landing-features" });
 };
 const goToAboutUs = () => {
   router.push({ name: "landing-about" });

@@ -29,6 +29,7 @@
             variant="text"
             class="font-16 app-regular-font text-none ms-10"
             color="white"
+            @click="goToAboutUs"
           >
             About us
           </v-btn>
@@ -37,6 +38,7 @@
             variant="text"
             class="font-16 app-regular-font text-none ms-10"
             color="white"
+            @click="goToContacts"
           >
             Contacts
           </v-btn>
@@ -45,6 +47,7 @@
             variant="text"
             class="font-16 app-regular-font text-none ms-10"
             color="white"
+            @click="goToPricing"
           >
             Pricing
           </v-btn>
@@ -53,6 +56,7 @@
             variant="text"
             class="font-16 app-regular-font text-none ms-10"
             color="white"
+            @click="goToBlog"
           >
             Blog
           </v-btn>
@@ -67,6 +71,7 @@
               min-height: 40px;
               max-height: 40px;
             "
+            @click="goToLogin"
           >
             Login
           </v-btn>
@@ -181,7 +186,7 @@
               "
               class="font-32 app-semibold-font d-flex align-center justify-center"
             >
-              1
+              2
             </span>
             <span class="font-32 app-semibold-font dark-font mt-12">
               Set Monitor Rules
@@ -210,7 +215,7 @@
               "
               class="font-32 app-semibold-font d-flex align-center justify-center"
             >
-              1
+              3
             </span>
             <span class="font-32 app-semibold-font dark-font mt-12">
               AI gets to work
@@ -1282,6 +1287,21 @@ const questions = reactive([
 const router = useRouter();
 const goToFeatures = () => {
   router.push({ name: "landing-features" });
+};
+const goToAboutUs = () => {
+  router.push({ name: "landing-about" });
+};
+const goToContacts = () => {
+  router.push({ name: "landing-contacts" });
+};
+const goToPricing = () => {
+  router.push({ name: "landing-pricing" });
+};
+const goToBlog = () => {
+  router.push({ name: "landing-blog" });
+};
+const goToLogin = () => {
+  router.push({ name: "login" });
 };
 </script>
 <style scoped>
