@@ -38,9 +38,9 @@
             variant="text"
             class="font-16 app-regular-font text-none ms-10"
             color="white"
-            @click="goToContacts"
+            @click="goToContact"
           >
-            Contacts
+            Contact
           </v-btn>
           <v-btn
             flat
@@ -113,9 +113,11 @@
         class="font-56 dark-font app-semibold-font"
         style="margin-top: 192px"
       >
-        How Billeasy Works
+        Benefits
       </span>
-      <span class="font-18 app-medium-font shade-font" style="width: 1120px"
+      <span
+        class="font-18 app-medium-font shade-font"
+        style="width: 1120px; margin-top: 48px"
         >Our mission is to empower businesses who are already active with B2B
         commerce or looking to start with their B2B offerings by providing a one
         stop shop solution which requires no major technical knowledge or
@@ -422,8 +424,8 @@ const goToFeatures = () => {
 const goToAboutUs = () => {
   router.push({ name: "landing-about" });
 };
-const goToContacts = () => {
-  router.push({ name: "landing-contacts" });
+const goToContact = () => {
+  router.push({ name: "landing-contact" });
 };
 const goToPricing = () => {
   router.push({ name: "landing-pricing" });

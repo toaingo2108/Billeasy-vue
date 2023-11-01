@@ -38,9 +38,9 @@
             variant="text"
             class="font-16 app-regular-font text-none ms-10"
             color="white"
-            @click="goToContacts"
+            @click="goToContact"
           >
-            Contacts
+            Contact
           </v-btn>
           <v-btn
             flat
@@ -1291,8 +1291,8 @@ const goToFeatures = () => {
 const goToAboutUs = () => {
   router.push({ name: "landing-about" });
 };
-const goToContacts = () => {
-  router.push({ name: "landing-contacts" });
+const goToContact = () => {
+  router.push({ name: "landing-contact" });
 };
 const goToPricing = () => {
   router.push({ name: "landing-pricing" });

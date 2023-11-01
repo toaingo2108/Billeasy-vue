@@ -18,8 +18,9 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none selected-button"
+            class="font-16 app-regular-font text-none"
             color="white"
+            @click="goToFeatures"
           >
             Features
           </v-btn>
@@ -35,7 +36,7 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="font-16 app-regular-font text-none ms-10 selected-button"
             color="white"
             @click="goToContact"
           >
@@ -81,197 +82,145 @@
           class="font-80 app-semibold-font white-font text-center"
           style="margin-top: 160px; line-height: 1.2"
         >
-          Big bold tagline here<br />
-          about Features
+          Get in touch
         </div>
         <div
           class="font-20 white-font text-center app-medium-font"
-          style="width: 772px; margin-top: 64px; margin-bottom: 208px"
+          style="width: 1152px; margin-top: 32px; margin-bottom: 208px"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nulla
-          ipsum, gravida pellentesque massa nec, feugiat sagittis erat.
+          Any question or remarks? Just write us a message!
         </div>
       </div>
     </div>
-    <div class="bg-landing2 w-100" style="padding-bottom: 320px">
-      <v-row>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div class="w-100 d-flex flex-row align-center justify-center">
-            <div
-              class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
-            >
-              <div>
-                <v-img
-                  width="64"
-                  height="64"
-                  src="@/assets/landing/portal.svg"
-                />
+    <div
+      class="d-flex flex-column align-center"
+      style="margin-top: -323px; margin-bottom: 128px"
+    >
+      <v-card
+        elevation="0"
+        rounded="xl"
+        width="1200"
+        height="672"
+        style="
+          padding-top: 80px;
+          padding-bottom: 80px;
+          padding-left: 128px;
+          padding-right: 136px;
+        "
+      >
+        <v-card-text>
+          <v-row>
+            <v-col cols="12" md="6" class="d-flex flex-column">
+              <span class="font-32 app-semibold-font dark-font">
+                Contact Information
+              </span>
+              <span class="shade-font font-18 app-regular-font mt-6">
+                Fill ou the form and our team will get back<br />
+                to you within 24 hours
+              </span>
+              <div
+                class="d-flex flex-row align-center"
+                style="margin-top: 56px"
+              >
+                <div>
+                  <v-img
+                    width="40"
+                    height="40"
+                    src="@/assets/landing/contact_number.svg"
+                  />
+                </div>
+                <span class="font-16 dark-font app-medium-font ms-5">
+                  123 456 789 0
+                </span>
               </div>
-              <span
-                class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
-                >Feature Name</span
+              <div
+                class="d-flex flex-row align-center"
+                style="margin-top: 20px"
               >
-              <span class="font-18 app-medium-font shade-font mt-6"
-                >Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis
-                aliquet convallis arcu dictum. Ut nisi tellus erat nisi
-                pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam
-                neque at turpis. Volutpat placerat et nunc a amet sapien. Purus
-                massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque
-                lacus vel eget amet. Libero enim lectus lectus eu volutpat
-                lobortis.</span
-              >
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div
-            class="w-100 d-flex flex-column align-center justify-center"
-            style="margin-top: 244px"
-          >
-            <div>
-              <v-img
-                width="688"
-                height="464"
-                src="@/assets/landing/home_shadowed.png"
-              />
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div
-            class="w-100 d-flex flex-column align-center justify-center"
-            style="margin-top: 244px"
-          >
-            <div>
-              <v-img
-                width="688"
-                height="464"
-                src="@/assets/landing/home_shadowed.png"
-              />
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div class="w-100 d-flex flex-row align-center justify-center">
-            <div
-              class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
-            >
-              <div>
-                <v-img
-                  width="64"
-                  height="64"
-                  src="@/assets/landing/portal.svg"
-                />
+                <div>
+                  <v-img
+                    width="40"
+                    height="40"
+                    src="@/assets/landing/contact_email.svg"
+                  />
+                </div>
+                <span class="font-16 dark-font app-medium-font ms-5">
+                  hello@docsmart.com
+                </span>
               </div>
-              <span
-                class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
-                >Feature Name</span
+              <div
+                class="d-flex flex-row align-center"
+                style="margin-top: 20px"
               >
-              <span class="font-18 app-medium-font shade-font mt-6"
-                >Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis
-                aliquet convallis arcu dictum. Ut nisi tellus erat nisi
-                pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam
-                neque at turpis. Volutpat placerat et nunc a amet sapien. Purus
-                massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque
-                lacus vel eget amet. Libero enim lectus lectus eu volutpat
-                lobortis.</span
-              >
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div class="w-100 d-flex flex-row align-center justify-center">
-            <div
-              class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
-            >
-              <div>
-                <v-img
-                  width="64"
-                  height="64"
-                  src="@/assets/landing/portal.svg"
-                />
+                <div>
+                  <v-img
+                    width="40"
+                    height="40"
+                    src="@/assets/landing/contact_email.svg"
+                  />
+                </div>
+                <span class="font-16 dark-font app-medium-font ms-5">
+                  102 Street 2714 Don
+                </span>
               </div>
-              <span
-                class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
-                >Feature Name</span
-              >
-              <span class="font-18 app-medium-font shade-font mt-6"
-                >Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis
-                aliquet convallis arcu dictum. Ut nisi tellus erat nisi
-                pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam
-                neque at turpis. Volutpat placerat et nunc a amet sapien. Purus
-                massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque
-                lacus vel eget amet. Libero enim lectus lectus eu volutpat
-                lobortis.</span
-              >
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div
-            class="w-100 d-flex flex-column align-center justify-center"
-            style="margin-top: 244px"
-          >
-            <div>
-              <v-img
-                width="688"
-                height="464"
-                src="@/assets/landing/home_shadowed.png"
-              />
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div
-            class="w-100 d-flex flex-column align-center justify-center"
-            style="margin-top: 244px"
-          >
-            <div>
-              <v-img
-                width="688"
-                height="464"
-                src="@/assets/landing/home_shadowed.png"
-              />
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column align-center">
-          <div class="w-100 d-flex flex-row align-center justify-center">
-            <div
-              class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
-            >
-              <div>
-                <v-img
-                  width="64"
-                  height="64"
-                  src="@/assets/landing/portal.svg"
+            </v-col>
+            <v-col cols="12" md="6" class="d-flex flex-column">
+              <div class="d-flex flex-column" style="margin-left: 80px">
+                <span class="font-13 app-medium-font dark-font mb-1">Name</span>
+                <v-text-field
+                  placeholder="Enter Name"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
                 />
+                <span class="font-13 app-medium-font dark-font mb-1 mt-12">
+                  Email
+                </span>
+                <v-text-field
+                  placeholder="Enter Email"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                />
+                <span class="font-13 app-medium-font dark-font mb-1 mt-12">
+                  Mobile
+                </span>
+                <v-text-field
+                  placeholder="Enter Mobile Number"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                />
+                <span class="font-13 app-medium-font dark-font mb-1 mt-12">
+                  Message
+                </span>
+                <v-text-field
+                  placeholder="Enter Message"
+                  variant="outlined"
+                  rounded="lg"
+                  hide-details
+                />
+                <v-btn
+                  flat
+                  class="text-none font-16 app-semibold-font"
+                  color="white"
+                  rounded="lg"
+                  style="
+                    background-color: #20c39d !important;
+                    color: white !important;
+                    height: 48px;
+                    font-size: 16px;
+                    margin-top: 56px;
+                  "
+                  append-icon="mdi-chevron-right"
+                >
+                  Send
+                </v-btn>
               </div>
-              <span
-                class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
-                >Feature Name</span
-              >
-              <span class="font-18 app-medium-font shade-font mt-6"
-                >Lorem ipsum dolor sit amet consectetur. Felis sit malesuada dis
-                aliquet convallis arcu dictum. Ut nisi tellus erat nisi
-                pellentesque accumsan sit. Laoreet vulputate at nibh nulla nam
-                neque at turpis. Volutpat placerat et nunc a amet sapien. Purus
-                massa nisl sollicitudin lectus tortor. Ullamcorper pellentesque
-                lacus vel eget amet. Libero enim lectus lectus eu volutpat
-                lobortis.</span
-              >
-            </div>
-          </div>
-        </v-col>
-      </v-row>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-card>
     </div>
     <div class="bg-dark-blue" style="padding-top: 80px">
       <v-row style="margin-bottom: 108px">
@@ -385,6 +334,9 @@ const router = useRouter();
 const goHome = () => {
   router.push({ name: "landing-index" });
 };
+const goToFeatures = () => {
+  router.push({ name: "landing-features" });
+};
 const goToAboutUs = () => {
   router.push({ name: "landing-about" });
 };
@@ -429,6 +381,7 @@ const questions = reactive([
   background-image: url("@/assets/landing/bg_landing.png");
   background-size: cover;
   background-position: 50% 50%;
+  height: 867px;
 }
 .bg-landing2 {
   background-image: url("@/assets/landing/bg_feature.png");
