@@ -78,6 +78,9 @@
 .font-32 {
   font-size: 32px !important;
 }
+.font-48 {
+  font-size: 48px !important;
+}
 .font-56 {
   font-size: 56px;
 }
@@ -167,11 +170,17 @@ html {
 .light-blue-font {
   color: #8348ff;
 }
+.medium-blue-font {
+  color: #175eca !important;
+}
 .lime-green-font {
   color: #7ab618;
 }
 .pumpkin-font {
   color: #f87037;
+}
+.pumpkin-orange-font {
+  color: #f58d13;
 }
 .forest-font {
   color: #22b762;

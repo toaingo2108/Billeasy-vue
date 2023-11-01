@@ -304,6 +304,22 @@ const routes = [
             /* webpackChunkName: "landing-contact" */ "@/views/landing/Contact.vue"
           ),
       },
+      {
+        path: "blog",
+        name: "landing-blog",
+        component: () =>
+          import(
+            /* webpackChunkName: "landing-blog" */ "@/views/landing/Blog.vue"
+          ),
+      },
+      {
+        path: "blog-details",
+        name: "landing-blog-details",
+        component: () =>
+          import(
+            /* webpackChunkName: "landing-blog-details" */ "@/views/landing/BlogDetails.vue"
+          ),
+      },
     ],
   },
   {
