@@ -38,7 +38,7 @@
     >
       <div
         style="max-width: 432px; margin-bottom: 95px"
-        class="d-flex flex-column"
+        class="d-flex flex-column w-100"
       >
         <v-btn
           variant="outlined"

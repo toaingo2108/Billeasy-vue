@@ -38,46 +38,38 @@
     >
       <div
         style="max-width: 432px; margin-bottom: 95px"
-        class="d-flex flex-column"
+        class="d-flex flex-column w-100 align-center"
       >
-        <v-btn
-          variant="outlined"
-          prepend-icon="mdi-chevron-left"
-          color="#0d0d1e"
-          class="text-none font-14 app-medium-font mx-4"
-          rounded="lg"
-          style="height: 37px; width: 110px; border-color: #d1d1e2"
-          @click="goBack"
-        >
-          Go to Login
-        </v-btn>
+        <div>
+          <v-img
+            width="80"
+            height="80"
+            src="@/assets/landing/password_done.svg"
+          />
+        </div>
         <span
-          class="font-20 dark-font app-semibold-font mx-4"
+          class="font-20 dark-font app-semibold-font mx-4 mt-6"
           style="margin-top: 96px"
         >
           Password updated successfully
         </span>
-        <v-text-field
-          placeholder="Re-enter New Password"
-          variant="outlined"
-          rounded="lg"
-          hide-details
-          class="mx-4 mt-4"
-        />
-        <v-btn
-          rounded="lg"
-          flat
-          style="
-            height: 48px;
-            background-color: #20c39d;
-            color: white;
-            margin-top: 24px;
-          "
-          class="text-none app-semibold-font font-16 mx-4"
-          @click="goToNext"
-        >
-          Login
-        </v-btn>
+        <div class="w-100">
+          <v-btn
+            rounded="lg"
+            flat
+            style="
+              height: 48px;
+              background-color: #20c39d;
+              color: white;
+              margin-top: 48px;
+            "
+            block
+            class="text-none app-semibold-font font-16 mx-4"
+            @click="goToNext"
+          >
+            Login
+          </v-btn>
+        </div>
       </div>
     </div>
   </div>

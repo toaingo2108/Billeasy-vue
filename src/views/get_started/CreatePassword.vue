@@ -37,7 +37,7 @@
       class="d-flex flex-column align-center justify-center"
     >
       <div
-        style="max-width: 432px; margin-bottom: 95px"
+        style="max-width: 432px; margin-bottom: 95px; width: 100%"
         class="d-flex flex-column"
       >
         <v-btn
@@ -46,7 +46,7 @@
           color="#0d0d1e"
           class="text-none font-14 app-medium-font mx-4"
           rounded="lg"
-          style="height: 37px; width: 110px; border-color: #d1d1e2"
+          style="height: 37px; width: 131px; border-color: #d1d1e2"
           @click="goBack"
         >
           Go to Login
@@ -70,6 +70,7 @@
           hide-details
           class="mx-4"
           style="margin-top: 64px"
+          type="password"
         />
         <v-text-field
           placeholder="Re-enter New Password"
@@ -77,6 +78,7 @@
           rounded="lg"
           hide-details
           class="mx-4 mt-4"
+          type="password"
         />
         <v-btn
           rounded="lg"
@@ -103,7 +105,7 @@ const { mdAndUp } = useDisplay();
 
 const router = useRouter();
 const goToNext = () => {
-  router.push({ name: "create-password" });
+  router.push({ name: "password-updated" });
 };
 const goBack = () => {
   router.push({ name: "login" });
