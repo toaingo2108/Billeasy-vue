@@ -323,6 +323,36 @@ const routes = [
     ],
   },
   {
+    path: "/login",
+    name: "login",
+    component: () =>
+      import(/* webpackChunkName: "login" */ "@/views/get_started/Login.vue"),
+  },
+  {
+    path: "/forgot-password",
+    name: "forgot-password",
+    component: () =>
+      import(
+        /* webpackChunkName: "forgot-password" */ "@/views/get_started/ForgotPassword.vue"
+      ),
+  },
+  {
+    path: "/create-password",
+    name: "create-password",
+    component: () =>
+      import(
+        /* webpackChunkName: "create-password" */ "@/views/get_started/CreatePassword.vue"
+      ),
+  },
+  {
+    path: "/password-updated",
+    name: "password-updated",
+    component: () =>
+      import(
+        /* webpackChunkName: "password-updated" */ "@/views/get_started/PasswordUpdated.vue"
+      ),
+  },
+  {
     path: "/:pathMatch(.*)*",
     redirect: "/404",
   },
