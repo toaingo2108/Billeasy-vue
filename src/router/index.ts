@@ -320,6 +320,14 @@ const routes = [
             /* webpackChunkName: "landing-blog-details" */ "@/views/landing/BlogDetails.vue"
           ),
       },
+      {
+        path: "fortnox-integrations",
+        name: "landing-fortnox-integrations",
+        component: () =>
+          import(
+            /* webpackChunkName: "landing-fortnox-integrations" */ "@/views/landing/FortnoxIntegrations.vue"
+          ),
+      },
     ],
   },
   {

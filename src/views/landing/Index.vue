@@ -762,7 +762,7 @@
             <v-img width="64" height="64" src="@/assets/landing/left.svg" />
           </v-btn>
         </div>
-        <div>
+        <div @click="goToFortnox">
           <v-img
             width="240"
             height="121"
@@ -1302,6 +1302,9 @@ const goToBlog = () => {
 };
 const goToLogin = () => {
   router.push({ name: "login" });
+};
+const goToFortnox = () => {
+  router.push({ name: "landing-fortnox-integrations" });
 };
 </script>
 <style scoped>
