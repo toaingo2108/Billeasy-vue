@@ -5,7 +5,14 @@
         >Current payment method:
       </span>
       <span class="font-14 dark-font app-semibold-font">Invoice</span>
-      <span class="font-14 blue-600 app-medium-font ms-6">Update Method</span>
+      <v-btn
+        class="font-14 teal-font app-medium-font ms-2 text-none"
+        flat
+        variant="text"
+        rounded="lg"
+      >
+        Update Method
+      </v-btn>
     </div>
     <div class="d-flex flex-row justify-between">
       <div>

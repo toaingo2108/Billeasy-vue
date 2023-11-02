@@ -13,8 +13,9 @@
             text-decoration: none;
             margin-right: 24px;
           "
-          >Back</v-btn
         >
+          Back
+        </v-btn>
       </div>
       <div class="app-semibold-font font-28 dark-font">
         {{ connected ? "Fortnox Settings" : "Visma eAccount Settings" }}
@@ -75,7 +76,7 @@
         <span class="font-14 app-medium-font dark-font ms-2">To Billeasy</span>
       </v-card-title>
       <v-row class="mt-2">
-        <v-col cols="12" md="3" v-if="connected">
+        <v-col cols="12" md="3" v-if="fromBilleasy">
           <span class="font-12 shade-font app-semibold-font">INVOICES</span>
           <span
             class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1 mt-6"
@@ -90,7 +91,7 @@
             <span
               class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
             >
-              Transfer invoices with invoice date from
+              Transfer invoices with invoice date<br />from
               <v-icon color="#8B8BA9" class="ms-2"
                 >mdi-help-circle-outline
               </v-icon>
@@ -129,7 +130,7 @@
             <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
           </span>
         </v-col>
-        <v-col cols="12" md="3" v-if="connected">
+        <v-col cols="12" md="3" v-if="fromBilleasy">
           <span class="font-12 shade-font app-semibold-font">PAYMENTS</span>
           <span
             class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1 mt-6"
@@ -168,7 +169,7 @@
             </div>
             <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
           </span>
-          <div class="mt-6" v-if="connected">
+          <div class="mt-6" v-if="fromBilleasy">
             <span
               class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
             >
@@ -196,7 +197,7 @@
             </div>
             <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
           </span>
-          <div class="mt-6" v-if="connected">
+          <div class="mt-6" v-if="fromBilleasy">
             <span
               class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
             >
@@ -227,16 +228,6 @@
         <span class="font-20 dark-font app-semibold-font ms-2">
           Accounting Accounts
         </span>
-        <v-spacer />
-        <span class="font-14 app-medium-font dark-font me-2" v-if="connected"
-          >From Billeasy</span
-        >
-        <div v-if="connected">
-          <v-switch hide-details />
-        </div>
-        <span class="font-14 app-medium-font dark-font ms-2" v-if="connected"
-          >To Billeasy</span
-        >
       </v-card-title>
       <v-card-text class="d-flex flex-row align-center mt-4 ps-0">
         <span class="font-14 dark-font app-semibold-font" style="width: 160px"
@@ -354,7 +345,7 @@
       </v-row>
       <v-card-text
         class="d-flex flex-row align-center mt-6 ps-0 pb-0"
-        v-if="connected"
+        v-if="fromBilleasy"
       >
         <span class="font-14 dark-font app-semibold-font" style="width: 160px">
           Custom Accounts
@@ -363,7 +354,7 @@
       </v-card-text>
       <v-card-text
         class="mt-5 d-flex flex-row justify-between pt-0 px-0"
-        v-if="connected"
+        v-if="fromBilleasy"
       >
         <v-table style="width: 100%">
           <thead>
@@ -443,7 +434,7 @@
           </tbody>
         </v-table>
       </v-card-text>
-      <v-card-actions class="mb-4 ps-0" v-if="connected">
+      <v-card-actions class="mb-4 ps-0" v-if="fromBilleasy">
         <v-btn
           color="#20C39D"
           prepend-icon="mdi-plus"
@@ -517,7 +508,8 @@ const paymentMethods = ["Swish", "Bankgiro"];
 
 const router = useRouter();
 const onBack = function () {
-  router.back();
+  // router.back();
+  router.push({ name: "settings" });
 };
 
 const connected = ref(false);

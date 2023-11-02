@@ -473,6 +473,81 @@ const chartOptions2 = {
     enabled: false,
   },
 };
+
+const chartOptions3 = {
+  showInLegend: false,
+  chart: {
+    backgroundColor: "white",
+    renderTo: "container",
+    type: "line",
+  },
+  credits: {
+    enabled: false,
+  },
+  title: {
+    text: " ", //Distributed Analysis'
+  },
+  // subtitle: {
+  //     text: 'Test options by dragging the sliders below'
+  // },
+  plotOptions: {
+    column: {
+      depth: 25,
+      borderRadius: 6,
+    },
+    series: {
+      color: "#7024C4",
+    },
+  },
+  xAxis: {
+    labels: {
+      style: {
+        color: "#0D0D1E",
+        fontSize: "12px",
+        fontFamily: "Poppins-Regular",
+      },
+    },
+    categories: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    lineColor: "#E6E6ED",
+  },
+  yAxis: {
+    title: "",
+    max: 50000,
+    gridLineColor: "#E6E6ED",
+    labels: {
+      style: {
+        color: "#0D0D1E",
+        fontSize: "12px",
+        fontFamily: "Poppins-Regular",
+      },
+    },
+  },
+  series: [
+    {
+      color: "#7FC526",
+      data: [
+        13000, 26000, 17000, 20000, 8000, 26000, 20000, 34000, 23000, 5000,
+        11000, 22000,
+      ],
+    },
+  ],
+  legend: {
+    enabled: false,
+  },
+};
 const showAmountIncl = ref(false);
 
 const tab = ref(0);

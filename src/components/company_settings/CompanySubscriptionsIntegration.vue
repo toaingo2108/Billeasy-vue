@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <div class="ma-8">
-      <span class="font-14 blue-600 app-medium-font"
-        >Current payment method:
-      </span>
-      <span class="font-14 dark-font app-semibold-font">Invoice</span>
-      <span class="font-14 blue-600 app-medium-font ms-6">Update Method</span>
-    </div>
+  <div class="mt-8">
     <div class="d-flex flex-row justify-between">
       <div>
         <v-btn

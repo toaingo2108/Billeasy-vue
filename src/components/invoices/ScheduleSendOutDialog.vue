@@ -27,18 +27,10 @@
         />
       </v-card-text>
       <v-card-text class="d-flex flex-row mx-3 pb-1">
-        <v-checkbox
-          color="#20c39d"
-          value="#20c39d"
-          hide-details
-          v-model="scheduled"
-        >
-          <template v-slot:label>
-            <span class="font-14 app-regular-font dark-font">
-              Scheduled Send Out
-            </span>
-          </template>
-        </v-checkbox>
+        <app-checkbox v-model="scheduled" class="me-2" />
+        <span class="font-14 app-regular-font dark-font">
+          Scheduled Send Out
+        </span>
       </v-card-text>
       <v-divider class="mt-8" />
       <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
@@ -70,8 +62,9 @@
             padding-bottom: 7px;
           "
           class="text-none"
-          >Save</v-btn
         >
+          Schedule
+        </v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -79,6 +72,7 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
+import AppCheckbox from "../default/AppCheckbox.vue";
 
 const props = defineProps({
   dialog: Boolean,

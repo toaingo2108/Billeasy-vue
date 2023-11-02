@@ -43,6 +43,7 @@
         rounded="lg"
         style="
           border-color: #d1d1e2;
+          background-color: white;
           color: #e91818 !important;
           padding-left: 20px;
           padding-right: 20px;

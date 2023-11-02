@@ -126,7 +126,7 @@
                     width="24"
                     height="24"
                   />
-                  <item-menu />
+                  <item-menu :on-edit="onEdit" />
                 </v-btn>
               </div>
             </td>
@@ -139,13 +139,16 @@
     :dialog="newDialog"
     @update:dialog="(val) => (newDialog = val)"
   />
+  <edit-reminder-flow-dialog
+    :dialog="editDialog"
+    @update:dialog="(val) => (editDialog = val)"
+  />
 </template>
 <script lang="ts" setup>
 import { ref, watch, watchEffect, reactive } from "vue";
-import AppCheckbox from "../default/AppCheckbox.vue";
 import ItemMenu from "./CustomerSubscriptionsPaymentsItemMenu.vue";
 import NewReminderFlowDialog from "../customers/NewReminderFlowDialog.vue";
-import NewEventDialog from "@/components/invoices/NewEventDialog.vue";
+import EditReminderFlowDialog from "../customers/EditReminderFlowDialog.vue";
 
 const newItem = reactive({
   name: "",
@@ -198,6 +201,11 @@ const items = reactive([
 const newDialog = ref(false);
 const onAddNew = () => {
   newDialog.value = true;
+};
+
+const editDialog = ref(false);
+const onEdit = () => {
+  editDialog.value = true;
 };
 </script>
 

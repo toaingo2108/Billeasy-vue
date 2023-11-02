@@ -75,8 +75,9 @@ const headers = [
     key: "code",
     style: "bold",
     align: "left",
+    width: "200px",
   },
-  { title: "Description", key: "currency", align: "left" },
+  { title: "Description", key: "currency", align: "left", width: "100%" },
   { title: "", key: "action" },
 ];
 

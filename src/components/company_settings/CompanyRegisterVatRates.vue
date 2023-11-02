@@ -53,6 +53,7 @@ const headers = [
     key: "code",
     style: "bold",
     align: "left",
+    width: "100%",
   },
   { title: "", key: "action" },
 ];

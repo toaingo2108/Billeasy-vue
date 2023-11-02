@@ -76,8 +76,10 @@
             "
             block
             class="text-none file-upload-button"
-            >Add File<v-icon>mdi-cloud-upload-outline</v-icon></v-btn
           >
+            Add File
+            <v-icon class="ms-2"> mdi-cloud-upload-outline</v-icon>
+          </v-btn>
         </div>
         <div class="ms-2">
           <v-btn

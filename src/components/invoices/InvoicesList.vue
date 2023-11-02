@@ -78,7 +78,7 @@ import RegisterPaymentDialog from "@/components/invoices/RegisterPaymentDialog.v
 import SearchField from "../default/SearchField.vue";
 
 const headers = [
-  { title: "Invoice nr.", key: "id", style: "bold" },
+  { title: "Invoice nr.", key: "id", style: "bold", align: "left" },
   { title: "OCR", key: "ocr", style: "bold" },
   { title: "Customer Name", key: "name" },
   { title: "Your Reference", key: "reference" },

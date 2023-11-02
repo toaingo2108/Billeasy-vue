@@ -32,24 +32,11 @@
           </span>
         </div>
         <div class="flex-grow">
-          <v-radio-group class="mt-7 w-100">
-            <div class="d-flex flex-row">
-              <v-radio value="one">
-                <template v-slot:label>
-                  <span class="font-14 app-regular-font dark-font">
-                    All Customers
-                  </span>
-                </template>
-              </v-radio>
-              <v-radio value="two">
-                <template v-slot:label>
-                  <span class="font-14 app-regular-font dark-font">
-                    Active Customers
-                  </span>
-                </template>
-              </v-radio>
-            </div>
-          </v-radio-group>
+          <app-radio-group
+            class="mt-7"
+            :items="['All Customers', 'Active Customers']"
+            direction="row"
+          />
         </div>
       </v-card-text>
       <v-card-text
@@ -76,8 +63,10 @@
             "
             block
             class="text-none file-upload-button"
-            >Add File<v-icon>mdi-cloud-upload-outline</v-icon></v-btn
           >
+            Add File
+            <v-icon class="ms-2"> mdi-cloud-upload-outline</v-icon>
+          </v-btn>
         </div>
         <div class="ms-2">
           <v-btn
@@ -317,6 +306,7 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
+import AppRadioGroup from "../default/AppRadioGroup.vue";
 
 const props = defineProps({
   dialog: Boolean,

@@ -5,7 +5,14 @@
         >Current payment plan:
       </span>
       <span class="font-14 dark-font app-semibold-font">Quarterly</span>
-      <span class="font-14 blue-600 app-medium-font ms-6">Update Plan</span>
+      <v-btn
+        class="font-14 teal-font app-medium-font ms-2 text-none"
+        flat
+        variant="text"
+        rounded="lg"
+      >
+        Update Plan
+      </v-btn>
     </div>
     <v-row class="mt-4">
       <v-col cols="12" md="3" v-for="(item, index) in packages">

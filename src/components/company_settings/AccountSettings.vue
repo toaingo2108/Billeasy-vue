@@ -10,7 +10,7 @@
           src="@/assets/svg/company_settings/company_information.svg"
         />
       </div>
-      Subscriptions
+      Account
     </v-card-title>
     <v-card-text class="mt-8 ms-4">
       <div class="d-flex flex-column">

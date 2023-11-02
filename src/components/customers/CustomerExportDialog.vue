@@ -102,40 +102,11 @@
           <span class="font-14 app-semibold-font dark-font ps-3">
             Sort export on
           </span>
-          <v-radio-group class="mt-7">
-            <div class="d-flex flex-row align-center" style="height: 36px">
-              <v-radio value="one">
-                <template v-slot:label>
-                  <span class="font-14 app-regular-font dark-font">
-                    Product nr.
-                  </span>
-                </template>
-              </v-radio>
-            </div>
-            <div class="d-flex flex-row align-center" style="height: 36px">
-              <v-radio value="two">
-                <template v-slot:label>
-                  <span class="font-14 app-regular-font dark-font"> Name </span>
-                </template>
-              </v-radio>
-            </div>
-            <div class="d-flex flex-row align-center" style="height: 36px">
-              <v-radio value="three">
-                <template v-slot:label>
-                  <span class="font-14 app-regular-font dark-font"> SKU </span>
-                </template>
-              </v-radio>
-            </div>
-            <div class="d-flex flex-row align-center" style="height: 36px">
-              <v-radio value="four">
-                <template v-slot:label>
-                  <span class="font-14 app-regular-font dark-font">
-                    Quantity in Stock
-                  </span>
-                </template>
-              </v-radio>
-            </div>
-          </v-radio-group>
+          <app-radio-group
+            class="mt-6"
+            v-model="radioGroup"
+            :items="['Product nr.', 'Name', 'SKU', 'Quantity in Stock']"
+          />
         </div>
       </v-card-text>
       <v-divider class="mt-8" />
@@ -178,6 +149,7 @@
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
 import AppCheckbox from "../default/AppCheckbox.vue";
+import AppRadioGroup from "../default/AppRadioGroup.vue";
 
 const props = defineProps({
   dialog: Boolean,
@@ -209,6 +181,8 @@ const priceDialog = ref(false);
 const onAddNewPrice = function () {
   priceDialog.value = true;
 };
+
+const radioGroup = ref(0);
 </script>
 
 <style scoped>

@@ -14,7 +14,7 @@
             v-if="header.checkable"
             class="d-flex flex-row align-center justify-center"
           >
-            <app-checkbox v-model="isCheckedAll" />
+            <app-checkbox v-model="isCheckedAll" class="ms-3 me-5" />
           </div>
           <div
             v-else-if="header.key != 'action'"
@@ -33,11 +33,15 @@
       <tr
         v-for="(item, index) in items"
         :key="index"
-        style="height: 50px; padding-top: 3px; padding-bottom: 3px"
+        :style="`height: ${props.height}px; padding-top: 3px; padding-bottom: 3px`"
         @click="onRowClicked(item, index)"
       >
         <v-hover v-slot="{ isHovering, props }">
-          <td v-for="(header, index) in headers" v-bind="props">
+          <td
+            v-for="header in headers"
+            v-bind="props"
+            :style="header.width == '100%' ? `width: 100%;` : ''"
+          >
             <div
               class="w-100 d-flex flex-row align-center"
               :class="[
@@ -53,6 +57,7 @@
               <app-checkbox
                 v-model="item.checked"
                 v-if="header.key == 'checked'"
+                class="ms-3 me-5"
               />
               <div v-else-if="header.key == 'action'">
                 <v-btn
@@ -111,7 +116,10 @@
                 v-else-if="header.style == 'checkbox'"
                 class="d-flex flex-row align-center"
               >
-                <app-checkbox v-model="item[`${header.key}`]" />
+                <app-checkbox
+                  v-model="item[`${header.key}`]"
+                  class="ms-3 me-5"
+                />
               </div>
               <div
                 v-else
@@ -145,6 +153,7 @@ const props = defineProps({
   checkable: { type: Boolean, default: true },
   onRowClicked: { type: Function, default: () => {} },
   rowColor: { type: String, default: "white" },
+  height: { type: Number, default: 50 },
 });
 
 const headers = reactive(

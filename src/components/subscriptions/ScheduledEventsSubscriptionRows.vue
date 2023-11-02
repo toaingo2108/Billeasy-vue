@@ -94,7 +94,7 @@
                 :items="['30', '40', '50']"
               />
             </div>
-            <div class="w-50 ps-2">
+            <div class="w-50 ps-2" v-if="recurringEvent">
               <span class="font-13 app-medium-font dark-font"># Events *</span>
               <v-text-field
                 placeholder="Date"

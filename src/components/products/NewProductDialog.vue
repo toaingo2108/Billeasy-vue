@@ -126,11 +126,11 @@
         </div>
       </v-card-text>
       <v-card-text>
-        <v-table>
+        <v-table style="background-color: #0000">
           <thead>
             <tr>
               <th
-                class="text-left font-12 app-semibold-font shade-font"
+                class="text-left font-12 app-semibold-font shade-font remove-border-bottom"
                 v-for="header in headers"
                 :key="header"
               >
@@ -140,7 +140,7 @@
           </thead>
           <tbody>
             <tr v-for="(item, index) in items" :key="index">
-              <td>
+              <td class="remove-border-bottom">
                 <v-text-field
                   placeholder="PRICE Incl. VAT"
                   variant="outlined"
@@ -149,7 +149,7 @@
                   v-model="item.incl"
                 />
               </td>
-              <td>
+              <td class="remove-border-bottom">
                 <v-text-field
                   placeholder="PRICE excl. VAT"
                   variant="outlined"
@@ -158,7 +158,7 @@
                   v-model="item.excl"
                 />
               </td>
-              <td>
+              <td class="remove-border-bottom">
                 <v-text-field
                   placeholder="FROM QUANTITY"
                   variant="outlined"
@@ -167,7 +167,7 @@
                   v-model="item.quantity"
                 />
               </td>
-              <td>
+              <td class="remove-border-bottom">
                 <v-select
                   bg-color="white"
                   placeholder="PRICELIST"
@@ -178,7 +178,7 @@
                   :items="['A', 'B', 'C', 'X']"
                 />
               </td>
-              <td>
+              <td class="remove-border-bottom">
                 <v-btn flat icon size="small"
                   ><v-icon color="#8B8BA9">mdi-close</v-icon></v-btn
                 >
@@ -301,4 +301,19 @@ const onAddNewVATRate = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+div :deep(.v-text-field input.v-field__input) {
+  min-height: 32px;
+  padding: 3px 10px !important;
+  background-color: white;
+  border-radius: 10px;
+}
+
+div :deep(.v-select .v-field__input) {
+  min-height: 32px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+</style>

@@ -230,6 +230,10 @@
       :dialog="invoiceInformationDialog"
       @update:dialog="(val) => (invoiceInformationDialog = val)"
     />
+    <scheduled-send-out-dialog
+      :dialog="scheduleSendDialog"
+      @update:dialog="(val) => (scheduleSendDialog = val)"
+    />
   </div>
 </template>
 <script lang="ts" setup>
@@ -255,6 +259,7 @@ import TodoCategoryList from "../default/TodoCategoryList.vue";
 import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
 import NewTodoItemDialog from "../todos/NewTodoItemDialog.vue";
 import InvoiceInformationDialog from "./InvoiceInformationDialog.vue";
+import ScheduledSendOutDialog from "@/components/invoices/ScheduleSendOutDialog.vue";
 
 const tab = ref(0);
 
@@ -292,7 +297,11 @@ const onCreditInvoice = function () {};
 const onDuplicate = function () {};
 const onPreviewPDF = function () {};
 const onCancelInvoice = function () {};
-const onSendInvoice = function () {};
+
+const scheduleSendDialog = ref(false);
+const onSendInvoice = function () {
+  scheduleSendDialog.value = true;
+};
 
 const invoiceMenuItems = [
   {

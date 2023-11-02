@@ -9,14 +9,15 @@
         paid for
       </v-card-text>
       <v-card-text class="d-flex flex-column mx-3 pb-1">
-        <span class="font-13 app-medium-font dark-font"
-          >Choose a reason for the cancellation *</span
-        >
+        <span class="font-13 app-medium-font dark-font">
+          Choose a reason for the cancellation *
+        </span>
         <v-select
           placeholder="Choose a reason"
           variant="outlined"
           rounded="lg"
           hide-details
+          bg-color="white"
           :items="[
             'Service is too expensive',
             'Service is not working',
