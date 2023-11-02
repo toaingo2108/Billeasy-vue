@@ -98,6 +98,7 @@
             class="text-none app-medium-font font-14 ms-1"
             color="#20c39d"
             rounded="lg"
+            @click="goToSignUp"
           >
             Sign Up
           </v-btn>
@@ -117,6 +118,9 @@ const goToHome = () => {
 };
 const goToForgotPassword = () => {
   router.push({ name: "forgot-password" });
+};
+const goToSignUp = () => {
+  router.push({ name: "signup" });
 };
 </script>
 <style scoped>
