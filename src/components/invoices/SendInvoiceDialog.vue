@@ -15,14 +15,21 @@
           :items="['Customer Specific', 'Method 2']"
         />
       </v-card-text>
+      <v-card-text class="d-flex flex-column mx-3 pb-1" v-if="scheduled">
+        <span class="font-13 app-medium-font dark-font">Send Date</span>
+        <v-text-field
+          placeholder="Date"
+          variant="outlined"
+          rounded="lg"
+          hide-details
+          value="2023-07-01"
+        />
+      </v-card-text>
       <v-card-text class="d-flex flex-row mx-3 pb-1">
-        <v-checkbox color="#20c39d" value="#20c39d" hide-details>
-          <template v-slot:label>
-            <span class="font-14 app-regular-font dark-font">
-              Scheduled Send Out
-            </span>
-          </template>
-        </v-checkbox>
+        <app-checkbox v-model="scheduled" class="me-2" />
+        <span class="font-14 app-regular-font dark-font">
+          Scheduled Send Out
+        </span>
       </v-card-text>
       <v-divider class="mt-8" />
       <v-card-actions class="py-7 px-8 d-flex flex-row justify-end bg-gray">
@@ -63,6 +70,9 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
+import AppCheckbox from "../default/AppCheckbox.vue";
+
+const scheduled = ref(false);
 
 const props = defineProps({
   dialog: Boolean,

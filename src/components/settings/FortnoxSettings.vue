@@ -145,7 +145,7 @@
             <span
               class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
             >
-              Transfer payments with payment date from
+              Transfer payments with payment<br />date from
               <v-icon color="#8B8BA9" class="ms-2"
                 >mdi-help-circle-outline
               </v-icon>
