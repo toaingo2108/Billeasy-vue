@@ -3,12 +3,15 @@
     <div class="d-flex flex-row mb-5 align-center justify-between w-100">
       <div class="app-semibold-font font-28 dark-font mx-8">Settings</div>
     </div>
-    <div>
-      <v-tabs v-model="tab" color="#20C39D">
+    <div class="w-100">
+      <v-tabs v-model="tab" color="#20C39D" class="w-100">
         <v-tab
           :value="index"
           class="text-none font-14 app-medium-font mx-8"
-          :class="tab == index ? 'teal-font' : 'blue-600'"
+          :class="[
+            tab == index ? 'teal-font' : 'blue-600',
+            mdAndUp ? 'font-14' : 'font-8',
+          ]"
           v-for="(menu, index) in menus"
         >
           <div class="me-2">
@@ -74,12 +77,15 @@ import subscriptionUnselectedIcon from "@/assets/svg/subscriptions/subscription_
 import settingIcon from "@/assets/svg/settings/setting.svg";
 import settingUnselectedIcon from "@/assets/svg/settings/setting_unselected.svg";
 import IntegrationSettings from "@/components/settings/IntegrationSettings.vue";
+import { useDisplay } from "vuetify";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);
 const importDialog = ref(false);
 const productCategoriesDialog = ref(false);
 const tab = ref(0);
+
+const mdAndUp = useDisplay();
 
 const menus = [
   {
@@ -114,4 +120,11 @@ const onProductCategories = function () {
   productCategoriesDialog.value = true;
 };
 </script>
-<style scoped></style>
+<style scoped>
+@media (max-width: 850px) {
+  div :deep(.v-tab) {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+}
+</style>
