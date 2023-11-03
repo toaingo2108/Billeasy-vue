@@ -5,11 +5,11 @@
       <div class="app-semibold-font font-28 teal-font ms-2">Jane!</div>
     </div>
     <v-row>
-      <v-col cols="12" md="7" class="h-100">
+      <v-col cols="12" md="7" :class="mdAndUp ? 'h-100' : ''">
         <open-invoices />
         <sales />
       </v-col>
-      <v-col cols="12" md="5" class="h-100">
+      <v-col cols="12" md="5" :class="mdAndUp ? 'h-100' : ''">
         <subscription />
         <best-customers />
         <most-sold-products />
@@ -24,4 +24,7 @@ import Sales from "@/components/home/HomeSales.vue";
 import Subscription from "@/components/home/HomeSubscription.vue";
 import BestCustomers from "@/components/home/HomeBestCustomers.vue";
 import MostSoldProducts from "@/components/home/HomeMostSoldProducts.vue";
+import { useDisplay } from "vuetify";
+
+const { mdAndUp } = useDisplay();
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar flat color="white">
+  <v-app-bar flat color="white" class="w-100" style="left: 0">
     <v-spacer />
     <v-divider vertical class="bar-divider" />
     <v-btn icon class="mx-2">

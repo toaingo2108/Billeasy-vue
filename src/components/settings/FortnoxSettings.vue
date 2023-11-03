@@ -92,8 +92,8 @@
               class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
             >
               Transfer invoices with invoice date<br />from
-              <v-icon color="#8B8BA9" class="ms-2"
-                >mdi-help-circle-outline
+              <v-icon color="#8B8BA9" class="ms-2">
+                mdi-help-circle-outline
               </v-icon>
             </span>
             <v-text-field

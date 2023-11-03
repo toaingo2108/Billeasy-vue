@@ -2,7 +2,7 @@
   <div class="left-section">
     <v-navigation-drawer
       permanent
-      width="300"
+      :width="mdAndUp ? 300 : 48"
       color="#0D0D1E"
       dark
       height="auto"
@@ -18,11 +18,21 @@
           @click="onOpenMenu(name, i)"
           :ref="`menuItem-${i}`"
           :active="i == selected"
+          class="pa-3"
         >
           <template v-slot:prepend>
-            <v-img :src="icon" width="20" height="20" class="ml-5" />
+            <v-img
+              :src="icon"
+              width="20"
+              height="20"
+              :class="mdAndUp ? 'ml-5' : ''"
+            />
           </template>
-          <v-list-item-title v-text="text" class="ml-3"></v-list-item-title>
+          <v-list-item-title
+            v-text="text"
+            class="ml-3"
+            v-if="mdAndUp"
+          ></v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -32,10 +42,11 @@
 <script lang="ts" setup>
 import { ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-// import { useStore } from "vuex";
+import { useDisplay } from "vuetify";
 
 const router = useRouter();
 const route = useRoute();
+const { mdAndUp } = useDisplay();
 // const store = useStore();
 
 import homeIcon from "@/assets/svg/sideMenu/home.svg";
@@ -92,18 +103,37 @@ watch(
 checkRoute();
 </script>
 <style scoped>
-.left-section {
-  max-height: 0;
-  overflow-y: hidden;
-  position: sticky;
-  min-height: inherit;
-  overflow-x: hidden;
-  max-width: 300px;
-  min-width: 300px;
-  width: 300px;
-  top: 56px;
-  background: #084468;
+@media (max-width: 960px) {
+  .left-section {
+    max-height: 0;
+    overflow-y: hidden;
+    position: sticky;
+    min-height: inherit;
+    overflow-x: hidden;
+    max-width: 48px;
+    min-width: 48px;
+    width: 48px;
+    top: 56px;
+    background: #084468;
+    z-index: 1005;
+  }
 }
+@media (min-width: 960px) {
+  .left-section {
+    max-height: 0;
+    overflow-y: hidden;
+    position: sticky;
+    min-height: inherit;
+    overflow-x: hidden;
+    max-width: 300px;
+    min-width: 300px;
+    width: 300px;
+    top: 56px;
+    background: #084468;
+    z-index: 1005;
+  }
+}
+
 .left-section:hover {
   overflow-y: auto;
 }
