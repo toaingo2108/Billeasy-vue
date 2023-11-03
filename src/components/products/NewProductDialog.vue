@@ -179,7 +179,7 @@
                 />
               </td>
               <td class="remove-border-bottom">
-                <v-btn flat icon size="small"
+                <v-btn flat icon size="small" style="background-color: #0000"
                   ><v-icon color="#8B8BA9">mdi-close</v-icon></v-btn
                 >
               </td>

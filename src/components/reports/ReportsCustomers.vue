@@ -172,7 +172,7 @@
       </v-card-text>
       <v-card-text class="mt-2">
         <highcharts
-          :options="chartOptions2"
+          :options="chartOptions3"
           class="homechart_container2"
         ></highcharts>
       </v-card-text>
