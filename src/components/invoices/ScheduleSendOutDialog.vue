@@ -23,7 +23,7 @@
           variant="outlined"
           rounded="lg"
           hide-details
-          value="2023-07-01"
+          v-model="date"
         />
       </v-card-text>
       <v-card-text class="d-flex flex-row mx-3 pb-1">
@@ -80,6 +80,7 @@ const props = defineProps({
 
 const emit = defineEmits();
 
+const date = ref("2023-07-01");
 const closeDialog = () => {
   emit("update:dialog", false);
 };
