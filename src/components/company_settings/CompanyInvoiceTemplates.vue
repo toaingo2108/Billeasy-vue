@@ -30,6 +30,7 @@
       :checkable="false"
       row-color="#f7f7fa"
       class="mt-10 mb-10"
+      :height="64"
     >
       <template v-slot:action>
         <customer-subscriptions-payments-item-menu />
@@ -44,10 +45,10 @@ import CustomerSubscriptionsPaymentsItemMenu from "./CustomerSubscriptionsPaymen
 import { useRouter } from "vue-router";
 
 const invoiceHeaders = [
-  { title: "Name", key: "name", align: "left", style: "bold" },
-  { title: "Code", key: "code", style: "bold" },
-  { title: "Description", key: "description", width: "380px" },
-  { title: "# Invoices", key: "subscriptions" },
+  { title: "Name", key: "name", align: "left", style: "bold", width: "104px" },
+  { title: "Code", key: "code", style: "bold", align: "left", width: "144px" },
+  { title: "Description", key: "description", width: "380px", align: "left" },
+  { title: "# Invoices", key: "subscriptions", align: "left" },
   { title: "", key: "action" },
 ];
 

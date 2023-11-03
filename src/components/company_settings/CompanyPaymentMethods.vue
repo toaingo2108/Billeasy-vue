@@ -113,7 +113,7 @@
           </div>
         </v-col>
         <v-col cols="12" md="6">
-          <div class="d-flex flex-column">
+          <div class="d-flex flex-column ps-12">
             <span class="font-12 app-semibold-font shade-font"> PLUSGIRO </span>
             <div class="d-flex flex-row align-center mt-6 mb-1">
               <span class="font-13 app-medium-font dark-font wx-200">

@@ -60,6 +60,7 @@
               padding-top: 10px;
               padding-bottom: 10px;
               border-color: #d1d1e2;
+              background-color: white;
             "
             block
             class="text-none file-upload-button"

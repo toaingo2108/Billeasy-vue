@@ -76,7 +76,7 @@
         <span class="font-14 app-medium-font dark-font ms-2">To Billeasy</span>
       </v-card-title>
       <v-row class="mt-2">
-        <v-col cols="12" md="3" v-if="fromBilleasy">
+        <v-col cols="12" md="3" v-if="!fromBilleasy">
           <span class="font-12 shade-font app-semibold-font">INVOICES</span>
           <span
             class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1 mt-6"
@@ -130,7 +130,7 @@
             <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
           </span>
         </v-col>
-        <v-col cols="12" md="3" v-if="fromBilleasy">
+        <v-col cols="12" md="3" v-if="!fromBilleasy">
           <span class="font-12 shade-font app-semibold-font">PAYMENTS</span>
           <span
             class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1 mt-6"
@@ -169,7 +169,7 @@
             </div>
             <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
           </span>
-          <div class="mt-6" v-if="fromBilleasy">
+          <div class="mt-6" v-if="!fromBilleasy">
             <span
               class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
             >
@@ -197,7 +197,7 @@
             </div>
             <v-icon color="#8B8BA9">mdi-help-circle-outline </v-icon>
           </span>
-          <div class="mt-6" v-if="fromBilleasy">
+          <div class="mt-6" v-if="!fromBilleasy">
             <span
               class="font-13 app-medium-font dark-font d-flex flex-row align-center justify-between mb-1"
             >
@@ -345,7 +345,7 @@
       </v-row>
       <v-card-text
         class="d-flex flex-row align-center mt-6 ps-0 pb-0"
-        v-if="fromBilleasy"
+        v-if="!fromBilleasy"
       >
         <span class="font-14 dark-font app-semibold-font" style="width: 160px">
           Custom Accounts
@@ -354,7 +354,7 @@
       </v-card-text>
       <v-card-text
         class="mt-5 d-flex flex-row justify-between pt-0 px-0"
-        v-if="fromBilleasy"
+        v-if="!fromBilleasy"
       >
         <v-table style="width: 100%">
           <thead>
@@ -434,7 +434,7 @@
           </tbody>
         </v-table>
       </v-card-text>
-      <v-card-actions class="mb-4 ps-0" v-if="fromBilleasy">
+      <v-card-actions class="mb-4 ps-0" v-if="!fromBilleasy">
         <v-btn
           color="#20C39D"
           prepend-icon="mdi-plus"

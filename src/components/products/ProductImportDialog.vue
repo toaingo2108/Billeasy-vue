@@ -23,7 +23,7 @@
         </div>
       </v-card-text>
       <v-card-text
-        class="d-flex flex-row pb-1 ps-4 align-center"
+        class="d-flex flex-row pb-1 ps-4 align-center mt-5"
         v-if="importType == 'Fortnox'"
       >
         <div style="width: 212px">
@@ -31,25 +31,11 @@
             Products to Import
           </span>
         </div>
-        <div class="flex-grow">
-          <v-radio-group class="mt-7 w-100">
-            <div class="d-flex flex-row">
-              <v-radio value="one">
-                <template v-slot:label>
-                  <span class="font-14 app-regular-font dark-font">
-                    All Products
-                  </span>
-                </template>
-              </v-radio>
-              <v-radio value="two">
-                <template v-slot:label>
-                  <span class="font-14 app-regular-font dark-font">
-                    Active Products
-                  </span>
-                </template>
-              </v-radio>
-            </div>
-          </v-radio-group>
+        <div class="flex-grow mt-2">
+          <app-radio-group
+            :items="['All Products', 'Active Products']"
+            direction="row"
+          />
         </div>
       </v-card-text>
       <v-card-text
@@ -73,6 +59,7 @@
               padding-top: 10px;
               padding-bottom: 10px;
               border-color: #d1d1e2;
+              background-color: white;
             "
             block
             class="text-none file-upload-button"
@@ -315,6 +302,7 @@
 
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
+import AppRadioGroup from "../default/AppRadioGroup.vue";
 
 const props = defineProps({
   dialog: Boolean,
