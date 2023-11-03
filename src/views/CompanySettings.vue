@@ -9,10 +9,13 @@
               flat
               variant="text"
               style="height: 44px; min-height: 44px; max-height: 44px"
-              class="text-none font-14 app-medium-font d-flex flex-row justify-start"
-              :class="index == menuIndex ? 'teal-font' : 'shade-font'"
+              class="text-none app-medium-font d-flex flex-row justify-start"
+              :class="[
+                index == menuIndex ? 'teal-font' : 'shade-font',
+                mdAndUp ? 'font-14' : 'font-10',
+              ]"
               @click="onSelectMenu(index)"
-              width="250"
+              :width="mdAndUp ? 250 : 180"
             >
               {{ item.title }}
             </v-btn>
@@ -29,6 +32,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
+import { useDisplay } from "vuetify";
 const menuIndex = ref(0);
 const menus = [
   {
@@ -67,6 +71,7 @@ const menus = [
 
 const router = useRouter();
 const route = useRoute();
+const { mdAndUp } = useDisplay();
 
 const onSelectMenu = (index: number) => {
   menuIndex.value = index;
@@ -84,17 +89,33 @@ const checkRoute = () => {
 checkRoute();
 </script>
 <style scoped>
-.setting-left-section {
-  max-height: 0;
-  overflow-y: hidden;
-  position: sticky;
-  min-height: inherit;
-  overflow-x: hidden;
-  max-width: 300px;
-  min-width: 300px;
-  width: 300px;
-  top: 64px;
+@media (max-width: 960px) {
+  .setting-left-section {
+    max-height: 0;
+    overflow-y: hidden;
+    position: sticky;
+    min-height: inherit;
+    overflow-x: hidden;
+    max-width: 190px;
+    min-width: 190px;
+    width: 190px;
+    top: 64px;
+  }
 }
+@media (min-width: 960px) {
+  .setting-left-section {
+    max-height: 0;
+    overflow-y: hidden;
+    position: sticky;
+    min-height: inherit;
+    overflow-x: hidden;
+    max-width: 300px;
+    min-width: 300px;
+    width: 300px;
+    top: 64px;
+  }
+}
+
 .setting-left-section:hover {
   overflow-y: auto;
 }

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rounded-xl me-8 my-8" elevation="0">
+  <v-card class="rounded-xl me-8 my-8 responsive-card" elevation="0">
     <v-card-title
       class="app-semibold-font font-20 dark-font mt-6 mx-3 d-flex flex-row"
     >
@@ -16,8 +16,11 @@
       <v-tabs v-model="tab" color="#20C39D">
         <v-tab
           :value="index"
-          class="text-none font-14 app-medium-font"
-          :class="tab == index ? 'teal-font' : 'blue-600'"
+          class="text-none app-medium-font"
+          :class="[
+            tab == index ? 'teal-font' : 'blue-600',
+            mdAndUp ? 'font-14' : 'font-10',
+          ]"
           v-for="(menu, index) in menus"
         >
           {{ menu }}
@@ -79,6 +82,7 @@ import CompanyRegisterPaymentTerms from "./CompanyRegisterPaymentTerms.vue";
 import CompanyRegisterPriceLists from "./CompanyRegisterPriceLists.vue";
 import CompanyRegisterUnits from "./CompanyRegisterUnits.vue";
 import CompanyRegisterVatRates from "./CompanyRegisterVatRates.vue";
+import { useDisplay } from "vuetify";
 
 const tab = ref(0);
 const menus = [
@@ -91,10 +95,40 @@ const menus = [
 
 const type = ref("Delete");
 const cancelSubscriptionDialog = ref(false);
-
+const { sm, mdAndUp } = useDisplay();
 const onCancelSubscription = () => {
   cancelSubscriptionDialog.value = true;
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+@media (max-width: 850px) {
+  div :deep(.v-tab) {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+  .responsive-card {
+    width: calc(100% - 250px);
+  }
+}
+@media (max-width: 910px) and (min-width: 851px) {
+  .responsive-card {
+    width: calc(100% - 240px);
+  }
+}
+@media (max-width: 960px) and (min-width: 911px) {
+  .responsive-card {
+    width: calc(100% - 180px);
+  }
+}
+@media (max-width: 1230px) and (min-width: 961px) {
+  .responsive-card {
+    width: calc(100% - 300px);
+  }
+}
+@media (max-width: 1420px) and (min-width: 1231px) {
+  .responsive-card {
+    width: calc(100% - 50px);
+  }
+}
+</style>
