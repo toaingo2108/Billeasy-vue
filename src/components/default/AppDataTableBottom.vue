@@ -1,11 +1,10 @@
 <template>
   <div
-    style="
-      height: 96px;
-      bottom: 0;
-      width: calc(100% - 300px);
-      left: 300px;
-      z-index: 1;
+    style="height: 96px; bottom: 0; z-index: 1"
+    :style="
+      mdAndUp
+        ? 'calc(100% - 300px); left: 300px'
+        : 'calc(100% - 48px); left: 48px'
     "
     class="bg-gray position-fixed d-flex flex-row align-center"
   >
@@ -42,7 +41,9 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import AppDataTableBottomPagination from "./AppDataTableBottomPagination.vue";
+import { useDisplay } from "vuetify";
 
+const { mdAndUp } = useDisplay();
 const type = ref("Activate");
 
 const props = defineProps({

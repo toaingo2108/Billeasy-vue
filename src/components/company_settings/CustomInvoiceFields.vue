@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rounded-xl me-8 mt-8" elevation="0">
+  <v-card class="rounded-xl me-8 mt-8 responsive-card" elevation="0">
     <v-card-title
       class="app-semibold-font font-20 dark-font mt-6 mx-3 d-flex flex-row"
     >
@@ -16,7 +16,7 @@
       Here you can add custom fields to include in your customer registry and/or
       in your invoices.
     </v-card-text>
-    <v-card-text class="mt-8 ms-4 mb-15">
+    <v-card-text class="mt-8 ms-4 mb-15 w-100">
       <v-table style="width: 100%; background-color: #0000">
         <thead>
           <tr>
@@ -202,4 +202,35 @@ const items = reactive([
 ]);
 </script>
 
-<style scoped></style>
+<style scoped>
+@media (max-width: 850px) {
+  .responsive-card {
+    width: calc(100% - 250px);
+  }
+}
+@media (max-width: 910px) and (min-width: 851px) {
+  .responsive-card {
+    width: calc(100% - 240px);
+  }
+}
+@media (max-width: 960px) and (min-width: 911px) {
+  .responsive-card {
+    width: calc(100% - 246px);
+  }
+}
+@media (max-width: 1000px) and (min-width: 961px) {
+  .responsive-card {
+    width: calc(100% - 560px);
+  }
+}
+@media (max-width: 1230px) and (min-width: 1001px) {
+  .responsive-card {
+    width: calc(100% - 360px);
+  }
+}
+@media (max-width: 1420px) and (min-width: 1231px) {
+  .responsive-card {
+    width: calc(100% - 150px);
+  }
+}
+</style>

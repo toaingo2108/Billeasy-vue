@@ -20,6 +20,7 @@
             v-else-if="header.key != 'action'"
             class="d-flex flex-row align-center"
             :class="header.align ? `justify-${header.align}` : 'justify-center'"
+            :style="header.width ? `width: ${header.width}` : ''"
           >
             <span class="dark-font app-semibold-font font-13">
               {{ header.title }}
@@ -126,12 +127,12 @@
                 :style="header.width ? `width: ${header.width};` : ''"
               >
                 <span
-                  class="font-13 dark-font app-semibold-font"
+                  class="font-13 dark-font app-semibold-font px-1"
                   v-if="header.style == 'bold'"
                 >
                   {{ item[`${header.key}`] }}
                 </span>
-                <span class="font-13 shade-font app-medium-font" v-else>
+                <span class="font-13 shade-font app-medium-font px-1" v-else>
                   {{ item[`${header.key}`] }}
                 </span>
               </div>
