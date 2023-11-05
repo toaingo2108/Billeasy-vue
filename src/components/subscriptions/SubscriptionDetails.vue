@@ -1057,7 +1057,7 @@ div :deep(.v-select .v-field__input) {
   border-color: #d1d1e2;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
   .five-row {
     width: 100%;
   }
@@ -1065,7 +1065,7 @@ div :deep(.v-select .v-field__input) {
     width: 100%;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 960px) {
   .five-row {
     width: 20%;
     padding-left: 10px;

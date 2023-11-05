@@ -596,12 +596,12 @@ div :deep(.v-chip__close) {
   color: #8b8ba9;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
   .five-row {
     width: 100%;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 960px) {
   .five-row {
     width: 20%;
     padding-left: 10px;

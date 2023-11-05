@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="d-flex flex-row justify-between">
+    <div
+      class="d-flex justify-between"
+      :class="mdAndUp ? 'flex-row' : 'flex-column'"
+    >
       <div class="font-14 app-regular-font shade-font ms-3 mt-6">
         Here you can create invoice templates with default settings<br />
         to use when creating invoices.
@@ -43,6 +46,9 @@ import { reactive, ref } from "vue";
 import AppDataTable from "../default/AppDataTable.vue";
 import CustomerSubscriptionsPaymentsItemMenu from "./CustomerSubscriptionsPaymentsItemMenu.vue";
 import { useRouter } from "vue-router";
+import { useDisplay } from "vuetify";
+
+const { mdAndUp } = useDisplay();
 
 const invoiceHeaders = [
   { title: "Name", key: "name", align: "left", style: "bold", width: "104px" },

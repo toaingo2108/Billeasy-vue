@@ -2,7 +2,12 @@
   <div class="mt-6">
     <div class="d-flex flex-row mb-6">
       <div style="width: 224px">
-        <span class="font-13 app-medium-font dark-font">Period</span>
+        <span
+          class="app-medium-font dark-font"
+          :class="mdAndUp ? 'font-13' : 'font-8'"
+        >
+          Period
+        </span>
         <v-select
           placeholder="Period"
           variant="outlined"
@@ -12,8 +17,13 @@
           bg-color="white"
         />
       </div>
-      <div style="width: 224px" class="ms-12">
-        <span class="font-13 app-medium-font dark-font">Currency</span>
+      <div style="width: 224px" :class="mdAndUp ? 'ms-12' : 'ms-2'">
+        <span
+          class="app-medium-font dark-font"
+          :class="mdAndUp ? 'font-13' : 'font-8'"
+        >
+          Currency
+        </span>
         <v-select
           placeholder="VAT rate"
           variant="outlined"
@@ -23,15 +33,26 @@
           bg-color="white"
         />
       </div>
-      <div class="ms-12 mt-7">
+      <div
+        class="mt-7"
+        :class="mdAndUp ? 'ms-12' : 'ms-2'"
+        style="min-width: 135px"
+      >
         <app-checkbox v-model="showAmountIncl" />
-        <span class="font-14 app-regular-font dark-font ms-2">
+        <span
+          class="app-regular-font dark-font ms-2"
+          :class="mdAndUp ? 'font-14' : 'font-8'"
+        >
           Show amounts incl. VAT
         </span>
       </div>
       <v-spacer />
       <div style="width: 224px">
-        <span class="font-13 app-medium-font dark-font">Product</span>
+        <span
+          class="app-medium-font dark-font"
+          :class="mdAndUp ? 'font-13' : 'font-8'"
+          >Product</span
+        >
         <v-select
           placeholder="Customer"
           variant="outlined"
@@ -41,8 +62,13 @@
           bg-color="white"
         />
       </div>
-      <div style="width: 224px" class="ms-12">
-        <span class="font-13 app-medium-font dark-font">Customer Category</span>
+      <div style="width: 224px" :class="mdAndUp ? 'ms-12' : 'ms-2'">
+        <span
+          class="app-medium-font dark-font"
+          :class="mdAndUp ? 'font-13' : 'font-8'"
+        >
+          Customer Category
+        </span>
         <v-select
           placeholder="Customer Category"
           variant="outlined"
@@ -184,6 +210,7 @@
 import AppCheckbox from "@/components/default/AppCheckbox.vue";
 import moment from "moment";
 import { ref } from "vue";
+import { useDisplay } from "vuetify";
 const chartOptions = {
   showInLegend: false,
   chart: {
@@ -462,6 +489,8 @@ const menus = [
     title: "Canceled Subscriptions",
   },
 ];
+
+const { mdAndUp } = useDisplay();
 </script>
 <style scoped>
 .homechart_container {

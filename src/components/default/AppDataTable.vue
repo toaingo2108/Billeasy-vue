@@ -6,7 +6,7 @@
     <thead>
       <tr>
         <th
-          class="text-left font-12 app-semibold-font shade-font"
+          class="text-left app-semibold-font shade-font"
           v-for="(header, index) in headers"
           :key="index"
         >
@@ -22,10 +22,15 @@
             :class="header.align ? `justify-${header.align}` : 'justify-center'"
             :style="header.width ? `width: ${header.width}` : ''"
           >
-            <span class="dark-font app-semibold-font font-13">
+            <span
+              class="dark-font app-semibold-font"
+              :class="mdAndUp ? 'font-13' : 'font-8'"
+            >
               {{ header.title }}
             </span>
-            <v-icon color="#59597B">mdi-unfold-more-horizontal</v-icon>
+            <v-icon color="#59597B" :size="mdAndUp ? 16 : 10"
+              >mdi-unfold-more-horizontal</v-icon
+            >
           </div>
         </th>
       </tr>
@@ -127,12 +132,17 @@
                 :style="header.width ? `width: ${header.width};` : ''"
               >
                 <span
-                  class="font-13 dark-font app-semibold-font px-1"
+                  class="dark-font app-semibold-font px-1"
+                  :class="mdAndUp ? 'font-13' : 'font-8'"
                   v-if="header.style == 'bold'"
                 >
                   {{ item[`${header.key}`] }}
                 </span>
-                <span class="font-13 shade-font app-medium-font px-1" v-else>
+                <span
+                  class="shade-font app-medium-font px-1"
+                  :class="mdAndUp ? 'font-13' : 'font-8'"
+                  v-else
+                >
                   {{ item[`${header.key}`] }}
                 </span>
               </div>
@@ -147,6 +157,7 @@
 import { ref, watchEffect, reactive, watch } from "vue";
 import { TableHeadersArray, TableItemsArray } from "@/types/interfaces";
 import AppCheckbox from "./AppCheckbox.vue";
+import { useDisplay } from "vuetify";
 
 const props = defineProps({
   headers: { type: Array as () => TableHeadersArray, default: [] },
@@ -165,6 +176,8 @@ const headers = reactive(
 const items = reactive(props.items);
 
 const isCheckedAll = ref(false);
+
+const { mdAndUp } = useDisplay();
 
 watch(
   () => isCheckedAll.value,

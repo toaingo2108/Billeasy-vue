@@ -1,5 +1,8 @@
 <template>
-  <div class="w-100 h-100 pa-8 d-flex flex-column">
+  <div
+    class="w-100 h-100 d-flex flex-column"
+    :class="mdAndUp ? 'pa-8' : 'py-8 ps-8 pe-15'"
+  >
     <div class="d-flex flex-row mb-5 align-center w-100">
       <div>
         <v-btn
@@ -170,8 +173,8 @@
       </div>
     </v-card>
     <v-row>
-      <v-col cols="12" md="6" class="h-100">
-        <div class="h-100 pt-4">
+      <v-col cols="12" md="6" :class="mdAndUp ? 'h-100' : ''">
+        <div class="pt-4" :class="mdAndUp ? 'h-100' : ''">
           <v-card class="rounded-xl pa-6" height="100%">
             <v-row>
               <v-col cols="12" md="4">
@@ -260,8 +263,8 @@
           </v-card>
         </div>
       </v-col>
-      <v-col cols="12" md="6" class="h-100">
-        <div class="h-50 pt-4">
+      <v-col cols="12" md="6" :class="mdAndUp ? 'h-100' : ''">
+        <div class="pt-4" :class="mdAndUp ? 'h-50' : ''">
           <v-card class="rounded-xl pa-2" height="100%">
             <v-card-text>
               <span class="font-13 app-medium-font dark-font"
@@ -278,7 +281,7 @@
             </v-card-text>
           </v-card>
         </div>
-        <div class="h-50 pt-4">
+        <div class="pt-4" :class="mdAndUp ? 'h-50' : ''">
           <v-card class="rounded-xl pa-2 mt-0" height="100%">
             <v-card-text>
               <span class="font-13 app-medium-font dark-font"
@@ -733,12 +736,12 @@ div :deep(.v-chip__close) {
   color: #8b8ba9;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
   .five-row {
     width: 100%;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 960px) {
   .five-row {
     width: 20%;
     padding-left: 10px;

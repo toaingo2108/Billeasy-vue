@@ -12,7 +12,7 @@
           :items="['12 months', '2 years']"
         />
       </div>
-      <div style="width: 224px" class="ms-12">
+      <div style="width: 224px" :class="mdAndUp ? 'ms-12' : 'ms-2'">
         <span class="font-13 app-medium-font dark-font">Currency</span>
         <v-select
           placeholder="VAT rate"
@@ -23,9 +23,16 @@
           bg-color="white"
         />
       </div>
-      <div class="ms-12 mt-7">
+      <div
+        class="mt-7"
+        :class="mdAndUp ? 'ms-12' : 'ms-2'"
+        style="min-width: 123px"
+      >
         <app-checkbox v-model="showAmountIncl" />
-        <span class="font-14 app-regular-font dark-font ms-2">
+        <span
+          class="app-regular-font dark-font ms-2"
+          :class="mdAndUp ? 'font-14' : 'font-8'"
+        >
           Show amounts incl. VAT
         </span>
       </div>
@@ -148,90 +155,123 @@
               <table class="w-100 h-100 py-5 styled-table">
                 <tr>
                   <th style="text-align: left; height: 48px">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Subscription
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Customer
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Total
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Start Date
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Cancel Date
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Period Start
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Last Billed
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Period interval
                     </span>
                   </th>
                 </tr>
                 <tr v-for="n in 4">
                   <td
-                    class="remove-border-bottom font-13 app-medium-font dark-font"
+                    class="remove-border-bottom app-medium-font dark-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                     style="height: 36px"
                   >
                     12345
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font dark-font"
+                    class="remove-border-bottom app-medium-font dark-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     12 - Sara Carlsson
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     1000,00
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     --
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
@@ -242,90 +282,123 @@
               <table class="w-100 h-100 py-5 styled-table">
                 <tr>
                   <th style="text-align: left; height: 48px">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Subscription
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Customer
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Total
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Start Date
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Cancel Date
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Period Start
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Last Billed
                     </span>
                   </th>
                   <th style="text-align: left">
-                    <span class="font-13 app-semibold-font dark-font">
+                    <span
+                      class="app-semibold-font dark-font"
+                      :class="mdAndUp ? 'font-13' : 'font-8'"
+                    >
                       Period interval
                     </span>
                   </th>
                 </tr>
                 <tr v-for="n in 4">
                   <td
-                    class="remove-border-bottom font-13 app-medium-font dark-font"
+                    class="remove-border-bottom app-medium-font dark-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                     style="height: 36px"
                   >
                     12345
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font dark-font"
+                    class="remove-border-bottom app-medium-font dark-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     12 - Sara Carlsson
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     1000,00
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     --
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
                   <td
-                    class="remove-border-bottom font-13 app-medium-font shade-font"
+                    class="remove-border-bottom app-medium-font shade-font"
+                    :class="mdAndUp ? 'font-13' : 'font-8'"
                   >
                     2023-01-01
                   </td>
@@ -382,6 +455,7 @@
 import AppCheckbox from "@/components/default/AppCheckbox.vue";
 import moment from "moment";
 import { ref } from "vue";
+import { useDisplay } from "vuetify";
 const chartOptions = {
   showInLegend: false,
   chart: {
@@ -552,6 +626,8 @@ const menus = [
     title: "Canceled Subscriptions",
   },
 ];
+
+const { mdAndUp } = useDisplay();
 </script>
 <style scoped>
 .homechart_container {

@@ -1,5 +1,8 @@
 <template>
-  <div class="w-100 h-100 pa-8 d-flex flex-column">
+  <div
+    class="w-100 h-100 d-flex flex-column"
+    :class="mdAndUp ? 'pa-8' : 'py-8 ps-8 pe-15'"
+  >
     <div class="d-flex flex-row mb-5 align-center justify-between w-100">
       <div class="app-semibold-font font-28 dark-font">Reports</div>
     </div>
@@ -65,6 +68,7 @@ import productsIcon from "@/assets/svg/reports/products_selected.svg";
 import productsUnselectedIcon from "@/assets/svg/reports/products_unselected.svg";
 import ReportsCustomers from "@/components/reports/ReportsCustomers.vue";
 import ReportsProducts from "@/components/reports/ReportsProducts.vue";
+import { useDisplay } from "vuetify";
 
 const productCategoriesDialog = ref(false);
 const tab = ref(0);
@@ -91,5 +95,7 @@ const menus = [
     unselected_icon: productsUnselectedIcon,
   },
 ];
+
+const { mdAndUp } = useDisplay();
 </script>
 <style scoped></style>

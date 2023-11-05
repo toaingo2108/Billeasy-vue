@@ -3,8 +3,8 @@
     style="height: 96px; bottom: 0; z-index: 1"
     :style="
       mdAndUp
-        ? 'calc(100% - 300px); left: 300px'
-        : 'calc(100% - 48px); left: 48px'
+        ? 'width: calc(100% - 300px); left: 300px'
+        : 'width: calc(100% - 48px); left: 48px'
     "
     class="bg-gray position-fixed d-flex flex-row align-center"
   >

@@ -1,5 +1,9 @@
 <template>
-  <v-card class="rounded-xl me-8 my-8" elevation="0">
+  <v-card
+    class="rounded-xl me-8 my-8"
+    elevation="0"
+    :style="mdAndUp ? '' : 'width: calc(100vw - 270px)'"
+  >
     <v-card-title
       class="app-semibold-font font-20 dark-font mt-6 mx-3 d-flex flex-row"
     >
@@ -84,6 +88,7 @@
 import { ref, watch, watchEffect } from "vue";
 import CancelSubscriptionDialog from "./CancelSubscriptionDialog.vue";
 import { useRouter, useRoute } from "vue-router";
+import { useDisplay } from "vuetify";
 
 const tab = ref(0);
 const menus = ["Subscription Templates", "Invoice Templates"];
@@ -95,6 +100,8 @@ const onCancelSubscription = () => {
 
 const router = useRouter();
 const route = useRoute();
+const { mdAndUp } = useDisplay();
+
 watch(
   () => tab.value,
   (newValue) => {

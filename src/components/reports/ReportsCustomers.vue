@@ -2,7 +2,12 @@
   <div class="mt-6">
     <div class="d-flex flex-row mb-6">
       <div style="width: 224px">
-        <span class="font-13 app-medium-font dark-font">Period</span>
+        <span
+          class="app-medium-font dark-font"
+          :class="mdAndUp ? 'font-13' : 'font-8'"
+        >
+          Period
+        </span>
         <v-select
           placeholder="Period"
           variant="outlined"
@@ -12,8 +17,13 @@
           bg-color="white"
         />
       </div>
-      <div style="width: 224px" class="ms-12">
-        <span class="font-13 app-medium-font dark-font">Currency</span>
+      <div style="width: 224px" :class="mdAndUp ? 'ms-12' : 'ms-2'">
+        <span
+          class="app-medium-font dark-font"
+          :class="mdAndUp ? 'font-13' : 'font-8'"
+        >
+          Currency
+        </span>
         <v-select
           placeholder="VAT rate"
           variant="outlined"
@@ -23,15 +33,26 @@
           bg-color="white"
         />
       </div>
-      <div class="ms-12 mt-7">
+      <div
+        class="mt-7"
+        :class="mdAndUp ? 'ms-12' : 'ms-2'"
+        style="min-width: 135px"
+      >
         <app-checkbox v-model="showAmountIncl" />
-        <span class="font-14 app-regular-font dark-font ms-2">
+        <span
+          class="app-regular-font dark-font ms-2"
+          :class="mdAndUp ? 'font-14' : 'font-8'"
+        >
           Show amounts incl. VAT
         </span>
       </div>
       <v-spacer />
       <div style="width: 224px">
-        <span class="font-13 app-medium-font dark-font">Customer</span>
+        <span
+          class="app-medium-font dark-font"
+          :class="mdAndUp ? 'font-13' : 'font-8'"
+          >Customer</span
+        >
         <v-select
           placeholder="Customer"
           variant="outlined"
@@ -41,8 +62,13 @@
           bg-color="white"
         />
       </div>
-      <div style="width: 224px" class="ms-12">
-        <span class="font-13 app-medium-font dark-font">Customer Category</span>
+      <div style="width: 224px" :class="mdAndUp ? 'ms-12' : 'ms-2'">
+        <span
+          class="app-medium-font dark-font"
+          :class="mdAndUp ? 'font-13' : 'font-8'"
+        >
+          Customer Category
+        </span>
         <v-select
           placeholder="Customer Category"
           variant="outlined"
@@ -214,60 +240,104 @@
         <table class="w-100 h-100 py-5 styled-table">
           <tr>
             <th style="text-align: left; height: 48px; width: 120px">
-              <span class="font-13 app-semibold-font dark-font">
+              <span
+                class="app-semibold-font dark-font"
+                :class="mdAndUp ? 'font-13' : 'font-8'"
+              >
                 #Customer
               </span>
             </th>
             <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font"> Name </span>
+              <span
+                class="app-semibold-font dark-font"
+                :class="mdAndUp ? 'font-13' : 'font-8'"
+              >
+                Name
+              </span>
             </th>
             <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font"> Total </span>
+              <span
+                class="app-semibold-font dark-font"
+                :class="mdAndUp ? 'font-13' : 'font-8'"
+              >
+                Total
+              </span>
             </th>
             <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font">
+              <span
+                class="app-semibold-font dark-font"
+                :class="mdAndUp ? 'font-13' : 'font-8'"
+              >
                 #Late Invoices
               </span>
             </th>
             <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font">
+              <span
+                class="app-semibold-font dark-font"
+                :class="mdAndUp ? 'font-13' : 'font-8'"
+              >
                 Avg. Time (days)
               </span>
             </th>
             <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font">
+              <span
+                class="app-semibold-font dark-font"
+                :class="mdAndUp ? 'font-13' : 'font-8'"
+              >
                 Avg. Amount
               </span>
             </th>
             <th style="text-align: left">
-              <span class="font-13 app-semibold-font dark-font">
+              <span
+                class="app-semibold-font dark-font"
+                :class="mdAndUp ? 'font-13' : 'font-8'"
+              >
                 #Avg. Reminders Need
               </span>
             </th>
           </tr>
           <tr v-for="n in 9">
             <td
-              class="remove-border-bottom font-13 app-medium-font dark-font"
+              class="remove-border-bottom app-medium-font dark-font"
+              :class="mdAndUp ? 'font-13' : 'font-8'"
               style="height: 36px"
             >
               12
             </td>
-            <td class="remove-border-bottom font-13 app-medium-font dark-font">
+            <td
+              class="remove-border-bottom app-medium-font dark-font"
+              :class="mdAndUp ? 'font-13' : 'font-8'"
+            >
               Sara
             </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
+            <td
+              class="remove-border-bottom app-medium-font shade-font"
+              :class="mdAndUp ? 'font-13' : 'font-8'"
+            >
               Carlsson
             </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
+            <td
+              class="remove-border-bottom app-medium-font shade-font"
+              :class="mdAndUp ? 'font-13' : 'font-8'"
+            >
               10 / 80 (12,5%)
             </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
+            <td
+              class="remove-border-bottom app-medium-font shade-font"
+              :class="mdAndUp ? 'font-13' : 'font-8'"
+            >
               7,8
             </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
+            <td
+              class="remove-border-bottom app-medium-font shade-font"
+              :class="mdAndUp ? 'font-13' : 'font-8'"
+            >
               3
             </td>
-            <td class="remove-border-bottom font-13 app-medium-font shade-font">
+            <td
+              class="remove-border-bottom app-medium-font shade-font"
+              :class="mdAndUp ? 'font-13' : 'font-8'"
+            >
               3
             </td>
           </tr>
@@ -282,6 +352,7 @@ import AppCheckbox from "@/components/default/AppCheckbox.vue";
 import moment from "moment";
 import { ref } from "vue";
 import SearchField from "../default/SearchField.vue";
+import { useDisplay } from "vuetify";
 const chartOptions = {
   showInLegend: false,
   chart: {
@@ -549,6 +620,8 @@ const chartOptions3 = {
   },
 };
 const showAmountIncl = ref(false);
+
+const { mdAndUp } = useDisplay();
 
 const tab = ref(0);
 

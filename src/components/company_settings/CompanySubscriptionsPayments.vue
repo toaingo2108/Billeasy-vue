@@ -23,18 +23,21 @@
             height: 40px;
             max-height: 40px;
             min-height: 40px;
+            padding-left: 5px;
+            padding-right: 5px;
           "
           :style="
             option == 0
               ? 'background-color: #F7F7FA'
               : 'background-color: white'
           "
-          class="font-14 text-none"
-          :class="
+          class="text-none"
+          :class="[
             option == 0
               ? 'app-medium-font dark-font'
-              : 'shade-font app-regular-font'
-          "
+              : 'shade-font app-regular-font',
+            mdAndUp ? 'font-14' : 'font-8',
+          ]"
           rounded="s-lg"
           @click="onSelectOption(0)"
           >All</v-btn
@@ -46,18 +49,21 @@
             height: 40px;
             max-height: 40px;
             min-height: 40px;
+            padding-left: 5px;
+            padding-right: 5px;
           "
           :style="
             option == 1
               ? 'background-color: #F7F7FA'
               : 'background-color: white'
           "
-          class="font-14 text-none"
-          :class="
+          class="text-none"
+          :class="[
             option == 1
               ? 'app-medium-font dark-font'
-              : 'shade-font app-regular-font'
-          "
+              : 'shade-font app-regular-font',
+            mdAndUp ? 'font-14' : 'font-8',
+          ]"
           rounded="0"
           @click="onSelectOption(1)"
           >Unpaid</v-btn
@@ -69,18 +75,21 @@
             height: 40px;
             max-height: 40px;
             min-height: 40px;
+            padding-left: 5px;
+            padding-right: 5px;
           "
           :style="
             option == 2
               ? 'background-color: #F7F7FA'
               : 'background-color: white'
           "
-          class="font-14 text-none"
-          :class="
+          class="text-none"
+          :class="[
             option == 2
               ? 'app-medium-font dark-font'
-              : 'shade-font app-regular-font'
-          "
+              : 'shade-font app-regular-font',
+            mdAndUp ? 'font-14' : 'font-8',
+          ]"
           rounded="0"
           @click="onSelectOption(2)"
           >Unpaid & late</v-btn
@@ -92,25 +101,28 @@
             height: 40px;
             max-height: 40px;
             min-height: 40px;
+            padding-left: 5px;
+            padding-right: 5px;
           "
           :style="
             option == 3
               ? 'background-color: #F7F7FA'
               : 'background-color: white'
           "
-          class="font-14 text-none"
-          :class="
+          class="text-none"
+          :class="[
             option == 3
               ? 'app-medium-font dark-font'
-              : 'shade-font app-regular-font'
-          "
+              : 'shade-font app-regular-font',
+            mdAndUp ? 'font-14' : 'font-8',
+          ]"
           rounded="e-lg"
           @click="onSelectOption(3)"
           >Paid</v-btn
         >
       </div>
-      <div style="width: 288px">
-        <search-field />
+      <div :style="mdAndUp ? 'width: 288px' : 'width: 120px'">
+        <search-field :width="mdAndUp ? 'width: 288px' : 'width: 120px'" />
       </div>
     </div>
     <app-data-table
@@ -131,6 +143,7 @@ import { reactive, ref } from "vue";
 import SearchField from "../default/SearchField.vue";
 import AppDataTable from "../default/AppDataTable.vue";
 import CustomerSubscriptionsPaymentsItemMenu from "./CustomerSubscriptionsPaymentsItemMenu.vue";
+import { useDisplay } from "vuetify";
 
 const option = ref(0);
 
@@ -206,4 +219,6 @@ const invoiceItems = reactive([
 const onSelectOption = (index: number) => {
   option.value = index;
 };
+
+const { mdAndUp } = useDisplay();
 </script>
