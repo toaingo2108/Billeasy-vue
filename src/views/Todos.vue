@@ -13,8 +13,8 @@
     </div>
     <div class="d-flex justify-between">
       <div class="d-flex">
-        <div style="width: 288px">
-          <search-field />
+        <div :style="mdAndUp ? 'width: 288px' : 'width: 110px'">
+          <search-field :width="mdAndUp ? '288px' : '110px'" />
         </div>
         <div class="ml-2">
           <v-btn
@@ -112,6 +112,7 @@ const newTodoItemDialog = ref(false);
 
 import { useRouter } from "vue-router";
 import SearchField from "@/components/default/SearchField.vue";
+import { useDisplay } from "vuetify";
 
 const router = useRouter();
 
@@ -133,5 +134,7 @@ const onTodoCategory = function () {
 const onTodoStatus = function () {
   newTodoStatusDialog.value = true;
 };
+
+const { mdAndUp } = useDisplay();
 </script>
 <style scoped></style>

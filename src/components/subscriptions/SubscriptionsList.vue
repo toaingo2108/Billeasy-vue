@@ -2,8 +2,8 @@
   <div class="w-100 h-100 py-8 d-flex flex-column">
     <div class="d-flex justify-between">
       <div class="d-flex">
-        <div style="width: 288px">
-          <search-field />
+        <div :style="mdAndUp ? 'width: 288px' : 'width: 110px'">
+          <search-field :width="mdAndUp ? '288px' : '110px'" />
         </div>
         <div class="ml-2">
           <v-btn
@@ -101,6 +101,7 @@ import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
 import SubscriptionImportDialog from "@/components/subscriptions/SubscriptionImportDialog.vue";
 import SearchField from "../default/SearchField.vue";
 import SubscriptionCategoriesDialog from "@/components/subscriptions/SubscriptionCategoriesDialog.vue";
+import { useDisplay } from "vuetify";
 
 const headers = [
   { title: "Sub nr.", key: "id", style: "bold" },
@@ -247,5 +248,7 @@ onImportData;
 const onSelectedSubscription = function (item: any, index: number) {
   router.push({ name: "subscription-details", query: { id: item.id } });
 };
+
+const { mdAndUp } = useDisplay();
 </script>
 <style scoped></style>

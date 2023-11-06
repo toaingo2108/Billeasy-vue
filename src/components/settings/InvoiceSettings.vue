@@ -1,16 +1,18 @@
 <template>
   <div class="w-100 h-100 pt-8 d-flex flex-column">
-    <v-alert
-      class="mb-5 app-regular-font font-14 mx-8"
-      icon="mdi-alert-circle-outline"
-      text="Here you set default settings for your invoices. These settings will be applied to all invoices automatically, but can be overwritten in each respective invoice and invoice template."
-      variant="outlined"
-      rounded="xl"
-      color="#0D0D1E"
-      width="632"
-      style="border-color: #8b8ba9; background-color: white"
-    />
-    <div class="mx-8">
+    <div class="px-8 me-6">
+      <v-alert
+        class="mb-5 app-regular-font font-14"
+        icon="mdi-alert-circle-outline"
+        text="Here you set default settings for your invoices. These settings will be applied to all invoices automatically, but can be overwritten in each respective invoice and invoice template."
+        variant="outlined"
+        rounded="xl"
+        color="#0D0D1E"
+        :width="mdAndUp ? 632 : '100%'"
+        style="border-color: #8b8ba9; background-color: white"
+      />
+    </div>
+    <div class="px-8">
       <v-row>
         <v-col cols="12" md="4">
           <v-card rounded="xl" class="pa-2">
@@ -566,6 +568,7 @@ const vatRate = ref(false);
 const includeOCR = ref(false);
 
 import { useRouter } from "vue-router";
+import { useDisplay } from "vuetify";
 
 const router = useRouter();
 
@@ -581,6 +584,8 @@ const onTodoCategory = function () {
 };
 
 const paymentMethods = ["Swish", "Bankgiro"];
+
+const { mdAndUp } = useDisplay();
 </script>
 <style scoped>
 div :deep(.v-chip__close) {

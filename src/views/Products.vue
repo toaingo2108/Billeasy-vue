@@ -6,15 +6,15 @@
         class="app-medium-font font-14 teal-font d-flex flex-row align-center"
       >
         <v-btn variant="plain" class="text-none">
-          <v-icon color="#20C39D" class="me-2">mdi-vector-square</v-icon
-          >Customize
+          <v-icon color="#20C39D" class="me-2">mdi-vector-square</v-icon>
+          Customize
         </v-btn>
       </div>
     </div>
     <div class="d-flex justify-between">
       <div class="d-flex">
-        <div style="width: 288px">
-          <search-field />
+        <div :style="mdAndUp ? 'width: 288px' : 'width: 110px'">
+          <search-field :width="mdAndUp ? '288px' : '110px'" />
         </div>
         <div class="ml-2">
           <v-btn
@@ -142,6 +142,7 @@ import AppDataTable from "@/components/default/AppDataTable.vue";
 import AppDataTableBottom from "@/components/default/AppDataTableBottom.vue";
 import SearchField from "@/components/default/SearchField.vue";
 import ItemMenu from "@/components/products/ProductItemMenu.vue";
+import { useDisplay } from "vuetify";
 
 const newProductDialog = ref(false);
 const editProductDialog = ref(false);
@@ -519,5 +520,7 @@ const onImportData = function () {
 const onProductCategories = function () {
   productCategoriesDialog.value = true;
 };
+
+const { mdAndUp } = useDisplay();
 </script>
 <style scoped></style>

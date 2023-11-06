@@ -7,7 +7,7 @@
       variant="outlined"
       rounded="xl"
       color="#0D0D1E"
-      width="632"
+      :width="mdAndUp ? 632 : 500"
       style="border-color: #8b8ba9; background-color: white"
     />
     <div class="mx-8">
@@ -330,8 +330,11 @@ const footerValue2 = ref(false);
 const autoUpdatePrice = ref(false);
 
 import { useRouter } from "vue-router";
+import { useDisplay } from "vuetify";
 
 const router = useRouter();
+
+const { mdAndUp } = useDisplay();
 </script>
 <style scoped>
 div :deep(.v-chip__close) {
