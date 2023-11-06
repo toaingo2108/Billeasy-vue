@@ -1,24 +1,33 @@
 <template>
   <div class="w-100 d-flex flex-column">
-    <div class="bg-landing" style="height: 1290px">
+    <div
+      class="bg-landing"
+      :style="mdAndUp ? 'height: 1290px' : 'height: 850px'"
+    >
       <div class="d-flex flex-row">
         <div>
           <v-img
-            width="120"
-            height="104"
+            :width="mdAndUp ? 120 : 60"
+            :height="mdAndUp ? 104 : 52"
             src="@/assets/logo.png"
-            class="mt-10 ms-15"
+            class="mt-10"
+            :class="mdAndUp ? 'ms-15' : 'ms-2'"
           />
         </div>
         <v-spacer />
         <div
           class="d-flex flex-row"
-          style="margin-top: 72px; margin-right: 95px"
+          :style="
+            mdAndUp
+              ? 'margin-top: 72px; margin-right: 95px'
+              : 'margin-top: 50px; margin-right: 30px'
+          "
         >
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none"
+            class="app-regular-font text-none"
+            :class="mdAndUp ? 'font-16' : 'font-8'"
             color="white"
             @click="goToFeatures"
           >
@@ -27,7 +36,8 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
             color="white"
             @click="goToAboutUs"
           >
@@ -36,7 +46,8 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
             color="white"
             @click="goToContact"
           >
@@ -45,24 +56,26 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
             color="white"
             @click="goToPricing"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
           >
             Pricing
           </v-btn>
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
             color="white"
             @click="goToBlog"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
           >
             Blog
           </v-btn>
           <v-btn
             flat
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
             rounded="lg"
             style="
               background-color: #20c39d;
@@ -72,6 +85,7 @@
               max-height: 40px;
             "
             @click="goToLogin"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
           >
             Login
           </v-btn>
@@ -79,15 +93,21 @@
       </div>
       <div class="d-flex flex-column align-center">
         <div
-          class="font-80 app-semibold-font white-font text-center"
+          class="app-semibold-font white-font text-center"
           style="margin-top: 160px; line-height: 1.2"
+          :class="mdAndUp ? 'font-80' : 'font-40'"
         >
           Corporate monitoring<br />
           on Autopilot
         </div>
         <div
-          class="font-20 white-font text-center app-medium-font"
-          style="width: 772px; margin-top: 64px"
+          class="white-font text-center app-medium-font"
+          :style="
+            mdAndUp
+              ? 'width: 772px; margin-top: 64px'
+              : 'width: 100%; margin-top: 64px; padding-left:30px; padding-right: 30px;'
+          "
+          :class="mdAndUp ? 'font-20' : 'font-12'"
         >
           Your own AI powered assistant monitoring, alerting and taking actions
           on critical financial events. Stay on top of corporate filings for
@@ -130,14 +150,24 @@
       </div>
     </div>
     <div class="d-flex flex-column align-center">
-      <div style="margin-top: -500px">
-        <v-img width="1440" height="967" src="@/assets/landing/main_home.png" />
+      <div :style="mdAndUp ? 'margin-top: -500px' : 'margin-top: -200px'">
+        <v-img
+          :width="mdAndUp ? 1440 : '500px'"
+          :height="mdAndUp ? 967 : '335px'"
+          src="@/assets/landing/main_home.png"
+        />
       </div>
-      <span class="font-56 dark-font app-semibold-font">
+      <span
+        class="dark-font app-semibold-font"
+        :class="mdAndUp ? 'font-56' : 'font-28'"
+      >
         How Billeasy Works
       </span>
       <div style="margin-top: 80px; margin-bottom: 190px">
-        <div class="d-flex flex-row justify-center">
+        <div
+          class="d-flex justify-center"
+          :class="mdAndUp ? 'flex-row' : 'flex-column'"
+        >
           <v-card
             color="#0D0D1E"
             width="501"
@@ -175,6 +205,7 @@
             rounded="xl"
             elevation="0"
             class="d-flex flex-column align-center justify-center mx-6"
+            :class="mdAndUp ? '' : 'mt-5'"
           >
             <span
               style="
@@ -204,6 +235,7 @@
             rounded="xl"
             elevation="0"
             class="d-flex flex-column align-center justify-center mx-6"
+            :class="mdAndUp ? '' : 'mt-5'"
           >
             <span
               style="
@@ -233,7 +265,8 @@
     <div class="bg-landing d-flex flex-column align-center">
       <span
         class="font-56 white-font app-semibold-font"
-        style="margin-top: 90px"
+        :style="mdAndUp ? 'margin-top: 90px' : 'margin-top: 45px'"
+        :class="mdAndUp ? 'font-56' : 'font-28'"
       >
         What problems does Billeasy solve?
       </span>
@@ -246,37 +279,43 @@
             style="width: 595px"
           >
             <div
-              class="font-24 white-font app-medium-font mx-10 d-flex flex-row"
+              class="white-font app-medium-font mx-10 d-flex flex-row"
+              :class="mdAndUp ? 'font-24' : 'font-12'"
             >
               <v-icon color="#20C39D" class="me-2">mdi-check</v-icon>
               Bevaka alla dina bolagsengagemang
             </div>
             <div
-              class="font-24 white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              class="white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              :class="mdAndUp ? 'font-24' : 'font-12'"
             >
               <v-icon color="#20C39D" class="me-2">mdi-check</v-icon>
               Håll koll på dina kunder, leverantörer och konkurrenter
             </div>
             <div
-              class="font-24 white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              class="white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              :class="mdAndUp ? 'font-24' : 'font-12'"
             >
               <v-icon color="#20C39D" class="me-2">mdi-check</v-icon>
               Få notiser på tidiga signaler och undvik onödiga kreditförluster
             </div>
             <div
-              class="font-24 white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              class="white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              :class="mdAndUp ? 'font-24' : 'font-12'"
             >
               <v-icon color="#20C39D" class="me-2">mdi-check</v-icon>
               Automatisera Fodringsanmälningar för kundkonkurser
             </div>
             <div
-              class="font-24 white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              class="white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              :class="mdAndUp ? 'font-24' : 'font-12'"
             >
               <v-icon color="#20C39D" class="me-2">mdi-check</v-icon>
               Bygg upp smarta logikregler vid bevakningar
             </div>
             <div
-              class="font-24 white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              class="white-font app-medium-font mx-10 mt-7 d-flex flex-row"
+              :class="mdAndUp ? 'font-24' : 'font-12'"
             >
               <v-icon color="#20C39D" class="me-2">mdi-check</v-icon>
               Bevaka marknad och industritrender
@@ -301,10 +340,12 @@
             <div
               class="d-flex flex-column"
               style="
-                max-width: 640px;
+                max-width: 700px;
                 margin-top: 128px;
                 margin-bottom: 120px;
                 width: 100%;
+                padding-left: 30px;
+                padding-right: 30px;
               "
             >
               <div>
@@ -316,7 +357,7 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
                 >Self Service Portal</span
               >
               <span class="font-18 app-medium-font shade-font mt-6"
@@ -340,10 +381,12 @@
             <div
               class="d-flex flex-column"
               style="
-                max-width: 640px;
+                max-width: 700px;
                 margin-top: 128px;
                 margin-bottom: 96px;
                 width: 100%;
+                padding-left: 30px;
+                padding-right: 30px;
               "
             >
               <div>
@@ -355,9 +398,10 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="width: 640px"
-                >Customizable Portal</span
+                style="100%"
               >
+                Customizable Portal
+              </span>
               <span class="font-18 app-medium-font shade-font mt-6"
                 >Fully control which products and categories are visible to
                 which customers.</span
@@ -367,7 +411,12 @@
           <div class="w-100 d-flex flex-row align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="width: 640px; margin-bottom: 96px"
+              style="
+                width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-bottom: 96px;
+              "
             >
               <div>
                 <v-img
@@ -378,9 +427,10 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="width: 640px"
-                >Customer Specific Pricing</span
+                style="width: 100%"
               >
+                Customer Specific Pricing
+              </span>
               <span class="font-18 app-medium-font shade-font mt-6"
                 >Set buyer-specific prices and assign them right to the company
                 profile</span
@@ -390,7 +440,12 @@
           <div class="w-100 d-flex flex-row align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="width: 640px; margin-bottom: 96px"
+              style="
+                width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-bottom: 96px;
+              "
             >
               <div>
                 <v-img
@@ -401,7 +456,7 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="width: 640px"
+                style="width: 100%"
                 >Customer Segment</span
               >
               <span class="font-18 app-medium-font shade-font mt-6"
@@ -413,7 +468,12 @@
           <div class="w-100 d-flex flex-row align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="width: 640px; margin-bottom: 96px"
+              style="
+                width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-bottom: 96px;
+              "
             >
               <div>
                 <v-img
@@ -424,7 +484,7 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="width: 640px"
+                style="width: 100%"
               >
                 Campaign & Communication Tools
               </span>
@@ -463,7 +523,13 @@
           <div class="w-100 d-flex flex-column align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 128px; width: 100%"
+              style="
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-top: 128px;
+                width: 100%;
+              "
             >
               <div>
                 <v-img
@@ -474,7 +540,7 @@
               </div>
               <span
                 class="font-32 white-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
                 >Helpdesk & RMA Support</span
               >
               <span class="font-18 app-medium-font light-font mt-6"
@@ -486,7 +552,13 @@
             </div>
             <div
               class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 80px; width: 100%"
+              style="
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-top: 80px;
+                width: 100%;
+              "
             >
               <div>
                 <v-img
@@ -497,7 +569,7 @@
               </div>
               <span
                 class="font-32 white-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
                 >Helpdesk & RMA Support</span
               >
               <span class="font-18 app-medium-font light-font mt-6"
@@ -509,7 +581,9 @@
             <div
               class="d-flex flex-column"
               style="
-                max-width: 640px;
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
                 margin-top: 80px;
                 margin-bottom: 80px;
                 width: 100%;
@@ -524,7 +598,7 @@
               </div>
               <span
                 class="font-32 white-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
               >
                 Accounting & ERP Integration
               </span>
@@ -580,7 +654,13 @@
           <div class="w-100 d-flex flex-column align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 194px; width: 100%"
+              style="
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-top: 194px;
+                width: 100%;
+              "
             >
               <div>
                 <v-img
@@ -591,7 +671,7 @@
               </div>
               <span
                 class="font-32 white-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
               >
                 BankID Signing
               </span>
@@ -602,7 +682,13 @@
             </div>
             <div
               class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 80px; width: 100%"
+              style="
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-top: 80px;
+                width: 100%;
+              "
             >
               <div>
                 <v-img
@@ -613,7 +699,7 @@
               </div>
               <span
                 class="font-32 white-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
               >
                 Customer Credit Control
               </span>
@@ -625,7 +711,9 @@
             <div
               class="d-flex flex-column"
               style="
-                max-width: 640px;
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
                 margin-top: 80px;
                 margin-bottom: 80px;
                 width: 100%;
@@ -640,7 +728,7 @@
               </div>
               <span
                 class="font-32 white-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
               >
                 Analytics
               </span>
@@ -678,69 +766,81 @@
       <div style="margin-top: 144px; max-width: 1600px; margin-bottom: 192px">
         <v-row>
           <v-col cols="12" md="4">
-            <div class="bg-card bg-dark">
-              <div style="margin-top: 80px">
-                <v-img
-                  width="120"
-                  height="120"
-                  src="@/assets/sample/profile2.png"
-                />
+            <div class="d-flex flex-row align-center justify-center">
+              <div class="bg-card bg-dark">
+                <div style="margin-top: 80px">
+                  <v-img
+                    width="120"
+                    height="120"
+                    src="@/assets/sample/profile2.png"
+                  />
+                </div>
+                <span class="font-32 teal-font mt-12 app-semibold-font"
+                  >Jane Cooper</span
+                >
+                <span class="font-24 teal-font app-medium-font"
+                  >Designation</span
+                >
+                <span class="light-font font-18 app-medium-font mt-10 mx-15"
+                  >Praesent molestie massa eu auctor tristique. Quisque vitae
+                  massa ut elit elementum bibendum. Vivamus non tempus dui.
+                  Curabitur tincidunt massa risus, mollis molestie tortor
+                  egestas vel. Pellentesque at sodales eros, aliquam iaculis
+                  ligula. Morbi non dolor tellus.
+                </span>
               </div>
-              <span class="font-32 teal-font mt-12 app-semibold-font"
-                >Jane Cooper</span
-              >
-              <span class="font-24 teal-font app-medium-font">Designation</span>
-              <span class="light-font font-18 app-medium-font mt-10 mx-15"
-                >Praesent molestie massa eu auctor tristique. Quisque vitae
-                massa ut elit elementum bibendum. Vivamus non tempus dui.
-                Curabitur tincidunt massa risus, mollis molestie tortor egestas
-                vel. Pellentesque at sodales eros, aliquam iaculis ligula. Morbi
-                non dolor tellus.
-              </span>
             </div>
           </v-col>
           <v-col cols="12" md="4">
-            <div class="bg-card-dark bg-white">
-              <div style="margin-top: 80px">
-                <v-img
-                  width="120"
-                  height="120"
-                  src="@/assets/sample/profile3.png"
-                />
+            <div class="d-flex flex-row align-center justify-center">
+              <div class="bg-card-dark bg-white">
+                <div style="margin-top: 80px">
+                  <v-img
+                    width="120"
+                    height="120"
+                    src="@/assets/sample/profile3.png"
+                  />
+                </div>
+                <span class="font-32 teal-font mt-12 app-semibold-font">
+                  Wade Warren
+                </span>
+                <span class="font-24 teal-font app-medium-font"
+                  >Designation</span
+                >
+                <span class="light-font font-18 app-medium-font mt-10 mx-15"
+                  >Praesent molestie massa eu auctor tristique. Quisque vitae
+                  massa ut elit elementum bibendum. Vivamus non tempus dui.
+                  Curabitur tincidunt massa risus, mollis molestie tortor
+                  egestas vel. Pellentesque at sodales eros, aliquam iaculis
+                  ligula. Morbi non dolor tellus.
+                </span>
               </div>
-              <span class="font-32 teal-font mt-12 app-semibold-font">
-                Wade Warren
-              </span>
-              <span class="font-24 teal-font app-medium-font">Designation</span>
-              <span class="light-font font-18 app-medium-font mt-10 mx-15"
-                >Praesent molestie massa eu auctor tristique. Quisque vitae
-                massa ut elit elementum bibendum. Vivamus non tempus dui.
-                Curabitur tincidunt massa risus, mollis molestie tortor egestas
-                vel. Pellentesque at sodales eros, aliquam iaculis ligula. Morbi
-                non dolor tellus.
-              </span>
             </div>
           </v-col>
           <v-col cols="12" md="4">
-            <div class="bg-card-dark bg-white">
-              <div style="margin-top: 80px">
-                <v-img
-                  width="120"
-                  height="120"
-                  src="@/assets/sample/profile4.png"
-                />
+            <div class="d-flex flex-row align-center justify-center">
+              <div class="bg-card-dark bg-white">
+                <div style="margin-top: 80px">
+                  <v-img
+                    width="120"
+                    height="120"
+                    src="@/assets/sample/profile4.png"
+                  />
+                </div>
+                <span class="font-32 teal-font mt-12 app-semibold-font">
+                  Annette Black
+                </span>
+                <span class="font-24 teal-font app-medium-font"
+                  >Designation</span
+                >
+                <span class="light-font font-18 app-medium-font mt-10 mx-15"
+                  >Praesent molestie massa eu auctor tristique. Quisque vitae
+                  massa ut elit elementum bibendum. Vivamus non tempus dui.
+                  Curabitur tincidunt massa risus, mollis molestie tortor
+                  egestas vel. Pellentesque at sodales eros, aliquam iaculis
+                  ligula. Morbi non dolor tellus.
+                </span>
               </div>
-              <span class="font-32 teal-font mt-12 app-semibold-font">
-                Annette Black
-              </span>
-              <span class="font-24 teal-font app-medium-font">Designation</span>
-              <span class="light-font font-18 app-medium-font mt-10 mx-15"
-                >Praesent molestie massa eu auctor tristique. Quisque vitae
-                massa ut elit elementum bibendum. Vivamus non tempus dui.
-                Curabitur tincidunt massa risus, mollis molestie tortor egestas
-                vel. Pellentesque at sodales eros, aliquam iaculis ligula. Morbi
-                non dolor tellus.
-              </span>
             </div>
           </v-col>
         </v-row>
@@ -750,43 +850,47 @@
       <span
         class="font-56 dark-font app-semibold-font"
         style="margin-top: 112px; margin-bottom: 112px"
+        :class="mdAndUp ? 'font-56' : 'font-28'"
       >
         Integrated with leading ERP's
       </span>
       <div
-        class="d-flex flex-row align-center justify-around w-100"
-        style="margin-bottom: 147px"
+        class="w-100 d-flex flex-column"
+        :class="mdAndUp ? 'align-center' : ''"
+        style="margin-bottom: 147px; overflow: auto"
       >
-        <div>
-          <v-btn flat rounded="circle" variant="text" class="button-64">
-            <v-img width="64" height="64" src="@/assets/landing/left.svg" />
-          </v-btn>
-        </div>
-        <div @click="goToFortnox">
-          <v-img
-            width="240"
-            height="121"
-            src="@/assets/landing/integrated_logo1.png"
-          />
-        </div>
-        <div>
-          <v-img
-            width="240"
-            height="63"
-            src="@/assets/landing/integrated_logo2.png"
-          />
-        </div>
-        <div>
-          <v-img
-            width="240"
-            height="93"
-            src="@/assets/landing/integrated_logo3.png"
-          />
-        </div>
-        <div>
-          <v-btn flat rounded="circle" variant="text" class="button-64">
-            <v-img width="64" height="64" src="@/assets/landing/right.svg" />
-          </v-btn>
+        <div class="px-5 d-flex flex-row">
+          <div class="mx-2">
+            <v-btn flat rounded="circle" variant="text" class="button-64">
+              <v-img width="64" height="64" src="@/assets/landing/left.svg" />
+            </v-btn>
+          </div>
+          <div @click="goToFortnox" class="mx-2">
+            <v-img
+              width="240"
+              height="121"
+              src="@/assets/landing/integrated_logo1.png"
+            />
+          </div>
+          <div class="mx-2">
+            <v-img
+              width="240"
+              height="63"
+              src="@/assets/landing/integrated_logo2.png"
+            />
+          </div>
+          <div class="mx-2">
+            <v-img
+              width="240"
+              height="93"
+              src="@/assets/landing/integrated_logo3.png"
+            />
+          </div>
+          <div class="mx-2">
+            <v-btn flat rounded="circle" variant="text" class="button-64">
+              <v-img width="64" height="64" src="@/assets/landing/right.svg" />
+            </v-btn>
+          </div>
         </div>
       </div>
     </div>
@@ -833,232 +937,256 @@
       <div style="max-width: 1600px">
         <v-row>
           <v-col cols="12" md="4">
-            <v-card
-              rounded="xl"
-              elevation="0"
-              color="white"
-              style="width: 501.33px; height: 784px; padding: 48px"
-            >
-              <v-card-title class="font-24 app-medium-font dark-font pa-0 mt-4">
-                Standard Package
-              </v-card-title>
-              <v-card-text style="line-height: 1; padding: 0; margin-top: 40px">
-                <span class="font-72 dark-font app-bold-font">780</span>
-                <span class="font-32 blue-600 app-regular-font">/ month</span>
-              </v-card-text>
-              <v-card-text class="pa-0">
-                <v-btn
-                  flat
-                  class="text-none font-16 app-semibold-font"
-                  color="white"
-                  rounded="lg"
-                  style="
-                    background-color: #20c39d !important;
-                    color: white !important;
-                    height: 56px;
-                    margin-top: 64px;
-                  "
-                  block
+            <div class="d-flex flex-column align-center">
+              <v-card
+                rounded="xl"
+                elevation="0"
+                color="white"
+                style="width: 501.33px; height: 784px; padding: 48px"
+              >
+                <v-card-title
+                  class="font-24 app-medium-font dark-font pa-0 mt-4"
                 >
-                  Sign Up
-                </v-btn>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="margin-top: 64px; height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  Up to 20 company watches
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  Up to 2 users
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  Up to 2 Automation Rules
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  Basic Analytics
-                </span>
-              </v-card-text>
-            </v-card>
+                  Standard Package
+                </v-card-title>
+                <v-card-text
+                  style="line-height: 1; padding: 0; margin-top: 40px"
+                >
+                  <span class="font-72 dark-font app-bold-font">780</span>
+                  <span class="font-32 blue-600 app-regular-font">/ month</span>
+                </v-card-text>
+                <v-card-text class="pa-0">
+                  <v-btn
+                    flat
+                    class="text-none font-16 app-semibold-font"
+                    color="white"
+                    rounded="lg"
+                    style="
+                      background-color: #20c39d !important;
+                      color: white !important;
+                      height: 56px;
+                      margin-top: 64px;
+                    "
+                    block
+                  >
+                    Sign Up
+                  </v-btn>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="margin-top: 64px; height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    Up to 20 company watches
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    Up to 2 users
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    Up to 2 Automation Rules
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    Basic Analytics
+                  </span>
+                </v-card-text>
+              </v-card>
+            </div>
           </v-col>
           <v-col cols="12" md="4">
-            <v-card
-              rounded="xl"
-              elevation="0"
-              color="#0D0D1E"
-              style="width: 501.33px; height: 784px; padding: 48px"
-            >
-              <v-card-title
-                class="font-24 app-medium-font white-font pa-0 mt-4"
+            <div class="d-flex flex-column align-center">
+              <v-card
+                rounded="xl"
+                elevation="0"
+                color="#0D0D1E"
+                style="width: 501.33px; height: 784px; padding: 48px"
               >
-                Standard Package
-              </v-card-title>
-              <v-card-text style="line-height: 1; padding: 0; margin-top: 40px">
-                <span class="font-72 white-font app-bold-font">1200</span>
-                <span class="font-32 blue-600 app-regular-font">/ month</span>
-              </v-card-text>
-              <v-card-text class="pa-0">
-                <v-btn
-                  flat
-                  class="text-none font-16 app-semibold-font"
-                  color="white"
-                  rounded="lg"
-                  style="
-                    background-color: #20c39d !important;
-                    color: white !important;
-                    height: 56px;
-                    margin-top: 64px;
-                  "
-                  block
+                <v-card-title
+                  class="font-24 app-medium-font white-font pa-0 mt-4"
                 >
-                  Sign Up
-                </v-btn>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="margin-top: 64px; height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 light-font app-medium-font ms-4">
-                  Up to 50 company watches
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 light-font app-medium-font ms-4">
-                  Up to 5 users
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 light-font app-medium-font ms-4">
-                  Up till 5 Automation Rules
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 light-font app-medium-font ms-4">
-                  Extended Analytics
-                </span>
-              </v-card-text>
-            </v-card>
+                  Standard Package
+                </v-card-title>
+                <v-card-text
+                  style="line-height: 1; padding: 0; margin-top: 40px"
+                >
+                  <span class="font-72 white-font app-bold-font">1200</span>
+                  <span class="font-32 blue-600 app-regular-font">/ month</span>
+                </v-card-text>
+                <v-card-text class="pa-0">
+                  <v-btn
+                    flat
+                    class="text-none font-16 app-semibold-font"
+                    color="white"
+                    rounded="lg"
+                    style="
+                      background-color: #20c39d !important;
+                      color: white !important;
+                      height: 56px;
+                      margin-top: 64px;
+                    "
+                    block
+                  >
+                    Sign Up
+                  </v-btn>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="margin-top: 64px; height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 light-font app-medium-font ms-4">
+                    Up to 50 company watches
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 light-font app-medium-font ms-4">
+                    Up to 5 users
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 light-font app-medium-font ms-4">
+                    Up till 5 Automation Rules
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 light-font app-medium-font ms-4">
+                    Extended Analytics
+                  </span>
+                </v-card-text>
+              </v-card>
+            </div>
           </v-col>
           <v-col cols="12" md="4">
-            <v-card
-              rounded="xl"
-              elevation="0"
-              color="white"
-              style="width: 501.33px; height: 784px; padding: 48px"
-            >
-              <v-card-title class="font-24 app-medium-font dark-font pa-0 mt-4">
-                ENTERPRISE Package
-              </v-card-title>
-              <v-card-text style="line-height: 1; padding: 0; margin-top: 40px">
-                <span class="font-72 dark-font app-bold-font">780</span>
-                <span class="font-32 blue-600 app-regular-font">/ month</span>
-              </v-card-text>
-              <v-card-text class="pa-0">
-                <v-btn
-                  flat
-                  class="text-none font-16 app-semibold-font"
-                  color="white"
-                  rounded="lg"
-                  style="
-                    background-color: #20c39d !important;
-                    color: white !important;
-                    height: 56px;
-                    margin-top: 64px;
-                  "
-                  block
+            <div class="d-flex flex-column align-center">
+              <v-card
+                rounded="xl"
+                elevation="0"
+                color="white"
+                style="width: 501.33px; height: 784px; padding: 48px"
+              >
+                <v-card-title
+                  class="font-24 app-medium-font dark-font pa-0 mt-4"
                 >
-                  Sign Up
-                </v-btn>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="margin-top: 64px; height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  Up to 200 company watches
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  Up to 10 users
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  Unlimited Automation Rules
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  AI Assistant
-                </span>
-              </v-card-text>
-              <v-card-text
-                class="d-flex flex-row align-center pa-0"
-                style="height: 68px"
-              >
-                <v-icon color="#20C39D">mdi-check</v-icon>
-                <span class="font-24 dark-font app-medium-font ms-4">
-                  Premium analytics
-                </span>
-              </v-card-text>
-            </v-card>
+                  ENTERPRISE Package
+                </v-card-title>
+                <v-card-text
+                  style="line-height: 1; padding: 0; margin-top: 40px"
+                >
+                  <span class="font-72 dark-font app-bold-font">780</span>
+                  <span class="font-32 blue-600 app-regular-font">/ month</span>
+                </v-card-text>
+                <v-card-text class="pa-0">
+                  <v-btn
+                    flat
+                    class="text-none font-16 app-semibold-font"
+                    color="white"
+                    rounded="lg"
+                    style="
+                      background-color: #20c39d !important;
+                      color: white !important;
+                      height: 56px;
+                      margin-top: 64px;
+                    "
+                    block
+                  >
+                    Sign Up
+                  </v-btn>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="margin-top: 64px; height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    Up to 200 company watches
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    Up to 10 users
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    Unlimited Automation Rules
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    AI Assistant
+                  </span>
+                </v-card-text>
+                <v-card-text
+                  class="d-flex flex-row align-center pa-0"
+                  style="height: 68px"
+                >
+                  <v-icon color="#20C39D">mdi-check</v-icon>
+                  <span class="font-24 dark-font app-medium-font ms-4">
+                    Premium analytics
+                  </span>
+                </v-card-text>
+              </v-card>
+            </div>
           </v-col>
         </v-row>
       </div>
       <span
         class="font-56 dark-font app-semibold-font"
         style="margin-top: 284px"
+        :class="mdAndUp ? 'font-56' : 'font-28'"
       >
         Frequently Asked Questions
       </span>
-      <div style="width: 1104px; margin-top: 80px; margin-bottom: 189px">
+      <div
+        style="margin-top: 80px; margin-bottom: 189px"
+        :style="
+          mdAndUp
+            ? 'width: 1104px'
+            : 'width: 100%; padding-left: 30px; padding-right: 30px'
+        "
+      >
         <v-card
           elevation="0"
           style="
@@ -1105,15 +1233,30 @@
         <v-row>
           <v-col cols="12" md="6">
             <div class="d-flex flex-column justify-center w-100 align-center">
-              <div style="width: 603px">
-                <div class="font-32 light-font app-medium-font d-flex flex-row">
+              <div
+                :style="
+                  mdAndUp
+                    ? 'width: 603px'
+                    : 'width: 100%; padding-left: 30px; padding-right: 30px'
+                "
+              >
+                <div
+                  class="light-font app-medium-font d-flex flex-row"
+                  :class="mdAndUp ? 'font-32' : 'font-16'"
+                >
                   Seamlessly interact with any piece of corporate filings
                   data—from bankrupsy filings, notifications to case details,
                   emails, parsed PDFs, aggregate statistics, and case
                   filing—within a single platform.
                 </div>
               </div>
-              <div style="width: 603px">
+              <div
+                :style="
+                  mdAndUp
+                    ? 'width: 603px'
+                    : 'width: 100%; padding-left: 30px; padding-right: 30px'
+                "
+              >
                 <v-btn
                   flat
                   class="text-none font-16 app-semibold-font"
@@ -1150,7 +1293,13 @@
       <v-row style="margin-bottom: 108px">
         <v-col cols="12" md="5">
           <div class="d-flex flex-column align-center justify-center">
-            <div style="width: 458px">
+            <div
+              :style="
+                mdAndUp
+                  ? 'width: 458px'
+                  : 'width: 100%; padding-left: 30px; padding-right: 30px'
+              "
+            >
               <div>
                 <v-img width="120" height="104" src="@/assets/logo.png" />
               </div>
@@ -1166,8 +1315,15 @@
           </div>
         </v-col>
         <v-col cols="12" md="7">
-          <div class="d-flex flex-row">
-            <div class="d-flex flex-column" style="width: 388px">
+          <div class="d-flex" :class="mdAndUp ? 'flex-row' : 'flex-column'">
+            <div
+              class="d-flex flex-column"
+              :style="
+                mdAndUp
+                  ? 'width: 388px'
+                  : 'width: 100%; padding-left: 30px; padding-right: 30px'
+              "
+            >
               <span class="font-28 app-semibold-font white-font">
                 Resources
               </span>
@@ -1193,7 +1349,14 @@
                 Partnerships
               </span>
             </div>
-            <div class="d-flex flex-column">
+            <div
+              class="d-flex flex-column"
+              :style="
+                mdAndUp
+                  ? ''
+                  : 'width: 100%; padding-left: 30px; padding-right: 30px; padding-top: 30px'
+              "
+            >
               <span class="font-28 app-semibold-font white-font">
                 Features
               </span>
@@ -1235,10 +1398,10 @@
         </v-col>
       </v-row>
       <div
-        style="
-          margin-left: calc(20.8333% - 236px);
-          margin-right: calc(20.8333% - 236px);
-          margin-bottom: 50px;
+        :style="
+          mdAndUp
+            ? 'margin-left: calc(20.8333% - 236px); margin-right: calc(20.8333% - 236px); margin-bottom: 50px;'
+            : 'width: 100%; padding-left: 30px;padding-right: 30px; padding-bottom: 30px'
         "
       >
         <v-divider color="#59597B" class="mb-5" />
@@ -1255,7 +1418,9 @@ import { ref, reactive } from "vue";
 import MinusIcon from "@/assets/landing/minus.svg";
 import PlusIcon from "@/assets/landing/plus.svg";
 import { useRouter } from "vue-router";
+import { useDisplay } from "vuetify";
 
+const { mdAndUp } = useDisplay();
 const option = ref(0);
 const onSelectOption = (index: number) => {
   option.value = index;

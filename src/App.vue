@@ -70,13 +70,16 @@
   font-size: 24px !important;
 }
 .font-28 {
-  font-size: 24px !important;
+  font-size: 28px !important;
 }
 .font-30 {
   font-size: 30px !important;
 }
 .font-32 {
   font-size: 32px !important;
+}
+.font-40 {
+  font-size: 40px !important;
 }
 .font-48 {
   font-size: 48px !important;

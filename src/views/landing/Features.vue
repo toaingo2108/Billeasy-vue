@@ -2,23 +2,29 @@
   <div class="w-100 d-flex flex-column">
     <div class="bg-landing">
       <div class="d-flex flex-row">
-        <div @click="goHome" class="cursor-pointer">
+        <div>
           <v-img
-            width="120"
-            height="104"
+            :width="mdAndUp ? 120 : 60"
+            :height="mdAndUp ? 104 : 52"
             src="@/assets/logo.png"
-            class="mt-10 ms-15"
+            class="mt-10"
+            :class="mdAndUp ? 'ms-15' : 'ms-2'"
           />
         </div>
         <v-spacer />
         <div
           class="d-flex flex-row"
-          style="margin-top: 72px; margin-right: 95px"
+          :style="
+            mdAndUp
+              ? 'margin-top: 72px; margin-right: 95px'
+              : 'margin-top: 50px; margin-right: 30px'
+          "
         >
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none selected-button"
+            class="app-regular-font text-none selected-button"
+            :class="mdAndUp ? 'font-16' : 'font-8'"
             color="white"
           >
             Features
@@ -26,7 +32,8 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
             color="white"
             @click="goToAboutUs"
           >
@@ -35,7 +42,8 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
             color="white"
             @click="goToContact"
           >
@@ -44,24 +52,26 @@
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
             color="white"
             @click="goToPricing"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
           >
             Pricing
           </v-btn>
           <v-btn
             flat
             variant="text"
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
             color="white"
             @click="goToBlog"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
           >
             Blog
           </v-btn>
           <v-btn
             flat
-            class="font-16 app-regular-font text-none ms-10"
+            class="app-regular-font text-none"
             rounded="lg"
             style="
               background-color: #20c39d;
@@ -71,6 +81,7 @@
               max-height: 40px;
             "
             @click="goToLogin"
+            :class="mdAndUp ? 'font-16 ms-10' : 'font-8 ms-2'"
           >
             Login
           </v-btn>
@@ -380,6 +391,8 @@
 <script lang="ts" setup>
 import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
+import { useDisplay } from "vuetify";
+const { mdAndUp } = useDisplay();
 
 const router = useRouter();
 const goHome = () => {
