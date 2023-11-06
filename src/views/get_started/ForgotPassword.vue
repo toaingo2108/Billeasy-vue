@@ -40,6 +40,9 @@
         style="max-width: 432px; margin-bottom: 95px"
         class="d-flex flex-column w-100"
       >
+        <div style="margin-top: 64px; margin-right: 82px" v-if="!mdAndUp">
+          <v-img width="120" height="104" src="@/assets/logo.png" />
+        </div>
         <v-btn
           variant="outlined"
           prepend-icon="mdi-chevron-left"

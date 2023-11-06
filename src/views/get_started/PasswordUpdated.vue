@@ -40,7 +40,10 @@
         style="max-width: 432px; margin-bottom: 95px"
         class="d-flex flex-column w-100 align-center"
       >
-        <div>
+        <!-- <div style="margin-top: 64px" v-if="!mdAndUp">
+          <v-img width="120" height="104" src="@/assets/logo.png" />
+        </div> -->
+        <div :class="mdAndUp ? '' : 'mt-15'">
           <v-img
             width="80"
             height="80"

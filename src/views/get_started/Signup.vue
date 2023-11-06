@@ -38,6 +38,9 @@
       style="overflow: auto"
     >
       <div class="d-flex flex-column w-100" style="padding: 64px">
+        <div style="margin-right: 82px" v-if="!mdAndUp">
+          <v-img width="120" height="104" src="@/assets/logo.png" />
+        </div>
         <span class="font-28 dark-font app-semibold-font">Sign Up</span>
         <span class="font-16 shade-font app-medium-font mt-4">
           Welcome to Billeasy. Create your account now!
