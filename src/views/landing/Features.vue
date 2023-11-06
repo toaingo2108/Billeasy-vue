@@ -89,15 +89,21 @@
       </div>
       <div class="d-flex flex-column align-center">
         <div
-          class="font-80 app-semibold-font white-font text-center"
+          class="app-semibold-font white-font text-center"
           style="margin-top: 160px; line-height: 1.2"
+          :class="mdAndUp ? 'font-80' : 'font-40'"
         >
           Big bold tagline here<br />
           about Features
         </div>
         <div
           class="font-20 white-font text-center app-medium-font"
-          style="width: 772px; margin-top: 64px; margin-bottom: 208px"
+          style="margin-top: 64px; margin-bottom: 208px"
+          :style="
+            mdAndUp
+              ? 'width: 772px;'
+              : 'width: 100%; padding-left: 30px; padding-right: 30px'
+          "
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nulla
           ipsum, gravida pellentesque massa nec, feugiat sagittis erat.
@@ -110,7 +116,13 @@
           <div class="w-100 d-flex flex-row align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
+              style="
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-top: 296px;
+                width: 100%;
+              "
             >
               <div>
                 <v-img
@@ -121,7 +133,7 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
                 >Feature Name</span
               >
               <span class="font-18 app-medium-font shade-font mt-6"
@@ -168,7 +180,13 @@
           <div class="w-100 d-flex flex-row align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
+              style="
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-top: 296px;
+                width: 100%;
+              "
             >
               <div>
                 <v-img
@@ -179,7 +197,7 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
                 >Feature Name</span
               >
               <span class="font-18 app-medium-font shade-font mt-6"
@@ -198,7 +216,13 @@
           <div class="w-100 d-flex flex-row align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
+              style="
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-top: 296px;
+                width: 100%;
+              "
             >
               <div>
                 <v-img
@@ -209,7 +233,7 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
                 >Feature Name</span
               >
               <span class="font-18 app-medium-font shade-font mt-6"
@@ -256,7 +280,13 @@
           <div class="w-100 d-flex flex-row align-center justify-center">
             <div
               class="d-flex flex-column"
-              style="max-width: 640px; margin-top: 296px; width: 100%"
+              style="
+                max-width: 700px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin-top: 296px;
+                width: 100%;
+              "
             >
               <div>
                 <v-img
@@ -267,7 +297,7 @@
               </div>
               <span
                 class="font-32 dark-font app-semibold-font mt-8"
-                style="max-width: 640px; width: 100%"
+                style="width: 100%"
                 >Feature Name</span
               >
               <span class="font-18 app-medium-font shade-font mt-6"

@@ -90,14 +90,21 @@
       </div>
       <div class="d-flex flex-column align-center">
         <div
-          class="font-80 app-semibold-font white-font text-center"
+          class="app-semibold-font white-font text-center"
           style="margin-top: 160px; line-height: 1.2"
+          :class="mdAndUp ? 'font-80' : 'font-40'"
         >
           About Billeasy
         </div>
         <div
-          class="font-20 white-font text-center app-medium-font"
-          style="width: 1152px; margin-top: 64px; margin-bottom: 208px"
+          class="white-font text-center app-medium-font"
+          style="margin-top: 64px; margin-bottom: 208px"
+          :style="
+            mdAndUp
+              ? 'width: 1152px;'
+              : 'width: 100%; padding-left: 30px; padding-right: 30px'
+          "
+          :class="mdAndUp ? 'font-20' : 'font-14'"
         >
           White label refers to a product or service that is developed by one
           company and sold to another company that puts its own logo and brand
@@ -123,12 +130,18 @@
       <span
         class="font-56 dark-font app-semibold-font"
         style="margin-top: 192px"
+        :class="mdAndUp ? 'font-56' : 'font-28'"
       >
         Benefits
       </span>
       <span
         class="font-18 app-medium-font shade-font"
         style="width: 1120px; margin-top: 48px"
+        :style="
+          mdAndUp
+            ? 'width: 1120px'
+            : 'width: 100%; padding-left: 30px; padding-right: 30px'
+        "
         >Our mission is to empower businesses who are already active with B2B
         commerce or looking to start with their B2B offerings by providing a one
         stop shop solution which requires no major technical knowledge or
@@ -136,7 +149,10 @@
         to make your B2B commerce enjoyable.</span
       >
       <div style="margin-top: 96px">
-        <div class="d-flex flex-row justify-center">
+        <div
+          class="d-flex justify-center"
+          :class="mdAndUp ? 'flex-row' : 'flex-column'"
+        >
           <v-card
             color="#0D0D1E"
             width="501"
@@ -171,6 +187,7 @@
             rounded="xl"
             elevation="0"
             class="d-flex flex-column align-center justify-center mx-6"
+            :style="mdAndUp ? '' : 'margin-top: 48px'"
           >
             <span
               style="
@@ -198,6 +215,7 @@
             rounded="xl"
             elevation="0"
             class="d-flex flex-column align-center justify-center mx-6"
+            :style="mdAndUp ? '' : 'margin-top: 48px'"
           >
             <span
               style="
@@ -218,7 +236,11 @@
             </span>
           </v-card>
         </div>
-        <div class="d-flex flex-row justify-center" style="margin-top: 48px">
+        <div
+          class="d-flex justify-center"
+          style="margin-top: 48px"
+          :class="mdAndUp ? 'flex-row' : 'flex-column'"
+        >
           <v-card
             color="white"
             width="501"
@@ -252,6 +274,7 @@
             rounded="xl"
             elevation="0"
             class="d-flex flex-column align-center justify-center mx-6"
+            :style="mdAndUp ? '' : 'margin-top: 48px'"
           >
             <span
               style="
@@ -278,6 +301,7 @@
             rounded="xl"
             elevation="0"
             class="d-flex flex-column align-center justify-center mx-6"
+            :style="mdAndUp ? '' : 'margin-top: 48px'"
           >
             <span
               style="
