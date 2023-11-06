@@ -24,11 +24,11 @@
           >
             <span
               class="dark-font app-semibold-font"
-              :class="mdAndUp ? 'font-13' : 'font-8'"
+              :class="lgAndUp ? 'font-13' : mdAndUp ? 'font-11' : 'font-8'"
             >
               {{ header.title }}
             </span>
-            <v-icon color="#59597B" :size="mdAndUp ? 16 : 10"
+            <v-icon color="#59597B" :size="lgAndUp ? 16 : mdAndUp ? 14 : 10"
               >mdi-unfold-more-horizontal</v-icon
             >
           </div>
@@ -133,14 +133,14 @@
               >
                 <span
                   class="dark-font app-semibold-font px-1"
-                  :class="mdAndUp ? 'font-13' : 'font-8'"
+                  :class="lgAndUp ? 'font-13' : mdAndUp ? 'font-11' : 'font-8'"
                   v-if="header.style == 'bold'"
                 >
                   {{ item[`${header.key}`] }}
                 </span>
                 <span
                   class="shade-font app-medium-font px-1"
-                  :class="mdAndUp ? 'font-13' : 'font-8'"
+                  :class="lgAndUp ? 'font-13' : mdAndUp ? 'font-11' : 'font-8'"
                   v-else
                 >
                   {{ item[`${header.key}`] }}
@@ -177,7 +177,7 @@ const items = reactive(props.items);
 
 const isCheckedAll = ref(false);
 
-const { mdAndUp } = useDisplay();
+const { lgAndUp, mdAndUp } = useDisplay();
 
 watch(
   () => isCheckedAll.value,

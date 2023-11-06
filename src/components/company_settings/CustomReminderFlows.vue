@@ -1,7 +1,7 @@
 <template>
-  <v-card class="rounded-xl me-8 mt-8" elevation="0">
-    <v-card-title class="d-flex flex-row justify-between">
-      <div class="d-flex flex-column">
+  <v-card class="rounded-xl me-8 mt-8 responsive-card" elevation="0">
+    <v-card-title class="d-flex flex-row w-100">
+      <div class="d-flex flex-column flex-grow">
         <div
           class="app-semibold-font font-20 dark-font mt-6 mx-3 d-flex flex-row"
         >
@@ -14,7 +14,10 @@
           </div>
           Reminder Flows
         </div>
-        <div class="font-14 app-regular-font shade-font ms-3 mt-2">
+        <div
+          class="font-14 app-regular-font shade-font ms-3 mt-2"
+          style="width: 100px"
+        >
           Here you can create the flow of what's to happen when a<br />
           customer does not pay an invoice on time.
         </div>
@@ -31,7 +34,8 @@
             padding-top: 7px;
             padding-bottom: 7px;
           "
-          class="text-none font-14 app-medium-font"
+          class="text-none app-medium-font"
+          :class="mdAndUp ? 'font-14' : 'font-8'"
           @click="onAddNew"
           >Add Reminder Flow</v-btn
         >
@@ -149,6 +153,7 @@ import { ref, watch, watchEffect, reactive } from "vue";
 import ItemMenu from "./CustomerSubscriptionsPaymentsItemMenu.vue";
 import NewReminderFlowDialog from "../customers/NewReminderFlowDialog.vue";
 import EditReminderFlowDialog from "../customers/EditReminderFlowDialog.vue";
+import { useDisplay } from "vuetify";
 
 const newItem = reactive({
   name: "",
@@ -207,6 +212,44 @@ const editDialog = ref(false);
 const onEdit = () => {
   editDialog.value = true;
 };
+
+const { mdAndUp } = useDisplay();
 </script>
 
-<style scoped></style>
+<style scoped>
+@media (max-width: 810px) {
+  .responsive-card {
+    width: calc(100% - 250px);
+  }
+}
+@media (max-width: 820px) and (min-width: 811px) {
+  .responsive-card {
+    width: calc(100% - 240px);
+  }
+}
+@media (max-width: 911px) and (min-width: 821px) {
+  .responsive-card {
+    width: calc(100% - 200px);
+  }
+}
+@media (max-width: 960px) and (min-width: 911px) {
+  .responsive-card {
+    width: calc(100% - 146px);
+  }
+}
+@media (max-width: 1000px) and (min-width: 961px) {
+  .responsive-card {
+    width: calc(100% - 560px);
+  }
+}
+@media (max-width: 1230px) and (min-width: 1001px) {
+  .responsive-card {
+    width: calc(100% - 360px);
+  }
+}
+@media (max-width: 1420px) and (min-width: 1231px) {
+  .responsive-card {
+    width: calc(100% - 150px);
+  }
+}
+</style>

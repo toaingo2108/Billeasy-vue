@@ -65,9 +65,9 @@ import ProductCategoriesDialog from "@/components/products/ProductCategoriesDial
 import UsersList from "@/components/users/UsersList.vue";
 import RolesList from "@/components/users/RolesList.vue";
 import userIcon from "@/assets/svg/users/users_selected.svg";
-import userUnselectedIcon from "@/assets/svg/users/user_unselected.svg";
-import roleIcon from "@/assets/svg/users/role_selected.svg";
-import roleUnselectedIcon from "@/assets/svg/users/role_unselected.svg";
+import userUnselectedIcon from "@/assets/svg/users/users_unselected.svg";
+import roleIcon from "@/assets/svg/users/roles_selected.svg";
+import roleUnselectedIcon from "@/assets/svg/users/roles_unselected.svg";
 
 const newProductDialog = ref(false);
 const exportDialog = ref(false);
