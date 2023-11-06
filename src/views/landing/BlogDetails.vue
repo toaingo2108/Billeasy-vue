@@ -1,6 +1,6 @@
 <template>
   <div class="w-100 d-flex flex-column">
-    <div class="bg-landing">
+    <div class="bg-landing" :style="mdAndUp ? 'height: 867px;' : ''">
       <div class="d-flex flex-row">
         <div>
           <v-img
@@ -92,7 +92,14 @@
         class="w-100 d-flex flex-column align-center justify-center"
         style="margin-top: 100px"
       >
-        <div style="max-width: 1424px">
+        <div
+          style="
+            max-width: 1424px;
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+          "
+        >
           <div class="d-flex flex-row align-center">
             <v-btn flat variant="text" class="button-40" rounded="lg">
               <v-img
@@ -109,7 +116,11 @@
               >/ Product Updates</span
             >
           </div>
-          <div style="padding-top: 90px" class="d-flex flex-row align-center">
+          <div
+            style="padding-top: 90px"
+            class="d-flex align-center"
+            :class="mdAndUp ? 'flex-row' : 'flex-column'"
+          >
             <div>
               <v-img
                 width="576"
@@ -117,13 +128,20 @@
                 src="@/assets/landing/img_blog.png"
               />
             </div>
-            <div class="d-flex flex-column" style="margin-left: 64px">
-              <span class="font-32 app-semibold-font white-font">
+            <div
+              class="d-flex flex-column"
+              :style="mdAndUp ? 'margin-left: 64px' : 'margin-top: 30px'"
+            >
+              <span
+                class="app-semibold-font white-font"
+                :class="mdAndUp ? 'font-32' : 'font-20'"
+              >
                 What is B2B Portal?
               </span>
               <span
-                class="font-20 app-medium-font light-font mt-4"
+                class="app-medium-font light-font mt-4"
                 style="line-height: 1.5"
+                :class="mdAndUp ? 'font-20' : 'font-12'"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 nulla ipsum,<br />
@@ -133,7 +151,10 @@
                 pellentesque massa<br />
                 nec, feugiat sagittis......
               </span>
-              <div class="d-flex flex-row mt-8 align-center">
+              <div
+                class="d-flex flex-row mt-8 align-center"
+                :class="mdAndUp ? '' : 'mb-12'"
+              >
                 <div>
                   <v-img
                     width="40"
@@ -141,10 +162,14 @@
                     src="@/assets/sample/profile5.png"
                   />
                 </div>
-                <span class="font-20 white-font app-medium-font ms-4"
+                <span
+                  class="white-font app-medium-font ms-4"
+                  :class="mdAndUp ? 'font-20' : 'font-12'"
                   >Ryan Pollock</span
                 >
-                <span class="font-20 blue-600 app-medium-font ms-2"
+                <span
+                  class="blue-600 app-medium-font ms-2"
+                  :class="mdAndUp ? 'font-20' : 'font-12'"
                   >on Product Updates</span
                 >
               </div>
@@ -155,12 +180,10 @@
     </div>
     <div
       class="d-flex flex-column"
-      style="
-        margin-bottom: 156px;
-        margin-top: 112px;
-        margin-left: 240px;
-        max-width: 1216px;
-        margin-right: 240px;
+      :style="
+        mdAndUp
+          ? 'margin-bottom: 156px;margin-top: 112px;margin-left: 240px;max-width: 1216px;margin-right: 240px;'
+          : 'margin: 30px;'
       "
     >
       <span class="font-32 dark-font app-semibold-font">
@@ -242,17 +265,24 @@
         ac placerat gravida mattis viverra dolor nibh. Dignissim dictum a ut
         velit.
       </span>
-      <span class="font-48 app-semibold-font dark-font"> Comments </span>
+      <span
+        class="app-semibold-font dark-font"
+        :style="mdAndUp ? 'margin-top: 208px' : 'margin-top:60px'"
+        :class="mdAndUp ? 'fotn-48' : 'font-32'"
+      >
+        Comments
+      </span>
       <div
-        style="width: 800px; margin-bottom: 114px"
+        :style="mdAndUp ? 'width: 800px; margin-bottom: 114px' : 'width: 100%;'"
         class="d-flex flex-column"
       >
-        <div class="d-flex flex-row my-12">
+        <div class="d-flex flex-row my-12 align-center">
           <v-text-field
             placeholder="Enter Email"
             variant="outlined"
             rounded="lg"
             hide-details
+            bg-color="white"
           />
           <v-btn
             flat
@@ -262,10 +292,12 @@
             style="
               background-color: #20c39d !important;
               color: white !important;
-              height: 48px;
-              width: 192px;
-              font-size: 16px;
               margin-left: 12px;
+            "
+            :style="
+              mdAndUp
+                ? 'font-size: 16px; height: 48px;width: 192px;'
+                : 'font-size: 12px;'
             "
             prepend-icon="mdi-send-outline"
           >
@@ -328,10 +360,22 @@
       class="w-100 d-flex flex-column align-center"
       style="margin-top: 104px; margin-bottom: 112px"
     >
-      <span class="font-48 dark-font app-semibold-font" style="width: 1600px">
+      <span
+        class="dark-font app-semibold-font"
+        :style="
+          mdAndUp
+            ? 'width: 1600px'
+            : 'width: 100%; padding-left: 30px; padding-right: 30px'
+        "
+        :class="mdAndUp ? 'font-48' : 'font-24'"
+      >
         Recommended posts
       </span>
-      <div class="d-flex flex-row justify-center" style="margin-top: 64px">
+      <div
+        class="d-flex justify-center"
+        style="margin-top: 64px"
+        :class="mdAndUp ? 'flex-row' : 'flex-column'"
+      >
         <v-card
           color="white"
           width="501"
@@ -341,6 +385,7 @@
           style="border-radius: 48px !important"
           class="d-flex flex-column align-center justify-center mx-6"
           v-for="n in 3"
+          :class="mdAndUp ? '' : 'mb-5'"
         >
           <v-card-text class="pa-8">
             <v-img
@@ -589,55 +634,5 @@ const onSelectMenu = (index: number) => {
   background-image: url("@/assets/landing/bg_landing.png");
   background-size: cover;
   background-position: 50% 50%;
-  height: 867px;
-}
-.bg-landing2 {
-  background-image: url("@/assets/landing/bg_feature.png");
-  background-size: cover;
-}
-.bg-landing3 {
-  background-image: url("@/assets/landing/bg_landing3.png");
-  background-size: cover;
-  background-position: 50% 50%;
-}
-.bg-card {
-  background-image: url("@/assets/landing/quote.svg");
-  background-size: 131px 99px;
-  background-position: 18px 15px;
-  border-radius: 48px;
-  width: 501.33px;
-  height: 672px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.bg-card-dark {
-  background-image: url("@/assets/landing/quote_dark.svg");
-  background-size: 131px 99px;
-  background-position: 18px 15px;
-  border-radius: 48px;
-  width: 501.33px;
-  height: 672px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.selected-button {
-  position: relative;
-}
-.selected-button::after {
-  content: "";
-  height: 2px;
-  color: #20c39d;
-  opacity: 1;
-  margin-top: 40px;
-}
-
-div :deep(.v-text-field input.v-field__input) {
-  min-height: 48px;
-  padding: 10px 10px !important;
-  background-color: white;
-  border-radius: 10px;
 }
 </style>
