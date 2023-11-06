@@ -321,7 +321,13 @@
       <v-row style="margin-bottom: 108px">
         <v-col cols="12" md="5">
           <div class="d-flex flex-column align-center justify-center">
-            <div style="width: 458px">
+            <div
+              :style="
+                mdAndUp
+                  ? 'width: 458px'
+                  : 'width: 100%; padding-left: 30px; padding-right: 30px'
+              "
+            >
               <div>
                 <v-img width="120" height="104" src="@/assets/logo.png" />
               </div>
@@ -337,8 +343,15 @@
           </div>
         </v-col>
         <v-col cols="12" md="7">
-          <div class="d-flex flex-row">
-            <div class="d-flex flex-column" style="width: 388px">
+          <div class="d-flex" :class="mdAndUp ? 'flex-row' : 'flex-column'">
+            <div
+              class="d-flex flex-column"
+              :style="
+                mdAndUp
+                  ? 'width: 388px'
+                  : 'width: 100%; padding-left: 30px; padding-right: 30px'
+              "
+            >
               <span class="font-28 app-semibold-font white-font">
                 Resources
               </span>
@@ -364,7 +377,14 @@
                 Partnerships
               </span>
             </div>
-            <div class="d-flex flex-column">
+            <div
+              class="d-flex flex-column"
+              :style="
+                mdAndUp
+                  ? ''
+                  : 'width: 100%; padding-left: 30px; padding-right: 30px; padding-top: 30px'
+              "
+            >
               <span class="font-28 app-semibold-font white-font">
                 Features
               </span>
@@ -406,10 +426,10 @@
         </v-col>
       </v-row>
       <div
-        style="
-          margin-left: calc(20.8333% - 236px);
-          margin-right: calc(20.8333% - 236px);
-          margin-bottom: 50px;
+        :style="
+          mdAndUp
+            ? 'margin-left: calc(20.8333% - 236px); margin-right: calc(20.8333% - 236px); margin-bottom: 50px;'
+            : 'width: 100%; padding-left: 30px;padding-right: 30px; padding-bottom: 30px'
         "
       >
         <v-divider color="#59597B" class="mb-5" />
