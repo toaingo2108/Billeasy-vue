@@ -1,6 +1,6 @@
 <template>
   <div class="w-100 d-flex flex-column bg-white">
-    <div class="bg-landing">
+    <div class="bg-landing" :style="mdAndUp ? 'height: 1228px;' : ''">
       <div class="d-flex flex-row">
         <div>
           <v-img
@@ -88,20 +88,25 @@
           </v-btn>
         </div>
       </div>
-      <div class="d-flex flex-column align-center">
+      <div
+        class="d-flex flex-column align-center"
+        :class="mdAndUp ? '' : 'mb-15'"
+      >
         <div
-          class="font-80 app-semibold-font white-font text-center"
+          class="app-semibold-font white-font text-center"
           style="margin-top: 160px"
+          :class="mdAndUp ? 'font-80' : 'font-40'"
         >
           En vinnande kombination.
         </div>
         <div
-          class="font-20 light-font text-center app-medium-font"
-          style="
-            width: 772px;
-            margin-top: 64px;
-            margin-bottom: 104px;
-            line-height: 2;
+          class="light-font text-center app-medium-font"
+          style="margin-top: 64px; margin-bottom: 104px; line-height: 2"
+          :class="mdAndUp ? 'font-20' : 'font-12'"
+          :style="
+            mdAndUp
+              ? 'width: 772px;'
+              : 'width: 100%; padding-left: 30px; padding-right: 30px'
           "
         >
           Grundarna av Imexta är en av Fortnoxs ledande integrationspartners och
@@ -110,27 +115,33 @@
           automatisering.
         </div>
         <div>
-          <div class="d-flex flex-row font-24 app-medium-font white-font">
+          <div
+            class="d-flex flex-row app-medium-font white-font"
+            :class="mdAndUp ? 'font-24' : 'font-14'"
+          >
             <v-icon color="#20C39D" class="me-2"> mdi-check </v-icon>
             Skapa personliga import-/exportmallar
           </div>
           <div
-            class="d-flex flex-row font-24 app-medium-font white-font"
+            class="d-flex flex-row app-medium-font white-font"
             style="margin-top: 28px"
+            :class="mdAndUp ? 'font-24' : 'font-14'"
           >
             <v-icon color="#20C39D" class="me-2"> mdi-check </v-icon>
             Importera bokföringsdata via Imexta
           </div>
           <div
-            class="d-flex flex-row font-24 app-medium-font white-font"
+            class="d-flex flex-row app-medium-font white-font"
             style="margin-top: 28px"
+            :class="mdAndUp ? 'font-24' : 'font-14'"
           >
             <v-icon color="#20C39D" class="me-2"> mdi-check </v-icon>
             Exportera bokföringsdata via Imexta
           </div>
           <div
-            class="d-flex flex-row font-24 app-medium-font white-font"
+            class="d-flex flex-row app-medium-font white-font"
             style="margin-top: 28px"
+            :class="mdAndUp ? 'font-24' : 'font-14'"
           >
             <v-icon color="#20C39D" class="me-2"> mdi-check </v-icon>
             Bokför & skicka importerade fakturor automatiskt
@@ -141,52 +152,77 @@
     <div class="d-flex flex-column align-center">
       <div class="w-100">
         <div
-          style="margin-top: 112px; margin-left: 240px; margin-bottom: 112px"
+          :style="
+            mdAndUp
+              ? 'margin-top: 112px; margin-left: 240px; margin-bottom: 112px'
+              : 'margin: 30px;'
+          "
         >
           <v-img
-            width="563"
-            height="208"
+            :width="mdAndUp ? 563 : 232"
+            :height="mdAndUp ? 208 : 104"
             src="@/assets/landing/fortnox_logo.png"
           />
         </div>
       </div>
       <span
-        class="font-32 forest-font app-semibold-font w-100"
-        style="padding-left: 240px; margin-bottom: 48px"
+        class="forest-font app-semibold-font w-100"
+        style="margin-bottom: 48px"
+        :class="mdAndUp ? 'font-32' : 'font-16'"
+        :style="mdAndUp ? 'padding-left: 240px' : 'padding-left: 30px'"
       >
         Småföretagarnas bästa vän.
       </span>
-      <div class="w-100" style="padding-left: 240px; padding-right: 240px">
-        <span
-          class="font-20 shade-font app-medium-font mt-12 w-100"
-          style="max-width: 1216px; margin-bottom: 72px"
+      <div
+        class="w-100"
+        style="padding-left: 240px; padding-right: 240px"
+        :style="
+          mdAndUp
+            ? 'padding-left: 240px; padding-right: 240px'
+            : 'padding-left: 30px; padding-right: 30px'
+        "
+      >
+        <div
+          class="shade-font app-medium-font mt-12 w-100"
+          style="margin-bottom: 72px"
+          :class="mdAndUp ? 'font-20' : 'font-12'"
+          :style="mdAndUp ? 'max-width: 1216px;' : 'width: 100%;'"
         >
           Fortnox är ett av Sveriges mest använda ekonomiprogram med många
           funktioner som underlättar redovisning för små och stora bolag. Med
           Fortnox kan företagare sköta allt från bokföring till lagerhantering.
-        </span>
+        </div>
       </div>
-      <div style="width: 100%; padding-left: 240px; margin-top: 72px">
-        <div class="d-flex flex-row font-24 app-medium-font dark-font">
+      <div
+        style="width: 100%; margin-top: 72px"
+        :style="mdAndUp ? 'padding-left: 240px;' : 'padding-left: 30px'"
+      >
+        <div
+          class="d-flex flex-row app-medium-font dark-font"
+          :class="mdAndUp ? 'font-24' : 'font-14'"
+        >
           <v-icon color="#20C39D" class="me-2"> mdi-check </v-icon>
           Helt molnbaserat
         </div>
         <div
-          class="d-flex flex-row font-24 app-medium-font dark-font"
+          class="d-flex flex-row app-medium-font dark-font"
           style="margin-top: 28px"
+          :class="mdAndUp ? 'font-24' : 'font-14'"
         >
           <v-icon color="#20C39D" class="me-2"> mdi-check </v-icon>
           Öppet API för skräddarsydda flöden
         </div>
         <div
-          class="d-flex flex-row font-24 app-medium-font dark-font"
+          class="d-flex flex-row app-medium-font dark-font"
+          :class="mdAndUp ? 'font-24' : 'font-14'"
           style="margin-top: 28px"
         >
           <v-icon color="#20C39D" class="me-2"> mdi-check </v-icon>
           Mer än 300 integrationer
         </div>
         <div
-          class="d-flex flex-row font-24 app-medium-font dark-font"
+          class="d-flex flex-row app-medium-font dark-font"
+          :class="mdAndUp ? 'font-24' : 'font-14'"
           style="margin-top: 28px"
         >
           <v-icon color="#20C39D" class="me-2"> mdi-check </v-icon>
@@ -194,13 +230,17 @@
         </div>
       </div>
       <span
-        class="font-56 dark-font app-semibold-font"
+        class="dark-font app-semibold-font"
         style="margin-top: 240px"
+        :class="mdAndUp ? 'font-56' : 'font-28'"
       >
         Så här går det till
       </span>
       <div style="margin-top: 80px; margin-bottom: 192px">
-        <div class="d-flex flex-row justify-center">
+        <div
+          class="d-flex justify-center"
+          :class="mdAndUp ? 'flex-row' : 'flex-column'"
+        >
           <v-card
             color="#0D0D1E"
             width="501"
@@ -238,6 +278,7 @@
             rounded="xl"
             elevation="0"
             class="d-flex flex-column align-center justify-center mx-6"
+            :class="mdAndUp ? '' : 'mt-5'"
           >
             <span
               style="
@@ -268,6 +309,7 @@
             rounded="xl"
             elevation="0"
             class="d-flex flex-column align-center justify-center mx-6"
+            :class="mdAndUp ? '' : 'mt-5'"
           >
             <span
               style="
@@ -477,48 +519,5 @@ window.scrollTo(0, 0);
   background-image: url("@/assets/landing/bg_fortnox.png");
   background-size: cover;
   background-position: 50% 50%;
-  height: 1228px;
-}
-.bg-landing2 {
-  background-image: url("@/assets/landing/bg_feature.png");
-  background-size: cover;
-}
-.bg-landing3 {
-  background-image: url("@/assets/landing/bg_landing3.png");
-  background-size: cover;
-  background-position: 50% 50%;
-}
-.bg-card {
-  background-image: url("@/assets/landing/quote.svg");
-  background-size: 131px 99px;
-  background-position: 18px 15px;
-  border-radius: 48px;
-  width: 501.33px;
-  height: 672px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.bg-card-dark {
-  background-image: url("@/assets/landing/quote_dark.svg");
-  background-size: 131px 99px;
-  background-position: 18px 15px;
-  border-radius: 48px;
-  width: 501.33px;
-  height: 672px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.selected-button {
-  position: relative;
-}
-.selected-button::after {
-  content: "";
-  height: 2px;
-  color: #20c39d;
-  opacity: 1;
-  margin-top: 40px;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="w-100 d-flex flex-column">
     <div class="bg-landing">
       <div class="d-flex flex-row">
-        <div>
+        <div @click="goHome">
           <v-img
             :width="mdAndUp ? 120 : 60"
             :height="mdAndUp ? 104 : 52"

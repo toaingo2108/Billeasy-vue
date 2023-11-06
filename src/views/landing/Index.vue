@@ -494,7 +494,13 @@
               </span>
             </div>
           </div>
-          <div style="width: 660px">
+          <div
+            :style="
+              mdAndUp
+                ? 'width: 660px'
+                : 'width: 100%; padding-left: 20px; padding-right: 20px'
+            "
+          >
             <v-btn
               flat
               class="text-none font-16 app-semibold-font"
@@ -607,7 +613,13 @@
                 order and product sync.</span
               >
             </div>
-            <div style="width: 660px">
+            <div
+              :style="
+                mdAndUp
+                  ? 'width: 660px'
+                  : 'width: 100%; padding-left: 20px; padding-right: 20px'
+              "
+            >
               <v-btn
                 flat
                 class="text-none font-16 app-semibold-font"
@@ -738,7 +750,13 @@
                 sales agent
               </span>
             </div>
-            <div style="width: 660px">
+            <div
+              :style="
+                mdAndUp
+                  ? 'width: 660px'
+                  : 'width: 100%; padding-left: 20px; padding-right: 20px'
+              "
+            >
               <v-btn
                 flat
                 class="text-none font-16 app-semibold-font"
