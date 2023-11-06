@@ -91,34 +91,44 @@
     </div>
     <div
       class="d-flex flex-column align-center"
-      style="margin-top: -626px; margin-bottom: 156px"
+      style="
+        margin-top: -626px;
+        margin-bottom: 156px;
+        padding-left: 30px;
+        padding-right: 30px;
+      "
     >
       <v-card
         elevation="0"
         rounded="xl"
         max-width="1600"
         width="100%"
-        height="800"
-        style="
-          padding-top: 80px;
-          padding-bottom: 68px;
-          padding-left: 96px;
-          padding-right: 80px;
-          margin-left: 60px;
-          margin-right: 60px;
+        :style="
+          mdAndUp
+            ? 'padding-top: 80px;padding-bottom: 68px;padding-left: 96px;padding-right: 80px;margin-left: 60px;margin-right: 60px;'
+            : 'padding: 30px'
         "
       >
-        <v-card-title class="font-48 dark-font app-semibold-font">
+        <v-card-title
+          class="dark-font app-semibold-font"
+          :class="mdAndUp ? 'font-48' : 'font-24'"
+        >
           Main headline
         </v-card-title>
         <v-card-text
-          style="width: 784px; padding-top: 32px"
-          class="font-20 shade-font app-medium-font"
+          style="padding-top: 32px"
+          :style="mdAndUp ? 'width: 784px' : '100%'"
+          class="shade-font app-medium-font"
+          :class="mdAndUp ? 'font-20' : 'font-14'"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nulla
           ipsum, gravida pellentesque massa nec, feugiat sagittis erat.
         </v-card-text>
-        <v-card-text style="padding-top: 73px" class="d-flex flex-row">
+        <v-card-text
+          :style="mdAndUp ? 'padding-top: 73px' : 'padding-30px'"
+          class="d-flex"
+          :class="mdAndUp ? 'flex-row' : 'flex-column'"
+        >
           <div>
             <v-img
               width="576"
@@ -126,16 +136,26 @@
               src="@/assets/landing/img_blog.png"
             />
           </div>
-          <div class="d-flex flex-column" style="margin-left: 64px">
-            <span class="font-24 app-semibold-font pumpkin-orange-font">
+          <div
+            class="d-flex flex-column"
+            :style="mdAndUp ? 'margin-left: 64px' : 'margin-top:30px'"
+          >
+            <span
+              class="app-semibold-font pumpkin-orange-font"
+              :class="mdAndUp ? 'font-24' : 'font-18'"
+            >
               2023-03-16
             </span>
-            <span class="font-32 app-semibold-font dark-font mt-8">
+            <span
+              class="app-semibold-font dark-font mt-8"
+              :class="mdAndUp ? 'font-24' : 'font-18'"
+            >
               What is DocSmart?
             </span>
             <span
-              class="font-20 app-medium-font shade-font mt-8"
+              class="app-medium-font shade-font mt-8"
               style="line-height: 2"
+              :class="mdAndUp ? 'font-20' : 'font-12'"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
               nulla ipsum, gravida pellentesque massa nec, feugiat sagittis
@@ -149,10 +169,14 @@
                   src="@/assets/sample/profile5.png"
                 />
               </div>
-              <span class="font-20 dark-font app-medium-font ms-4"
+              <span
+                class="dark-font app-medium-font ms-4"
+                :class="mdAndUp ? 'font-20' : 'font-12'"
                 >Ryan Pollock</span
               >
-              <span class="font-20 blue-600 app-medium-font ms-2"
+              <span
+                class="blue-600 app-medium-font ms-2"
+                :class="mdAndUp ? 'font-20' : 'font-12'"
                 >on Product Updates</span
               >
             </div>
@@ -166,9 +190,9 @@
                 color: white !important;
                 height: 48px;
                 width: 160px;
-                font-size: 16px;
                 margin-top: 83px;
               "
+              :style="mdAndUp ? 'font-size: 16px' : 'font-size: 12px'"
               append-icon="mdi-chevron-right"
               @click="goToBlogDetails"
             >
@@ -179,20 +203,32 @@
       </v-card>
       <div
         class="w-100 d-flex flex-row"
-        style="margin-top: 80px; padding-left: 160px; padding-right: 160px"
+        style="margin-top: 80px"
+        :style="
+          mdAndUp
+            ? 'padding-left: 160px; padding-right: 160px'
+            : 'padding-left: 0px; padding-right: 0px'
+        "
       >
-        <div style="width: 352px">
-          <span class="font-32 dark-font app-semibold-font ms-4">Topics</span>
+        <div :style="mdAndUp ? 'width: 352px' : 'width: 160px'">
+          <span
+            class="dark-font app-semibold-font ms-4"
+            :class="mdAndUp ? 'font-32' : 'font-16'"
+            >Topics</span
+          >
           <div class="d-flex flex-column mt-12">
             <div v-for="(item, index) in menus" class="font-14">
               <v-btn
                 flat
                 variant="text"
                 style="height: 44px; min-height: 44px; max-height: 44px"
+                :style="
+                  mdAndUp ? 'font-size: 14px' : 'font-size: 10px !important;'
+                "
                 class="text-none font-14 app-medium-font d-flex flex-row justify-start"
                 :class="index == menuIndex ? 'teal-font' : 'blue-600'"
                 @click="onSelectMenu(index)"
-                width="250"
+                :width="mdAndUp ? 250 : 160"
               >
                 {{ item.title }}
               </v-btn>
@@ -201,7 +237,11 @@
         </div>
         <div class="flex-grow">
           <v-card elevation="0" rounded="xl" class="mb-5" v-for="n in 5">
-            <v-card-text class="d-flex flex-row" style="padding: 32px">
+            <v-card-text
+              class="d-flex"
+              style="padding: 32px"
+              :class="mdAndUp ? 'flex-row' : 'flex-column'"
+            >
               <div>
                 <v-img
                   width="320"
@@ -209,16 +249,26 @@
                   src="@/assets/landing/img_blog_small.png"
                 />
               </div>
-              <div class="d-flex flex-column" style="margin-left: 64px">
-                <span class="font-24 app-semibold-font pumpkin-orange-font">
+              <div
+                class="d-flex flex-column"
+                :style="mdAndUp ? 'margin-left: 64px' : 'margin-top: 30px'"
+              >
+                <span
+                  class="app-semibold-font pumpkin-orange-font"
+                  :class="mdAndUp ? 'font-24' : 'font-14'"
+                >
                   2023-03-16
                 </span>
-                <span class="font-32 app-semibold-font dark-font mt-8">
+                <span
+                  class="app-semibold-font dark-font mt-8"
+                  :class="mdAndUp ? 'font-24' : 'font-14'"
+                >
                   What is DocSmart?
                 </span>
                 <span
-                  class="font-20 app-medium-font shade-font mt-8"
+                  class="app-medium-font shade-font mt-8"
                   style="line-height: 2"
+                  :class="mdAndUp ? 'font-20' : 'font-12'"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                   nulla ipsum, gravida pellentesque massa nec, feugiat sagittis
@@ -232,10 +282,14 @@
                       src="@/assets/sample/profile5.png"
                     />
                   </div>
-                  <span class="font-20 dark-font app-medium-font ms-4"
+                  <span
+                    class="dark-font app-medium-font ms-4"
+                    :class="mdAndUp ? 'font-20' : 'font-12'"
                     >Ryan Pollock</span
                   >
-                  <span class="font-20 blue-600 app-medium-font ms-2"
+                  <span
+                    class="blue-600 app-medium-font ms-2"
+                    :class="mdAndUp ? 'font-20' : 'font-12'"
                     >on Product Updates</span
                   >
                 </div>
