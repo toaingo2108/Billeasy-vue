@@ -90,28 +90,39 @@
       </div>
       <div class="d-flex flex-column align-center">
         <div
-          class="font-80 app-semibold-font white-font text-center"
+          class="app-semibold-font white-font text-center"
           style="margin-top: 160px; line-height: 1.2"
+          :class="mdAndUp ? 'font-80' : 'font-40'"
         >
           Get in touch
         </div>
         <div
           class="font-20 white-font text-center app-medium-font"
-          style="width: 1152px; margin-top: 32px; margin-bottom: 208px"
+          style="margin-top: 32px; margin-bottom: 208px"
+          :style="
+            mdAndUp
+              ? 'width: 1152px;'
+              : 'width: 100%; padding-left: 30px; padding-right: 30px'
+          "
         >
           Any question or remarks? Just write us a message!
         </div>
       </div>
     </div>
     <div
-      class="d-flex flex-column align-center"
-      style="margin-top: -323px; margin-bottom: 128px"
+      class="d-flex flex-column align-center w-100"
+      style="
+        margin-top: -323px;
+        margin-bottom: 128px;
+        padding-left: 30px;
+        padding-right: 30px;
+      "
     >
       <v-card
         elevation="0"
         rounded="xl"
-        width="1200"
-        height="672"
+        :width="mdAndUp ? 1200 : '100%'"
+        :height="mdAndUp ? 672 : 1000"
         style="
           padding-top: 80px;
           padding-bottom: 80px;
@@ -176,7 +187,10 @@
               </div>
             </v-col>
             <v-col cols="12" md="6" class="d-flex flex-column">
-              <div class="d-flex flex-column" style="margin-left: 80px">
+              <div
+                class="d-flex flex-column"
+                :style="mdAndUp ? 'margin-left: 80px' : 'margin-top: 40px'"
+              >
                 <span class="font-13 app-medium-font dark-font mb-1">Name</span>
                 <v-text-field
                   placeholder="Enter Name"
