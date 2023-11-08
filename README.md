@@ -24,7 +24,7 @@ Check out the live demo of the admin page here:
 - **Framework**: Vue 3
 - **UI Library**: Vuetify
 - **Programming Language**: TypeScript
-- **State Management**: Vuex (if used)
+- **State Management**: Vuex
 
 ## Installation and Setup
 
