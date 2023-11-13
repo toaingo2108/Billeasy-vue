@@ -1,0 +1,1 @@
+import{U as o}from"./vuetify-7625c7fc.js";import{G as t,aM as r,az as a,o as n,bs as s,z as c}from"./@vue-89c9d61b.js";const u=t({__name:"View",setup(_){return(p,i)=>{const e=r("router-view");return a(),n(o,{style:{"background-color":"#f2f2f7"}},{default:s(()=>[c(e)]),_:1})}}});export{u as _};
