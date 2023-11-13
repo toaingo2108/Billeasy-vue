@@ -4,7 +4,6 @@
       <v-btn
         class="text-none"
         color="#0D0D1E"
-        @click="closeDialog"
         prepend-icon="mdi-cloud-upload-outline"
         rounded="lg"
         variant="outlined"

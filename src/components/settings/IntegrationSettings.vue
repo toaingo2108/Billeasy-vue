@@ -93,23 +93,11 @@
         Integration Page
       </v-btn>
     </div>
-    <new-todo-category-dialog
-      :dialog="newTodoCategoryDialog"
-      @update:dialog="(val) => (newTodoCategoryDialog = val)"
-      v-if="newTodoCategoryDialog"
-    />
-    <new-todo-status-dialog
-      :dialog="newTodoStatusDialog"
-      @update:dialog="(val) => (newTodoStatusDialog = val)"
-      v-if="newTodoStatusDialog"
-    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import NewTodoCategoryDialog from "@/components/todos/NewTodoCategoryDialog.vue";
-import NewTodoStatusDialog from "@/components/todos/NewTodoStatusDialog.vue";
 
 import { useRouter } from "vue-router";
 import { reactive } from "vue";

@@ -121,7 +121,7 @@
         </div>
         <div style="width: 33.33%" class="px-2">
           <div class="mt-6">
-            <app-checkbox v-model="firstName" class="me-2 ms-3" />
+            <app-checkbox v-model="rateIncludesVat" class="me-2 ms-3" />
             <span class="font-14 app-regular-font dark-font">
               Rate includes VAT
             </span>
@@ -219,6 +219,8 @@ const menuDialog = ref(false);
 const closeDialog = () => {
   menuDialog.value = false;
 };
+
+const rateIncludesVat = ref(false);
 </script>
 
 <style scoped>

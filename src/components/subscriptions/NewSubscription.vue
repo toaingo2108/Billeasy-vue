@@ -743,10 +743,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import generalIcon from "@/assets/svg/customers/general.svg";
-import addressIcon from "@/assets/svg/customers/address.svg";
-import contactIcon from "@/assets/svg/customers/contact.svg";
-import invoiceIcon from "@/assets/svg/customers/invoice.svg";
 import SubscriptionProductsRowMenu from "./SubscriptionProductsRowMenu.vue";
 
 import { useDisplay } from "vuetify";
@@ -764,25 +760,6 @@ const onBack = function () {
 const onAddNewCategory = function () {
   addNewCategoryDialog.value = true;
 };
-
-const menus = [
-  {
-    title: "General",
-    icon: generalIcon,
-  },
-  {
-    title: "Address",
-    icon: addressIcon,
-  },
-  {
-    title: "Contact",
-    icon: contactIcon,
-  },
-  {
-    title: "Invoice",
-    icon: invoiceIcon,
-  },
-];
 
 const productListsHeaders = [
   "",

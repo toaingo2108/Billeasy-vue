@@ -351,6 +351,8 @@ const noteItems = [
     updated_at: "2023-08-01, 12:32",
   },
 ];
+
+const onAddNewNote = () => {};
 </script>
 
 <style scoped>

@@ -926,12 +926,16 @@ import TodoCategoryList from "../default/TodoCategoryList.vue";
 import SubscriptionAddNoteDialog from "./SubscriptionAddNoteDialog.vue";
 import SubscriptionNoteItemMenu from "./SubscriptionNoteItemMenu.vue";
 import CustomerTodoDetailsMenu from "../customers/CustomerTodoDetailsMenu.vue";
+import { useDisplay } from "vuetify";
 
 const tab = ref(0);
 
 const addNewNoteDialog = ref(false);
 
 const router = useRouter();
+
+const { mdAndUp } = useDisplay();
+
 const onBack = function () {
   router.push({ name: "subscriptions" });
 };
@@ -1031,6 +1035,8 @@ const productLists = [
 const openNewNoteDialog = function () {
   addNewNoteDialog.value = true;
 };
+
+const paymentMethods = ["Swish", "Other method"];
 </script>
 <style scoped>
 div :deep(.v-label) {

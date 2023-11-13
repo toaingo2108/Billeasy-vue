@@ -162,7 +162,6 @@
     <v-card-actions class="d-flex flex-row justify-end bg-gray py-7 px-8">
       <v-btn
         color="#0D0D1E"
-        @click="closeDialog"
         variant="outlined"
         rounded="lg"
         style="
