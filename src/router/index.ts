@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: "/",
+    path: "/Billeasy-vue",
     component: () => import("@/layouts/default/Default.vue"),
     children: [
       {
@@ -269,7 +269,7 @@ const routes = [
     ],
   },
   {
-    path: "/landing",
+    path: "Billeasy-vue/landing",
     component: () => import("@/layouts/default/Landing.vue"),
     children: [
       {
@@ -331,19 +331,19 @@ const routes = [
     ],
   },
   {
-    path: "/login",
+    path: "Billeasy-vue/login",
     name: "login",
     component: () =>
       import(/* webpackChunkName: "login" */ "@/views/get_started/Login.vue"),
   },
   {
-    path: "/signup",
+    path: "Billeasy-vue/signup",
     name: "signup",
     component: () =>
       import(/* webpackChunkName: "signup" */ "@/views/get_started/Signup.vue"),
   },
   {
-    path: "/forgot-password",
+    path: "Billeasy-vue/forgot-password",
     name: "forgot-password",
     component: () =>
       import(
@@ -351,7 +351,7 @@ const routes = [
       ),
   },
   {
-    path: "/create-password",
+    path: "Billeasy-vue/create-password",
     name: "create-password",
     component: () =>
       import(
@@ -359,7 +359,7 @@ const routes = [
       ),
   },
   {
-    path: "/password-updated",
+    path: "Billeasy-vue/password-updated",
     name: "password-updated",
     component: () =>
       import(
