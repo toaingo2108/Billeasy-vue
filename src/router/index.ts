@@ -269,7 +269,7 @@ const routes = [
     ],
   },
   {
-    path: "Billeasy-vue/landing",
+    path: "/Billeasy-vue/landing",
     component: () => import("@/layouts/default/Landing.vue"),
     children: [
       {
@@ -331,19 +331,19 @@ const routes = [
     ],
   },
   {
-    path: "Billeasy-vue/login",
+    path: "/Billeasy-vue/login",
     name: "login",
     component: () =>
       import(/* webpackChunkName: "login" */ "@/views/get_started/Login.vue"),
   },
   {
-    path: "Billeasy-vue/signup",
+    path: "/Billeasy-vue/signup",
     name: "signup",
     component: () =>
       import(/* webpackChunkName: "signup" */ "@/views/get_started/Signup.vue"),
   },
   {
-    path: "Billeasy-vue/forgot-password",
+    path: "/Billeasy-vue/forgot-password",
     name: "forgot-password",
     component: () =>
       import(
@@ -351,7 +351,7 @@ const routes = [
       ),
   },
   {
-    path: "Billeasy-vue/create-password",
+    path: "/Billeasy-vue/create-password",
     name: "create-password",
     component: () =>
       import(
@@ -359,7 +359,7 @@ const routes = [
       ),
   },
   {
-    path: "Billeasy-vue/password-updated",
+    path: "/Billeasy-vue/password-updated",
     name: "password-updated",
     component: () =>
       import(
@@ -367,8 +367,12 @@ const routes = [
       ),
   },
   {
-    path: "/:pathMatch(.*)*",
-    redirect: "/404",
+    path: "/Billeasy-vue/:pathMatch(.*)*",
+    redirect: "/Billeasy-vue/404",
+  },
+  {
+    path: "/",
+    redirect: "/Billeasy-vue",
   },
 ];
 
